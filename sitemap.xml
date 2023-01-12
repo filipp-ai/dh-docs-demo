@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://dataheroes.ai/generate-license-key/installation/</loc>
+         <loc>https://filipp-ai.github.io/dh-docs-demo/installation/</loc>
          <lastmod>2023-01-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dataheroes.ai/generate-license-key/usage/</loc>
+         <loc>https://filipp-ai.github.io/dh-docs-demo/usage/</loc>
          <lastmod>2023-01-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -16,17 +16,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dataheroes.ai/generate-license-key/reference/services/coreset_services/</loc>
+         <loc>https://filipp-ai.github.io/dh-docs-demo/reference/services/coreset_services/</loc>
          <lastmod>2023-01-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dataheroes.ai/generate-license-key/reference/services/tree_services/</loc>
+         <loc>https://filipp-ai.github.io/dh-docs-demo/reference/services/tree_services/</loc>
          <lastmod>2023-01-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dataheroes.ai/generate-license-key/coverage/</loc>
+         <loc>https://filipp-ai.github.io/dh-docs-demo/coverage/</loc>
          <lastmod>2023-01-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
