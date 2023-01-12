@@ -1,0 +1,3529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DataHeroes Coreset Library">
+      
+      
+      
+      
+        <link rel="canonical" href="https://dataheroes.ai/generate-license-key/reference/services/tree_services/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>tree_services - DataHeroes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../css/material.css">
+    
+      <link rel="stylesheet" href="../../../css/mkdocstrings.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#services.tree_services" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="DataHeroes" class="md-header__button md-logo" aria-label="DataHeroes" data-md-component="logo">
+      
+  <img src="../../../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DataHeroes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              tree_services
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="lime" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../installation/" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../coreset_services/" class="md-tabs__link md-tabs__link--active">
+        Code Reference
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://dataheroes.ai/generate-license-key/" class="md-tabs__link">
+      Generate license key
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://dataheroes.ai/contact-us/" class="md-tabs__link">
+      Contact us
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DataHeroes" class="md-nav__button md-logo" aria-label="DataHeroes" data-md-component="logo">
+      
+  <img src="../../../logo.svg" alt="logo">
+
+    </a>
+    DataHeroes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        <span class="md-nav__icon md-icon"></span>
+        
+          Home
+        
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          
+            Home
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        <span class="md-nav__icon md-icon"></span>
+        
+          Code Reference
+        
+      </label>
+      <nav class="md-nav" aria-label="Code Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          
+            Code Reference
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        <span class="md-nav__icon md-icon"></span>
+        
+          services
+        
+      </label>
+      <nav class="md-nav" aria-label="services" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          
+            services
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coreset_services/" class="md-nav__link">
+        coreset_services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="./" class="md-nav__link md-nav__link--active"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            tree_services
+          </a>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        tree_services
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services" class="md-nav__link">
+    tree_services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService" class="md-nav__link">
+    CoresetTreeService
+  </a>
+  
+    <nav class="md-nav" aria-label="CoresetTreeService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.apply_data_filter" class="md-nav__link">
+    apply_data_filter()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build" class="md-nav__link">
+    build()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_df" class="md-nav__link">
+    build_from_df()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_file" class="md-nav__link">
+    build_from_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_tensor" class="md-nav__link">
+    build_from_tensor()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_tensorflow_dataset" class="md-nav__link">
+    build_from_tensorflow_dataset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.explain" class="md-nav__link">
+    explain()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.fit" class="md-nav__link">
+    fit()
+  </a>
+  
+    <nav class="md-nav" aria-label="fit()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.fit--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_coreset" class="md-nav__link">
+    get_coreset()
+  </a>
+  
+    <nav class="md-nav" aria-label="get_coreset()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_coreset--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_coreset--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples" class="md-nav__link">
+    get_important_samples()
+  </a>
+  
+    <nav class="md-nav" aria-label="get_important_samples()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.is_dirty" class="md-nav__link">
+    is_dirty()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.load" class="md-nav__link">
+    load()
+  </a>
+  
+    <nav class="md-nav" aria-label="load()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.load--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.load--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build" class="md-nav__link">
+    partial_build()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_df" class="md-nav__link">
+    partial_build_from_df()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_df()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_df--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_df--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_file" class="md-nav__link">
+    partial_build_from_file()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_file()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_file--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_file--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensor" class="md-nav__link">
+    partial_build_from_tensor()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_tensor()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensor--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset" class="md-nav__link">
+    partial_build_from_tensorflow_dataset()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_tensorflow_dataset()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.plot" class="md-nav__link">
+    plot()
+  </a>
+  
+    <nav class="md-nav" aria-label="plot()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.plot--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.plot--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.predict" class="md-nav__link">
+    predict()
+  </a>
+  
+    <nav class="md-nav" aria-label="predict()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.predict--parameterskeyword-arguments" class="md-nav__link">
+    ParametersKeyword arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.predict--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.print" class="md-nav__link">
+    print()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.remove_samples" class="md-nav__link">
+    remove_samples()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save" class="md-nav__link">
+    save()
+  </a>
+  
+    <nav class="md-nav" aria-label="save()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save_coreset" class="md-nav__link">
+    save_coreset()
+  </a>
+  
+    <nav class="md-nav" aria-label="save_coreset()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save_coreset--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.set_seen_indication" class="md-nav__link">
+    set_seen_indication()
+  </a>
+  
+    <nav class="md-nav" aria-label="set_seen_indication()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.set_seen_indication--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_dirty" class="md-nav__link">
+    update_dirty()
+  </a>
+  
+    <nav class="md-nav" aria-label="update_dirty()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_dirty--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_features" class="md-nav__link">
+    update_features()
+  </a>
+  
+    <nav class="md-nav" aria-label="update_features()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_features--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_targets" class="md-nav__link">
+    update_targets()
+  </a>
+  
+    <nav class="md-nav" aria-label="update_targets()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_targets--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceKMeans" class="md-nav__link">
+    CoresetTreeServiceKMeans
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceLG" class="md-nav__link">
+    CoresetTreeServiceLG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceLR" class="md-nav__link">
+    CoresetTreeServiceLR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServicePCA" class="md-nav__link">
+    CoresetTreeServicePCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceSVD" class="md-nav__link">
+    CoresetTreeServiceSVD
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dataheroes.ai/generate-license-key/" class="md-nav__link">
+        Generate license key
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dataheroes.ai/contact-us/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services" class="md-nav__link">
+    tree_services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService" class="md-nav__link">
+    CoresetTreeService
+  </a>
+  
+    <nav class="md-nav" aria-label="CoresetTreeService">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.apply_data_filter" class="md-nav__link">
+    apply_data_filter()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build" class="md-nav__link">
+    build()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_df" class="md-nav__link">
+    build_from_df()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_file" class="md-nav__link">
+    build_from_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_tensor" class="md-nav__link">
+    build_from_tensor()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.build_from_tensorflow_dataset" class="md-nav__link">
+    build_from_tensorflow_dataset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.explain" class="md-nav__link">
+    explain()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.fit" class="md-nav__link">
+    fit()
+  </a>
+  
+    <nav class="md-nav" aria-label="fit()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.fit--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_coreset" class="md-nav__link">
+    get_coreset()
+  </a>
+  
+    <nav class="md-nav" aria-label="get_coreset()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_coreset--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_coreset--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples" class="md-nav__link">
+    get_important_samples()
+  </a>
+  
+    <nav class="md-nav" aria-label="get_important_samples()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.get_important_samples--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.is_dirty" class="md-nav__link">
+    is_dirty()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.load" class="md-nav__link">
+    load()
+  </a>
+  
+    <nav class="md-nav" aria-label="load()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.load--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.load--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build" class="md-nav__link">
+    partial_build()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_df" class="md-nav__link">
+    partial_build_from_df()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_df()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_df--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_df--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_file" class="md-nav__link">
+    partial_build_from_file()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_file()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_file--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_file--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensor" class="md-nav__link">
+    partial_build_from_tensor()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_tensor()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensor--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset" class="md-nav__link">
+    partial_build_from_tensorflow_dataset()
+  </a>
+  
+    <nav class="md-nav" aria-label="partial_build_from_tensorflow_dataset()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.plot" class="md-nav__link">
+    plot()
+  </a>
+  
+    <nav class="md-nav" aria-label="plot()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.plot--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.plot--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.predict" class="md-nav__link">
+    predict()
+  </a>
+  
+    <nav class="md-nav" aria-label="predict()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.predict--parameterskeyword-arguments" class="md-nav__link">
+    ParametersKeyword arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.predict--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.print" class="md-nav__link">
+    print()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.remove_samples" class="md-nav__link">
+    remove_samples()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save" class="md-nav__link">
+    save()
+  </a>
+  
+    <nav class="md-nav" aria-label="save()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save_coreset" class="md-nav__link">
+    save_coreset()
+  </a>
+  
+    <nav class="md-nav" aria-label="save_coreset()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.save_coreset--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.set_seen_indication" class="md-nav__link">
+    set_seen_indication()
+  </a>
+  
+    <nav class="md-nav" aria-label="set_seen_indication()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.set_seen_indication--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_dirty" class="md-nav__link">
+    update_dirty()
+  </a>
+  
+    <nav class="md-nav" aria-label="update_dirty()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_dirty--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_features" class="md-nav__link">
+    update_features()
+  </a>
+  
+    <nav class="md-nav" aria-label="update_features()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_features--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_targets" class="md-nav__link">
+    update_targets()
+  </a>
+  
+    <nav class="md-nav" aria-label="update_targets()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeService.update_targets--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceKMeans" class="md-nav__link">
+    CoresetTreeServiceKMeans
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceLG" class="md-nav__link">
+    CoresetTreeServiceLG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceLR" class="md-nav__link">
+    CoresetTreeServiceLR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServicePCA" class="md-nav__link">
+    CoresetTreeServicePCA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.tree_services.CoresetTreeServiceSVD" class="md-nav__link">
+    CoresetTreeServiceSVD
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>tree_services</h1>
+                
+                <div class="doc doc-object doc-module">
+
+
+<a id="services.tree_services"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="services.tree_services.CoresetTreeService" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">CoresetTreeService</span>
+
+
+<a href="#services.tree_services.CoresetTreeService" class="headerlink" title="Permanent link">¤</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">CoresetTreeService</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="services._base.CoresetServiceBase">CoresetServiceBase</span></code></p>
+
+  
+      <p>Service class for creating and working with a coreset tree</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>data_manager</code></td>
+          <td>
+                <code><span title="services._base.DataManagerT">DataManagerT</span></code>
+          </td>
+          <td><p>DataManagerBase subclass, optional</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>data_params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="services.data.DataParams">DataParams</span>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
+          </td>
+          <td><p>DataParams, optional
+Preprocessing information.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
+          </td>
+          <td><p>int/dict, required
+Represent the coreset size of each node in the tree.
+dict {class: size}: control the number of samples to choose for each class.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sample_all</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
+          </td>
+          <td><p>iterable, optional
+Classification only, a list of classes for them all samples should be taken.
+When provided, coreset_size must be an int.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="services.common.CoresetParams">CoresetParams</span>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
+          </td>
+          <td><p>CoresetParams or dict, optional
+Corset algorithm specific parameters.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>node_train_function</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]</code>
+          </td>
+          <td><p>Callable, optional
+method for training model at tree node level</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>node_train_function_params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td><p>dict, optional
+kwargs to be used when calling node_train_function</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>node_metadata_func</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>], <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>, None]], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>, None]]</code>
+          </td>
+          <td><p>callable, optional
+A method for storing user meta data on each node</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>working_directory</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
+          </td>
+          <td><p>str, path, optional
+Local directory where intermediate data is stored.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>cache_dir</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
+          </td>
+          <td><p>str, path, optional
+For internal use when loading a saved service.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.apply_data_filter" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">apply_data_filter</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.apply_data_filter" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">apply_data_filter</span><span class="p">(</span><span class="n">filter_function</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Remove samples from the coreset tree, on the base of filter function,
+that returns list of samples to be <em>left</em> in tree. The signature is <em>filter_function(indexes, X, y)</em>.
+For example, for removing all instances for which target equal 6,
+the following function could be defined <em>filter_function = lambda indexes, X, y : indexes[y != 6]</em>.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>filter_function</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]]</code>
+          </td>
+          <td><p>Function that returns list of samples to be left in tree. Its logic described above.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>force_resample_all</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>Force full resample for affected nodes, starting from level=force_resample_all, assuming:
+    0 - root level;
+    len(tree) = leaf level;
+    None - no force resample at all;
+    -1 - same as leaf level.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>force_sensitivity_recalc</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>Partial resampling for affected nodes, based on coreset quality,
+starting from  level=force_sensitivity_recalc, assuming:
+    0 - root level;
+    len(tree) - leaf level;
+    None - one level above leaf (same as force_sensitivity_recalc=len(tree)-1, default behaviour);
+    -1 - same as leaf level</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>force_do_nothing</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>bool, default False
+If set True - do not make either full or partial resampling</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.build" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">build</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.build" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a coreset tree from parameters X, y and indices.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>X</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
+          </td>
+          <td><p>array like or iterator of arrays like
+an array or an iterator of features</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>y</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+          </td>
+          <td><p>array like or iterator of arrays like, optional
+an array or an iterator of targets</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>indices</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+          </td>
+          <td><p>array like or iterator of arrays like, optional
+an array or an iterator with indices of X</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sample_size</code></td>
+          <td>
+          </td>
+          <td><p>int
+The number of instances used when creating a coreset node in the tree.
+sample_size=0: nodes are created based on input chunks</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
+          </td>
+          <td><p>function, label, or list of labels, optional
+Split each dataset by the key.
+When provided, sample_size input is ignored.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code>
+          </td>
+          <td><p>self</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.build_from_df" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">build_from_df</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a coreset tree from pandas DataFrame(s).</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>datasets</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterator" href="https://docs.python.org/3/library/typing.html#typing.Iterator">Iterator</a>[<span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>]</code>
+          </td>
+          <td><p>pandas DataFrame or DataFrame iterator
+Data includes features, may include labels and may include indices.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>target_datasets</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterator" href="https://docs.python.org/3/library/typing.html#typing.Iterator">Iterator</a>[<span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas">pd</span>.<span title="pandas.DataFrame">DataFrame</span>]</code>
+          </td>
+          <td><p>pandas DataFrame or DataFrame iterator, optional
+Use when data is split to features and labels.
+Should include only one column.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sample_size</code></td>
+          <td>
+          </td>
+          <td><p>int
+The number of instances used when creating a coreset node in the tree.
+sample_size=0: nodes are created based on input chunks</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
+          </td>
+          <td><p>function, label, or list of labels, optional
+Split each dataset by the key.
+When provided, sample_size input is ignored.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code>
+          </td>
+          <td><p>self</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.build_from_file" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">build_from_file</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Create a coreset tree based on the data taken from a local storage.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>file_path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
+          </td>
+          <td><p>file, list of files, directory, list of directories.
+Path(s) to the place where data is stored.
+Data includes features, may include labels and may include indices.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>target_file_path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
+          </td>
+          <td><p>file, list of files, directory, list of directories, optional
+Use when files are split to features and labels.
+Each file should include only one column.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reader_f</code></td>
+          <td>
+          </td>
+          <td><p>pandas like read method, optional, default pandas read_csv
+For example, to read excel files use pandas read_excel.</p></td>
+          <td>
+                <code>pd.read_csv</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reader_kwargs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td><p>dict, optional
+Keyword arguments used when calling reader_f method.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sample_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int
+The number of instances used when creating a coreset node in the tree.
+sample_size=0: nodes are created based on input chunks</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
+          </td>
+          <td><p>function, label, or list of labels, optional
+Split the data by the key.
+When provided, sample_size input is ignored.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code>
+          </td>
+          <td><p>self</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.build_from_tensor" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">build_from_tensor</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.build_from_tensor" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">build_from_tensor</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>create a coreset tree based on the torch.Tensor</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dataset</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>torch.Tensor</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sample_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>nodes are created based on input chunks
+default: sample_size is decided internally</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
+          </td>
+          <td><p>function, label, or list of labels, optional
+split each dataset by key</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.build_from_tensorflow_dataset" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">build_from_tensorflow_dataset</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.build_from_tensorflow_dataset" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">build_from_tensorflow_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>create a coreset tree based on the tf.data.Dataset</p>
+      <hr />
+<pre><code>dataset: tuple (tf.data.Dataset, tfds.core.DatasetInfo)
+sample_size: nodes are created based on input chunks
+    default: sample_size is decided internally
+coreset_by: function, label, or list of labels, optional
+    split each dataset by key
+</code></pre>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.explain" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">explain</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.explain" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">explain</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">model_scoring_function</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>return leaf metadata and explainability path,
+using provided unlabeled examples and model scoring function.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>X</code></td>
+          <td>
+          </td>
+          <td><p>array like
+unclassified samples</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model_scoring_function</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]</code>
+          </td>
+          <td><p>callable[[array like, any], float]
+model scoring function which gets the X and the node's train model as params and returns a score in
+the range of [0,1]; this function drives the building of the explainability path.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterator" href="https://docs.python.org/3/library/typing.html#typing.Iterator">Iterator</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]]</code>
+          </td>
+          <td><p>An iterator of (metadata,explanation) tuples:
+metadata:
+    selected leaf's metadata
+explanation:
+    free text explaining the built explainability path</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.fit" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">fit</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.fit" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">fit</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Fit a model on the coreset tree.</p>
+<h5 id="services.tree_services.CoresetTreeService.fit--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.fit--parameters" title="Permanent link">¤</a></h5>
+
+<details class="level">
+  <summary>int, optional, default 0</summary>
+  <p>Defines the depth level of the tree from which the coreset is extracted.
+Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
+Level 1 returns the coreset from the level below the head of the tree with up to 2* coreset_size samples, etc.</p>
+</details>
+<details class="model">
+  <summary>an ml model instance, optional</summary>
+  <p>When provided, model_params are not relevant.
+Default: instantiate the service model class using input model_params.</p>
+</details>
+<details class="model_params">
+  <summary>model hyper parameters kwargs</summary>
+  <p>Input when instantiating default model class.</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.get_coreset" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">get_coreset</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.get_coreset" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">get_coreset</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">as_orig</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get tree's coreset data either in a processed format or in the original format.
+Use the level parameter to control the level of the tree from which samples will be returned.</p>
+<h5 id="services.tree_services.CoresetTreeService.get_coreset--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.get_coreset--parameters" title="Permanent link">¤</a></h5>
+
+<details class="level">
+  <summary>int, optional, default 0</summary>
+  <p>Defines the depth level of the tree from which the coreset is extracted.
+Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
+Level 1 returns the coreset from the level below the head of the tree with up to 2* coreset_size samples, etc.</p>
+</details>
+<details class="as_orig">
+  <summary>boolean, optional, default False</summary>
+  <p>Should the data be returned in it's original format or as a tuple of indices, X, and optionally y.
+True: data is returned as a pandas DataFrame.
+False: return a tuple of (indices, X, y) if target was used and (indices, X) when there is no target.</p>
+</details>
+<details class="with_index">
+  <summary>boolean, optional, default False</summary>
+  <p>Relevant only when as_orig=True. Should the returned data include the index column.</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.get_coreset--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.get_coreset--returns" title="Permanent link">¤</a></h5>
+
+<details class="dict">
+  <summary>dict</summary>
+  <p>data: numpy arrays tuple (indices,X, optional y) or a pandas DataFrame
+w: A numpy array of sample weights
+n_represents: number of instances represented by the coreset</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.get_important_samples" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">get_important_samples</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.get_important_samples" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">get_important_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filter_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_seen_samples</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns indices of most important samples order by importance. Useful for identifying miss-labeled instances.
+At least one of size, class_size must be provided. Must be called after build.</p>
+<h5 id="services.tree_services.CoresetTreeService.get_important_samples--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.get_important_samples--parameters" title="Permanent link">¤</a></h5>
+
+<details class="size">
+  <summary>int, optional</summary>
+  <p>Number of samples to return.
+When class_size is provided, remaining samples are taken from classes not appearing in class_size dictionary.</p>
+</details>
+<details class="class_size">
+  <summary>dict {class: int or "all" or "any"}, optional.</summary>
+  <p>Controls the number of samples to choose for each class.
+int: return at most size
+"all": return all samples.
+"any": limits the returned samples to the specified classes.</p>
+</details>
+<details class="ignore_indices">
+  <summary>array-like, optional.</summary>
+  <p>An array of indices to ignore when selecting important samples.</p>
+</details>
+<details class="select_from_indices">
+  <summary>array-like, optional.</summary>
+  <p>An array of indices to consider when selecting important samples.</p>
+</details>
+<details class="filter_function">
+  <summary>array-like, optional.</summary>
+  <p>Filter results by function. Function should accept 3 parameters as input: indices, X, y and return
+a list(iterator) of indices</p>
+</details>
+<details class="ignore_seen_samples">
+  <summary>bool, optional, default False.</summary>
+  <p>Exclude already seen indices and set seen flag on any returned indices.</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.get_important_samples--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.get_important_samples--returns" title="Permanent link">¤</a></h5>
+
+<details class="dict">
+  <summary>Dict</summary>
+  <p>indices: array-like[int].
+    important samples indices.
+X: array-like[int].
+    X array
+y: array-like[int].
+    y array
+importance: array-like[float].
+    The important value. High value is more important.</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.get_important_samples--examples">Examples<a class="headerlink" href="#services.tree_services.CoresetTreeService.get_important_samples--examples" title="Permanent link">¤</a></h5>
+
+<details class="input">
+  <summary>Input</summary>
+  <p>size=100,
+class_size={"class A": 10, "class B": 50, "class C": "all"}</p>
+</details>
+<details class="output">
+  <summary>Output</summary>
+  <p>10 of "class A",
+50 of "class B",
+12 of "class C" (all),
+28 of "class D/E"</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.is_dirty" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">is_dirty</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.is_dirty" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">is_dirty</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a flag whether the coreset tree has "dirty" nodes, that is all nodes, that were affected with
+any of methods: remove_samples, update_targets, update_features, apply_data_filter, and were
+not resampled.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.load" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">load</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#services.tree_services.CoresetTreeService.load" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">load</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">load_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Restore a service object from a local directory.</p>
+<h5 id="services.tree_services.CoresetTreeService.load--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.load--parameters" title="Permanent link">¤</a></h5>
+
+<details class="dir_path">
+  <summary>str, path</summary>
+  <p>Local directory where service data is stored.</p>
+</details>
+<details class="name">
+  <summary>string, optional, default service class name (lower case)</summary>
+  <p>The name prefix of the sub-directory to load.
+When more than one sub-directories having the same name prefix are found, the last one, ordered by name, is selected.
+For example when saving with override=False, the chosen sub-directory is the last saved.</p>
+</details>
+<details class="data_manager">
+  <summary>DataManagerBase subclass, optional</summary>
+  <p>When specified, input data manger will be used instead of restoring it from the saved configuration.</p>
+</details>
+<details class="load_buffer">
+  <summary>boole, optional, default True</summary>
+  <p>If set, load saved buffer from disk and add it to the tree.</p>
+</details>
+<details class="working_directory">
+  <summary>str, path, optional, default use working_directory from saved configuration</summary>
+  <p>Local directory where intermediate data is stored.</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.load--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.load--returns" title="Permanent link">¤</a></h5>
+<p>CoresetTreeService object</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.partial_build" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">partial_build</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.partial_build" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Adding new samples to a coreset tree from parameters X, y and indices.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>X</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
+          </td>
+          <td><p>array like or iterator of arrays like
+an array or an iterator of features</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>y</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+          </td>
+          <td><p>array like or iterator of arrays like, optional
+an array or an iterator of targets</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>indices</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+          </td>
+          <td><p>array like or iterator of arrays like, optional
+an array or an iterator with indices of X</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sample_size</code></td>
+          <td>
+          </td>
+          <td><p>int
+The number of instances used when creating a coreset node in the tree.
+sample_size=0: nodes are created based on input chunks</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_by</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
+          </td>
+          <td><p>function, label, or list of labels, optional
+Split each dataset by the key.
+When provided, sample_size input is ignored.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code>
+          </td>
+          <td><p>self</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.partial_build_from_df" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">partial_build_from_df</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.partial_build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Adding new samples to a coreset tree based on the pandas DataFrame iterator.</p>
+<h5 id="services.tree_services.CoresetTreeService.partial_build_from_df--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.partial_build_from_df--parameters" title="Permanent link">¤</a></h5>
+
+<details class="datasets">
+  <summary>pandas DataFrame or DataFrame iterator</summary>
+  <p>Data includes features, may include labels and may include indices.</p>
+</details>
+<details class="target_datasets">
+  <summary>pandas DataFrame or DataFrame iterator, optional</summary>
+  <p>Use when data is split to features and labels.
+Should include only one column.</p>
+</details>
+<details class="sample_size">
+  <summary>int, optional, default previous used sample_size</summary>
+  <p>The number of instances used when creating a coreset node in the tree.
+sample_size=0: nodes are created based on input chunks</p>
+</details>
+<details class="coreset_by">
+  <summary>function, label, or list of labels, optional</summary>
+  <p>Split each dataset by the key.
+When provided, sample_size input is ignored.</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.partial_build_from_df--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.partial_build_from_df--returns" title="Permanent link">¤</a></h5>
+<p>self</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.partial_build_from_file" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">partial_build_from_file</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.partial_build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Adding new samples to a coreset tree based on the data taken from local storage.</p>
+<h5 id="services.tree_services.CoresetTreeService.partial_build_from_file--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.partial_build_from_file--parameters" title="Permanent link">¤</a></h5>
+
+<details class="file_path">
+  <summary>file, list of files, directory, list of directories.</summary>
+  <p>Path(s) to the place where data is stored.
+Data includes features, may include labels and may include indices.</p>
+</details>
+<details class="target_file_path">
+  <summary>file, list of files, directory, list of directories, optional</summary>
+  <p>Use when files are split to features and labels.
+Each file should include only one column.</p>
+</details>
+<details class="reader_f">
+  <summary>pandas like read method, optional, default pandas read_csv</summary>
+  <p>For example, to read excel files use pandas read_excel.</p>
+</details>
+<details class="reader_kwargs">
+  <summary>dict, optional</summary>
+  <p>Keyword arguments used when calling reader_f method.</p>
+</details>
+<details class="sample_size">
+  <summary>int, optional, default previous used sample_size</summary>
+  <p>The number of instances used when creating a coreset node in the tree.
+sample_size=0: nodes are created based on input chunks.</p>
+</details>
+<details class="coreset_by">
+  <summary>function, label, or list of labels, optional</summary>
+  <p>Split the data by the key.
+When provided, sample_size input is ignored.</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.partial_build_from_file--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.partial_build_from_file--returns" title="Permanent link">¤</a></h5>
+<p>self</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.partial_build_from_tensor" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">partial_build_from_tensor</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.partial_build_from_tensor" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_tensor</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Applying new samples to a coreset tree based on the torch.Tensor</p>
+<h5 id="services.tree_services.CoresetTreeService.partial_build_from_tensor--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.partial_build_from_tensor--parameters" title="Permanent link">¤</a></h5>
+<p>dataset: torch.Tensor</p>
+
+<details class="sample_size">
+  <summary>nodes are created based on input chunks</summary>
+  <p>default: sample_size is decided internally</p>
+</details>
+<details class="coreset_by">
+  <summary>function, label, or list of labels, optional</summary>
+  <p>split each dataset by key</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">partial_build_from_tensorflow_dataset</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_tensorflow_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Applying new samples to a coreset tree based on the tf.data.Dataset</p>
+<h5 id="services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.partial_build_from_tensorflow_dataset--parameters" title="Permanent link">¤</a></h5>
+<p>dataset: tuple (tf.data.Dataset, tfds.core.DatasetInfo)</p>
+
+<details class="sample_size">
+  <summary>nodes are created based on input chunks</summary>
+  <p>default: sample_size is decided internally</p>
+</details>
+<details class="coreset_by">
+  <summary>function, label, or list of labels, optional</summary>
+  <p>split each dataset by key</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.plot" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">plot</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.plot" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Produce a tree graph plot and save figure as a local png file.</p>
+<h5 id="services.tree_services.CoresetTreeService.plot--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.plot--parameters" title="Permanent link">¤</a></h5>
+
+<details class="dir_path">
+  <summary>string or PathLike</summary>
+  <p>Path to save the plot figure in; if not provided, or if isn't valid/doesn't exist, the figure will be saved in the current directory (from which this method is called).</p>
+</details>
+<details class="name">
+  <summary>string, optional</summary>
+  <p>Name of the image file</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.plot--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.plot--returns" title="Permanent link">¤</a></h5>
+<p>Image file path</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.predict" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">predict</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.predict" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Run prediction on the trained model.</p>
+<h5 id="services.tree_services.CoresetTreeService.predict--parameterskeyword-arguments">ParametersKeyword arguments<a class="headerlink" href="#services.tree_services.CoresetTreeService.predict--parameterskeyword-arguments" title="Permanent link">¤</a></h5>
+
+<details class="x">
+  <summary>array</summary>
+  <p>an array of features</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.predict--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.predict--returns" title="Permanent link">¤</a></h5>
+<p>Model prediction results</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.print" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">print</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.print" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Print the tree's string representation.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.remove_samples" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">remove_samples</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.remove_samples" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">remove_samples</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Remove samples from the coreset tree.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>indices</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
+          </td>
+          <td><p>List of samples to be removed.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>force_resample_all</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>Force full resample for affected nodes, starting from level=force_resample_all, assuming:
+0 - root level;
+len(tree) = leaf level;
+None - no force resample at all;
+-1 - same as leaf level.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>force_sensitivity_recalc</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>Partial resampling for affected nodes, based on coreset quality,
+starting from  level=force_sensitivity_recalc, assuming:
+    0 - root level;
+    len(tree) - leaf level;
+    None - one level above leaf (same as force_sensitivity_recalc=len(tree)-1, default behaviour);
+    -1 - same as leaf level</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>force_do_nothing</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>bool, default False
+If set True - do not make either full or partial resampling</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.save" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">save</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.save" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">save</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">override</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>save service configuration and relevant data to a local directory.
+Use this method when the service needs to restored.</p>
+<h5 id="services.tree_services.CoresetTreeService.save--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.save--parameters" title="Permanent link">¤</a></h5>
+
+<details class="dir_path">
+  <summary>string or PathLike, optional, default self.working_directory</summary>
+  <p>A local directory for saving service's files.</p>
+</details>
+<details class="name">
+  <summary>string, optional, default service class name (lower case)</summary>
+  <p>Name of the sub-directory where the data will be stored.</p>
+</details>
+<details class="save_buffer">
+  <summary>boolean, default True</summary>
+  <p>Save the service’s configuration and relevant data to a local directory.</p>
+</details>
+<details class="override">
+  <summary>bool, optional, default false</summary>
+  <p>False: add a timestamp suffix so each save won’t override previous ones.
+True: existing sub-directory with that name is overridden.</p>
+</details>      <h5 id="services.tree_services.CoresetTreeService.save--returns">Returns<a class="headerlink" href="#services.tree_services.CoresetTreeService.save--returns" title="Permanent link">¤</a></h5>
+<p>Save directory path.</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.save_coreset" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">save_coreset</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.save_coreset" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">save_coreset</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">as_orig</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Get coreset from the tree and save to a file along with coreset weights.
+Use the level parameter to control the level of the tree from which samples will be returned.</p>
+<h5 id="services.tree_services.CoresetTreeService.save_coreset--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.save_coreset--parameters" title="Permanent link">¤</a></h5>
+
+<details class="file_path">
+  <summary>string or PathLike</summary>
+  <p>Local file path to store the coreset.</p>
+</details>
+<details class="level">
+  <summary>int, optional, default 0</summary>
+  <p>Defines the depth level of the tree from which the coreset is extracted.
+Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
+Level 1 returns the coreset from the level below the head of the tree with up to 2* coreset_size samples, etc.</p>
+</details>
+<details class="as_orig">
+  <summary>boolean, optional, default False</summary>
+  <p>True: save in the original format.
+False: save in a processed format (indices, X, y, weight).</p>
+</details>
+<details class="with_index">
+  <summary>boolean, optional, default False</summary>
+  <p>Relevant only when as_orig=True. Save also index column.</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.set_seen_indication" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">set_seen_indication</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.set_seen_indication" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">set_seen_indication</span><span class="p">(</span><span class="n">seen_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Set samples as 'seen' or 'unseen'. Not providing an indices list defaults to setting the flag on all
+samples.</p>
+<h5 id="services.tree_services.CoresetTreeService.set_seen_indication--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.set_seen_indication--parameters" title="Permanent link">¤</a></h5>
+
+<details class="seen_flag">
+  <summary>bool</summary>
+  <p>Set 'seen' or 'unseen' flag</p>
+</details>
+<details class="indices">
+  <summary>array like</summary>
+  <p>Set flag only on provided list of indices. Defaults to all indices.</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.update_dirty" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">update_dirty</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.update_dirty" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">update_dirty</span><span class="p">(</span><span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Execute resampling on <em>dirty</em> nodes of the coreset tree, that is all nodes, that were affected with
+any of methods: <em>remove_samples, update_targets, update_features, apply_data_filter</em>, and were
+not partially or fully resampled.</p>
+<h5 id="services.tree_services.CoresetTreeService.update_dirty--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.update_dirty--parameters" title="Permanent link">¤</a></h5>
+
+<details class="force_resample_all">
+  <summary>force_resample_all</summary>
+  <p>Force full resample for affected nodes, starting from level=force_resample_all, assuming:
+    0 - root level;
+    len(tree) = leaf level;
+    None - no force resample at all;
+    -1 - same as leaf level.</p>
+</details>
+<details class="force_sensitivity_recalc">
+  <summary>force_sensitivity_recalc</summary>
+  <p>Partial resampling for affected nodes, based on coreset quality,
+starting from  level=force_sensitivity_recalc, assuming:
+    0 - root level;
+    len(tree) - leaf level;
+    None - one level above leaf (same as force_sensitivity_recalc=len(tree)-1, default behaviour);
+    -1 - same as leaf level</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.update_features" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">update_features</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.update_features" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">update_features</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Update features for samples on the coreset tree.</p>
+<h5 id="services.tree_services.CoresetTreeService.update_features--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.update_features--parameters" title="Permanent link">¤</a></h5>
+
+<details class="indices">
+  <summary>Iterable</summary>
+  <p>List of samples to be removed.</p>
+</details>
+<details class="x">
+  <summary>X</summary>
+  <p>List of features, should have the same length as indices</p>
+</details>
+<details class="feature_names">
+  <summary>feature_names</summary>
+  <p>If the quantity of features in X is not equal to the quantity of features in the original coreset,
+this param should contain list of names of passed features.</p>
+</details>
+<details class="force_resample_all">
+  <summary>force_resample_all</summary>
+  <p>Force full resample for affected nodes, starting from level=force_resample_all, assuming:
+    0 - root level;
+    len(tree) = leaf level;
+    None - no force resample at all;
+    -1 - same as leaf level.</p>
+</details>
+<details class="force_sensitivity_recalc">
+  <summary>force_sensitivity_recalc</summary>
+  <p>Partial resampling for affected nodes, based on coreset quality,
+starting from  level=force_sensitivity_recalc, assuming:
+    0 - root level;
+    len(tree) - leaf level;
+    None - one level above leaf (same as force_sensitivity_recalc=len(tree)-1, default behaviour);
+    -1 - same as leaf level</p>
+</details>
+<details class="force_do_nothing">
+  <summary>bool, default False</summary>
+  <p>If set True - do not make either full or partial resampling</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="services.tree_services.CoresetTreeService.update_targets" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">update_targets</span>
+
+
+<a href="#services.tree_services.CoresetTreeService.update_targets" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">update_targets</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Update targets for samples on the coreset tree.</p>
+<h5 id="services.tree_services.CoresetTreeService.update_targets--parameters">Parameters<a class="headerlink" href="#services.tree_services.CoresetTreeService.update_targets--parameters" title="Permanent link">¤</a></h5>
+
+<details class="indices">
+  <summary>Iterable</summary>
+  <p>List of samples to be removed.</p>
+</details>
+<details class="y">
+  <summary>y</summary>
+  <p>List of targets, should have the same length as indices</p>
+</details>
+<details class="force_resample_all">
+  <summary>force_resample_all</summary>
+  <p>Force full resample for affected nodes, starting from level=force_resample_all, assuming:
+    0 - root level;
+    len(tree) = leaf level;
+    None - no force resample at all;
+    -1 - same as leaf level.</p>
+</details>
+<details class="force_sensitivity_recalc">
+  <summary>force_sensitivity_recalc</summary>
+  <p>Partial resampling for affected nodes, based on coreset quality,
+starting from  level=force_sensitivity_recalc, assuming:
+    0 - root level;
+    len(tree) - leaf level;
+    None - one level above leaf (same as force_sensitivity_recalc=len(tree)-1, default behaviour);
+    -1 - same as leaf level</p>
+</details>
+<details class="force_do_nothing">
+  <summary>bool, default False</summary>
+  <p>If set True - do not make either full or partial resampling</p>
+</details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="services.tree_services.CoresetTreeServiceKMeans" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">CoresetTreeServiceKMeans</span>
+
+
+<a href="#services.tree_services.CoresetTreeServiceKMeans" class="headerlink" title="Permanent link">¤</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code></p>
+
+  
+      <p>Subclass of CoresetTreeService for KMeans</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="services.tree_services.CoresetTreeServiceLG" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">CoresetTreeServiceLG</span>
+
+
+<a href="#services.tree_services.CoresetTreeServiceLG" class="headerlink" title="Permanent link">¤</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code></p>
+
+  
+      <p>Subclass of CoresetTreeService for Logistic Regression</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="services.tree_services.CoresetTreeServiceLR" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">CoresetTreeServiceLR</span>
+
+
+<a href="#services.tree_services.CoresetTreeServiceLR" class="headerlink" title="Permanent link">¤</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code></p>
+
+  
+      <p>Subclass of CoresetTreeService for linear regression</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="services.tree_services.CoresetTreeServicePCA" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">CoresetTreeServicePCA</span>
+
+
+<a href="#services.tree_services.CoresetTreeServicePCA" class="headerlink" title="Permanent link">¤</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code></p>
+
+  
+      <p>Subclass of CoresetTreeService for PCA</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="services.tree_services.CoresetTreeServiceSVD" class="doc doc-heading">
+        <span class="doc doc-object-name doc-class-name">CoresetTreeServiceSVD</span>
+
+
+<a href="#services.tree_services.CoresetTreeServiceSVD" class="headerlink" title="Permanent link">¤</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="services.tree_services.CoresetTreeService" href="#services.tree_services.CoresetTreeService">CoresetTreeService</a></code></p>
+
+  
+      <p>Subclass of CoresetTreeService for SVD</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../coreset_services/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              coreset_services
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/pawamoy" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/pawamoy" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.d351de03.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>
