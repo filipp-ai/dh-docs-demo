@@ -11,14 +11,14 @@
       
       
       
-        <link rel="canonical" href="https://filipp-ai.github.io/dh-docs-demo/coverage/">
+        <link rel="canonical" href="https://filipp-ai.github.io/dh-docs-demo/usage/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-7.1.5">
     
     
       
-        <title>Coverage - DataHeroes</title>
+        <title>Usage - DataHeroes</title>
       
     
     
@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#code" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Coverage
+              Usage
             
           </span>
         </div>
@@ -176,15 +181,11 @@
   
 
 
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../installation/" class="md-tabs__link">
-        Home
-      </a>
-    </li>
-  
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
 
       
         
@@ -271,53 +272,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
-      
-      <label class="md-nav__link" for="__nav_1">
-        <span class="md-nav__icon md-icon"></span>
-        
-          Home
-        
-      </label>
-      <nav class="md-nav" aria-label="Home" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          
-            Home
-          
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
-        Installation
+      <a href=".." class="md-nav__link">
+        Home
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../usage/" class="md-nav__link">
-        Usage
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -448,40 +406,63 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Coverage</h1>
+                  <h1>Usage</h1>
                 
-                <style>
-article h1, article > a, .md-sidebar--secondary {
-    display: none !important;
-}
-</style>
+                <h2 id="code">Code<a class="headerlink" href="#code" title="Permanent link">¤</a></h2>
+<p>Inline <code>code</code></p>
+<p>Indented code</p>
+<pre><code>// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+</code></pre>
+<p>Block code "fences"</p>
+<div class="highlight"><pre><span></span><code>Sample text here...
+</code></pre></div>
+<p>Syntax highlighting</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">bar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">bar</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<p><iframe
-    id="coviframe"
-    src="covindex.html"
-    frameborder="0"
-    scrolling="no"
-    onload="resizeIframe();"
-    width="100%">
-</iframe>
-</p>
-<script>
-var coviframe = document.getElementById("coviframe");
-
-function resizeIframe() {
-    coviframe.style.height = coviframe.contentWindow.document.documentElement.offsetHeight + 'px';
-}
-
-coviframe.contentWindow.document.body.onclick = function() {
-    coviframe.contentWindow.location.reload();
-}
-</script>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+<hr />
                 
               
               
