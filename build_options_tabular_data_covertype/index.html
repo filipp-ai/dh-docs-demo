@@ -1,4 +1,6 @@
 
+
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -250,7 +252,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-tabs__link">
+    <a href="../tutorials/" class="md-tabs__link">
       Tutorials
     </a>
   </li>
@@ -436,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         Tutorials
       </a>
     </li>
@@ -598,6 +600,13 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+
+    <a href="/dh-library/build_options_tabular_data_covertype/build_options_tabular_data_covertype.ipynb" title="Download Notebook" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg>
+    </a>
+
+
+
                   
 
 
@@ -2315,8 +2324,7 @@ service_obj.build_from_file(data1_X_file_path, target_file_path=data1_y_file_pat
 
 <span class="n">service_obj</span> <span class="o">=</span> <span class="n">CoresetTreeServiceLG</span><span class="p">(</span><span class="n">data_params</span><span class="o">=</span><span class="n">data_params</span><span class="p">,</span> 
                                    <span class="n">optimized_for</span><span class="o">=</span><span class="s1">&#39;cleaning&#39;</span><span class="p">,</span>
-                                   <span class="n">n_classes</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>
-                                   <span class="n">n_instances</span><span class="o">=</span><span class="mi">290_000</span>
+                                   <span class="n">coreset_size</span><span class="o">=</span><span class="mi">2_000</span>
                                   <span class="p">)</span>
 <span class="n">service_obj</span><span class="o">.</span><span class="n">build_from_file</span><span class="p">(</span><span class="n">data1_file_path</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="n">coreset_by_elevation</span><span class="p">)</span>
 </pre></div>
@@ -2329,8 +2337,7 @@ service_obj.build_from_file(data1_X_file_path, target_file_path=data1_y_file_pat
 
 service_obj = CoresetTreeServiceLG(data_params=data_params, 
                                    optimized_for='cleaning',
-                                   n_classes=7,
-                                   n_instances=290_000
+                                   coreset_size=2_000
                                   )
 service_obj.build_from_file(data1_file_path, coreset_by=coreset_by_elevation)</div>
     
@@ -2789,6 +2796,7 @@ service_obj.build_from_file(data1_file_path)</div>
 
 
                 
+
               </article>
             </div>
           

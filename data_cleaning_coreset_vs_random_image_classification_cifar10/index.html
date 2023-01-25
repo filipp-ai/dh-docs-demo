@@ -1,4 +1,6 @@
 
+
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -250,7 +252,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-tabs__link">
+    <a href="../tutorials/" class="md-tabs__link">
       Tutorials
     </a>
   </li>
@@ -436,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         Tutorials
       </a>
     </li>
@@ -592,6 +594,13 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+
+    <a href="/dh-library/data_cleaning_coreset_vs_random_image_classification_cifar10/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb" title="Download Notebook" class="md-content__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg>
+    </a>
+
+
+
                   
 
 
@@ -1699,56 +1708,30 @@ We’re also providing some code examples in PyTorch and Keras/TensorFlow demons
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">pathlib</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">gdown</span>
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">ConfusionMatrixDisplay</span>
+<span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">ConvergenceWarning</span>
+
 <span class="kn">from</span> <span class="nn">dataheroes</span> <span class="kn">import</span> <span class="n">CoresetTreeServiceLG</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">import copy
 import pathlib
 import warnings
+import shutil
+import gdown
+
 import numpy as np
 from matplotlib import pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, confusion_matrix, ConfusionMatrixDisplay
-from dataheroes import CoresetTreeServiceLG</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-3">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Ignore convergence warnings for logistic regression</span>
-<span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <span class="n">ConvergenceWarning</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
-</pre></div>
-<div id="cell-3" class="clipboard-copy-txt"># Ignore convergence warnings for logistic regression
 from sklearn.exceptions import ConvergenceWarning
-warnings.filterwarnings(action='ignore', category=ConvergenceWarning)</div>
+
+from dataheroes import CoresetTreeServiceLG</div>
     
         </div>
     </div>
@@ -1779,7 +1762,7 @@ warnings.filterwarnings(action='ignore', category=ConvergenceWarning)</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
+            <clipboard-copy for="cell-3">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1789,9 +1772,7 @@ warnings.filterwarnings(action='ignore', category=ConvergenceWarning)</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">gdown</span>
-<span class="c1"># public folder on Google drive with data and images </span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># public folder on Google drive with data and images</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://drive.google.com/drive/folders/1UVcEEYL3mBnazAjRGWetR44P81VFQ5DA&quot;</span>
 <span class="c1"># create local data folder</span>
 <span class="n">data_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../data/cifar10_resnet18/generated&#39;</span><span class="p">)</span>
@@ -1806,9 +1787,7 @@ warnings.filterwarnings(action='ignore', category=ConvergenceWarning)</div>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_path</span> <span class="o">/</span> <span class="s2">&quot;y_train.npy&quot;</span><span class="p">))</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_path</span> <span class="o">/</span> <span class="s2">&quot;y_test.npy&quot;</span><span class="p">))</span>
 </pre></div>
-<div id="cell-4" class="clipboard-copy-txt">import shutil
-import gdown
-# public folder on Google drive with data and images 
+<div id="cell-3" class="clipboard-copy-txt"># public folder on Google drive with data and images
 url = "https://drive.google.com/drive/folders/1UVcEEYL3mBnazAjRGWetR44P81VFQ5DA"
 # create local data folder
 data_path = pathlib.Path('../data/cifar10_resnet18/generated')
@@ -1853,7 +1832,7 @@ y_test = np.load(str(data_path / "y_test.npy"))</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
+            <clipboard-copy for="cell-4">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1866,7 +1845,7 @@ y_test = np.load(str(data_path / "y_test.npy"))</div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">clf_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;class_weight&quot;</span><span class="p">:</span> <span class="s2">&quot;balanced&quot;</span><span class="p">,</span> <span class="s2">&quot;max_iter&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="o">**</span><span class="n">clf_params</span><span class="p">)</span>
 </pre></div>
-<div id="cell-5" class="clipboard-copy-txt">clf_params = {"class_weight": "balanced", "max_iter": 500}
+<div id="cell-4" class="clipboard-copy-txt">clf_params = {"class_weight": "balanced", "max_iter": 500}
 clf = LogisticRegression(**clf_params)</div>
     
         </div>
@@ -1898,7 +1877,7 @@ clf = LogisticRegression(**clf_params)</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
+            <clipboard-copy for="cell-5">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1912,7 +1891,7 @@ clf = LogisticRegression(**clf_params)</div>
     <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_to_eval</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">multi_class</span><span class="o">=</span><span class="s2">&quot;ovr&quot;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">def eval_clf(y_train_to_eval):
+<div id="cell-5" class="clipboard-copy-txt">def eval_clf(y_train_to_eval):
     clf.fit(X_train, y_train_to_eval)
     return roc_auc_score(y_test, clf.predict_proba(X_test), multi_class="ovr")</div>
     
@@ -1945,7 +1924,7 @@ clf = LogisticRegression(**clf_params)</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
+            <clipboard-copy for="cell-6">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -1957,7 +1936,7 @@ clf = LogisticRegression(**clf_params)</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">score_clean</span> <span class="o">=</span> <span class="n">eval_clf</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">score_clean = eval_clf(y_train)</div>
+<div id="cell-6" class="clipboard-copy-txt">score_clean = eval_clf(y_train)</div>
     
         </div>
     </div>
@@ -1990,7 +1969,7 @@ The 3 selected classes are the ones in which the prediction model missed mostly,
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-8">
+            <clipboard-copy for="cell-7">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2017,7 +1996,7 @@ The 3 selected classes are the ones in which the prediction model missed mostly,
     <span class="n">cm</span><span class="p">[</span><span class="n">from_to</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">from_to</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">classes_transform</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">n_weak_cls = 3
+<div id="cell-7" class="clipboard-copy-txt">n_weak_cls = 3
 classes_transform = []
 clf.fit(X_train, y_train)
 cm = confusion_matrix(y_test, clf.predict(X_test), normalize="true")
@@ -2104,7 +2083,7 @@ class="
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-9">
+            <clipboard-copy for="cell-8">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2125,7 +2104,7 @@ class="
 
 <span class="n">mislabeled_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">classes_transform</span><span class="p">]</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">noise_amount = 600
+<div id="cell-8" class="clipboard-copy-txt">noise_amount = 600
 noise_amount_per_class = noise_amount // len(classes_transform)
 print(f'{noise_amount_per_class=}')
 y_train_noise_orig = copy.deepcopy(y_train)
@@ -2188,7 +2167,7 @@ mislabeled_classes = [c[1] for c in classes_transform]</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-10">
+            <clipboard-copy for="cell-9">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2200,7 +2179,7 @@ mislabeled_classes = [c[1] for c in classes_transform]</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">score_before_cleaning</span> <span class="o">=</span> <span class="n">eval_clf</span><span class="p">(</span><span class="n">y_train_noise_orig</span><span class="p">)</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">score_before_cleaning = eval_clf(y_train_noise_orig)</div>
+<div id="cell-9" class="clipboard-copy-txt">score_before_cleaning = eval_clf(y_train_noise_orig)</div>
     
         </div>
     </div>
@@ -2231,7 +2210,7 @@ mislabeled_classes = [c[1] for c in classes_transform]</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-11">
+            <clipboard-copy for="cell-10">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2242,11 +2221,11 @@ mislabeled_classes = [c[1] for c in classes_transform]</div>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">fix_labels</span><span class="p">(</span><span class="n">y_train_to_fix</span><span class="p">,</span> <span class="n">idxs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;In reality this is a manual procedure, but in this simulation, we know the correct and original label&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;In reality this is a manual procedure, but in this simulation, we know the correct and original label&quot;&quot;&quot;</span>
     <span class="n">y_train_to_fix</span><span class="p">[</span><span class="n">idxs</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="n">idxs</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">y_train_to_fix</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">def fix_labels(y_train_to_fix, idxs):
+<div id="cell-10" class="clipboard-copy-txt">def fix_labels(y_train_to_fix, idxs):
     """In reality this is a manual procedure, but in this simulation, we know the correct and original label"""
     y_train_to_fix[idxs] = y_train[idxs]
     return y_train_to_fix</div>
@@ -2280,7 +2259,7 @@ mislabeled_classes = [c[1] for c in classes_transform]</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-12">
+            <clipboard-copy for="cell-11">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2299,7 +2278,7 @@ mislabeled_classes = [c[1] for c in classes_transform]</div>
 <span class="n">samples_per_class</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">counts</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">samples_per_class</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-12" class="clipboard-copy-txt">n_iterations = 10
+<div id="cell-11" class="clipboard-copy-txt">n_iterations = 10
 n_samples_per_iter = 100
 # Define for each class how many samples to fix in each iteration.
 # The amount considers the times a class appears in mislabeled classes.
@@ -2360,7 +2339,7 @@ print(f'{samples_per_class=}')</div>
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-13">
+            <clipboard-copy for="cell-12">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2376,6 +2355,8 @@ print(f'{samples_per_class=}')</div>
 <span class="n">dataset_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="n">service</span> <span class="o">=</span> <span class="n">CoresetTreeServiceLG</span><span class="p">(</span><span class="n">optimized_for</span><span class="o">=</span><span class="s1">&#39;cleaning&#39;</span><span class="p">)</span>
+<span class="c1"># Ignore convergence warnings for logistic regression</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">ConvergenceWarning</span><span class="p">)</span>
 <span class="n">service</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_noise</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="n">dataset_indices</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iterations</span><span class="p">):</span>
@@ -2398,12 +2379,14 @@ print(f'{samples_per_class=}')</div>
     <span class="n">coreset_result</span><span class="p">[</span><span class="s1">&#39;fixed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fixed</span><span class="p">)</span>
     <span class="n">coreset_result</span><span class="p">[</span><span class="s1">&#39;viewed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">viewed_indices</span><span class="p">))</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">coreset_result = {'score': [score_before_cleaning], 'fixed': [0], 'viewed': [0]}
+<div id="cell-12" class="clipboard-copy-txt">coreset_result = {'score': [score_before_cleaning], 'fixed': [0], 'viewed': [0]}
 y_train_noise = copy.deepcopy(y_train_noise_orig)
 viewed_indices = np.array([]).astype(int)
 dataset_indices = np.arange(0, len(X_train), dtype=int)
 
 service = CoresetTreeServiceLG(optimized_for='cleaning')
+# Ignore convergence warnings for logistic regression
+warnings.filterwarnings(action='ignore', category=ConvergenceWarning)
 service.build(X_train, y_train_noise, indices=dataset_indices)
 
 for i in range(n_iterations):
@@ -2455,7 +2438,7 @@ for i in range(n_iterations):
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-14">
+            <clipboard-copy for="cell-13">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2482,7 +2465,7 @@ for i in range(n_iterations):
     <span class="n">random_result</span><span class="p">[</span><span class="s1">&#39;fixed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fixed</span><span class="p">)</span>
     <span class="n">random_result</span><span class="p">[</span><span class="s1">&#39;viewed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">viewed_indices</span><span class="p">))</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt">random_result = {'score': [score_before_cleaning], 'fixed': [0], 'viewed': [0]}
+<div id="cell-13" class="clipboard-copy-txt">random_result = {'score': [score_before_cleaning], 'fixed': [0], 'viewed': [0]}
 y_train_noise = copy.deepcopy(y_train_noise_orig)
 viewed_indices = np.array([]).astype(int)
 for i in range(n_iterations):
@@ -2528,7 +2511,7 @@ for i in range(n_iterations):
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-15">
+            <clipboard-copy for="cell-14">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2547,7 +2530,7 @@ for i in range(n_iterations):
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt">plt.plot(coreset_result["viewed"],coreset_result["score"], label="DH")
+<div id="cell-14" class="clipboard-copy-txt">plt.plot(coreset_result["viewed"],coreset_result["score"], label="DH")
 plt.plot(random_result["viewed"], random_result["score"],label="Random")
 plt.plot(coreset_result["viewed"], np.ones(len(coreset_result["viewed"])) * score_clean, label="Clean")
 plt.ylabel("AUC")
@@ -2613,7 +2596,7 @@ class="
         
         <div class="CodeMirror cm-s-jupyter">
         <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-16">
+            <clipboard-copy for="cell-15">
             <div>
                 <span class="notice" hidden>Copied!</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
@@ -2631,7 +2614,7 @@ class="
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt">plt.plot(coreset_result["viewed"], coreset_result["fixed"], label="DH")
+<div id="cell-15" class="clipboard-copy-txt">plt.plot(coreset_result["viewed"], coreset_result["fixed"], label="DH")
 plt.plot(random_result["viewed"], random_result["fixed"], label="Random")
 plt.ylabel("Amount of fixed samples")
 plt.xlabel("Seen Images")
@@ -2684,6 +2667,7 @@ class="
 
 
                 
+
               </article>
             </div>
           
