@@ -21,9 +21,11 @@ class MethodRemover(ast.NodeTransformer):
                                             # delete few methods
                                             and 'tensor' not in b.name
                                             and b.name != 'explain'
+                                            and b.name != 'optimized_for'
+                                            and b.name != 'chunk_size'
+                                            and b.name != 'max_memory_gb'
                                             and not b.name.startswith('_')
                                         ]
-            return node
         else:
             return None
 

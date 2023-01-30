@@ -8,3 +8,4 @@
 | [Build Options](build_options_tabular_data_covertype.ipynb)                                                                                   | Tabular              |Demonstrating different possibilities to construct the Coreset tree data structure.|
 | [All Library Functions](all_library_functions_tabular_data_covertype.ipynb)                                                                   | Tabular              |Demonstrating the usage of all library functions available for the Coreset tree data structure.|
 | <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/config_file_example/.dataheroes.config">Configuration File</a> | -                    |An example configuration file.|
+

@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -247,7 +245,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../tutorials/" class="md-tabs__link">
+    <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-tabs__link">
       Tutorials
     </a>
   </li>
@@ -433,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/" class="md-nav__link">
+      <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-nav__link">
         Tutorials
       </a>
     </li>
@@ -1735,7 +1733,6 @@ for path in sorted(Path("dataheroes").rglob("*tree_ser*.py")):
     <span class="s1">&#39;examples/cleaning/examples/data_cleaning_image_classification_imagenet.ipynb&#39;</span><span class="p">,</span>
     <span class="s1">&#39;examples/tree_service/build_options_tabular_data_covertype.ipynb&#39;</span><span class="p">,</span>
     <span class="s1">&#39;examples/tree_service/all_library_functions_tabular_data_covertype.ipynb&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;docs/.dataheroes.config&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 <div id="cell-5" class="clipboard-copy-txt"># we do not use all this yet (but could in the future)
@@ -1746,7 +1743,6 @@ src_path_list = [
     'examples/cleaning/examples/data_cleaning_image_classification_imagenet.ipynb',
     'examples/tree_service/build_options_tabular_data_covertype.ipynb',
     'examples/tree_service/all_library_functions_tabular_data_covertype.ipynb',
-    'docs/.dataheroes.config',
 ]</div>
     
         </div>
@@ -1777,25 +1773,55 @@ src_path_list = [
                 </div>
             </clipboard-copy>
         </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># temporary clean up notebooks</span>
+<span class="n">src_path_list</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt"># temporary clean up notebooks
+src_path_list = []</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">for</span> <span class="n">src_path</span> <span class="ow">in</span> <span class="n">src_path_list</span><span class="p">:</span>
     <span class="n">src_file_name</span> <span class="o">=</span> <span class="n">src_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">dst_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;tutorials/</span><span class="si">{</span><span class="n">src_file_name</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">src_file_name</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
             <span class="n">lines</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
                 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-    <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">set_edit_path</span><span class="p">(</span><span class="n">dst_filename</span><span class="p">,</span> <span class="s2">&quot;gen_ref_nav.py&quot;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">for src_path in src_path_list:
+<div id="cell-7" class="clipboard-copy-txt">for src_path in src_path_list:
     src_file_name = src_path.split('/')[-1]
-    dst_filename = f"tutorials/{src_file_name}"
     with mkdocs_gen_files.open(src_file_name, "w") as f:
         with open(src_path, 'r') as src:
             lines = src.readlines()
             for line in lines:
-                f.write(line)
-    mkdocs_gen_files.set_edit_path(dst_filename, "gen_ref_nav.py")</div>
+                f.write(line)</div>
     
         </div>
     </div>

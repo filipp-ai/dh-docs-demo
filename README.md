@@ -70,7 +70,7 @@ After building the Coreset Tree using one of the <a href="reference/services/tre
     - (Less recommended) Adding the following to your code:
       ```python
       from dataheroes.utils import DataHeroesConfiguration
-      DataHeroesConfiguration(licensing__license_key="AAAAA-BBBBB-CCCCC-DDDDD")
+      DataHeroesConfiguration().add_params(licensing__license_key="AAAAA-BBBBB-CCCCC-DDDDD")
       ```
 4. Check out our documentation and examples available <a target="_blank" href="https://dataheroes.ai/tutorials/">here</a>.
 

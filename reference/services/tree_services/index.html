@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -254,7 +252,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../tutorials/" class="md-tabs__link">
+    <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-tabs__link">
       Tutorials
     </a>
   </li>
@@ -675,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tutorials/" class="md-nav__link">
+      <a href="https://dataheroes.ai/tutorials/" target="_blank" class="md-nav__link">
         Tutorials
       </a>
     </li>
@@ -1203,7 +1201,7 @@ For internal use when loading a saved service.</p></td>
 
 
 <a href="#services.tree_services.CoresetTreeService.build" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -1266,7 +1264,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>coreset_by</code></td>
+          <td><code>chunk_by</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
@@ -1311,7 +1309,7 @@ When provided, chunk_size input is ignored.</p></td>
 
 
 <a href="#services.tree_services.CoresetTreeService.build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -1364,7 +1362,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>coreset_by</code></td>
+          <td><code>chunk_by</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
@@ -1409,7 +1407,7 @@ When provided, chunk_size input is ignored.</p></td>
 
 
 <a href="#services.tree_services.CoresetTreeService.build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -1485,7 +1483,7 @@ chunk_size=0: nodes are created based on input chunks</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>coreset_by</code></td>
+          <td><code>chunk_by</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
@@ -2105,7 +2103,7 @@ Local directory where intermediate data is stored.</p></td>
 
 
 <a href="#services.tree_services.CoresetTreeService.partial_build" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">partial_build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2168,7 +2166,7 @@ chunk_size=0: nodes are created based on input chunks</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>coreset_by</code></td>
+          <td><code>chunk_by</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
@@ -2213,7 +2211,7 @@ When provided, chunk_size input is ignored.</p></td>
 
 
 <a href="#services.tree_services.CoresetTreeService.partial_build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2266,7 +2264,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>coreset_by</code></td>
+          <td><code>chunk_by</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
@@ -2311,7 +2309,7 @@ When provided, chunk_size input is ignored.</p></td>
 
 
 <a href="#services.tree_services.CoresetTreeService.partial_build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">partial_build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2387,7 +2385,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           </td>
         </tr>
         <tr>
-          <td><code>coreset_by</code></td>
+          <td><code>chunk_by</code></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
@@ -3318,21 +3316,6 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
           </div>
         </a>
       
-      
-        
-        <a href="../../../tutorials/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorials" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Tutorials
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

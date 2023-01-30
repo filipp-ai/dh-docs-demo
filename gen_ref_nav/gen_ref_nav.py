@@ -38,15 +38,15 @@ src_path_list = [
     'examples/cleaning/examples/data_cleaning_image_classification_imagenet.ipynb',
     'examples/tree_service/build_options_tabular_data_covertype.ipynb',
     'examples/tree_service/all_library_functions_tabular_data_covertype.ipynb',
-    'docs/.dataheroes.config',
 ]
+
+# temporary clean up notebooks
+src_path_list = []
 
 for src_path in src_path_list:
     src_file_name = src_path.split('/')[-1]
-    dst_filename = f"tutorials/{src_file_name}"
     with mkdocs_gen_files.open(src_file_name, "w") as f:
         with open(src_path, 'r') as src:
             lines = src.readlines()
             for line in lines:
                 f.write(line)
-    mkdocs_gen_files.set_edit_path(dst_filename, "gen_ref_nav.py")
