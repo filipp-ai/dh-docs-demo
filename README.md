@@ -3,7 +3,7 @@
    list-style-type: lower-alpha;
    }
 </style>
-Last updated on Jan 23, 2023
+Last updated on Feb 17, 2023
 
 ### Coresets and Coreset Trees
 A Coreset is a weighted subset of samples from a larger dataset, selected in such a way that the selected samples maintain the statistical properties and corner cases of the full dataset such that training an algorithm on the Coreset will yield the same results as training that same algorithm on the full dataset.
@@ -62,18 +62,14 @@ You can use the Coreset Tree structure to update models in production when new d
 After building the Coreset Tree using one of the <a href="reference/services/tree_services/#services.tree_services.CoresetTreeService.build">`build()`</a> functions, you can add additional data to the Coreset Tree using the <a href="reference/services/tree_services/#services.tree_services.CoresetTreeService.partial_build">`partial_build()`</a> function or one of its sibling functions <a href="reference/services/tree_services/#services.tree_services.CoresetTreeService.partial_build_from_df">`partial_build_from_df()`</a> and <a href="reference/services/tree_services/#services.tree_services.CoresetTreeService.partial_build_from_file">`partial_build_from_file()`</a>, and retrain the model as explained above.
 
 ### <span style="color:#2F5496"><ins>Getting Started</ins></span>
-1. Sign up (free) on <a href="https://dataheroes.ai/getting-started/" target="_blank"><span>https</span>://dataheroes.ai/getting-started</a> and obtain a license key.
-2. Install the library on your device by running: `pip install dataheroes`. 
-3. Setup the obtained license key on your device in one of the following ways:
-    - Setting the environment variable `DATAHEROES_LICENSE_KEY` (e.g.: `DATAHEROES_LICENSE_KEY=AAAAA-BBBBB-CCCCC-DDDDD`).
-    - Defining the license key in the library’s configuration file, .dataheroes.config, as shown in the <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/config_file_example/.dataheroes.config">example configuration file</a> and placing the file either in your home directory, the current directory or any directory of your choice. In the latter option, you’ll need to specify the path to the file, by setting the environment variable `DATAHEROES_CONFIG` (e.g.: `DATAHEROES_CONFIG_PATH=/home/users/apps`).
-    - (Less recommended) Adding the following to your code:
-      ```python
-      from dataheroes.utils import DataHeroesConfiguration
-      DataHeroesConfiguration().add_params(licensing__license_key="AAAAA-BBBBB-CCCCC-DDDDD")
-      ```
+1. Create a free account on https://dataheroes.ai/getting-started/.
+2. Install the library on your device by running: `pip install dataheroes`.
+3. Activate your account by executing the following code once (from each device you’re using):
+```
+from dataheroes.utils import activate_account
+activate_account("john.doe@gmail.com")
+```
 4. Check out our documentation and examples available <a target="_blank" href="https://dataheroes.ai/tutorials/">here</a>.
-
 ### <span style="color:#2F5496"><ins>Other library dependencies</ins></span>
 The DataHeroes library has dependency on other libraries. Please note that when installing the DataHeroes library, older versions of other libraries you may be using, may get automatically updated. The table below shows the minimum version required from each library the dataheroes library depends on.
 

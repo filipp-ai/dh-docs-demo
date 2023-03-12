@@ -41,7 +41,7 @@ class MethodTextRemover(ast.NodeVisitor):
             node.body = [ast.Pass()]
 
 
-with open("../dataheroes/services/tree_services.py") as f:
+with open("../dataheroes/services/coreset_tree/_base.py") as f:
     source = f.read()
 
 tree = ast.parse(source)

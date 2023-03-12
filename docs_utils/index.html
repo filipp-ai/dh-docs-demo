@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://data-heroes.github.io/dh-library/gen_ref_nav/">
+        <link rel="canonical" href="https://data-heroes.github.io/dh-library/docs_utils/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Gen ref nav - DataHeroes</title>
+        <title>Docs utils - DataHeroes</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gen ref nav
+              Docs utils
             
           </span>
         </div>
@@ -556,7 +556,7 @@
               <article class="md-content__inner md-typeset">
                 
 
-    <a href="/dh-library/gen_ref_nav/gen_ref_nav.py" title="Download Notebook" class="md-content__button md-icon">
+    <a href="/dh-library/docs_utils/docs_utils.py" title="Download Notebook" class="md-content__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg>
     </a>
 
@@ -564,13 +564,13 @@
 
                   
 
-  <a href="https://github.com/Data-Heroes/dataheroes/edit/master/docs/gen_ref_nav.py" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/Data-Heroes/dataheroes/edit/master/docs/docs_utils.py" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Gen ref nav</h1>
+  <h1>Docs utils</h1>
 
 <script>
 (function (global, factory) {
@@ -1623,17 +1623,11 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="sd">&quot;&quot;&quot;Generate the code reference pages and navigation.&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">mkdocs_gen_files</span>
-<span class="kn">import</span> <span class="nn">glob</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">"""Generate the code reference pages and navigation."""
-from pathlib import Path
-import mkdocs_gen_files
-import glob
+<div id="cell-1" class="clipboard-copy-txt">import glob
 import re
 import os</div>
     
@@ -1776,7 +1770,7 @@ import os</div>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">src_file</span><span class="p">:</span>
 
-                    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;@telemetry&quot;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">):</span>
                         <span class="k">pass</span>
                     <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;from&quot;</span><span class="p">):</span>
                         <span class="n">module_name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;from(.*)import&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -1804,7 +1798,7 @@ import os</div>
             with open(path, 'w') as file:
                 for line in src_file:
 
-                    if line.strip().startswith("@telemetry"):
+                    if line.strip().startswith("@"):
                         pass
                     elif line.startswith("from"):
                         module_name = re.search('from(.*)import', line).group(1).strip()
@@ -1816,234 +1810,6 @@ import os</div>
                         file.writelines(processed_line)
                     else:
                         file.writelines(line)</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-4">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">process_src</span><span class="p">()</span>
-<span class="n">nav</span> <span class="o">=</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">Nav</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">file_pattern</span> <span class="ow">in</span> <span class="p">[</span>
-                    <span class="s2">&quot;dataheroes/services/coreset_tree/lg.py&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;dataheroes/services/coreset_tree/svd.py&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;dataheroes/services/coreset_tree/pca.py&quot;</span><span class="p">,</span>
-                     <span class="p">]:</span>
-    <span class="k">for</span> <span class="n">path_str</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">file_pattern</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path_str</span><span class="p">)</span>
-        <span class="n">module_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="s2">&quot;dataheroes&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="n">doc_path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="s2">&quot;dataheroes&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.md&quot;</span><span class="p">)</span>
-        <span class="n">full_doc_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;reference&quot;</span><span class="p">,</span> <span class="n">doc_path</span><span class="p">)</span>
-        <span class="n">parts</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">module_path</span><span class="o">.</span><span class="n">parts</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;__init__&quot;</span><span class="p">:</span>
-            <span class="n">parts</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">doc_path</span> <span class="o">=</span> <span class="n">doc_path</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="s2">&quot;index.md&quot;</span><span class="p">)</span>
-            <span class="n">full_doc_path</span> <span class="o">=</span> <span class="n">full_doc_path</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="s2">&quot;index.md&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">parts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-            <span class="k">continue</span>
-
-        <span class="n">nav</span><span class="p">[</span><span class="n">parts</span><span class="p">]</span> <span class="o">=</span> <span class="n">doc_path</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
-
-        <span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">full_doc_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
-            <span class="n">ident</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
-            <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;::: </span><span class="si">{</span><span class="n">ident</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">set_edit_path</span><span class="p">(</span><span class="n">full_doc_path</span><span class="p">,</span> <span class="s2">&quot;..&quot;</span> <span class="o">/</span> <span class="n">path</span><span class="p">)</span>
-</pre></div>
-<div id="cell-4" class="clipboard-copy-txt">process_src()
-nav = mkdocs_gen_files.Nav()
-for file_pattern in [
-                    "dataheroes/services/coreset_tree/lg.py",
-                    "dataheroes/services/coreset_tree/svd.py",
-                    "dataheroes/services/coreset_tree/pca.py",
-                     ]:
-    for path_str in glob.glob(file_pattern, recursive=True):
-        path = Path(path_str)
-        module_path = path.relative_to("dataheroes").with_suffix("")
-        doc_path = path.relative_to("dataheroes").with_suffix(".md")
-        full_doc_path = Path("reference", doc_path)
-        parts = tuple(module_path.parts)
-        if parts[-1] == "__init__":
-            parts = parts[:-1]
-            doc_path = doc_path.with_name("index.md")
-            full_doc_path = full_doc_path.with_name("index.md")
-        elif parts[-1] == "__main__":
-            continue
-
-        nav[parts] = doc_path.as_posix()
-
-        with mkdocs_gen_files.open(full_doc_path, "w") as fd:
-            ident = ".".join(parts)
-            fd.write(f"::: {ident}")
-        mkdocs_gen_files.set_edit_path(full_doc_path, ".." / path)</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-5">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;reference/SUMMARY.md&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">nav_file</span><span class="p">:</span>
-    <span class="n">nav_file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">nav</span><span class="o">.</span><span class="n">build_literate_nav</span><span class="p">())</span>
-</pre></div>
-<div id="cell-5" class="clipboard-copy-txt">with mkdocs_gen_files.open("reference/SUMMARY.md", "w") as nav_file:
-    nav_file.writelines(nav.build_literate_nav())</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-6">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">reference_nav_lines</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">nav</span><span class="o">.</span><span class="n">build_literate_nav</span><span class="p">():</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[lg]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CoresetTreeServiceLG]&#39;</span><span class="p">)</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[svd]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CoresetTreeServiceSVD]&#39;</span><span class="p">)</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[pca]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CoresetTreeServicePCA]&#39;</span><span class="p">)</span>
-    <span class="n">reference_nav_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-</pre></div>
-<div id="cell-6" class="clipboard-copy-txt">reference_nav_lines = []
-for line in nav.build_literate_nav():
-    line = line.replace('[lg]', '[CoresetTreeServiceLG]')
-    line = line.replace('[svd]', '[CoresetTreeServiceSVD]')
-    line = line.replace('[pca]', '[CoresetTreeServicePCA]')
-    reference_nav_lines.append(line)</div>
-    
-        </div>
-    </div>
-
-</div>
-</div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-        
-        
-        <div class="CodeMirror cm-s-jupyter">
-        <div class="zeroclipboard-container">
-            <clipboard-copy for="cell-7">
-            <div>
-                <span class="notice" hidden>Copied!</span>
-                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
-                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
-                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
-                </svg>
-                </div>
-            </clipboard-copy>
-        </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;reference/SUMMARY.md&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">nav_file</span><span class="p">:</span>
-    <span class="n">nav_file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">reference_nav_lines</span><span class="p">)</span>
-<span class="c1"># we do not use all this yet (but could in the future)</span>
-<span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
-    <span class="n">src_path_list</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;examples/cleaning/examples/data_cleaning_object_detection_coco.ipynb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;examples/cleaning/examples/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;examples/cleaning/examples/data_cleaning_labeling_utility_image_classification_cifar10.ipynb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;examples/cleaning/examples/data_cleaning_image_classification_imagenet.ipynb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;examples/tree_service/build_options_tabular_data_covertype.ipynb&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;examples/tree_service/all_library_functions_tabular_data_covertype.ipynb&#39;</span><span class="p">,</span>
-    <span class="p">]</span>
-
-    <span class="k">for</span> <span class="n">src_path</span> <span class="ow">in</span> <span class="n">src_path_list</span><span class="p">:</span>
-        <span class="n">src_file_name</span> <span class="o">=</span> <span class="n">src_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="k">with</span> <span class="n">mkdocs_gen_files</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">src_file_name</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
-                <span class="n">lines</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-</pre></div>
-<div id="cell-7" class="clipboard-copy-txt">with mkdocs_gen_files.open("reference/SUMMARY.md", "w") as nav_file:
-    nav_file.writelines(reference_nav_lines)
-# we do not use all this yet (but could in the future)
-if False:
-    src_path_list = [
-        'examples/cleaning/examples/data_cleaning_object_detection_coco.ipynb',
-        'examples/cleaning/examples/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb',
-        'examples/cleaning/examples/data_cleaning_labeling_utility_image_classification_cifar10.ipynb',
-        'examples/cleaning/examples/data_cleaning_image_classification_imagenet.ipynb',
-        'examples/tree_service/build_options_tabular_data_covertype.ipynb',
-        'examples/tree_service/all_library_functions_tabular_data_covertype.ipynb',
-    ]
-
-    for src_path in src_path_list:
-        src_file_name = src_path.split('/')[-1]
-        with mkdocs_gen_files.open(src_file_name, "w") as f:
-            with open(src_path, 'r') as src:
-                lines = src.readlines()
-                for line in lines:
-                    f.write(line)</div>
     
         </div>
     </div>
