@@ -2,57 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://data-heroes.github.io/dh-library/</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://data-heroes.github.io/dh-library/README-DEPLOY/</loc>
-         <lastmod>2023-03-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://data-heroes.github.io/dh-library/docs_utils/</loc>
-         <lastmod>2023-03-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://data-heroes.github.io/dh-library/gen_public_module/</loc>
-         <lastmod>2023-03-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://data-heroes.github.io/dh-library/gen_ref_nav/</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://data-heroes.github.io/dh-library/tutorials/</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>None</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://data-heroes.github.io/dh-library/reference/services/coreset_tree/kmeans/</loc>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://data-heroes.github.io/dh-library/reference/services/coreset_tree/lg/</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://data-heroes.github.io/dh-library/reference/services/coreset_tree/lr/</loc>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://data-heroes.github.io/dh-library/reference/services/coreset_tree/pca/</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://data-heroes.github.io/dh-library/reference/services/coreset_tree/svd/</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://data-heroes.github.io/dh-library/coverage/</loc>
-         <lastmod>2023-03-12</lastmod>
+         <lastmod>2023-03-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
