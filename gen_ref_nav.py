@@ -37,8 +37,17 @@ for file_pattern in [
 
         mkdocs_gen_files.set_edit_path(full_doc_path, ".." / path)
 
+reference_nav_lines = []
+for line in nav.build_literate_nav():
+    line = line.replace('[lg]', '[CoresetTreeServiceLG]')
+    line = line.replace('[svd]', '[CoresetTreeServiceSVD]')
+    line = line.replace('[pca]', '[CoresetTreeServicePCA]')
+    line = line.replace('[kmeans]', '[CoresetTreeServiceKMeans]')
+    line = line.replace('[lr]', '[CoresetTreeServiceLR]')
+    reference_nav_lines.append(line)
+
 with mkdocs_gen_files.open("reference/SUMMARY.md", "w") as nav_file:
-    nav_file.writelines(nav.build_literate_nav())
+    nav_file.writelines(reference_nav_lines)
 
 # we do not use all this yet (but could in the future)
 src_path_list = [

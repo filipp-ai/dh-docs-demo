@@ -1,7 +1,8 @@
-import ast
 """
 prepare for docs building (merge inherited members into classes)
 """
+import ast
+
 members_list = []
 
 

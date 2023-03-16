@@ -17,7 +17,7 @@
     
     
       
-        <title>kmeans - DataHeroes</title>
+        <title>CoresetTreeServiceKMeans - DataHeroes</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              kmeans
+              CoresetTreeServiceKMeans
             
           </span>
         </div>
@@ -447,12 +447,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          kmeans
+          CoresetTreeServiceKMeans
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        kmeans
+        CoresetTreeServiceKMeans
       </a>
       
         
@@ -678,7 +678,7 @@
   
     <li class="md-nav__item">
       <a href="../lg/" class="md-nav__link">
-        lg
+        CoresetTreeServiceLG
       </a>
     </li>
   
@@ -692,7 +692,7 @@
   
     <li class="md-nav__item">
       <a href="../lr/" class="md-nav__link">
-        lr
+        CoresetTreeServiceLR
       </a>
     </li>
   
@@ -706,7 +706,7 @@
   
     <li class="md-nav__item">
       <a href="../pca/" class="md-nav__link">
-        pca
+        CoresetTreeServicePCA
       </a>
     </li>
   
@@ -720,7 +720,7 @@
   
     <li class="md-nav__item">
       <a href="../svd/" class="md-nav__link">
-        svd
+        CoresetTreeServiceSVD
       </a>
     </li>
   
@@ -1033,7 +1033,7 @@
   </a>
 
 
-  <h1>kmeans</h1>
+  <h1>CoresetTreeServiceKMeans</h1>
 
 <div class="doc doc-object doc-module">
 
@@ -1061,7 +1061,7 @@
 
 
 <a href="#services.coreset_tree.kmeans.CoresetTreeServiceKMeans" class="headerlink" title="Permanent link">¤</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">CoresetTreeServiceKMeans</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory_gb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimized_for</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_all</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">CoresetTreeServiceKMeans</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory_gb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimized_for</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_all</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -1159,6 +1159,17 @@ In any case only 80% of the provided memory or the server's total memory is cons
 The main usage of the service.</p></td>
           <td>
               <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>k</code></td>
+          <td>
+          </td>
+          <td><p>int, default=8
+Only relevant when tree is optimized_for cleaning. The number of clusters to form as well
+as the number of centroids to generate.</p></td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
         <tr>
@@ -1358,6 +1369,7 @@ An array or an iterator of properties.</p></td>
         <tr>
           <td><code>chunk_size</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td><p>int, optional
 The number of instances used when creating a coreset node in the tree.
@@ -1470,6 +1482,7 @@ Should include only one column.</p></td>
         <tr>
           <td><code>chunk_size</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td><p>int, optional
 The number of instances used when creating a coreset node in the tree.
@@ -2299,6 +2312,7 @@ An array or an iterator of properties.</p></td>
         <tr>
           <td><code>chunk_size</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td><p>int, optional
 The number of instances used when creating a coreset node in the tree.
@@ -2409,6 +2423,7 @@ Should include only one column.</p></td>
         <tr>
           <td><code>chunk_size</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td><p>int, optional, default previous used chunk_size
 The number of instances used when creating a coreset node in the tree.
@@ -3449,13 +3464,13 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
       
       
         
-        <a href="../lg/" class="md-footer__link md-footer__link--next" aria-label="Next: lg" rel="next">
+        <a href="../lg/" class="md-footer__link md-footer__link--next" aria-label="Next: CoresetTreeServiceLG" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              lg
+              CoresetTreeServiceLG
             </div>
           </div>
           <div class="md-footer__button md-icon">
