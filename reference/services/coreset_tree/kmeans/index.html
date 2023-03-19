@@ -12,14 +12,8 @@
       
         <link rel="canonical" href="https://data-heroes.github.io/dh-library/reference/services/coreset_tree/kmeans/">
       
-      
-        <link rel="prev" href="../../../..">
-      
-      
-        <link rel="next" href="../lg/">
-      
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.0.0">
     
     
       
@@ -27,21 +21,19 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c4a75a56.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ad626c1e.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
-      
-      
-
-    
-    
-    
-      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.9204c3b2.min.css">
         
+      
+    
+    
+    
+      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -54,11 +46,11 @@
     
       <link rel="stylesheet" href="../../../../css/mkdocstrings.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../../../..":"../../../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
     
       
 
-    
+
     
     
   </head>
@@ -75,7 +67,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -92,8 +84,10 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
       </div>
     
     
@@ -101,7 +95,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../../.." title="DataHeroes" class="md-header__button md-logo" aria-label="DataHeroes" data-md-component="logo">
       
@@ -109,7 +103,7 @@
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -131,18 +125,20 @@
       <form class="md-header__option" data-md-component="palette">
         
           
+          
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
             </label>
           
         
           
+          
           <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
             <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
             </label>
           
         
@@ -151,7 +147,7 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -159,13 +155,13 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
       
@@ -176,7 +172,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list"></ol>
         </div>
       </div>
     </div>
@@ -188,7 +184,7 @@
         <a href="https://github.com/Data-Heroes/dataheroes" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -201,7 +197,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
+  <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
@@ -323,7 +319,7 @@
       <a href="https://github.com/Data-Heroes/dataheroes" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -361,18 +357,17 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
-      
-        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_2">
           Code Reference
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" aria-label="Code Reference" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Code Reference
@@ -390,18 +385,17 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
       
       
-      
-        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_2_1">
           services
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+      <nav class="md-nav" aria-label="services" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           services
@@ -419,18 +413,17 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_1" type="checkbox" id="__nav_2_1_1" checked>
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" checked>
       
       
-      
-        <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_2_1_1">
           coreset_tree
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="true">
+      <nav class="md-nav" aria-label="coreset_tree" data-md-level="3">
         <label class="md-nav__title" for="__nav_2_1_1">
           <span class="md-nav__icon md-icon"></span>
           coreset_tree
@@ -446,7 +439,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
       
@@ -1022,17 +1015,16 @@
               </div>
             
           
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+
+
                 
-
-
-
-                  
-
-  
-  
+<a href="https://github.com/Data-Heroes/dataheroes/edit/master/dataheroes/services/coreset_tree/kmeans.py" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
 
 
   <h1>CoresetTreeServiceKMeans</h1>
@@ -1079,7 +1071,7 @@ In the 'training' case, the service will decide whether to build an actual Cores
 to build a single Coreset over the entire dataset, based on the triplet:
 n_instances, max_memory_gb and the 'number of features' (deduced from the dataset).
 The chunk_size and coreset_size will be deduced based on the above triplet too.
-In case chunk_size and coreset_size are provided, they will override all above-mentioned parameters (less recommended).</p>
+In case chunk_size and coreset_size are provided, they will override all above mentioned parameters (less recommended).</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1097,7 +1089,8 @@ In case chunk_size and coreset_size are provided, they will override all above-m
           <td>
                 <code><span title="services.coreset_tree._base.DataManagerT">DataManagerT</span></code>
           </td>
-          <td><p>The class used to interact with the provided data and store it locally.
+          <td><p>DataManagerBase subclass, optional.
+The class used to interact with the provided data and store it locally.
 By default, only the sampled data is stored in HDF5 files format.</p></td>
           <td>
                 <code>None</code>
@@ -1108,7 +1101,8 @@ By default, only the sampled data is stored in HDF5 files format.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="services.data.DataParams">DataParams</span>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
           </td>
-          <td><p>Preprocessing information.</p>
+          <td><p>DataParams, optional.
+Preprocessing information.</p>
 <p>For Example:
 data_params = {
     'index': {'name': 'index_column'}
@@ -1122,8 +1116,9 @@ data_params = {
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>The total number of instances that are going to be processed (can be an estimation).
-This parameter is required and the only one from the above-mentioned quadruplet,
+          <td><p>int.
+The total number of instances that are going to be processed (can be an estimation).
+This parameter is required and the only one from the above mentioned quadruplet,
 which isn't deduced from the data.</p></td>
           <td>
                 <code>None</code>
@@ -1134,7 +1129,8 @@ which isn't deduced from the data.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>The maximum memory in GB that should be used.
+          <td><p>int, optional.
+The maximum memory in GB that should be used.
 When not provided, the server's total memory is used.
 In any case only 80% of the provided memory or the server's total memory is considered.</p></td>
           <td>
@@ -1146,7 +1142,7 @@ In any case only 80% of the provided memory or the server's total memory is cons
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>either 'training' or 'cleaning'.
+          <td><p>str, either 'training' or 'cleaning'.
 The main usage of the service.</p></td>
           <td>
               <em>required</em>
@@ -1156,7 +1152,8 @@ The main usage of the service.</p></td>
           <td><code>k</code></td>
           <td>
           </td>
-          <td><p>Only relevant when tree is optimized_for cleaning. The number of clusters to form as well
+          <td><p>int, optional.
+Only relevant when tree is optimized_for cleaning. The number of clusters to form as well
 as the number of centroids to generate.</p></td>
           <td>
                 <code>None</code>
@@ -1167,7 +1164,8 @@ as the number of centroids to generate.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>The number of instances to be used when creating a coreset node in the tree.
+          <td><p>int, optional.
+The number of instances to be used when creating a coreset node in the tree.
 When defined, it will override the parameters of optimized_for, n_instances, n_classes and max_memory_gb.
 chunk_size=0: nodes are created based on input chunks</p></td>
           <td>
@@ -1179,7 +1177,8 @@ chunk_size=0: nodes are created based on input chunks</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
           </td>
-          <td><p>Represents the coreset size of each node in the coreset tree.
+          <td><p>int, optional.
+Represents the coreset size of each node in the coreset tree.
 The coreset is constructed by sampling data instances from the dataset based on their calculated importance.
 Since each instance may be sampled more than once, in practice, the actual size of the coreset is mostly
 smaller than coreset_size.</p></td>
@@ -1192,7 +1191,8 @@ smaller than coreset_size.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="services.common.CoresetParams">CoresetParams</span>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
           </td>
-          <td><p>Coreset algorithm specific parameters.</p></td>
+          <td><p>CoresetParams or dict, optional.
+Coreset algorithm specific parameters.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1202,7 +1202,8 @@ smaller than coreset_size.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]</code>
           </td>
-          <td><p>method for training model at tree node level.</p></td>
+          <td><p>Callable, optional.
+method for training model at tree node level.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1212,7 +1213,8 @@ smaller than coreset_size.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>kwargs to be used when calling node_train_function.</p></td>
+          <td><p>dict, optional.
+kwargs to be used when calling node_train_function.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1222,7 +1224,8 @@ smaller than coreset_size.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>], <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>, None]], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>, None]]</code>
           </td>
-          <td><p>A method for storing user meta data on each node.</p></td>
+          <td><p>callable, optional.
+A method for storing user meta data on each node.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1232,7 +1235,8 @@ smaller than coreset_size.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>Local directory where intermediate data is stored.</p></td>
+          <td><p>str, path, optional.
+Local directory where intermediate data is stored.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1242,7 +1246,8 @@ smaller than coreset_size.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>For internal use when loading a saved service.</p></td>
+          <td><p>str, path, optional.
+For internal use when loading a saved service.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1252,7 +1257,8 @@ smaller than coreset_size.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>When set to True, the entire dataset would be saved and not only the selected samples.
+          <td><p>bool, optional.
+When set to True, the entire dataset would be saved and not only the selected samples.
 When optimized_for='cleaning' the default is True. When optimized_for='training' the default is False.</p></td>
           <td>
                 <code>None</code>
@@ -1309,7 +1315,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
           </td>
-          <td><p>An array or an iterator of features.</p></td>
+          <td><p>array like or iterator of arrays like
+An array or an iterator of features.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -1319,7 +1326,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>An array or an iterator of targets.</p></td>
+          <td><p>array like or iterator of arrays like, optional
+An array or an iterator of targets.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1329,7 +1337,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>An array or an iterator with indices of X.</p></td>
+          <td><p>array like or iterator of arrays like, optional
+An array or an iterator with indices of X.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1339,7 +1348,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>An array or an iterator of properties.</p></td>
+          <td><p>array like or iterator of arrays like, optional
+An array or an iterator of properties.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1349,7 +1359,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>The number of instances used when creating a coreset node in the tree.
+          <td><p>int, optional
+The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code>None</code>
@@ -1372,7 +1383,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>False (default) - input data might be updated as result a consequence action like update_targets or update_features
+          <td><p>boolean, default False
+False (default) - input data might be updated as result a consequence action like update_targets or update_features
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -1437,7 +1449,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>Data includes features, may include labels and may include indices.</p></td>
+          <td><p>pandas DataFrame or a DataFrame iterator
+Data includes features, may include labels and may include indices.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -1447,7 +1460,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>Use when data is split to features and target.
+          <td><p>pandas DataFrame or a DataFrame iterator, optional
+Use when data is split to features and target.
 Should include only one column.</p></td>
           <td>
                 <code>None</code>
@@ -1458,7 +1472,8 @@ Should include only one column.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>The number of instances used when creating a coreset node in the tree.
+          <td><p>int, optional
+The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code>None</code>
@@ -1481,7 +1496,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>False (default) - input data might be updated as result a consequence action like update_targets or update_features
+          <td><p>boolean, default False
+False (default) - input data might be updated as result a consequence action like update_targets or update_features
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -1580,7 +1596,8 @@ For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>Keyword arguments used when calling reader_f method.</p></td>
+          <td><p>dict, optional
+Keyword arguments used when calling reader_f method.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1590,7 +1607,8 @@ For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>reader_f input parameter name for reading file in chunks.
+          <td><p>str, optional
+reader_f input parameter name for reading file in chunks.
 When not provided we'll try to figure it out our self.
 Based on the data, we decide on the optimal chunk size to read
 and use this parameter as input when calling reader_f.
@@ -1604,7 +1622,8 @@ Use "ignore" to skip the automatic chunk reading logic.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>The number of instances used when creating a coreset node in the tree.
+          <td><p>int, optional
+The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks</p></td>
           <td>
                 <code>None</code>
@@ -1679,7 +1698,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[Iterable, Iterable, Iterable, Iterable], Iterable[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]]</code>
           </td>
-          <td><p>A function that returns a list of indices to be removed from the tree.
+          <td><p>function, optional
+A function that returns a list of indices to be removed from the tree.
 The function should accept 4 parameters as input: indices, X, y, props
 and return a list(iterator) of indices to be removed from the coreset tree.
 For example, in order to remove all instances with a target equal to 6, use the following function:
@@ -1693,7 +1713,8 @@ filter_function = lambda indices, X, y : indices[y = 6].</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
+          <td><p>int, optional
+Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
@@ -1719,7 +1740,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
+          <td><p>bool, optional, default False
+When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -1773,7 +1795,7 @@ Level 1 returns the coreset from the level below the head of the tree with up to
           <td><code>model</code></td>
           <td>
           </td>
-          <td><p>an ml model instance, optional.
+          <td><p>an ml model instance, optional
 When provided, model_params are not relevant.
 Default: instantiate the service model class using input model_params.</p></td>
           <td>
@@ -1784,7 +1806,7 @@ Default: instantiate the service model class using input model_params.</p></td>
           <td><code>model_params</code></td>
           <td>
           </td>
-          <td><p>model hyperparameters kwargs.
+          <td><p>model hyperparameters kwargs
 Input when instantiating default model class.</p></td>
           <td>
                 <code>{}</code>
@@ -1846,7 +1868,8 @@ Use the level parameter to control the level of the tree from which samples will
           <td><code>level</code></td>
           <td>
           </td>
-          <td><p>Defines the depth level of the tree from which the coreset is extracted.
+          <td><p>int, optional, default 0
+Defines the depth level of the tree from which the coreset is extracted.
 Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
 Level 1 returns the coreset from the level below the head of the tree with up to 2*coreset_size samples, etc.</p></td>
           <td>
@@ -1857,7 +1880,8 @@ Level 1 returns the coreset from the level below the head of the tree with up to
           <td><code>as_orig</code></td>
           <td>
           </td>
-          <td><p>Should the data be returned in its original format or as a tuple of indices, X, and optionally y.
+          <td><p>boolean, optional, default False
+Should the data be returned in its original format or as a tuple of indices, X, and optionally y.
 True: data is returned as a pandas DataFrame.
 False: return a tuple of (indices, X, y) if target was used and (indices, X) when there is no target.</p></td>
           <td>
@@ -1868,7 +1892,8 @@ False: return a tuple of (indices, X, y) if target was used and (indices, X) whe
           <td><code>with_index</code></td>
           <td>
           </td>
-          <td><p>Relevant only when as_orig=True. Should the returned data include the index column.</p></td>
+          <td><p>boolean, optional, default False
+Relevant only when as_orig=True. Should the returned data include the index column.</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -1933,7 +1958,8 @@ Either class_size (recommended) or size must be provided. Must be called after b
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Number of samples to return.
+          <td><p>int, optional
+Number of samples to return.
 When class_size is provided, remaining samples are taken from classes not appearing in class_size dictionary.</p></td>
           <td>
                 <code>None</code>
@@ -1944,7 +1970,8 @@ When class_size is provided, remaining samples are taken from classes not appear
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>An array of indices to ignore when selecting important samples.</p></td>
+          <td><p>array-like, optional
+An array of indices to ignore when selecting important samples.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1954,7 +1981,8 @@ When class_size is provided, remaining samples are taken from classes not appear
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>An array of indices to consider when selecting important samples.</p></td>
+          <td><p>array-like, optional
+ An array of indices to consider when selecting important samples.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1964,7 +1992,8 @@ When class_size is provided, remaining samples are taken from classes not appear
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[Iterable, Iterable, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None]], Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
           </td>
-          <td><p>Pass a function in order to limit the selection of the important samples accordingly.
+          <td><p>function, optional.
+ Pass a function in order to limit the selection of the important samples accordingly.
  The function should accept 4 parameters as input: indices, X, y, props
  and return a list(iterator) of the desired indices.</p></td>
           <td>
@@ -1976,7 +2005,8 @@ When class_size is provided, remaining samples are taken from classes not appear
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Exclude already seen samples and set the seen flag on any indices returned by the function.</p></td>
+          <td><p>bool, optional, default True
+ Exclude already seen samples and set the seen flag on any indices returned by the function.</p></td>
           <td>
                 <code>True</code>
           </td>
@@ -2041,25 +2071,6 @@ class_size={"class A": 10, "class B": 50, "class C": "all"}</p>
 </code></pre></div>
 
   <div class="doc doc-contents ">
-  
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td><p>Indicates whether the coreset tree has nodes marked as dirty, meaning they were affected by any of the methods: remove_samples, update_targets, update_features or filter_out_samples, when they were called with force_do_nothing.</p></td>
-        </tr>
-    </tbody>
-  </table>
 
   </div>
 
@@ -2101,7 +2112,8 @@ class_size={"class A": 10, "class B": 50, "class C": "all"}</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>Local directory where service data is stored.</p></td>
+          <td><p>str, path
+Local directory where service data is stored.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2111,7 +2123,7 @@ class_size={"class A": 10, "class B": 50, "class C": "all"}</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>default service class name (lower case).
+          <td><p>string, optional, default service class name (lower case)
 The name prefix of the subdirectory to load.
 When several subdirectories having the same name prefix are found, the last one, ordered by name, is selected.
 For example when saving with override=False, the chosen subdirectory is the last saved.</p></td>
@@ -2124,7 +2136,8 @@ For example when saving with override=False, the chosen subdirectory is the last
           <td>
                 <code><span title="services.coreset_tree._base.DataManagerT">DataManagerT</span></code>
           </td>
-          <td><p>When specified, input data manger will be used instead of restoring it from the saved configuration.</p></td>
+          <td><p>DataManagerBase subclass, optional
+When specified, input data manger will be used instead of restoring it from the saved configuration.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2134,7 +2147,8 @@ For example when saving with override=False, the chosen subdirectory is the last
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>If set, load saved buffer (a partial node of the tree) from disk and add it to the tree.</p></td>
+          <td><p>boolean, optional, default True
+If set, load saved buffer (a partial node of the tree) from disk and add it to the tree.</p></td>
           <td>
                 <code>True</code>
           </td>
@@ -2144,7 +2158,7 @@ For example when saving with override=False, the chosen subdirectory is the last
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>default use working_directory from saved configuration
+          <td><p>str, path, optional, default use working_directory from saved configuration
 Local directory where intermediate data is stored.</p></td>
           <td>
                 <code>None</code>
@@ -2275,7 +2289,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>False (default) - input data might be updated as result a consequence action like update_targets or update_features
+          <td><p>boolean, default False
+False (default) - input data might be updated as result a consequence action like update_targets or update_features
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -2338,7 +2353,8 @@ True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>Data includes features, may include labels and may include indices.</p></td>
+          <td><p>pandas DataFrame or a DataFrame iterator
+Data includes features, may include labels and may include indices.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2348,7 +2364,8 @@ True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>Use when data is split to features and labels.
+          <td><p>pandas DataFrame or a DataFrame iterator, optional
+Use when data is split to features and labels.
 Should include only one column.</p></td>
           <td>
                 <code>None</code>
@@ -2359,7 +2376,7 @@ Should include only one column.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>default previous used chunk_size.
+          <td><p>int, optional, default previous used chunk_size
 The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
@@ -2383,7 +2400,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>False (default) - input data might be updated as result a consequence action like update_targets or update_features
+          <td><p>boolean, default False
+False (default) - input data might be updated as result a consequence action like update_targets or update_features
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -2480,7 +2498,8 @@ For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>Keyword arguments used when calling reader_f method.</p></td>
+          <td><p>dict, optional
+Keyword arguments used when calling reader_f method.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2490,7 +2509,8 @@ For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>reader_f input parameter name for reading file in chunks.
+          <td><p>str, optional
+reader_f input parameter name for reading file in chunks.
 When not provided we'll try to figure it out our self.
 Based on the data, we decide on the optimal chunk size to read
 and use this parameter as input when calling reader_f.
@@ -2504,7 +2524,7 @@ Use "ignore" to skip the automatic chunk reading logic.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>default previous used chunk_size.
+          <td><p>int, optional, default previous used chunk_size
 The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
@@ -2580,7 +2600,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>Path to save the plot figure in; if not provided, or if isn't valid/doesn't exist,
+          <td><p>string or PathLike
+Path to save the plot figure in; if not provided, or if isn't valid/doesn't exist,
 the figure will be saved in the current directory (from which this method is called).</p></td>
           <td>
                 <code>None</code>
@@ -2591,7 +2612,8 @@ the figure will be saved in the current directory (from which this method is cal
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>Name of the image file</p></td>
+          <td><p>string, optional
+Name of the image file</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2793,7 +2815,8 @@ the figure will be saved in the current directory (from which this method is cal
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>An array of indices to be removed from the coreset tree.</p></td>
+          <td><p>array-like
+An array of indices to be removed from the coreset tree.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2874,7 +2897,7 @@ Use this method when the service needs to be restored.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>default self.working_directory.
+          <td><p>string or PathLike, optional, default self.working_directory
 A local directory for saving service's files.</p></td>
           <td>
                 <code>None</code>
@@ -2885,7 +2908,7 @@ A local directory for saving service's files.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>default service class name (lower case).
+          <td><p>string, optional, default service class name (lower case)
 Name of the subdirectory where the data will be stored.</p></td>
           <td>
                 <code>None</code>
@@ -2896,7 +2919,8 @@ Name of the subdirectory where the data will be stored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Save also the data in the buffer (a partial node of the tree)
+          <td><p>boolean, default True
+Save also the data in the buffer (a partial node of the tree)
 along with the rest of the saved data.</p></td>
           <td>
                 <code>True</code>
@@ -2907,7 +2931,8 @@ along with the rest of the saved data.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>False: add a timestamp suffix so each save won’t override the previous ones.
+          <td><p>bool, optional, default False
+False: add a timestamp suffix so each save won’t override the previous ones.
 True: The existing subdirectory with the provided name is overridden.</p></td>
           <td>
                 <code>False</code>
@@ -2970,7 +2995,8 @@ Use the level parameter to control the level of the tree from which samples will
           <td><code>file_path</code></td>
           <td>
           </td>
-          <td><p>Local file path to store the coreset.</p></td>
+          <td><p>string or PathLike
+Local file path to store the coreset.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2979,7 +3005,8 @@ Use the level parameter to control the level of the tree from which samples will
           <td><code>level</code></td>
           <td>
           </td>
-          <td><p>Defines the depth level of the tree from which the coreset is extracted.
+          <td><p>int, optional, default 0
+Defines the depth level of the tree from which the coreset is extracted.
 Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
 Level 1 returns the coreset from the level below the head of the tree with up to 2*coreset_size samples, etc.</p></td>
           <td>
@@ -2990,7 +3017,8 @@ Level 1 returns the coreset from the level below the head of the tree with up to
           <td><code>as_orig</code></td>
           <td>
           </td>
-          <td><p>True: save in the original format.
+          <td><p>boolean, optional, default False
+True: save in the original format.
 False: save in a processed format (indices, X, y, weight).</p></td>
           <td>
                 <code>False</code>
@@ -3000,7 +3028,8 @@ False: save in a processed format (indices, X, y, weight).</p></td>
           <td><code>with_index</code></td>
           <td>
           </td>
-          <td><p>Relevant only when as_orig=True. Save also index column.</p></td>
+          <td><p>boolean, optional, default False
+Relevant only when as_orig=True. Save also index column.</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -3045,7 +3074,8 @@ samples.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>Set 'seen' or 'unseen' flag</p></td>
+          <td><p>bool
+Set 'seen' or 'unseen' flag</p></td>
           <td>
                 <code>True</code>
           </td>
@@ -3055,7 +3085,8 @@ samples.</p>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>Set flag only to the provided list of indices. Defaults to all indices.</p></td>
+          <td><p>array like
+Set flag only to the provided list of indices. Defaults to all indices.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3102,7 +3133,8 @@ when they were called with force_do_nothing.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
+          <td><p>int, optional
+Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
@@ -3162,7 +3194,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>An array of indices to be updated.</p></td>
+          <td><p>array-like
+An array of indices to be updated.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -3172,7 +3205,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>An array of features. Should have the same length as indices.</p></td>
+          <td><p>array-like
+An array of features. Should have the same length as indices.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -3193,7 +3227,8 @@ this param should contain list of names of passed features.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
+          <td><p>int, optional
+Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
@@ -3219,7 +3254,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
+          <td><p>bool, optional, default False
+When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -3338,26 +3374,55 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
 
 </div>
 
+              
 
-
-
-
-                
-
-              </article>
-            </div>
-          
-          
+            </article>
+          </div>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
             Back to top
-          </button>
+          </a>
         
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Release Notes - Version 0.1.1" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Release Notes - Version 0.1.1
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../lg/" class="md-footer__link md-footer__link--next" aria-label="Next: CoresetTreeServiceLG" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              CoresetTreeServiceLG
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3375,24 +3440,20 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
   
     
     
-    
-    
       
       
     
     <a href="https://github.com/pawamoy" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
     </a>
   
-    
-    
     
     
       
       
     
     <a href="https://twitter.com/pawamoy" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
 </div>
@@ -3405,11 +3466,10 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.01824240.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
-    
-      <script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.e8a254df.min.js"></script>
       
     
   </body>
