@@ -1072,6 +1072,10 @@ to build a single Coreset over the entire dataset, based on the triplet:
 n_instances, n_classes, max_memory_gb and the 'number of features' (deduced from the dataset).
 The chunk_size and coreset_size will be deduced based on the above triplet too.
 In case chunk_size and coreset_size are provided, they will override all above mentioned parameters (less recommended).</p>
+<p>When building the Coreset, samples are selected and weights are assigned to them, therefore it is important
+to use functions that support the receipt of sample_weight. Sklearn's PCA implementation does not support the
+receipt of sample_weight, therefore, it is highly recommended to use the built-in fit or fit_transform functions of
+the CoresetTreeServicePCA class as they were extended to receive sample_weight.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1338,7 +1342,9 @@ An array or an iterator with indices of X.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td><p>array like or iterator of arrays like, optional.
-An array or an iterator of properties.</p></td>
+An array or an iterator of properties.
+Properties, won’t be used to compute the Coreset or train the model, but it is possible to
+filter_out_samples on them or to pass them in the select_from_function of get_important_samples.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2266,7 +2272,9 @@ An array or an iterator with indices of X.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td><p>array like or iterator of arrays like, optional.
-An array or an iterator of properties.</p></td>
+An array or an iterator of properties.
+Properties, won’t be used to compute the Coreset or train the model, but it is possible to
+filter_out_samples on them or to pass them in the select_from_function of get_important_samples.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3212,7 +3220,7 @@ The coreset tree is automatically updated to accommodate to the changes.</p>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>array-like
+          <td><p>array-like.
 An array of indices to be updated.</p></td>
           <td>
               <em>required</em>
@@ -3223,7 +3231,7 @@ An array of indices to be updated.</p></td>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>array-like
+          <td><p>array-like.
 An array of features. Should have the same length as indices.</p></td>
           <td>
               <em>required</em>

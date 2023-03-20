@@ -1079,7 +1079,7 @@ with the parameter inverse_class_weight set to True (default). If you wish to st
 classifier, retrieve the coreset using the get_coreset method with the parameter inverse_class_weight set to False.</p>
 <p>If you intend passing C (the inverse of regularization strength) to your solver, it should be adjusted as specified
 here when used on the Coreset: C = C * float(len(X) / np.sum(weights)).
-When calling the class' fit function, alpha is already adjusted accordingly.</p>
+When calling the class' fit function, C is already adjusted accordingly and no further action is required.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1324,7 +1324,7 @@ When optimized_for='cleaning' the default is True. When optimized_for='training'
   
       <p>Create a coreset tree from the parameters X, y, indices and props (properties).
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions.</p>
+the partial_build functions. All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1343,7 +1343,7 @@ the partial_build functions.</p>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
           </td>
           <td><p>array like or iterator of arrays like.
-An array or an iterator of features.</p></td>
+An array or an iterator of features. All features must be numeric.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2280,7 +2280,8 @@ Local directory where intermediate data is stored.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Add new samples to a coreset tree from parameters X, y, indices and props (properties).</p>
+      <p>Add new samples to a coreset tree from parameters X, y, indices and props (properties).
+All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2299,7 +2300,7 @@ Local directory where intermediate data is stored.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
           </td>
           <td><p>array like or iterator of arrays like.
-An array or an iterator of features.</p></td>
+An array or an iterator of features. All features must be numeric.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2332,7 +2333,9 @@ An array or an iterator with indices of X.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td><p>array like or iterator of arrays like, optional.
-An array or an iterator of properties.</p></td>
+An array or an iterator of properties.
+Properties, won’t be used to compute the Coreset or train the model, but it is possible to
+filter_out_samples on them or to pass them in the select_from_function of get_important_samples.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3277,7 +3280,7 @@ The coreset tree is automatically updated to accommodate to the changes.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
-          <td><p>array-like
+          <td><p>array-like.
 An array of indices to be updated.</p></td>
           <td>
               <em>required</em>
@@ -3288,7 +3291,7 @@ An array of indices to be updated.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
-          <td><p>array-like
+          <td><p>array-like.
 An array of features. Should have the same length as indices.</p></td>
           <td>
               <em>required</em>
