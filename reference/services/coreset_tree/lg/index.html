@@ -2971,7 +2971,7 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 <a href="#services.coreset_tree.lg.CoresetTreeServiceLG.save" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">save</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">override</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">save</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">override</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -3034,6 +3034,18 @@ False: add a timestamp suffix so each save won’t override the previous ones.
 True: The existing subdirectory with the provided name is overridden.</p></td>
           <td>
                 <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>allow_pickle</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>bool, optional, default True.
+True: Saves the Coreset tree in pickle format (much faster).
+False: Saves the Coreset tree in JSON format.</p></td>
+          <td>
+                <code>True</code>
           </td>
         </tr>
     </tbody>
