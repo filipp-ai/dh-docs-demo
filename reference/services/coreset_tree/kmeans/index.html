@@ -207,7 +207,7 @@
 
   <li class="md-tabs__item">
     <a href="../../../.." class="md-tabs__link">
-      Release Notes - Version 0.1.1
+      Release Notes - Version 0.2.0
     </a>
   </li>
 
@@ -338,7 +338,7 @@
   
     <li class="md-nav__item">
       <a href="../../../.." class="md-nav__link">
-        Release Notes - Version 0.1.1
+        Release Notes - Version 0.2.0
       </a>
     </li>
   
@@ -1302,9 +1302,10 @@ When optimized_for='cleaning' the default is True. When optimized_for='training'
 
   <div class="doc doc-contents ">
   
-      <p>Create a coreset tree from parameters X, y and indices.
+      <p>Create a coreset tree from the parameters X, y, indices and props (properties).
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. All features must be numeric.</p>
+the partial_build functions. All features must be numeric.
+The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1334,7 +1335,8 @@ An array or an iterator of features. All features must be numeric.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td><p>array like or iterator of arrays like, optional.
-An array or an iterator of targets.</p></td>
+An array or an iterator of targets.
+The target will be ignored when the Coreset is built.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1440,7 +1442,8 @@ True - Data is copied before processing (impacts memory).</p></td>
   
       <p>Create a coreset tree from pandas DataFrame(s).
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. All features must be numeric.</p>
+the partial_build functions. All features must be numeric.
+The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1553,7 +1556,8 @@ True - Data is copied before processing (impacts memory).</p></td>
   
       <p>Create a coreset tree based on data taken from local storage.
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. All features must be numeric.</p>
+the partial_build functions. All features must be numeric.
+The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1573,7 +1577,7 @@ the partial_build functions. All features must be numeric.</p>
           </td>
           <td><p>file, list of files, directory, list of directories.
 Path(s) to the place where data is stored.
-Data includes features, may include labels and may include indices.</p></td>
+Data includes features, may include targets and may include indices.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -1945,7 +1949,7 @@ n_represents: number of instances represented by the coreset.</p></td>
 
 
 <a href="#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_important_samples" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">get_important_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">class_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_seen_samples</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">get_important_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_seen_samples</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2233,8 +2237,8 @@ Local directory where intermediate data is stored.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Add new samples to a coreset tree from parameters X, y and indices.
-All features must be numeric.</p>
+      <p>Add new samples to a coreset tree from parameters X, y, indices and props (properties).
+All features must be numeric. The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2264,7 +2268,8 @@ An array or an iterator of features. All features must be numeric.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td><p>array like or iterator of arrays like, optional.
-An array or an iterator of targets.</p></td>
+An array or an iterator of targets.
+The target will be ignored when the Coreset is built.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2369,7 +2374,7 @@ True - Data is copied before processing (impacts memory).</p></td>
   <div class="doc doc-contents ">
   
       <p>Add new samples to a coreset tree based on the pandas DataFrame iterator.
-All features must be numeric.</p>
+All features must be numeric. The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2388,7 +2393,7 @@ All features must be numeric.</p>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
           <td><p>pandas DataFrame or a DataFrame iterator.
-Data includes features, may include labels and may include indices.</p></td>
+Data includes features, may include targets and may include indices.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2399,7 +2404,7 @@ Data includes features, may include labels and may include indices.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
           <td><p>pandas DataFrame or a DataFrame iterator, optional.
-Use when data is split to features and labels.
+Use when data is split to features and target.
 Should include only one column.</p></td>
           <td>
                 <code>None</code>
@@ -2481,7 +2486,7 @@ True - Data is copied before processing (impacts memory).</p></td>
   <div class="doc doc-contents ">
   
       <p>Add new samples to a coreset tree based on data taken from local storage.
-All features must be numeric.</p>
+All features must be numeric. The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2501,7 +2506,7 @@ All features must be numeric.</p>
           </td>
           <td><p>file, list of files, directory, list of directories.
 Path(s) to the place where data is stored.
-Data includes features, may include labels and may include indices.</p></td>
+Data includes features, may include targets and may include indices.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2512,7 +2517,7 @@ Data includes features, may include labels and may include indices.</p></td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], Iterable[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
           </td>
           <td><p>file, list of files, directory, list of directories, optional.
-Use when files are split to features and labels.
+Use when files are split to features and target.
 Each file should include only one column.</p></td>
           <td>
                 <code>None</code>
@@ -3439,7 +3444,7 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Release Notes - Version 0.1.1" rel="prev">
+        <a href="../../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Release Notes - Version 0.2.0" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -3448,7 +3453,7 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
               <span class="md-footer__direction">
                 Previous
               </span>
-              Release Notes - Version 0.1.1
+              Release Notes - Version 0.2.0
             </div>
           </div>
         </a>
