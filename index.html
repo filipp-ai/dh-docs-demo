@@ -755,7 +755,7 @@
 <p>Last updated on March 20, 2023</p>
 <h3 id="new-features-and-improvements">New Features and Improvements<a class="headerlink" href="#new-features-and-improvements" title="Permanent link">¤</a></h3>
 <ul>
-<li>Additional CoresetTreeServices for <a href="reference/services/coreset_tree/lg/">linear regression</a>, <a href="reference/services/coreset_tree/kmeans/">K-Means</a>, <a href="reference/services/coreset_tree/pca/">PCA</a> and <a href="reference/services/coreset_tree/svd/">SVD</a> have been added to the library.</li>
+<li>Additional CoresetTreeServices for <a href="reference/services/coreset_tree/lr/">linear regression</a>, <a href="reference/services/coreset_tree/kmeans/">K-Means</a>, <a href="reference/services/coreset_tree/pca/">PCA</a> and <a href="reference/services/coreset_tree/svd/">SVD</a> have been added to the library.</li>
 <li>Significantly reducing the memory footprint by up to 50% especially during the various <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.build">build</a> and <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.partial_build">partial_build</a> functions.</li>
 <li>Data is read in chunks in the size of <code>chunk_size</code> when the file format allows it (CSV, TSV), to reduce the memory footprint when building the Coreset tree.</li>
 <li>Significantly improving the <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset">get_coreset</a> time on large datasets.</li>
