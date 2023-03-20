@@ -1286,7 +1286,7 @@ When optimized_for='cleaning' the default is True. When optimized_for='training'
   
       <p>Create a coreset tree from parameters X, y and indices.
 build functions may be called only once. To add more data to the coreset tree use one of
-the build_partial functions.</p>
+the partial_build functions. All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1304,8 +1304,8 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
           </td>
-          <td><p>array like or iterator of arrays like
-An array or an iterator of features.</p></td>
+          <td><p>array like or iterator of arrays like.
+An array or an iterator of features. All features must be numeric.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -1315,7 +1315,7 @@ An array or an iterator of features.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>array like or iterator of arrays like, optional
+          <td><p>array like or iterator of arrays like, optional.
 An array or an iterator of targets.</p></td>
           <td>
                 <code>None</code>
@@ -1326,7 +1326,7 @@ An array or an iterator of targets.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>array like or iterator of arrays like, optional
+          <td><p>array like or iterator of arrays like, optional.
 An array or an iterator with indices of X.</p></td>
           <td>
                 <code>None</code>
@@ -1337,7 +1337,7 @@ An array or an iterator with indices of X.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>array like or iterator of arrays like, optional
+          <td><p>array like or iterator of arrays like, optional.
 An array or an iterator of properties.</p></td>
           <td>
                 <code>None</code>
@@ -1348,7 +1348,7 @@ An array or an iterator of properties.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
@@ -1360,7 +1360,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
-          <td><p>function, label, or list of labels, optional
+          <td><p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p></td>
           <td>
@@ -1372,8 +1372,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>boolean, default False
-False (default) - input data might be updated as result a consequence action like update_targets or update_features
+          <td><p>boolean, default False.
+False (default) - Input data might be updated as result of functions such as update_targets or update_features.
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -1420,7 +1420,7 @@ True - Data is copied before processing (impacts memory).</p></td>
   
       <p>Create a coreset tree from pandas DataFrame(s).
 build functions may be called only once. To add more data to the coreset tree use one of
-the build_partial functions.</p>
+the partial_build functions. All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1438,7 +1438,7 @@ the build_partial functions.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>pandas DataFrame or a DataFrame iterator
+          <td><p>pandas DataFrame or a DataFrame iterator.
 Data includes features, may include labels and may include indices.</p></td>
           <td>
               <em>required</em>
@@ -1449,7 +1449,7 @@ Data includes features, may include labels and may include indices.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>pandas DataFrame or a DataFrame iterator, optional
+          <td><p>pandas DataFrame or a DataFrame iterator, optional.
 Use when data is split to features and target.
 Should include only one column.</p></td>
           <td>
@@ -1461,7 +1461,7 @@ Should include only one column.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
@@ -1473,7 +1473,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
-          <td><p>function, label, or list of labels, optional
+          <td><p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p></td>
           <td>
@@ -1485,8 +1485,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>boolean, default False
-False (default) - input data might be updated as result a consequence action like update_targets or update_features
+          <td><p>boolean, default False.
+False (default) - Input data might be updated as result of functions such as update_targets or update_features.
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -1533,7 +1533,7 @@ True - Data is copied before processing (impacts memory).</p></td>
   
       <p>Create a coreset tree based on data taken from local storage.
 build functions may be called only once. To add more data to the coreset tree use one of
-the build_partial functions.</p>
+the partial_build functions. All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1563,7 +1563,7 @@ Data includes features, may include labels and may include indices.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], Iterable[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
           </td>
-          <td><p>file, list of files, directory, list of directories, optional
+          <td><p>file, list of files, directory, list of directories, optional.
 Use when the dataset files are split to features and target.
 Each file should include only one column.</p></td>
           <td>
@@ -1574,7 +1574,7 @@ Each file should include only one column.</p></td>
           <td><code>reader_f</code></td>
           <td>
           </td>
-          <td><p>pandas like read method, optional, default pandas read_csv
+          <td><p>pandas like read method, optional, default pandas read_csv.
 For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code>pd.read_csv</code>
@@ -1585,7 +1585,7 @@ For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>dict, optional
+          <td><p>dict, optional.
 Keyword arguments used when calling reader_f method.</p></td>
           <td>
                 <code>None</code>
@@ -1596,7 +1596,7 @@ Keyword arguments used when calling reader_f method.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>str, optional
+          <td><p>str, optional.
 reader_f input parameter name for reading file in chunks.
 When not provided we'll try to figure it out our self.
 Based on the data, we decide on the optimal chunk size to read
@@ -1611,9 +1611,9 @@ Use "ignore" to skip the automatic chunk reading logic.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 The number of instances used when creating a coreset node in the tree.
-chunk_size=0: nodes are created based on input chunks</p></td>
+chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1623,7 +1623,7 @@ chunk_size=0: nodes are created based on input chunks</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
-          <td><p>function, label, or list of labels, optional
+          <td><p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p></td>
           <td>
@@ -1669,7 +1669,8 @@ When provided, chunk_size input is ignored.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Remove samples from the coreset tree, based on the provided filter function.</p>
+      <p>Remove samples from the coreset tree, based on the provided filter function.
+The coreset tree is automatically updated to accommodate to the changes.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -1685,14 +1686,14 @@ When provided, chunk_size input is ignored.</p></td>
         <tr>
           <td><code>filter_function</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[Iterable, Iterable, Iterable, Iterable], Iterable[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[Iterable, Iterable, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None]], Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
           </td>
-          <td><p>function, optional
+          <td><p>function, optional.
 A function that returns a list of indices to be removed from the tree.
 The function should accept 4 parameters as input: indices, X, y, props
 and return a list(iterator) of indices to be removed from the coreset tree.
 For example, in order to remove all instances with a target equal to 6, use the following function:
-filter_function = lambda indices, X, y : indices[y = 6].</p></td>
+filter_function = lambda indices, X, y, props : indices[y = 6].</p></td>
           <td>
               <em>required</em>
           </td>
@@ -1702,7 +1703,7 @@ filter_function = lambda indices, X, y : indices[y = 6].</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
@@ -1715,7 +1716,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force the recalculation of the sensitivity and partial resampling of the affected nodes,
+          <td><p>int, optional.
+Force the recalculation of the sensitivity and partial resampling of the affected nodes,
 based on the coreset's quality, starting from level=force_sensitivity_recalc.
 None - If self.save_all=False - one level above leaf node level. If self.save_all=True - leaf level
 0 - The head of the tree, 1 - The level below the head of the tree,
@@ -1729,7 +1731,7 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>bool, optional, default False
+          <td><p>bool, optional, default False.
 When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
           <td>
                 <code>False</code>
@@ -1784,7 +1786,7 @@ Level 1 returns the coreset from the level below the head of the tree with up to
           <td><code>model</code></td>
           <td>
           </td>
-          <td><p>an ml model instance, optional
+          <td><p>An ML model instance, optional.
 When provided, model_params are not relevant.
 Default: instantiate the service model class using input model_params.</p></td>
           <td>
@@ -1795,7 +1797,7 @@ Default: instantiate the service model class using input model_params.</p></td>
           <td><code>model_params</code></td>
           <td>
           </td>
-          <td><p>model hyperparameters kwargs
+          <td><p>Model hyperparameters kwargs.
 Input when instantiating default model class.</p></td>
           <td>
                 <code>{}</code>
@@ -1857,7 +1859,7 @@ Use the level parameter to control the level of the tree from which samples will
           <td><code>level</code></td>
           <td>
           </td>
-          <td><p>int, optional, default 0
+          <td><p>int, optional, default 0.
 Defines the depth level of the tree from which the coreset is extracted.
 Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
 Level 1 returns the coreset from the level below the head of the tree with up to 2*coreset_size samples, etc.</p></td>
@@ -1869,7 +1871,7 @@ Level 1 returns the coreset from the level below the head of the tree with up to
           <td><code>as_orig</code></td>
           <td>
           </td>
-          <td><p>boolean, optional, default False
+          <td><p>boolean, optional, default False.
 Should the data be returned in its original format or as a tuple of indices, X, and optionally y.
 True: data is returned as a pandas DataFrame.
 False: return a tuple of (indices, X, y) if target was used and (indices, X) when there is no target.</p></td>
@@ -1881,7 +1883,7 @@ False: return a tuple of (indices, X, y) if target was used and (indices, X) whe
           <td><code>with_index</code></td>
           <td>
           </td>
-          <td><p>boolean, optional, default False
+          <td><p>boolean, optional, default False.
 Relevant only when as_orig=True. Should the returned data include the index column.</p></td>
           <td>
                 <code>False</code>
@@ -1903,9 +1905,9 @@ Relevant only when as_orig=True. Should the returned data include the index colu
 <td><code>Dict</code></td>          <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>data: numpy arrays tuple (indices, X, optional y) or a pandas DataFrame
-w: A numpy array of sample weights
-n_represents: number of instances represented by the coreset</p></td>
+          <td><p>data: numpy arrays tuple (indices, X, optional y) or a pandas DataFrame.
+w: A numpy array of sample weights.
+n_represents: number of instances represented by the coreset.</p></td>
         </tr>
     </tbody>
   </table>
@@ -1947,7 +1949,7 @@ Either class_size (recommended) or size must be provided. Must be called after b
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 Number of samples to return.
 When class_size is provided, remaining samples are taken from classes not appearing in class_size dictionary.</p></td>
           <td>
@@ -1959,7 +1961,7 @@ When class_size is provided, remaining samples are taken from classes not appear
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>array-like, optional
+          <td><p>array-like, optional.
 An array of indices to ignore when selecting important samples.</p></td>
           <td>
                 <code>None</code>
@@ -1970,7 +1972,7 @@ An array of indices to ignore when selecting important samples.</p></td>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>array-like, optional
+          <td><p>array-like, optional.
  An array of indices to consider when selecting important samples.</p></td>
           <td>
                 <code>None</code>
@@ -1983,7 +1985,7 @@ An array of indices to ignore when selecting important samples.</p></td>
           </td>
           <td><p>function, optional.
  Pass a function in order to limit the selection of the important samples accordingly.
- The function should accept 4 parameters as input: indices, X, y, props
+ The function should accept 4 parameters as input: indices, X, y, props.
  and return a list(iterator) of the desired indices.</p></td>
           <td>
                 <code>None</code>
@@ -1994,7 +1996,7 @@ An array of indices to ignore when selecting important samples.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>bool, optional, default True
+          <td><p>bool, optional, default True.
  Exclude already seen samples and set the seen flag on any indices returned by the function.</p></td>
           <td>
                 <code>True</code>
@@ -2120,7 +2122,7 @@ class_size={"class A": 10, "class B": 50, "class C": "all"}</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>str, path
+          <td><p>str, path.
 Local directory where service data is stored.</p></td>
           <td>
               <em>required</em>
@@ -2131,7 +2133,7 @@ Local directory where service data is stored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>string, optional, default service class name (lower case)
+          <td><p>string, optional, default service class name (lower case).
 The name prefix of the subdirectory to load.
 When several subdirectories having the same name prefix are found, the last one, ordered by name, is selected.
 For example when saving with override=False, the chosen subdirectory is the last saved.</p></td>
@@ -2144,7 +2146,7 @@ For example when saving with override=False, the chosen subdirectory is the last
           <td>
                 <code><span title="services.coreset_tree._base.DataManagerT">DataManagerT</span></code>
           </td>
-          <td><p>DataManagerBase subclass, optional
+          <td><p>DataManagerBase subclass, optional.
 When specified, input data manger will be used instead of restoring it from the saved configuration.</p></td>
           <td>
                 <code>None</code>
@@ -2155,7 +2157,7 @@ When specified, input data manger will be used instead of restoring it from the 
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>boolean, optional, default True
+          <td><p>boolean, optional, default True.
 If set, load saved buffer (a partial node of the tree) from disk and add it to the tree.</p></td>
           <td>
                 <code>True</code>
@@ -2166,7 +2168,7 @@ If set, load saved buffer (a partial node of the tree) from disk and add it to t
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>str, path, optional, default use working_directory from saved configuration
+          <td><p>str, path, optional, default use working_directory from saved configuration.
 Local directory where intermediate data is stored.</p></td>
           <td>
                 <code>None</code>
@@ -2211,7 +2213,8 @@ Local directory where intermediate data is stored.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Add new samples to a coreset tree from parameters X, y and indices.</p>
+      <p>Add new samples to a coreset tree from parameters X, y and indices.
+All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2229,8 +2232,8 @@ Local directory where intermediate data is stored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
           </td>
-          <td><p>array like or iterator of arrays like
-An array or an iterator of features.</p></td>
+          <td><p>array like or iterator of arrays like.
+An array or an iterator of features. All features must be numeric.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2240,7 +2243,7 @@ An array or an iterator of features.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>array like or iterator of arrays like, optional
+          <td><p>array like or iterator of arrays like, optional.
 An array or an iterator of targets.</p></td>
           <td>
                 <code>None</code>
@@ -2251,7 +2254,7 @@ An array or an iterator of targets.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>array like or iterator of arrays like, optional
+          <td><p>array like or iterator of arrays like, optional.
 An array or an iterator with indices of X.</p></td>
           <td>
                 <code>None</code>
@@ -2262,7 +2265,7 @@ An array or an iterator with indices of X.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
-          <td><p>array like or iterator of arrays like, optional
+          <td><p>array like or iterator of arrays like, optional.
 An array or an iterator of properties.</p></td>
           <td>
                 <code>None</code>
@@ -2273,9 +2276,9 @@ An array or an iterator of properties.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 The number of instances used when creating a coreset node in the tree.
-chunk_size=0: nodes are created based on input chunks</p></td>
+chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2285,7 +2288,7 @@ chunk_size=0: nodes are created based on input chunks</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
-          <td><p>function, label, or list of labels, optional
+          <td><p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p></td>
           <td>
@@ -2298,7 +2301,7 @@ When provided, chunk_size input is ignored.</p></td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>boolean, default False
-False (default) - input data might be updated as result a consequence action like update_targets or update_features
+False (default) - Input data might be updated as result of functions such as update_targets or update_features.
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -2343,7 +2346,8 @@ True - Data is copied before processing (impacts memory).</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Add new samples to a coreset tree based on the pandas DataFrame iterator.</p>
+      <p>Add new samples to a coreset tree based on the pandas DataFrame iterator.
+All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2361,7 +2365,7 @@ True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>pandas DataFrame or a DataFrame iterator
+          <td><p>pandas DataFrame or a DataFrame iterator.
 Data includes features, may include labels and may include indices.</p></td>
           <td>
               <em>required</em>
@@ -2372,7 +2376,7 @@ Data includes features, may include labels and may include indices.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[pd.<span title="pd.DataFrame">DataFrame</span>], pd.<span title="pd.DataFrame">DataFrame</span>]</code>
           </td>
-          <td><p>pandas DataFrame or a DataFrame iterator, optional
+          <td><p>pandas DataFrame or a DataFrame iterator, optional.
 Use when data is split to features and labels.
 Should include only one column.</p></td>
           <td>
@@ -2384,7 +2388,7 @@ Should include only one column.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional, default previous used chunk_size
+          <td><p>int, optional, default previous used chunk_size.
 The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
@@ -2396,7 +2400,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
-          <td><p>function, label, or list of labels, optional
+          <td><p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p></td>
           <td>
@@ -2408,8 +2412,8 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>boolean, default False
-False (default) - input data might be updated as result a consequence action like update_targets or update_features
+          <td><p>boolean, default False.
+False (default) - Input data might be updated as result of functions such as update_targets or update_features.
 True - Data is copied before processing (impacts memory).</p></td>
           <td>
                 <code>False</code>
@@ -2454,7 +2458,8 @@ True - Data is copied before processing (impacts memory).</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Add new samples to a coreset tree based on data taken from local storage.</p>
+      <p>Add new samples to a coreset tree based on data taken from local storage.
+All features must be numeric.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2484,7 +2489,7 @@ Data includes features, may include labels and may include indices.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], Iterable[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
           </td>
-          <td><p>file, list of files, directory, list of directories, optional
+          <td><p>file, list of files, directory, list of directories, optional.
 Use when files are split to features and labels.
 Each file should include only one column.</p></td>
           <td>
@@ -2495,7 +2500,7 @@ Each file should include only one column.</p></td>
           <td><code>reader_f</code></td>
           <td>
           </td>
-          <td><p>pandas like read method, optional, default pandas read_csv
+          <td><p>pandas like read method, optional, default pandas read_csv.
 For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code>pd.read_csv</code>
@@ -2506,7 +2511,7 @@ For example, to read excel files use pandas read_excel.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>dict, optional
+          <td><p>dict, optional.
 Keyword arguments used when calling reader_f method.</p></td>
           <td>
                 <code>None</code>
@@ -2517,7 +2522,7 @@ Keyword arguments used when calling reader_f method.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>str, optional
+          <td><p>str, optional.
 reader_f input parameter name for reading file in chunks.
 When not provided we'll try to figure it out our self.
 Based on the data, we decide on the optimal chunk size to read
@@ -2532,7 +2537,7 @@ Use "ignore" to skip the automatic chunk reading logic.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional, default previous used chunk_size
+          <td><p>int, optional, default previous used chunk_size.
 The number of instances used when creating a coreset node in the tree.
 chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
@@ -2544,7 +2549,7 @@ chunk_size=0: nodes are created based on input chunks.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>]</code>
           </td>
-          <td><p>function, label, or list of labels, optional
+          <td><p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p></td>
           <td>
@@ -2608,7 +2613,7 @@ When provided, chunk_size input is ignored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>string or PathLike
+          <td><p>string or PathLike.
 Path to save the plot figure in; if not provided, or if isn't valid/doesn't exist,
 the figure will be saved in the current directory (from which this method is called).</p></td>
           <td>
@@ -2620,8 +2625,8 @@ the figure will be saved in the current directory (from which this method is cal
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>string, optional
-Name of the image file</p></td>
+          <td><p>string, optional.
+Name of the image file.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2682,7 +2687,7 @@ Name of the image file</p></td>
           <td><code>X</code></td>
           <td>
           </td>
-          <td><p>an array of features.</p></td>
+          <td><p>An array of features.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2742,7 +2747,7 @@ Name of the image file</p></td>
           <td><code>X</code></td>
           <td>
           </td>
-          <td><p>an array of features</p></td>
+          <td><p>An array of features.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -2805,7 +2810,8 @@ Name of the image file</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Remove samples from the coreset tree.</p>
+      <p>Remove samples from the coreset tree.
+The coreset tree is automatically updated to accommodate to the changes.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2823,7 +2829,7 @@ Name of the image file</p></td>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>array-like
+          <td><p>array-like.
 An array of indices to be removed from the coreset tree.</p></td>
           <td>
               <em>required</em>
@@ -2834,7 +2840,8 @@ An array of indices to be removed from the coreset tree.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
+          <td><p>int, optional.
+Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
@@ -2846,7 +2853,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force the recalculation of the sensitivity and partial resampling of the affected nodes,
+          <td><p>int, optional.
+Force the recalculation of the sensitivity and partial resampling of the affected nodes,
 based on the coreset's quality, starting from level=force_sensitivity_recalc.
 None - If self.save_all=False - one level above leaf node level. If self.save_all=True - leaf level
 0 - The head of the tree, 1 - The level below the head of the tree,
@@ -2860,7 +2868,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
+          <td><p>bool, optional, default False.
+When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -2905,7 +2914,7 @@ Use this method when the service needs to be restored.</p>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
-          <td><p>string or PathLike, optional, default self.working_directory
+          <td><p>string or PathLike, optional, default self.working_directory.
 A local directory for saving service's files.</p></td>
           <td>
                 <code>None</code>
@@ -2916,7 +2925,7 @@ A local directory for saving service's files.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
-          <td><p>string, optional, default service class name (lower case)
+          <td><p>string, optional, default service class name (lower case).
 Name of the subdirectory where the data will be stored.</p></td>
           <td>
                 <code>None</code>
@@ -2927,7 +2936,7 @@ Name of the subdirectory where the data will be stored.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>boolean, default True
+          <td><p>boolean, default True.
 Save also the data in the buffer (a partial node of the tree)
 along with the rest of the saved data.</p></td>
           <td>
@@ -2939,7 +2948,7 @@ along with the rest of the saved data.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>bool, optional, default False
+          <td><p>bool, optional, default False.
 False: add a timestamp suffix so each save won’t override the previous ones.
 True: The existing subdirectory with the provided name is overridden.</p></td>
           <td>
@@ -3003,7 +3012,7 @@ Use the level parameter to control the level of the tree from which samples will
           <td><code>file_path</code></td>
           <td>
           </td>
-          <td><p>string or PathLike
+          <td><p>string or PathLike.
 Local file path to store the coreset.</p></td>
           <td>
               <em>required</em>
@@ -3013,7 +3022,7 @@ Local file path to store the coreset.</p></td>
           <td><code>level</code></td>
           <td>
           </td>
-          <td><p>int, optional, default 0
+          <td><p>int, optional, default 0.
 Defines the depth level of the tree from which the coreset is extracted.
 Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
 Level 1 returns the coreset from the level below the head of the tree with up to 2*coreset_size samples, etc.</p></td>
@@ -3025,7 +3034,7 @@ Level 1 returns the coreset from the level below the head of the tree with up to
           <td><code>as_orig</code></td>
           <td>
           </td>
-          <td><p>boolean, optional, default False
+          <td><p>boolean, optional, default False.
 True: save in the original format.
 False: save in a processed format (indices, X, y, weight).</p></td>
           <td>
@@ -3036,7 +3045,7 @@ False: save in a processed format (indices, X, y, weight).</p></td>
           <td><code>with_index</code></td>
           <td>
           </td>
-          <td><p>boolean, optional, default False
+          <td><p>boolean, optional, default False.
 Relevant only when as_orig=True. Save also index column.</p></td>
           <td>
                 <code>False</code>
@@ -3063,8 +3072,7 @@ Relevant only when as_orig=True. Save also index column.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Set samples as 'seen' or 'unseen'. Not providing an indices list defaults to setting the flag on all
-samples.</p>
+      <p>Set samples as 'seen' or 'unseen'. Not providing an indices list defaults to setting the flag on all samples.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3082,7 +3090,7 @@ samples.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>bool
+          <td><p>bool, optional, default True.
 Set 'seen' or 'unseen' flag</p></td>
           <td>
                 <code>True</code>
@@ -3093,8 +3101,8 @@ Set 'seen' or 'unseen' flag</p></td>
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>array like
-Set flag only to the provided list of indices. Defaults to all indices.</p></td>
+          <td><p>array like, optional.
+Set flag only for the provided list of indices. Defaults to all indices.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3141,7 +3149,7 @@ when they were called with force_do_nothing.</p>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
@@ -3154,7 +3162,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force the recalculation of the sensitivity and partial resampling of the affected nodes,
+          <td><p>int, optional.
+Force the recalculation of the sensitivity and partial resampling of the affected nodes,
 based on the coreset's quality, starting from level=force_sensitivity_recalc.
 None - If self.save_all=False - one level above leaf node level. If self.save_all=True - leaf level
 0 - The head of the tree, 1 - The level below the head of the tree,
@@ -3184,7 +3193,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
 
   <div class="doc doc-contents ">
   
-      <p>Update the features for selected samples on the coreset tree.</p>
+      <p>Update the features for selected samples on the coreset tree.
+The coreset tree is automatically updated to accommodate to the changes.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3235,7 +3245,7 @@ this param should contain list of names of passed features.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>int, optional
+          <td><p>int, optional.
 Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
@@ -3248,7 +3258,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force the recalculation of the sensitivity and partial resampling of the affected nodes,
+          <td><p>int, optional.
+Force the recalculation of the sensitivity and partial resampling of the affected nodes,
 based on the coreset's quality, starting from level=force_sensitivity_recalc.
 None - If self.save_all=False - one level above leaf node level. If self.save_all=True - leaf level
 0 - The head of the tree, 1 - The level below the head of the tree,
@@ -3262,7 +3273,7 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>bool, optional, default False
+          <td><p>bool, optional, default False.
 When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
           <td>
                 <code>False</code>
@@ -3289,7 +3300,8 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
   <div class="doc doc-contents ">
   
-      <p>Update the targets for selected samples on the coreset tree.</p>
+      <p>Update the targets for selected samples on the coreset tree.
+The coreset tree is automatically updated to accommodate to the changes.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3307,7 +3319,8 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>An array of indices to be updated.</p></td>
+          <td><p>array-like.
+An array of indices to be updated.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -3317,7 +3330,8 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
           <td>
                 <code>Iterable</code>
           </td>
-          <td><p>An array of classes/labels. Should have the same length as indices.</p></td>
+          <td><p>array-like.
+An array of classes/labels. Should have the same length as indices.</p></td>
           <td>
               <em>required</em>
           </td>
@@ -3327,7 +3341,8 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
+          <td><p>int, optional.
+Force full resampling of the affected nodes in the coreset tree, starting from level=force_resample_all.
 None - Do not force_resample_all (default), 0 - The head of the tree, 1 - The level below the head of the tree,
 len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
@@ -3339,7 +3354,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
-          <td><p>Force the recalculation of the sensitivity and partial resampling of the affected nodes,
+          <td><p>int, optional.
+Force the recalculation of the sensitivity and partial resampling of the affected nodes,
 based on the coreset's quality, starting from level=force_sensitivity_recalc.
 None - If self.save_all=False - one level above leaf node level. If self.save_all=True - leaf level
 0 - The head of the tree, 1 - The level below the head of the tree,
@@ -3353,7 +3369,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
-          <td><p>When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
+          <td><p>bool, optional, default False.
+When set to True, suppresses any update to the coreset tree until update_dirty is called.</p></td>
           <td>
                 <code>False</code>
           </td>

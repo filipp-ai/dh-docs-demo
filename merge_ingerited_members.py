@@ -20,7 +20,7 @@ class MemberInjector(ast.NodeVisitor):
         for base_class_name in [b.id for b in node.bases]:
             node.body += [m['member'] for m in members_list
                           if m['class_name'] == base_class_name
-                          and m['member'].name not in [b.name for b in  node.body if isinstance(b, ast.FunctionDef)]
+                          and m['member'].name not in [b.name for b in node.body if isinstance(b, ast.FunctionDef)]
                           ]
 
 
@@ -29,6 +29,7 @@ def collect_members(module_path):
         source = f.read()
     tree = ast.parse(source)
     MemberCollector().visit(tree)
+
 
 def inject_members(module_path):
     with open(module_path) as f:
