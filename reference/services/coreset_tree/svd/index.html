@@ -1583,6 +1583,7 @@ Each file should include only one column.</p></td>
         <tr>
           <td><code>reader_f</code></td>
           <td>
+                <code>Callable</code>
           </td>
           <td><p>pandas like read method, optional, default pandas read_csv.
 For example, to read excel files use pandas read_excel.</p></td>
@@ -1784,6 +1785,7 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
         <tr>
           <td><code>level</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td><p>Defines the depth level of the tree from which the coreset is extracted.
 Level 0 returns the coreset from the head of the tree with up to coreset_size samples.
@@ -1795,6 +1797,7 @@ Level 1 returns the coreset from the level below the head of the tree with up to
         <tr>
           <td><code>model</code></td>
           <td>
+                <code>Any</code>
           </td>
           <td><p>An ML model instance, optional.
 When provided, model_params are not relevant.
@@ -1868,6 +1871,7 @@ Use the level parameter to control the level of the tree from which samples will
         <tr>
           <td><code>level</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td><p>int, optional, default 0.
 Defines the depth level of the tree from which the coreset is extracted.
@@ -1880,6 +1884,7 @@ Level 1 returns the coreset from the level below the head of the tree with up to
         <tr>
           <td><code>as_orig</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>boolean, optional, default False.
 Should the data be returned in its original format or as a tuple of indices, X, and optionally y.
@@ -1892,6 +1897,7 @@ False: return a tuple of (indices, X, y) if target was used and (indices, X) whe
         <tr>
           <td><code>with_index</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>boolean, optional, default False.
 Relevant only when as_orig=True. Should the returned data include the index column.</p></td>
@@ -2512,6 +2518,7 @@ Each file should include only one column.</p></td>
         <tr>
           <td><code>reader_f</code></td>
           <td>
+                <code>Callable</code>
           </td>
           <td><p>pandas like read method, optional, default pandas read_csv.
 For example, to read excel files use pandas read_excel.</p></td>
@@ -2699,6 +2706,7 @@ Name of the image file.</p></td>
         <tr>
           <td><code>X</code></td>
           <td>
+                <code>Union[Iterable, Iterable[Iterable]]</code>
           </td>
           <td><p>An array of features.</p></td>
           <td>
@@ -2759,6 +2767,7 @@ Name of the image file.</p></td>
         <tr>
           <td><code>X</code></td>
           <td>
+                <code>Union[Iterable, Iterable[Iterable]]</code>
           </td>
           <td><p>An array of features.</p></td>
           <td>
@@ -3024,6 +3033,7 @@ Use the level parameter to control the level of the tree from which samples will
         <tr>
           <td><code>file_path</code></td>
           <td>
+                <code>Union[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
           </td>
           <td><p>string or PathLike.
 Local file path to store the coreset.</p></td>
@@ -3034,6 +3044,7 @@ Local file path to store the coreset.</p></td>
         <tr>
           <td><code>level</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td><p>int, optional, default 0.
 Defines the depth level of the tree from which the coreset is extracted.
@@ -3046,6 +3057,7 @@ Level 1 returns the coreset from the level below the head of the tree with up to
         <tr>
           <td><code>as_orig</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>boolean, optional, default False.
 True: save in the original format.
@@ -3057,6 +3069,7 @@ False: save in a processed format (indices, X, y, weight).</p></td>
         <tr>
           <td><code>with_index</code></td>
           <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>boolean, optional, default False.
 Relevant only when as_orig=True. Save also index column.</p></td>
