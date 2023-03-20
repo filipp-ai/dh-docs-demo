@@ -1073,6 +1073,189 @@ n_instances, n_classes, max_memory_gb and the 'number of features' (deduced from
 The chunk_size and coreset_size will be deduced based on the above triplet too.
 In case chunk_size and coreset_size are provided, they will override all above mentioned parameters (less recommended).</p>
 
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>data_manager</code></td>
+          <td>
+                <code>DataManagerT</code>
+          </td>
+          <td><p>DataManagerBase subclass, optional.
+The class used to interact with the provided data and store it locally.
+By default, only the sampled data is stored in HDF5 files format.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>data_params</code></td>
+          <td>
+                <code>Union[DataParams, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
+          </td>
+          <td><p>DataParams, optional.
+Preprocessing information.</p>
+<p>For Example:
+data_params = {
+    'index': {'name': 'index_column'}
+}</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>n_instances</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int.
+The total number of instances that are going to be processed (can be an estimation).
+This parameter is required and the only one from the above mentioned quadruplet,
+which isn't deduced from the data.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>max_memory_gb</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+The maximum memory in GB that should be used.
+When not provided, the server's total memory is used.
+In any case only 80% of the provided memory or the server's total memory is considered.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>optimized_for</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>str, either 'training' or 'cleaning'.
+The main usage of the service.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>chunk_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+The number of instances to be used when creating a coreset node in the tree.
+When defined, it will override the parameters of optimized_for, n_instances, n_classes and max_memory_gb.
+chunk_size=0: nodes are created based on input chunks</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_size</code></td>
+          <td>
+                <code>Union[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
+          </td>
+          <td><p>int, optional.
+Represents the coreset size of each node in the coreset tree.
+The coreset is constructed by sampling data instances from the dataset based on their calculated importance.
+Since each instance may be sampled more than once, in practice, the actual size of the coreset is mostly
+smaller than coreset_size.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>coreset_params</code></td>
+          <td>
+                <code>Union[<span title="services.common.CoresetParams">CoresetParams</span>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>]</code>
+          </td>
+          <td><p>CoresetParams or dict, optional.
+Coreset algorithm specific parameters.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>node_train_function</code></td>
+          <td>
+                <code>Callable[[np.<span title="np.ndarray">ndarray</span>, np.<span title="np.ndarray">ndarray</span>, np.<span title="np.ndarray">ndarray</span>], Any]</code>
+          </td>
+          <td><p>Callable, optional.
+method for training model at tree node level.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>node_train_function_params</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td><p>dict, optional.
+kwargs to be used when calling node_train_function.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>node_metadata_func</code></td>
+          <td>
+                <code>Callable[[Tuple[np.<span title="np.ndarray">ndarray</span>], np.<span title="np.ndarray">ndarray</span>, Union[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>, None]], Union[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>, None]]</code>
+          </td>
+          <td><p>callable, optional.
+A method for storing user meta data on each node.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>working_directory</code></td>
+          <td>
+                <code>Union[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
+          </td>
+          <td><p>str, path, optional.
+Local directory where intermediate data is stored.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>cache_dir</code></td>
+          <td>
+                <code>Union[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/os.html#module-os">os</a>.<a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
+          </td>
+          <td><p>str, path, optional.
+For internal use when loading a saved service.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>save_all</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>bool, optional.
+When set to True, the entire dataset would be saved and not only the selected samples.
+When optimized_for='cleaning' the default is True. When optimized_for='training' the default is False.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
 
 
   
