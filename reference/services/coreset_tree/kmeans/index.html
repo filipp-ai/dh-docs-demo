@@ -1055,7 +1055,7 @@
 
 
 <a href="#services.coreset_tree.kmeans.CoresetTreeServiceKMeans" class="headerlink" title="Permanent link">¤</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">CoresetTreeServiceKMeans</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory_gb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimized_for</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_all</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">CoresetTreeServiceKMeans</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory_gb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimized_for</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_all</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
   <div class="doc doc-contents ">
@@ -1152,11 +1152,11 @@ The main usage of the service.</p></td>
           <td><code>k</code></td>
           <td>
           </td>
-          <td><p>int, optional.
+          <td><p>int, default=8
 Only relevant when tree is optimized_for cleaning. The number of clusters to form as well
 as the number of centroids to generate.</p></td>
           <td>
-                <code>None</code>
+                <code>8</code>
           </td>
         </tr>
         <tr>
