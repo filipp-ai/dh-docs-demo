@@ -1,5 +1,4 @@
 """Generate the code reference pages and navigation."""
-import os
 import glob
 from pathlib import Path
 
@@ -10,6 +9,7 @@ nav = mkdocs_gen_files.Nav()
 for file_pattern in [
                     "dataheroes/services/coreset_tree/kmeans.py",
                     "dataheroes/services/coreset_tree/lg.py",
+                    "dataheroes/services/coreset_tree/dtc.py",
                     "dataheroes/services/coreset_tree/lr.py",
                     "dataheroes/services/coreset_tree/pca.py",
                     "dataheroes/services/coreset_tree/svd.py",
@@ -40,6 +40,7 @@ for file_pattern in [
 reference_nav_lines = []
 for line in nav.build_literate_nav():
     line = line.replace('[lg]', '[CoresetTreeServiceLG]')
+    line = line.replace('[dtc]', '[CoresetTreeServiceDTC]')
     line = line.replace('[svd]', '[CoresetTreeServiceSVD]')
     line = line.replace('[pca]', '[CoresetTreeServicePCA]')
     line = line.replace('[kmeans]', '[CoresetTreeServiceKMeans]')
