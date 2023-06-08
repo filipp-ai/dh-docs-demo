@@ -6,14 +6,14 @@ import mkdocs_gen_files
 
 nav = mkdocs_gen_files.Nav()
 
-for file_pattern in [
+for file_pattern in sorted([
                     "dataheroes/services/coreset_tree/kmeans.py",
                     "dataheroes/services/coreset_tree/lg.py",
                     "dataheroes/services/coreset_tree/dtc.py",
                     "dataheroes/services/coreset_tree/lr.py",
                     "dataheroes/services/coreset_tree/pca.py",
                     "dataheroes/services/coreset_tree/svd.py",
-                     ]:
+                     ]):
     for path_str in glob.glob(file_pattern, recursive=True):
         path = Path(path_str)
         module_path = path.relative_to("dataheroes").with_suffix("")
