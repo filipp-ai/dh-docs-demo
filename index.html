@@ -394,6 +394,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bug-fixes-in-version-031" class="md-nav__link">
+    Bug Fixes in version 0.3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-features-and-improvements-in-version-030" class="md-nav__link">
     New Features and Improvements in version 0.3.0
   </a>
@@ -721,6 +728,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bug-fixes-in-version-031" class="md-nav__link">
+    Bug Fixes in version 0.3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-features-and-improvements-in-version-030" class="md-nav__link">
     New Features and Improvements in version 0.3.0
   </a>
@@ -804,15 +818,19 @@
    list-style-type: lower-alpha;
    }
 </style>
-<p>Last updated on June 08, 2023</p>
+<p>Last updated on June ??, 2023</p>
 <h3 id="new-features-and-improvements-in-version-040">New Features and Improvements in version 0.4.0<a class="headerlink" href="#new-features-and-improvements-in-version-040" title="Permanent link">¤</a></h3>
 <ul>
 <li>Adding support for Python 3.11.</li>
-<li>Allowing to create a CoresetTreeService, which can be used for both training and cleaning (optimized_for=['cleaning', 'training']).</li>
+<li>Allowing to create a CoresetTreeService, which can be used for both training and cleaning (<code>optimized_for=['cleaning', 'training']</code>).</li>
 <li>The CoresetTreeService can now handle datasets that do not fit into the device’s memory also for cleaning purposes (for training purposes this was supported from the initial release).</li>
-<li>The get_important_samples function was renamed to get_cleaning_samples to improve the clarity of its purpose.</li>
-<li>Adding hyperparameter tuning capabilities to the library with the introduction of the grid_search() function, which works in a similar manner to Scikit-learn’s GridSearchCV class, only dramatically faster, as it utilizes the Coreset tree. Introducing also the cross_validate() and holdout_validate() functions, which can be used directly or as the validation method as part of the grid_search() function.</li>
+<li>The <code>get_important_samples</code> function was renamed to <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_cleaning_samples"><code>get_cleaning_samples</code></a> to improve the clarity of its purpose.</li>
+<li>Adding hyperparameter tuning capabilities to the library with the introduction of the <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search()</code></a> function, which works in a similar manner to Scikit-learn’s GridSearchCV class, only dramatically faster, as it utilizes the Coreset tree. Introducing also the <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.cross_validate"><code>cross_validate()</code></a> and <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.holdout_validate"><code>holdout_validate()</code></a> functions, which can be used directly or as the validation method as part of the <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search()</code></a> function.</li>
 <li>Further improving the error messages for some of the data processing problems users encountered.</li>
+</ul>
+<h3 id="bug-fixes-in-version-031">Bug Fixes in version 0.3.1<a class="headerlink" href="#bug-fixes-in-version-031" title="Permanent link">¤</a></h3>
+<ul>
+<li>build and build_partial now read the data in chunks in the size of chunk_size when the file format allows it (CSV, TSV), to reduce the memory footprint when building the Coreset tree.</li>
 </ul>
 <h3 id="new-features-and-improvements-in-version-030">New Features and Improvements in version 0.3.0<a class="headerlink" href="#new-features-and-improvements-in-version-030" title="Permanent link">¤</a></h3>
 <ul>
@@ -850,7 +868,7 @@ The Coreset Tree data structure has several advantages over a single Coreset com
 <p>Use the DataHeroes’ library <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit()</code></a> function to fit a model on the Coreset and the <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.predict"><code>predict()</code></a> function to run predictions on the model. Alternatively, if you prefer to use other libraries for training, use the <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset"><code>get_coreset()</code></a> function to retrieve a numpy array or pandas dataframe version of the Coreset which can be used with other libraries. </p>
 <p>To check the quality of your Coreset, you can fit a model and compare its predictions to predictions from a model built using your full dataset. To decrease the approximation error in the case of a Coreset Tree, requesting level 1 or 2 instead of the default level 0 when calling <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset"><code>get_coreset()</code></a> will return the requested level from the Coreset Tree.</p>
 <p>To hyperparameter tune your model, use the library’s <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search()</code></a> function, which works in a similar manner to Scikit-learn’s GridSearchCV class, only dramatically faster. Note that calling <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset"><code>get_coreset()</code></a> and passing its output to GridSearchCV would yield sub-optimal results, as GridSearchCV would split the returned Coreset into folds. When a Coreset is split, it is no longer a Coreset and won’t maintain the statistical properties of your dataset. The library’s <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search()</code></a> function overcomes this obstacle by obtaining the individual nodes of a certain level of the Coreset tree and using them as folds. By default, <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search()</code></a> uses cross validation as it’s validation method, but one can select hold-out as an alternative validation method. It is also possible to use the <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.cross_validate"><code>cross_validate()</code></a> or <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.holdout_validate"><code>holdout_validate()</code></a> functions directly.</p>
-<p>The current version provides Coresets optimized for training with the following algorithms: all decision tree classification-based problems (including <a href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a>, <a href="https://lightgbm.readthedocs.io/en/v3.3.2/">LightGBM</a>, <a href="https://catboost.ai/en/docs/">CatBoost</a>, <a href="https://scikit-learn.org/stable/">Scikit-learn</a> and others), <a href="reference/services/coreset_tree/lg/">logistic regression</a>, <a href="reference/services/coreset_tree/lr/">linear regression</a>, <a href="reference/services/coreset_tree/kmeans/">K-Means</a>, <a href="reference/services/coreset_tree/pca/">PCA</a> and <a href="reference/services/coreset_tree/svd/">SVD</a>. To build the Coreset or Coreset Tree use any <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.build">build()</a> function, while setting the parameter <code>optimized_for</code> to <code>training</code>.   </p>
+<p>The current version provides Coresets optimized for training with the following algorithms: all <a href="reference/services/coreset_tree/dtc/">decision tree classification-based problems</a> (including <a href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a>, <a href="https://lightgbm.readthedocs.io/en/v3.3.2/">LightGBM</a>, <a href="https://catboost.ai/en/docs/">CatBoost</a>, <a href="https://scikit-learn.org/stable/">Scikit-learn</a> and others), <a href="reference/services/coreset_tree/lg/">logistic regression</a>, <a href="reference/services/coreset_tree/lr/">linear regression</a>, <a href="reference/services/coreset_tree/kmeans/">K-Means</a>, <a href="reference/services/coreset_tree/pca/">PCA</a> and <a href="reference/services/coreset_tree/svd/">SVD</a>. To build the Coreset or Coreset Tree use any <a href="reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.build">build()</a> function, while setting the parameter <code>optimized_for</code> to <code>training</code>.   </p>
 <p><a target="_blank" href="https://github.com/Data-Heroes/dataheroes/tree/master/examples/build_and_train">See building and training tutorials here.</a></p>
 <h3 id="model-maintenance-use-case">Model Maintenance Use Case<a class="headerlink" href="#model-maintenance-use-case" title="Permanent link">¤</a></h3>
 <p>You can use the Coreset Tree structure to update models in production when new data comes in, by updating the Coreset Tree with the new data and training the model on the Coreset, without having to re-train the model on the full dataset.</p>

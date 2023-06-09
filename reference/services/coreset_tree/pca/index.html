@@ -597,6 +597,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.cross_validate" class="md-nav__link">
+    cross_validate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.filter_out_samples" class="md-nav__link">
     filter_out_samples()
   </a>
@@ -632,29 +639,16 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.grid_search" class="md-nav__link">
+    grid_search()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate" class="md-nav__link">
     holdout_validate()
   </a>
-  
-    <nav class="md-nav" aria-label="holdout_validate()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -938,6 +932,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.cross_validate" class="md-nav__link">
+    cross_validate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.filter_out_samples" class="md-nav__link">
     filter_out_samples()
   </a>
@@ -973,29 +974,16 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.grid_search" class="md-nav__link">
+    grid_search()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate" class="md-nav__link">
     holdout_validate()
   </a>
-  
-    <nav class="md-nav" aria-label="holdout_validate()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1833,6 +1821,146 @@ When provided, chunk_size input is ignored.</p></td>
 
 
 
+<h3 id="services.coreset_tree.pca.CoresetTreeServicePCA.cross_validate" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">cross_validate</span>
+
+
+<a href="#services.coreset_tree.pca.CoresetTreeServicePCA.cross_validate" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">cross_validate</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Method for cross-validation on the coreset tree.
+This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>level</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+The level of the tree on which the training and validation will be performed.
+If None, the best level will be selected.
+Default: None</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>A Scikit-learn compatible model instance, optional.
+When provided, model_params are not relevant.
+The model class needs to implement the usual scikit-learn interface.
+Default: instantiate the service model class using input model_params.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>scoring</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[BaseEstimator, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
+          </td>
+          <td><p>callable or string, optional.
+If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
+where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
+For example, it can be produced using sklearn.metrics.make_scorer
+(<a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html</a>).
+If it is a string, it must be a valid name of a Scikit-learn scoring method
+(see <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a>)
+If None, the default scorer of the current model is used.
+Default: None</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>return_model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>bool, optional.
+If True, the trained model is also returned.
+Default: False</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+Controls the verbosity: the higher, the more messages.
+    &gt;=1 : the computation time for each fold is displayed;
+    &gt;=2 : the score is also displayed;
+    &gt;=3 : starting time of the computation is also displayed.
+Default: 0</p></td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model_params</code></td>
+          <td>
+          </td>
+          <td><p>kwargs, optional.
+The hyper-parameters of the model. If not provided, the default values are used.</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+          </td>
+          <td><p>A list of scores, one for each fold.</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+          </td>
+          <td><p>If return_model=True, a list of trained models is also returned (one model for each fold).</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="services.coreset_tree.pca.CoresetTreeServicePCA.filter_out_samples" class="doc doc-heading">
         <span class="doc doc-object-name doc-function-name">filter_out_samples</span>
 
@@ -2210,7 +2338,7 @@ Relevant only when as_orig=True. Should the returned data include the index colu
 <td><code>Dict</code></td>          <td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
           </td>
-          <td><p>data: numpy arrays tuple (indices, X, optional y) as_orig=False or
+          <td><p>data: A numpy arrays tuple (indices, X, optional y) when as_orig=False or
 as a pandas DataFrame when as_orig=True.
 w: A numpy array of sample weights.
 n_represents: number of instances represented by the coreset.</p></td>
@@ -2247,6 +2375,177 @@ Level 1 is the level below the head of the tree, etc.</p>
 
 
 
+<h3 id="services.coreset_tree.pca.CoresetTreeServicePCA.grid_search" class="doc doc-heading">
+        <span class="doc doc-object-name doc-function-name">grid_search</span>
+
+
+<a href="#services.coreset_tree.pca.CoresetTreeServicePCA.grid_search" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">grid_search</span><span class="p">(</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_method</span><span class="o">=</span><span class="s1">&#39;cross validation&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>A method for performing hyperparameter selection by grid search, using the coreset tree.
+This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>param_grid</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, List], List[Dict[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, List]]]</code>
+          </td>
+          <td><p>dict or list of dicts.
+Dictionary with parameters names (str) as keys and lists of parameter settings to try as values, or a list of such dictionaries, in which case the grids
+spanned by each dictionary in the list are explored. This enables searching over any sequence of parameter settings.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>level</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+The level of the tree on which the training and validation will be performed.
+If None, the best level will be selected.
+Default: None</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>validation_method</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td><p>str, optional.
+Indicates which validation method will be used. The possible values are 'cross validation' and 'hold-out validation'.
+Default: 'cross validation'</p></td>
+          <td>
+                <code>&#39;cross validation&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>A Scikit-learn compatible model instance, optional.
+The model class needs to implement the usual scikit-learn interface.
+Default: instantiate the service model class.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>scoring</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[BaseEstimator, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
+          </td>
+          <td><p>callable or string, optional.
+If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
+where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
+For example, it can be produced using sklearn.metrics.make_scorer
+(<a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html</a>).
+If it is a string, it must be a valid name of a Scikit-learn scoring method
+(see <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a>)
+If None, the default scorer of the current model is used.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>refit</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>bool, optional.
+If True, retrain the model on the whole coreset using the best found hyperparameters, and return the model.
+Default: True</p></td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+Controls the verbosity: the higher, the more messages.
+    &gt;=1 : the computation time for each fold and parameter candidate is displayed;
+    &gt;=2 : the score is also displayed;
+    &gt;=3 : starting time of the computation is also displayed.
+Default: 0</p></td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>error_score</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a>]</code>
+          </td>
+          <td><p>"raise" or numeric, optional.
+Value to assign to the score if an error occurs in model training. If set to "raise", the error is raised. If a numeric value is given,
+FitFailedWarning is raised. This parameter does not affect the refit step, which will always raise the error.
+Default: "raise"</p></td>
+          <td>
+                <code>np.nan</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, BaseEstimator]]</code>
+          </td>
+          <td><p>A dict with the best hyperparameters setting, among those provided by the user. The keys are the hyperparameters names,</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, BaseEstimator]]</code>
+          </td>
+          <td><p>while the dicts' values are the hyperparameters values.</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, BaseEstimator]]</code>
+          </td>
+          <td><p>If refit=True, the retrained model is also returned.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate" class="doc doc-heading">
         <span class="doc doc-object-name doc-function-name">holdout_validate</span>
 
@@ -2257,58 +2556,140 @@ Level 1 is the level below the head of the tree, etc.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Method for hold-out validation on the coreset tree.
-The test set is always the last part of the dataset.</p>
-<h5 id="services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--parameters">Parameters<a class="headerlink" href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--parameters" title="Permanent link">¤</a></h5>
+      <p>A method for hold-out validation on the coreset tree.
+The test set is always the last part of the dataset.
+This function is only applicable in case the coreset tree was optimized_for <code>training</code>.</p>
 
-<details class="level">
-  <summary>int, optional.</summary>
-  <p>The level of the tree on which the training and validation will be performed.
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>level</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+The level of the tree on which the training and validation will be performed.
 If None, the best level will be selected.
-Default: None</p>
-</details>
-<details class="validation_size">
-  <summary>float, optional.</summary>
-  <p>The percentage of the dataset that will be used for testing the model.
-Default: 0.2</p>
-</details>
-<details class="model">
-  <summary>A Scikit-learn compatible model instance, optional.</summary>
-  <p>When provided, model_params are not relevant.
+Default: None</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>validation_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>
+          </td>
+          <td><p>float, optional.
+The percentage of the dataset that will be used for testing the model.
+Default: 0.2</p></td>
+          <td>
+                <code>0.2</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td><p>A Scikit-learn compatible model instance, optional.
+When provided, model_params are not relevant.
 The model class needs to implement the usual scikit-learn interface.
-Default: instantiate the service model class using input model_params.</p>
-</details>
-<details class="scoring">
-  <summary>callable or string, optional.</summary>
-  <p>If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
+Default: instantiate the service model class using input model_params.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>scoring</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[BaseEstimator, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
+          </td>
+          <td><p>callable or string, optional.
+If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
 where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
 For example, it can be produced using sklearn.metrics.make_scorer
 (<a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html</a>).
 If it is a string, it must be a valid name of a Scikit-learn scoring method
 (see <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a>)
 If None, the default scorer of the current model is used.
-Default: None</p>
-</details>
-<details class="return_model">
-  <summary>bool, optional.</summary>
-  <p>If True, the trained model is also returned.
-Default: False</p>
-</details>
-<details class="verbose">
-  <summary>int, optional.</summary>
-  <p>Controls the verbosity: the higher, the more messages.
+Default: None</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>return_model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td><p>bool, optional.
+If True, the trained model is also returned.
+Default: False</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td><p>int, optional.
+Controls the verbosity: the higher, the more messages.
     &gt;=1 : the training and validation time is displayed;
     &gt;=2 : the validation score is also displayed;
     &gt;=3 : starting time of the computation is also displayed.
-Default: 0</p>
-</details>
-<details class="model_params">
-  <summary>kwargs, optional.</summary>
-  <p>The hyper-parameters of the model. If not provided, the default values are used.</p>
-</details>      <h5 id="services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--returns">Returns<a class="headerlink" href="#services.coreset_tree.pca.CoresetTreeServicePCA.holdout_validate--returns" title="Permanent link">¤</a></h5>
-<pre><code>The validation score.
-If return_model=True, the trained model is also returned.
-</code></pre>
+Default: 0</p></td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model_params</code></td>
+          <td>
+          </td>
+          <td><p>kwargs, optional.
+The hyper-parameters of the model. If not provided, the default values are used.</p></td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+          </td>
+          <td><p>The validation score.</p></td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+          </td>
+          <td><p>If return_model=True, the trained model is also returned.</p></td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
