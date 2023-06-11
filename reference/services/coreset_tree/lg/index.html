@@ -1859,10 +1859,8 @@ Default: instantiate the service model class using input model_params.</p></td>
           <td><p>callable or string, optional.
 If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
 where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
-For example, it can be produced using sklearn.metrics.make_scorer
-(<a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html</a>).
-If it is a string, it must be a valid name of a Scikit-learn scoring method
-(see <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a>)
+For example, it can be produced using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">sklearn.metrics.make_scorer</a>.
+If it is a string, it must be a valid name of a Scikit-learn <a href="see https://scikit-learn.org/stable/modules/model_evaluation.html">scoring method</a>
 If None, the default scorer of the current model is used.
 Default: None</p></td>
           <td>
@@ -1922,13 +1920,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
           </td>
-          <td><p>A list of scores, one for each fold.</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
-          </td>
-          <td><p>If return_model=True, a list of trained models is also returned (one model for each fold).</p></td>
+          <td><p>A list of scores, one for each fold. If return_model=True, a list of trained models             is also returned (one model for each fold).</p></td>
         </tr>
     </tbody>
   </table>
@@ -2478,10 +2470,8 @@ Default: instantiate the service model class.</p></td>
           <td><p>callable or string, optional.
 If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
 where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
-For example, it can be produced using sklearn.metrics.make_scorer
-(<a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html</a>).
-If it is a string, it must be a valid name of a Scikit-learn scoring method
-(see <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a>)
+For example, it can be produced using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">sklearn.metrics.make_scorer</a>.
+If it is a string, it must be a valid name of a Scikit-learn <a href="see https://scikit-learn.org/stable/modules/model_evaluation.html">scoring method</a>
 If None, the default scorer of the current model is used.</p></td>
           <td>
                 <code>None</code>
@@ -2543,19 +2533,7 @@ Default: "raise"</p></td>
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, BaseEstimator]]</code>
           </td>
-          <td><p>A dict with the best hyperparameters setting, among those provided by the user. The keys are the hyperparameters names,</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, BaseEstimator]]</code>
-          </td>
-          <td><p>while the dicts' values are the hyperparameters values.</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, BaseEstimator]]</code>
-          </td>
-          <td><p>If refit=True, the retrained model is also returned.</p></td>
+          <td><p>A dict with the best hyperparameters setting, among those provided by the user.             The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.             If refit=True, the retrained model is also returned.</p></td>
         </tr>
     </tbody>
   </table>
@@ -2639,10 +2617,8 @@ Default: instantiate the service model class using input model_params.</p></td>
           <td><p>callable or string, optional.
 If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
 where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
-For example, it can be produced using sklearn.metrics.make_scorer
-(<a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html</a>).
-If it is a string, it must be a valid name of a Scikit-learn scoring method
-(see <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">https://scikit-learn.org/stable/modules/model_evaluation.html</a>)
+For example, it can be produced using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">sklearn.metrics.make_scorer</a>.
+If it is a string, it must be a valid name of a Scikit-learn <a href="see https://scikit-learn.org/stable/modules/model_evaluation.html">scoring method</a>
 If None, the default scorer of the current model is used.
 Default: None</p></td>
           <td>
@@ -2702,13 +2678,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
           <td>
                 <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
           </td>
-          <td><p>The validation score.</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
-          </td>
-          <td><p>If return_model=True, the trained model is also returned.</p></td>
+          <td><p>The validation score. If return_model=True, the trained model is also returned.</p></td>
         </tr>
     </tbody>
   </table>
