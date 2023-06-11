@@ -1775,8 +1775,7 @@ This function is only applicable in case the coreset tree was optimized_for 'tra
           </td>
           <td><p>int, optional.
 The level of the tree on which the training and validation will be performed.
-If None, the best level will be selected.
-Default: None</p></td>
+If None, the best level will be selected.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1804,8 +1803,7 @@ If it is a callable object, it must return a scalar score. The signature of the 
 where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
 For example, it can be produced using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">sklearn.metrics.make_scorer</a>.
 If it is a string, it must be a valid name of a Scikit-learn <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">scoring method</a>
-If None, the default scorer of the current model is used.
-Default: None</p></td>
+If None, the default scorer of the current model is used.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -1816,8 +1814,7 @@ Default: None</p></td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>bool, optional.
-If True, the trained model is also returned.
-Default: False</p></td>
+If True, the trained model is also returned.</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -1831,8 +1828,7 @@ Default: False</p></td>
 Controls the verbosity: the higher, the more messages.
     &gt;=1 : the computation time for each fold is displayed;
     &gt;=2 : the score is also displayed;
-    &gt;=3 : starting time of the computation is also displayed.
-Default: 0</p></td>
+    &gt;=3 : starting time of the computation is also displayed.</p></td>
           <td>
                 <code>0</code>
           </td>
@@ -2333,8 +2329,7 @@ spanned by each dictionary in the list are explored. This enables searching over
           </td>
           <td><p>int, optional.
 The level of the tree on which the training and validation will be performed.
-If None, the best level will be selected.
-Default: None</p></td>
+If None, the best level will be selected.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2345,8 +2340,7 @@ Default: None</p></td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
           </td>
           <td><p>str, optional.
-Indicates which validation method will be used. The possible values are 'cross validation' and 'hold-out validation'.
-Default: 'cross validation'</p></td>
+Indicates which validation method will be used. The possible values are 'cross validation' and 'hold-out validation'.</p></td>
           <td>
                 <code>&#39;cross validation&#39;</code>
           </td>
@@ -2357,8 +2351,7 @@ Default: 'cross validation'</p></td>
                 <code>Any</code>
           </td>
           <td><p>A Scikit-learn compatible model instance, optional.
-The model class needs to implement the usual scikit-learn interface.
-Default: instantiate the service model class.</p></td>
+The model class needs to implement the usual scikit-learn interface.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2384,8 +2377,7 @@ If None, the default scorer of the current model is used.</p></td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>bool, optional.
-If True, retrain the model on the whole coreset using the best found hyperparameters, and return the model.
-Default: True</p></td>
+If True, retrain the model on the whole coreset using the best found hyperparameters, and return the model.</p></td>
           <td>
                 <code>True</code>
           </td>
@@ -2399,8 +2391,7 @@ Default: True</p></td>
 Controls the verbosity: the higher, the more messages.
     &gt;=1 : the computation time for each fold and parameter candidate is displayed;
     &gt;=2 : the score is also displayed;
-    &gt;=3 : starting time of the computation is also displayed.
-Default: 0</p></td>
+    &gt;=3 : starting time of the computation is also displayed.</p></td>
           <td>
                 <code>0</code>
           </td>
@@ -2412,8 +2403,7 @@ Default: 0</p></td>
           </td>
           <td><p>"raise" or numeric, optional.
 Value to assign to the score if an error occurs in model training. If set to "raise", the error is raised. If a numeric value is given,
-FitFailedWarning is raised. This parameter does not affect the refit step, which will always raise the error.
-Default: "raise"</p></td>
+FitFailedWarning is raised. This parameter does not affect the refit step, which will always raise the error.</p></td>
           <td>
                 <code>np.nan</code>
           </td>
@@ -2479,8 +2469,7 @@ This function is only applicable in case the coreset tree was optimized_for <cod
           </td>
           <td><p>int, optional.
 The level of the tree on which the training and validation will be performed.
-If None, the best level will be selected.
-Default: None</p></td>
+If None, the best level will be selected.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2491,8 +2480,7 @@ Default: None</p></td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>
           </td>
           <td><p>float, optional.
-The percentage of the dataset that will be used for testing the model.
-Default: 0.2</p></td>
+The percentage of the dataset that will be used for testing the model.</p></td>
           <td>
                 <code>0.2</code>
           </td>
@@ -2520,8 +2508,7 @@ If it is a callable object, it must return a scalar score. The signature of the 
 where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
 For example, it can be produced using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">sklearn.metrics.make_scorer</a>.
 If it is a string, it must be a valid name of a Scikit-learn <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">scoring method</a>
-If None, the default scorer of the current model is used.
-Default: None</p></td>
+If None, the default scorer of the current model is used.</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -2532,8 +2519,7 @@ Default: None</p></td>
                 <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
           </td>
           <td><p>bool, optional.
-If True, the trained model is also returned.
-Default: False</p></td>
+If True, the trained model is also returned.</p></td>
           <td>
                 <code>False</code>
           </td>
@@ -2547,8 +2533,7 @@ Default: False</p></td>
 Controls the verbosity: the higher, the more messages.
     &gt;=1 : the training and validation time is displayed;
     &gt;=2 : the validation score is also displayed;
-    &gt;=3 : starting time of the computation is also displayed.
-Default: 0</p></td>
+    &gt;=3 : starting time of the computation is also displayed.</p></td>
           <td>
                 <code>0</code>
           </td>
