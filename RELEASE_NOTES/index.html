@@ -10,16 +10,20 @@
       
       
       
-        <link rel="canonical" href="https://data-heroes.github.io/dh-library/README-DEPLOY/">
+        <link rel="canonical" href="https://data-heroes.github.io/dh-library/RELEASE_NOTES/">
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../CODE_BUILDER/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>README DEPLOY - DataHeroes</title>
+        <title>Release Notes - DataHeroes</title>
       
     
     
@@ -79,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documentation-deployment" class="md-skip">
+        <a href="#new-features-and-improvements-in-version-050" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              README DEPLOY
+              Release Notes
             
           </span>
         </div>
@@ -233,10 +237,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../RELEASE_NOTES/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       Release Notes
     </a>
   </li>
@@ -390,11 +396,76 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../RELEASE_NOTES/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Release Notes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-improvements-in-version-050" class="md-nav__link">
+    New Features and Improvements in version 0.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-improvements-in-version-040" class="md-nav__link">
+    New Features and Improvements in version 0.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes-in-version-031" class="md-nav__link">
+    Bug Fixes in version 0.3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-improvements-in-version-030" class="md-nav__link">
+    New Features and Improvements in version 0.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-improvements-in-version-020" class="md-nav__link">
+    New Features and Improvements in version 0.2.0
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -671,8 +742,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentation-deployment" class="md-nav__link">
-    Documentation deployment
+  <a href="#new-features-and-improvements-in-version-050" class="md-nav__link">
+    New Features and Improvements in version 0.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-improvements-in-version-040" class="md-nav__link">
+    New Features and Improvements in version 0.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes-in-version-031" class="md-nav__link">
+    Bug Fixes in version 0.3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-improvements-in-version-030" class="md-nav__link">
+    New Features and Improvements in version 0.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-improvements-in-version-020" class="md-nav__link">
+    New Features and Improvements in version 0.2.0
   </a>
   
 </li>
@@ -698,21 +797,53 @@
   
 
 
-  <h1>README DEPLOY</h1>
+  <h1>Release Notes</h1>
 
-<h2 id="documentation-deployment">Documentation deployment<a class="headerlink" href="#documentation-deployment" title="Permanent link">¤</a></h2>
-<p>During execution GitHub credentials will be asked (you need enter token as password).
-We keep documentation in branch docs-versions 
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install -r requirements_mkdocs.txt
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a># from branch with version 0.1.0 (for a moment that is docs_0_1_0_fixed)
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mike deploy -b docs-versions -p 0.1.0
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># from branch with last version 0.4.0 (for a moment that is docs_0_4_0)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># before deploy merge_ingerited_members.py should be executed (merge inherited members)
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>mike deploy -b docs-versions -p -u 0.4.0 latest
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>mike set-default -b docs-versions -p 0.4.0
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>if we need delete certain version
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>mike delete -b docs-versions -p 0.1.0
-</span></code></pre></div></p>
+<style>
+  li ul li{
+   list-style-type: lower-alpha;
+   }
+</style>
+
+<p>Last updated on June 20, 2023</p>
+<h3 id="new-features-and-improvements-in-version-050">New Features and Improvements in version 0.5.0<a class="headerlink" href="#new-features-and-improvements-in-version-050" title="Permanent link">¤</a></h3>
+<ul>
+<li>Coresets can now be built using categorical features. The library will automatically one-hot encode them during the build process (as Coresets can only be built with numeric features).</li>
+<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset"><code>get_coreset</code></a> can now return the data according to three data <code>preprocessing_stage</code>: <code>PreprocessingStage.ORIGINAL</code> – The dataset as it is handed to the Coreset’s build function. <code>PreprocessingStage.USER</code> – The dataset after any user defined data preprocessing (default). <code>PreprocessingStage.AUTO</code> – The dataset after any automatic data preprocessing done by the library, such as one-hot encoding and converting Boolean fields to numeric. The features (X), can also be returned as a sparse matrix or an array, controlled by the <code>sparse_output</code> parameter (applicable only for <code>PreprocessingStage.AUTO</code>).</li>
+<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit</code></a> can now return the data according to two <code>preprocessing_stage</code>. <code>PreprocessingStage.AUTO</code> is the default when <a href="https://scikit-learn.org/stable/">Scikit-learn</a> is used to train the model. <code>PreprocessingStage.USER</code> is the default when <a href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a>, <a href="https://lightgbm.readthedocs.io/en/v3.3.2/">LightGBM</a> or <a href="https://catboost.ai/en/docs/">CatBoost</a> are used to train the model.</li>
+<li>Adding a new <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.auto_preprocessing"><code>auto_preprocessing</code></a> function, allowing the user to preprocess the (test) data, as it was automatically done by the library during the Coreset’s build function.</li>
+<li>Fixing the problem where the library’s Docstrings did not show up in some IDEs.</li>
+</ul>
+<h3 id="new-features-and-improvements-in-version-040">New Features and Improvements in version 0.4.0<a class="headerlink" href="#new-features-and-improvements-in-version-040" title="Permanent link">¤</a></h3>
+<ul>
+<li>Adding support for Python 3.11.</li>
+<li>Allowing to create a CoresetTreeService, which can be used for both training and cleaning (<code>optimized_for=['cleaning', 'training']</code>).</li>
+<li>The CoresetTreeService can now handle datasets that do not fit into the device’s memory also for cleaning purposes (for training purposes this was supported from the initial release).</li>
+<li>The <code>get_important_samples</code> function was renamed to <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_cleaning_samples"><code>get_cleaning_samples</code></a> to improve the clarity of its purpose.</li>
+<li>Adding hyperparameter tuning capabilities to the library with the introduction of the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search()</code></a> function, which works in a similar manner to Scikit-learn’s GridSearchCV class, only dramatically faster, as it utilizes the Coreset tree. Introducing also the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.cross_validate"><code>cross_validate()</code></a> and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.holdout_validate"><code>holdout_validate()</code></a> functions, which can be used directly or as the validation method as part of the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search()</code></a> function.</li>
+<li>Further improving the error messages for some of the data processing problems users encountered.</li>
+</ul>
+<h3 id="bug-fixes-in-version-031">Bug Fixes in version 0.3.1<a class="headerlink" href="#bug-fixes-in-version-031" title="Permanent link">¤</a></h3>
+<ul>
+<li>build and build_partial now read the data in chunks in the size of chunk_size when the file format allows it (CSV, TSV), to reduce the memory footprint when building the Coreset tree.</li>
+</ul>
+<h3 id="new-features-and-improvements-in-version-030">New Features and Improvements in version 0.3.0<a class="headerlink" href="#new-features-and-improvements-in-version-030" title="Permanent link">¤</a></h3>
+<ul>
+<li>An additional CoresetTreeService for all <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/dtc/">decision tree classification-based</a> problems has been added to the library. This service can be used to create classification-based Coresets for all libraries including: XGBoost, LightGBM, CatBoost, Scikit-learn and others.</li>
+<li>Improving the results get_coreset returns in case the Coreset tree is not perfectly balanced.</li>
+<li>Improving the data handling capabilities, when processing the input data provided to the different build functions, such as supporting pandas.BooleanDtype and pandas.Series and returning clearer error messages for some of the data processing problems encountered.</li>
+</ul>
+<h3 id="new-features-and-improvements-in-version-020">New Features and Improvements in version 0.2.0<a class="headerlink" href="#new-features-and-improvements-in-version-020" title="Permanent link">¤</a></h3>
+<ul>
+<li>Additional CoresetTreeServices for <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/lr/">linear regression</a>, <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/">K-Means</a>, <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/pca/">PCA</a> and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/svd/">SVD</a> have been added to the library.</li>
+<li>Significantly reducing the memory footprint by up to 50% especially during the various <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.build">build</a> and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.partial_build">partial_build</a> functions.</li>
+<li>Data is read in chunks in the size of <code>chunk_size</code> when the file format allows it (CSV, TSV), to reduce the memory footprint when building the Coreset tree.</li>
+<li>Significantly improving the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset">get_coreset</a> time on large datasets.</li>
+<li>Significantly improving the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.save">save</a> time and changing the default save format to pickle.</li>
+<li>Significantly improving the importance calculation when the number of data instances per class is lower than the number of features.</li>
+<li>Allowing to save the entire dataset and not just the selected samples, by setting the <code>save_all</code> parameter during the initialization of the class. When <code>optimized_for</code>=<code>'cleaning'</code> <code>save_all</code> is True by default and when <code>optimized_for</code>=<code>'training'</code> it is False by default.</li>
+<li>Allowing to define certain columns in the dataset as properties (<code>props</code>). Properties, won’t be used to compute the Coreset or train the model, but it is possible to <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.filter_out_samples">filter_out_samples</a> on them or to pass them in the <code>select_from_function</code> of <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_important_samples">get_important_samples</a>.</li>
+</ul>
 
 
 

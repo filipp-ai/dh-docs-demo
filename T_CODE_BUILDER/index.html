@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://data-heroes.github.io/dh-library/README-DEPLOY/">
+        <link rel="canonical" href="https://data-heroes.github.io/dh-library/T_CODE_BUILDER/">
       
       
       
@@ -19,7 +19,7 @@
     
     
       
-        <title>README DEPLOY - DataHeroes</title>
+        <title>T CODE BUILDER - DataHeroes</title>
       
     
     
@@ -78,11 +78,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#documentation-deployment" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -129,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              README DEPLOY
+              T CODE BUILDER
             
           </span>
         </div>
@@ -664,21 +659,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-deployment" class="md-nav__link">
-    Documentation deployment
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -698,21 +678,68 @@
   
 
 
-  <h1>README DEPLOY</h1>
+<!DOCTYPE html>
+<p><html>
+<head>
+    <title>Aligned Select Elements</title>
+    <style>
+        .container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 300px;
+            }
+        .label {
+            text-align: right;
+            margin-right: 10px;
+            width: 100px;
+                }
+        .select {
+            width: 200px;
+            }
+    </style>
+</head></p>
+<body>
+    <h1>Aligned Select Elements</h1>
 
-<h2 id="documentation-deployment">Documentation deployment<a class="headerlink" href="#documentation-deployment" title="Permanent link">¤</a></h2>
-<p>During execution GitHub credentials will be asked (you need enter token as password).
-We keep documentation in branch docs-versions 
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install -r requirements_mkdocs.txt
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a># from branch with version 0.1.0 (for a moment that is docs_0_1_0_fixed)
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mike deploy -b docs-versions -p 0.1.0
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># from branch with last version 0.4.0 (for a moment that is docs_0_4_0)
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># before deploy merge_ingerited_members.py should be executed (merge inherited members)
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>mike deploy -b docs-versions -p -u 0.4.0 latest
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>mike set-default -b docs-versions -p 0.4.0
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>if we need delete certain version
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>mike delete -b docs-versions -p 0.1.0
-</span></code></pre></div></p>
+    <div class="container">
+        <div class="row">
+            <label class="label" for="select1">Label 1:</label>
+            <select class="select" id="select1" size=10>
+                <option value="">Select an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label class="label" for="select2" >Label 2:</label>
+            <select class="select" id="select2"  size=5>
+                <option value="">Select an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label class="label" for="select3">Label 3:</label>
+            <select class="select" id="select3"  size=5>
+                <option value="">Select an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+    </div>
+</body>
+<p></html></p>
 
 
 
