@@ -229,11 +229,29 @@ service_obj.remove_samples(important_samples[<span class=\"highlightText\">indic
 # library to random cleaning for the CIFAR10 dataset, visit this <a target=\"_blank\" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb">link</a>.    
 `
 
-training_processing=`
-# Train a logistic regression model using ${lib}.
-from sklearn.linear_model import LogisticRegression
+//const nonTabularTrainLib = ["PyTorch", "TensorFlow (currently used for feature extraction)"];
+let set_model_cls = '';
+if (lib === 'Scikit-learn'){
+set_model_cls = `from sklearn.linear_model import LogisticRegression # <span style="background-color: #ef5552">why we need this import?</span>
+`
+}else if (lib === 'XGBoost'){
+set_model_cls = `from xgboost import XGBClassifier
+service_obj.model_cls = XGBClassifier
+`
+}else if (lib === 'LightGBM'){
+set_model_cls = `from lightgbm import LGBMClassifier
+service_obj.model_cls = LGBMClassifier
+`
+}else if (lib === 'CatBoost'){
+set_model_cls = `from catboost import CatBoostClassifier
+service_obj.model_cls = CatBoostClassifier
+`
+}
 
-# fit a logistic regression model using ${lib} directly on the Coreset tree. 
+training_processing=`
+# Train a ${alg} model using ${lib}.
+${set_model_cls}
+# fit a ${alg} model using ${lib} directly on the Coreset tree. 
 # Provide the same parameters to the fit method as you would provide ${lib} (adjusting max_iter in the example).
 # Select the Coreset tree level you wish to fit on.
 coreset_model = service_obj.fit(level=0, <span class=\"highlightText\">max_iter=200</span>)
