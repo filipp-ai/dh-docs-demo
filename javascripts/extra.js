@@ -86,12 +86,125 @@ service_obj.build_from_file(x_train_file, y_train_file, sep='\\t')
 
 `
 
+let build_from_npy_file_single = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+# and build the Coreset tree using the read_npy reader.
+data_file = <span class=\"highlightText\">data_generated / 'data.npy'</span>
+
+service_obj.build_from_file(data_file, reader_f=read_npy)
+
+`
+
+let build_from_csv_file_single = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+data_file = <span class=\"highlightText\">data_generated / 'data.csv'</span>
+
+service_obj.build_from_file(data_file)
+
+`
+
+let build_from_tsv_file_single = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+data_file = <span class=\"highlightText\">data_generated / 'data.tsv'</span>
+
+service_obj.build_from_file(data_file, sep='\\t')
+
+`
+
+let build_from_npy_file_mult = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+# and build the Coreset tree using the read_npy reader.
+data_file1 = <span class=\"highlightText\">data_generated / 'data1.npy'</span>
+data_file2 = <span class=\"highlightText\">data_generated / 'data2.npy'</span>
+
+service_obj.build_from_file([data_file1, data_file2], reader_f=read_npy)
+
+`
+
+let build_from_csv_file_mult = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+data_file1 = <span class=\"highlightText\">data_generated / 'data1.npy'</span>
+data_file2 = <span class=\"highlightText\">data_generated / 'data2.npy'</span>
+
+service_obj.build_from_file([data_file1, data_file2])
+
+`
+
+let build_from_tsv_file_mult = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+data_file1 = <span class=\"highlightText\">data_generated / 'data1.npy'</span>
+data_file2 = <span class=\"highlightText\">data_generated / 'data2.npy'</span>
+
+service_obj.build_from_file([data_file1, data_file2], sep='\\t')
+
+`
+
+let build_from_npy_file_mult_separate = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+# and build the Coreset tree using the read_npy reader.
+x_train_file1 = <span class=\"highlightText\">data_generated / 'x_train1.npy'</span>
+x_train_file2 = <span class=\"highlightText\">data_generated / 'x_train2.npy'</span>
+y_train_file1 = <span class=\"highlightText\">data_generated / 'y_train1.npy'</span>
+y_train_file2 = <span class=\"highlightText\">data_generated / 'y_train2.npy'</span>
+
+service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2], reader_f=read_npy)
+
+`
+
+let build_from_csv_file_mult_separate = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+x_train_file1 = <span class=\"highlightText\">data_generated / 'x_train1.csv'</span>
+x_train_file2 = <span class=\"highlightText\">data_generated / 'x_train2.csv'</span>
+y_train_file1 = <span class=\"highlightText\">data_generated / 'y_train1.csv'</span>
+y_train_file2 = <span class=\"highlightText\">data_generated / 'y_train2.csv'</span>
+
+service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2])
+
+`
+
+let build_from_tsv_file_mult_separate = `
+# Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
+x_train_file1 = <span class=\"highlightText\">data_generated / 'x_train1.tsv'</span>
+x_train_file2 = <span class=\"highlightText\">data_generated / 'x_train2.tsv'</span>
+y_train_file1 = <span class=\"highlightText\">data_generated / 'y_train1.tsv'</span>
+y_train_file2 = <span class=\"highlightText\">data_generated / 'y_train2.tsv'</span>
+
+service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2], sep='\\t')
+
+`
+
 
 build_from_dir_single = `
 # Prepare the data directory (replace with your directory name) and build the Coreset tree from the files in it.
 from pathlib import Path
 data_dir = Path("<span class=\"highlightText\">data_dir</span>")
 service_obj.build_from_file(data_dir)
+`
+
+build_from_dir_single_separate = `
+# Prepare the data and target directories (replace with your directories names) and build the Coreset tree from the files in it.
+from pathlib import Path
+data_dir = Path("<span class=\"highlightText\">data_dir</span>")
+target_dir = Path("<span class=\"highlightText\">target_dir</span>")
+service_obj.build_from_file(file_path=data_dir, target_file_path=target_dir)
+`
+
+build_from_dir_mult = `
+# Prepare the data and target directories (replace with your directories names) and build the Coreset tree from the files in it.
+from pathlib import Path
+data_dir1 = Path("<span class=\"highlightText\">data_dir1</span>")
+data_dir2 = Path("<span class=\"highlightText\">data_dir2</span>")
+service_obj.build_from_file(file_path=[data_dir1, data_dir2]])
+`
+
+build_from_dir_mult_separate = `
+# Prepare the data and target directories (replace with your directories names) and build the Coreset tree from the files in it.
+from pathlib import Path
+data_dir1 = Path("<span class=\"highlightText\">data_dir1</span>")
+data_dir2 = Path("<span class=\"highlightText\">data_dir2</span>")
+target_dir1 = Path("<span class=\"highlightText\">target_dir1</span>")
+target_dir2 = Path("<span class=\"highlightText\">target_dir2</span>")
+service_obj.build_from_file(file_path=[data_dir1, data_dir2], target_file_path=[target_dir1, target_dir2])
 `
 
 cleaning_processing=`
@@ -153,18 +266,46 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(param_grid=para
     }
 
     if (form=='File'){
-        if (singleMultFilesDirs==='Single Directory' ){
-            codeSnippetText += build_from_dir_single
+        if(singleMultFilesDirs==='Single Directory' && targetFeaturesSeparate==='No'){
+        codeSnippetText += build_from_dir_single
+        }else if(singleMultFilesDirs==='Single Directory' && targetFeaturesSeparate==='Yes'){
+            codeSnippetText += build_from_dir_single_separate
+
+        }else if(singleMultFilesDirs==='Multiple Directories' && targetFeaturesSeparate==='No'){
+            codeSnippetText += build_from_dir_mult
+        }else if(singleMultFilesDirs==='Multiple Directories' && targetFeaturesSeparate==='Yes'){
+            codeSnippetText += build_from_dir_mult_separate
+
         }else if(singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'Yes' && fileTypeSelect=='NPY'){
             codeSnippetText += build_from_npy_file_single_separate;
         }else if(singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'Yes' && fileTypeSelect=='TSV'){
             codeSnippetText += build_from_tsv_file_single_separate;
         }else if(singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'Yes' && fileTypeSelect=='CSV'){
             codeSnippetText += build_from_csv_file_single_separate;
+
+        }else if(singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'No' && fileTypeSelect=='NPY'){
+            codeSnippetText += build_from_npy_file_single;
+        }else if(singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'No' && fileTypeSelect=='TSV'){
+            codeSnippetText += build_from_tsv_file_single;
+        }else if(singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'No' && fileTypeSelect=='CSV'){
+            codeSnippetText += build_from_csv_file_single;
+
+        }else if(singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'No' && fileTypeSelect=='NPY'){
+            codeSnippetText += build_from_npy_file_mult;
+        }else if(singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'No' && fileTypeSelect=='TSV'){
+            codeSnippetText += build_from_tsv_file_mult;
+        }else if(singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'No' && fileTypeSelect=='CSV'){
+            codeSnippetText += build_from_csv_file_mult;
+        }else if(singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'Yes' && fileTypeSelect=='NPY'){
+            codeSnippetText += build_from_npy_file_mult_separate;
+        }else if(singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'Yes' && fileTypeSelect=='TSV'){
+            codeSnippetText += build_from_tsv_file_mult_separate;
+        }else if(singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'Yes' && fileTypeSelect=='CSV'){
+            codeSnippetText += build_from_csv_file_mult_separate;
         }else{
             codeSnippetText += `
 # <span class=\"highlightText\">TODO FILE SECTION</span> 
-`;
+    `;
         }
     }else if (form=='DF'){
         let df_params='';
@@ -179,7 +320,6 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(param_grid=para
         }
 
         codeSnippetText += `
-# <span class=\"highlightText\">TODO DataFrame data reading</span>        
 servise_obj.build_from_df(${df_params})            
 `;
     }else if (form=='NP'){
@@ -191,10 +331,10 @@ servise_obj.build_from_df(${df_params})
         }
 
         codeSnippetText += `
-# <span class=\"highlightText\">TODO numpy array data reading</span>        
 servise_obj.build(${np_params})            
 `;
     }
+
 
     if (useCases[0] =='Data Cleaning') {
         codeSnippetText += cleaning_processing
