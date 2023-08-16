@@ -506,8 +506,8 @@ important_samples, importance = result['idx'], result["importance"]
 # Examine the returned samples for mislabels or other anomalies.
 # Use update_targets to relabel samples.
 # We simulated this by calling a fix_labels function. Replace it with your own method to select the relabeled samples).
-<span class=\"highlightText\">indices_relabeled, y_train_relabeled = fix_labels(...)</span>
-service_obj.update_targets(indices=<span class=\"highlightText\">indices_relabeled</span>, y=<span class=\"highlightText\">y_train_relabeled</span>)
+indices_relabeled, y_train_relabeled = <span class=\"highlightText\">fix_labels(...)</span>
+service_obj.update_targets(indices=indices_relabeled, y=y_train_relabeled)
 
 # Use remove_samples to remove samples from the dataset. 
 # Replace indices_to_remove with the indices you wish to remove.
@@ -672,6 +672,7 @@ for tree_level in range(3):
 
     if (useCases.includes('Data Cleaning')){
         codeSnippetText += '\n'+`# For a full notebook showing how to build a Coreset tree for cleaning purposes for the ImageNet dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_image_classification_imagenet.ipynb">link</a>.
+
 # For a full notebook showing how to build a Coreset tree for cleaning purposes comparing cleaning using the DataHeroes 
 # library to random cleaning for the CIFAR10 dataset, visit this <a target="_blank" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb">link</a>.    
 `
