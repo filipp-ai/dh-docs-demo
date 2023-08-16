@@ -695,149 +695,161 @@
 <!DOCTYPE html>
 <p><html>
 <head>
+    <link rel="stylesheet" href="../css/select-box.css">
+    <link rel="stylesheet" href="../css/builder.css">
+    <script src="../javascripts/select-box.js"></script>
+    <script src="../javascripts/gen_dataheroes_snippet.js"></script>
     <title>Code Builder</title>
-    <style>
-        .container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-        .row {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 1000px;
-            padding-bottom: 10px;
-            }
-        .label {
-            margin-right: 10px;
-            width: 300px;
-            text-align: right;
-            font-size: 15px;
-                }
-        .select {
-            flex: 1;
-            }
-        .warningDiv{
-            flex: 1;
-        }
-        .codeSnippet{
-            flex: 1;
-        }
-        .warningText{
-            width: 100%;
-            flex: 1;
-        }
-        .copyButton{
-            top: 80px; !important;
-        }
-        .md-clipboard{
-            top:27px;
-        }
-        .highlightText{
-            background-color: yellow;
-        }
-        .snippetPre{
-            text-wrap: wrap;
-            font-size: 12px;
-        }
-    </style>
 </head></p>
 <body>
+    <svg class="sprites">
+    <symbol id="select-arrow-down" viewbox="0 0 10 6">
+      <polyline points="1 1 5 5 9 1"></polyline>
+    </symbol>
+    </svg>
     <h1>Code Builder</h1>
-
+    <div class="code-builder">
     <div class="container">
+        <div class="row-label">Dataset type</div>
         <div class="row">
-            <label class="label" for="Dataset type">Dataset type</label>
-            <select class="select" id="Dataset type" size=5>
-                <option value="Tabular">Tabular</option>
-                <option value="Computer Vision - Image Classification">Computer Vision - Image Classification</option>
-                <option value="Computer Vision - Object Detection">Computer Vision - Object Detection</option>
-                <option value="Computer Vision - Semantic Segmentation">Computer Vision - Semantic Segmentation</option>
-                <option value="NLP">NLP</option>
-            </select>
+               <label class="select" for="Dataset type">
+                <select id="Dataset type" required="required">
+                  <option value="Tabular">Tabular</option>
+                  <option value="Computer Vision - Image Classification">Computer Vision - Image Classification</option>
+                  <option value="Computer Vision - Object Detection">Computer Vision - Object Detection</option>
+                  <option value="Computer Vision - Semantic Segmentation">Computer Vision - Semantic Segmentation</option>
+                  <option value="NLP">NLP</option>
+                </select>
+                <svg>
+                  <use xlink:href="#select-arrow-down"></use>
+                </svg>
+              </label>
         </div>
+        <div class="row-label">Use case</div>
         <div class="row">
-            <label  class="label" for="Use Case">Use Case</label>
-            <select class="select" id="Use Case" size=4 multiple>
-            </select>
+                 <div class="radio-group" id="Use Case Check">
+                </div>
         </div>
-
+    </div>
+    <div class="container">
+    <div class="row-label">ML algorithm</div>  
      <div class="row">
-            <label  class="label"  for="ML algorithm">ML algorithm</label>
-    <select  class="select" id="ML algorithm"  size=7>
+            <label class="select" for="ML algorithm">
+            <select  class="select" id="ML algorithm">
+            </select>
+                <svg>
+                  <use xlink:href="#select-arrow-down"></use>
+                </svg>
+            </label>
+    </div>
+    <div class="row-label">Library used to train models</div>
+    <div class="row">
+            <label  class="select"  for="Library used to train models">
+            <select  class="select"  id="Library used to train models">
+            </select>
+                <svg>
+                  <use xlink:href="#select-arrow-down"></use>
+                </svg>
+            </label>
     </select>
     </div>
-
+    <div class="row-label">In which form is your dataset available?</div>
     <div class="row">
-            <label  class="label"  for="Library used to train models">Library used to train models</label>
-            <select  class="select"  id="Library used to train models"  size=4>
-    </select>
-    </div>
-
-    <div class="row">
-            <label  class="label" for="In which form is your dataset available">In which form is your dataset available</label>
-    <select  class="select" id="datasetFormSelect"  size=3>
+            <label  class="select" for="datasetFormSelect">
+        <select  class="select" id="datasetFormSelect" >
         <option value="File">File</option>
         <option value="DF">pandas DataFrame</option>
         <option value="NP">X and y numpy arrays</option>
     </select>
+                <svg>
+                  <use xlink:href="#select-arrow-down"></use>
+                </svg>
+            </label>
     </div>
-     <div id="optionFileContent" style="display: none;">
+
+
+
+     <div id="optionFileContent" class="section-to-hide" style="display: none;">
+                    <div class="row-label">File type</div>
                     <div class="row">
-                        <label  class="label" for="File Type">File Type</label>
-                        <select  class="select" id="File Type"  size=3>
-                            <option value="CSV">CSV</option>
-                            <option value="TSV">TSV</option>
-                            <option value="NPY">NPY</option>
-                        </select>
+                        <label  class="select" for="File Type">
+                            <select  class="select" id="File Type">
+                                <option value="CSV">CSV</option>
+                                <option value="TSV">TSV</option>
+                                <option value="NPY">NPY</option>
+                            </select>
+                            <svg>
+                              <use xlink:href="#select-arrow-down"></use>
+                            </svg>
+                        </label>
                     </div>
+                    <div class="row-label">Do you have separate file(s) or directory(ies) for the target and features?</div>
                     <div class="row">
-                        <label  class="label" for="targetFeaturesSeparate">Do you have separate file(s) or directory(ies) for the target and features</label>
-                        <select  class="select" id="targetFeaturesSeparate"  size=2>
+                        <label  class="select" for="targetFeaturesSeparate">
+                        <select  class="select" id="targetFeaturesSeparate">
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
-                        </select>
+                        </select><svg>
+                              <use xlink:href="#select-arrow-down"></use>
+                            </svg>
+                        </label>
                     </div>
+                    <div class="row-label">How is your data organized?</div>
                     <div class="row">
-                        <label  class="label"  for="singleMultFilesDirs">How is your data organized?</label>
-                        <select  class="select" id="singleMultFilesDirs"  size=4>
+                        <label  class="select"  for="singleMultFilesDirs">
+                        <select  class="select" id="singleMultFilesDirs">
                             <option value="Single File">Single File</option>
                             <option value="Multiple Files">Multiple Files</option>
                             <option value="Single Directory">Single Directory</option>
                             <option value="Multiple Directories">Multiple Directories</option>
-                        </select>
+                        </select><svg>
+                              <use xlink:href="#select-arrow-down"></use>
+                            </svg>
+                        </label>
                     </div>
     </div>
-
-
-    <div id="optionDFContent" style="display: none;">
+    <div id="optionDFContent" class="section-to-hide" style="display: none;">
+                <div class="row-label">Do you have separate DataFrame for the target and features?</div>
                 <div class="row">
-                        <label  class="label"  for="targetFeaturesSeparateDF">Do you have separate DataFrame for the target and features</label>
-                <select  class="select" id="targetFeaturesSeparateDF"  size=2>
+                        <label  class="select"  for="targetFeaturesSeparateDF">
+                <select  class="select" id="targetFeaturesSeparateDF" >
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
-                </select>
+                </select><svg>
+                              <use xlink:href="#select-arrow-down"></use>
+                            </svg>
+                        </label>
                 </div>
+                <div class="row-label">Do you have a Single DataFrame / Multiple DataFrame?</div>
                 <div class="row">
-                        <label  class="label" for="singleDF">Do you have a Single DataFrame / Multiple DataFrame</label>
-                    <select  class="select" id="singleMultDF"  size=2>
+                        <label  class="select" for="singleDF">
+                    <select  class="select" id="singleMultDF" >
                         <option value="Single DataFrame">Single DataFrame</option>
                         <option value="Multiple DataFrames">Multiple DataFrames</option>
-                    </select>
+                    </select><svg>
+                              <use xlink:href="#select-arrow-down"></use>
+                            </svg>
+                        </label>
+                </div>
                 </div>
     </div>
 
-    <div id="optionNPContent" style="display: none;">
+
+
+    <div id="optionNPContent"  class="section-to-hide"  style="display: none;">
+                <div class="row-label">Do you have a Single numpy array?</div>
                 <div class="row">
-                        <label  class="label"  for="singleMultNPY">Do you have a Single numpy array</label>
-                    <select  class="select" id="singleMultNPY"  size=2>
+                        <label  class="select"  for="singleMultNPY">
+                    <select  class="select" id="singleMultNPY" >
                         <option value="Single numpy array">Single numpy array</option>
                         <option value="Multiple numpy arrays">Multiple numpy arrays</option>
-                    </select>
-
-                </div>
+                    </select><svg>
+                              <use xlink:href="#select-arrow-down"></use>
+                            </svg>
+                        </label>
+     </div>
     </div>
+
     <div class="row">
         <div id="warningDiv" class="admonition warning warningDiv"  style="display: none;" >
             <p class="admonition-title">Warning</p>
@@ -845,6 +857,8 @@
             </div>
         </div>
     </div>
+
+
 
     <div class="row">
             <div class="language-py copy highlight codeSnippet" id="codeSnippet" >
@@ -871,196 +885,9 @@
     </div>
 
     </div>
+    </div>
+    <script src="../javascripts/builder-controls.js"></script>
 
-    <script>
-        //import {genCodeText} from extra;
-        // Get the select elements
-        const dtypeSelect = document.getElementById('Dataset type');
-        const useCaseSelect = document.getElementById('Use Case');
-        const mlAlgSelect = document.getElementById('ML algorithm');
-        const trainLibSelect = document.getElementById('Library used to train models');
-
-        const tabularUseCases = ["Model training", "Model tuning", "Model maintenance", "Data Cleaning"];
-        const nonTabularUseCases = ["Data Cleaning"];
-
-        const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"];
-        const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"];
-
-        const tabularTrainLib = ["Scikit-learn", "XGBoost", "LightGBM", "CatBoost"];
-        const nonTabularTrainLib = ["PyTorch", "TensorFlow (currently used for feature extraction)"];
-
-        function getSelectOptions(elements, default_caption='select a value'){
-            result = '<option value="">'+default_caption+'</option>';
-            result = '';//<option value="">'+default_caption+'</option>';
-            for (el of elements){
-                result += '<option value="'+el+'">'+el+'</option>';
-            }
-            return result;
-        }
-
-        function generateText(){
-            const warningText = document.getElementById('warning_text');
-            const warningDiv = document.getElementById('warningDiv');
-            const codeSnippetDiv = document.getElementById('codeSnippet');
-
-            warningDiv.style.display = 'none';
-            codeSnippetDiv.style.display = 'none';
-
-            function isAllFilled(){
-                if (document.getElementById('datasetFormSelect').value==='File'){
-                    if (document.getElementById('File Type').value==='' ||
-                        document.getElementById('targetFeaturesSeparate').value==='' || 
-                        document.getElementById('singleMultFilesDirs').value===''  
-                        ){
-                        return false;
-                    }
-
-                }else if (document.getElementById('datasetFormSelect').value==='DF'){
-                    if (document.getElementById('targetFeaturesSeparateDF').value==='' ||
-                        document.getElementById('singleMultDF').value===''  
-                        ){
-                        return false;
-                    }
-                }else if (document.getElementById('datasetFormSelect').value==='NP'){
-                    if (document.getElementById('singleMultNPY').value===''   
-                        ){
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            if (dtypeSelect.value === ''){
-                warningDiv.style.display = 'block';
-                warningText.innerHTML = "Select a dataset type";
-            }else if (useCaseSelect.value === ''){
-                warningDiv.style.display = 'block';
-                warningText.innerHTML = "Select a Use Case(s)";
-            }else if (mlAlgSelect.value === ''){
-                warningDiv.style.display = 'block';
-                warningText.innerHTML = "Select a ML algorithm";
-            }else if (trainLibSelect.value === ''){
-                warningDiv.style.display = 'block';
-                warningText.innerHTML = "Select a library used to train models";
-            }else if (document.getElementById('datasetFormSelect').value === ''){
-                warningDiv.style.display = 'block';
-                warningText.innerHTML = "Select a form of dataset(s)";
-            }else if (mlAlgSelect.value === ''){
-                warningDiv.style.display = 'block';
-                warningText.innerHTML = "Select a ML algorithm";
-            }else if (!isAllFilled() ){
-                warningDiv.style.display = 'block';
-                warningText.innerHTML = "Answer all questions";   
-            }else{
-                //success!!!
-                codeSnippetDiv.style.display = 'block';
-                useCaseStr = '';
-                useCases = [];
-                for (option of useCaseSelect.options){
-                    if (option.selected){
-                        useCaseStr += option.value+', ';
-                        useCases.push(option.value);
-                    }
-                }
-
-                datasetFormSelect = document.getElementById('datasetFormSelect')
-                fileTypeSelect = document.getElementById('File Type')
-                targetFeaturesSeparate = document.getElementById('targetFeaturesSeparate') 
-                singleMultFilesDirs = document.getElementById('singleMultFilesDirs')  
-                targetFeaturesSeparateDF = document.getElementById('targetFeaturesSeparateDF')
-                singleMultDF = document.getElementById('singleMultDF')  
-                singleMultNPY = document.getElementById('singleMultNPY')
-
-
-                document.getElementById('codeSnippetText').innerHTML = genCodeText(
-                                                                        dsType=dtypeSelect.value,
-                                                                        useCases=useCases,
-                                                                        alg=mlAlgSelect.value,
-                                                                        lib=trainLibSelect.value,
-                                                                        form=datasetFormSelect.value,
-
-                                                                        fileTypeSelect=fileTypeSelect.value,
-                                                                        targetFeaturesSeparate=targetFeaturesSeparate.value,
-                                                                        singleMultFilesDirs=singleMultFilesDirs.value,
-
-                                                                        targetFeaturesSeparateDF=targetFeaturesSeparateDF.value,
-                                                                        singleMultDF=singleMultDF.value,
-
-                                                                        singleMultNPY=singleMultNPY.value
-                                                                    );
-
-            }
-
-        }    
-        generateText();
-
-        const selects = document.querySelectorAll('select');
-        // Add event listener to each button
-        selects.forEach(select => {
-            select.addEventListener('change', function() {
-                generateText();
-            });
-        });
-
-
-        // Update the subcategory select element when the category changes
-        dtypeSelect.addEventListener('change', function() {
-            const selectedDtype = dtypeSelect.value;
-
-            // Clear previous options
-            if (selectedDtype == 'Tabular'){
-                useCaseSelect.innerHTML = getSelectOptions(tabularUseCases, 'select a Use Case');
-                mlAlgSelect.innerHTML = getSelectOptions(tabularMLAlg, 'select a Use Case');
-                trainLibSelect.innerHTML = getSelectOptions(tabularTrainLib, 'select a Use Case');
-            }else if (selectedDtype==='') {
-                useCaseSelect.innerHTML = '                           ';
-                mlAlgSelect.innerHTML = '                               ';
-            }else{
-                useCaseSelect.innerHTML = getSelectOptions(nonTabularUseCases, 'select a Use Case');
-                mlAlgSelect.innerHTML = getSelectOptions(nonTabularMLAlg, 'select a Use Case');
-                trainLibSelect.innerHTML = getSelectOptions(nonTabularTrainLib, 'select a Use Case');
-            }
-            return;
-            itemSelect.innerHTML = '<option value="">Select an item</option>';
-
-            // Disable subcategory and item selects
-            //subcategorySelect.disabled = true;
-            //itemSelect.disabled = true;
-
-            if (selectedCategory) {
-                // Enable subcategory select
-                subcategorySelect.disabled = false;
-
-                // Add options based on selected category
-                const categoryOptions = options[selectedCategory];
-                for (const key in categoryOptions) {
-                    const option = document.createElement('option');
-                    option.value = key;
-                    option.text = categoryOptions[key];
-                    subcategorySelect.appendChild(option);
-                }
-            }
-        });
-
-        datasetFormSelect.addEventListener('change', function() {
-            const selectedDatasetForm = datasetFormSelect.value;
-            optionFileContent.style.display = 'none';
-            optionDFContent.style.display = 'none';
-            optionNPContent.style.display = 'none';
-
-            if (selectedDatasetForm === 'File'){
-                optionFileContent.style.display = 'block';
-            }else if (selectedDatasetForm ==='DF') {
-                optionDFContent.style.display = 'block';
-            }else if (selectedDatasetForm ==='NP') {
-                optionNPContent.style.display = 'block';
-            }
-        });
-
-
-
-
-    </script>
 </body>
 <p></html></p>
 
