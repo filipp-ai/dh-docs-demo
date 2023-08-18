@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#new-features-and-improvements-in-version-050" class="md-skip">
+        <a href="#new-features-improvements-and-bug-fixes-in-version-060" class="md-skip">
           Skip to content
         </a>
       
@@ -428,6 +428,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#new-features-improvements-and-bug-fixes-in-version-060" class="md-nav__link">
+    New Features, Improvements and Bug Fixes in version 0.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-features-and-improvements-in-version-050" class="md-nav__link">
     New Features and Improvements in version 0.5.0
   </a>
@@ -742,6 +749,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#new-features-improvements-and-bug-fixes-in-version-060" class="md-nav__link">
+    New Features, Improvements and Bug Fixes in version 0.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-features-and-improvements-in-version-050" class="md-nav__link">
     New Features and Improvements in version 0.5.0
   </a>
@@ -805,12 +819,21 @@
    }
 </style>
 
-<p>Last updated on June 20, 2023</p>
+<p>Last updated on July 25, 2023</p>
+<h3 id="new-features-improvements-and-bug-fixes-in-version-060">New Features, Improvements and Bug Fixes in version 0.6.0<a class="headerlink" href="#new-features-improvements-and-bug-fixes-in-version-060" title="Permanent link">¤</a></h3>
+<ul>
+<li>Replacing the <code>save_all</code> parameter passed when initializing all classes, with the <code>chunk_sample_ratio</code> parameter, which indicates the size of the sample that will be taken and saved from each chunk on top of the Coreset for the validation methods.</li>
+<li>Significantly improving the build time for datasets with categorical features.</li>
+<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search</code></a>, <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.cross_validate"><code>cross_validate</code></a> and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.holdout_validate"><code>holdout_validate</code></a> all receive now the <code>preprocessing_stage</code> parameter, same as the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit</code></a> function.</li>
+<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit</code></a> returns now the data in <code>preprocessing_stage=auto</code> by default when <a href="https://scikit-learn.org/stable/">Scikit-learn</a> or <a href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a> are used to train the model and in <code>preprocessing_stage=user</code> by default when <a href="https://lightgbm.readthedocs.io/en/v3.3.2/">LightGBM</a> or <a href="https://catboost.ai/en/docs/">CatBoost</a> are used to train the model.</li>
+<li>Fixing the problem when both <code>model</code> and <code>model_params</code> were passed to <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit</code></a>, <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search</code></a>, <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.cross_validate"><code>cross_validate</code></a> and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.holdout_validate"><code>holdout_validate</code></a>, <code>model_params</code> were ignored.</li>
+<li>Fixing the problem when a single Coreset was created for the entire dataset and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_cleaning_samples"><code>get_cleaning_samples</code></a> was called with <code>class_size={"class XXX": "all"}</code>, the returned result was faulty.</li>
+</ul>
 <h3 id="new-features-and-improvements-in-version-050">New Features and Improvements in version 0.5.0<a class="headerlink" href="#new-features-and-improvements-in-version-050" title="Permanent link">¤</a></h3>
 <ul>
 <li>Coresets can now be built using categorical features. The library will automatically one-hot encode them during the build process (as Coresets can only be built with numeric features).</li>
-<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset"><code>get_coreset</code></a> can now return the data according to three data <code>preprocessing_stage</code>: <code>PreprocessingStage.ORIGINAL</code> – The dataset as it is handed to the Coreset’s build function. <code>PreprocessingStage.USER</code> – The dataset after any user defined data preprocessing (default). <code>PreprocessingStage.AUTO</code> – The dataset after any automatic data preprocessing done by the library, such as one-hot encoding and converting Boolean fields to numeric. The features (X), can also be returned as a sparse matrix or an array, controlled by the <code>sparse_output</code> parameter (applicable only for <code>PreprocessingStage.AUTO</code>).</li>
-<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit</code></a> can now return the data according to two <code>preprocessing_stage</code>. <code>PreprocessingStage.AUTO</code> is the default when <a href="https://scikit-learn.org/stable/">Scikit-learn</a> is used to train the model. <code>PreprocessingStage.USER</code> is the default when <a href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a>, <a href="https://lightgbm.readthedocs.io/en/v3.3.2/">LightGBM</a> or <a href="https://catboost.ai/en/docs/">CatBoost</a> are used to train the model.</li>
+<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset"><code>get_coreset</code></a> can now return the data according to three data <code>preprocessing_stage=original</code> – The dataset as it is handed to the Coreset’s build function. <code>preprocessing_stage=user</code> – The dataset after any user defined data preprocessing (default). <code>preprocessing_stage=auto</code> – The dataset after any automatic data preprocessing done by the library, such as one-hot encoding and converting Boolean fields to numeric. The features (X), can also be returned as a sparse matrix or an array, controlled by the <code>sparse_output</code> parameter (applicable only for <code>preprocessing_stage=auto</code>).</li>
+<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit</code></a> can now return the data according to two <code>preprocessing_stage=auto</code> is the default when <a href="https://scikit-learn.org/stable/">Scikit-learn</a> is used to train the model. <code>preprocessing_stage=user</code> is the default when <a href="https://xgboost.readthedocs.io/en/stable/">XGBoost</a>, <a href="https://lightgbm.readthedocs.io/en/v3.3.2/">LightGBM</a> or <a href="https://catboost.ai/en/docs/">CatBoost</a> are used to train the model.</li>
 <li>Adding a new <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.auto_preprocessing"><code>auto_preprocessing</code></a> function, allowing the user to preprocess the (test) data, as it was automatically done by the library during the Coreset’s build function.</li>
 <li>Fixing the problem where the library’s Docstrings did not show up in some IDEs.</li>
 </ul>

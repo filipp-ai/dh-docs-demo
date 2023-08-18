@@ -7,6 +7,7 @@ const tabularUseCases = ["Model training", "Model tuning", "Model maintenance", 
 const nonTabularUseCases = ["Data Cleaning"];
 
 const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"];
+const tabularTuningAlg = ["Linear Regression", "Logistic Regression", "Decision trees classification based", "Decision trees regression based"];
 const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"];
 
 const tabularTrainLib = ["Scikit-learn", "XGBoost", "LightGBM", "CatBoost"];
@@ -142,7 +143,23 @@ function generateText(){
 
 }
 
+
+function handleUseCases(){
+    const selectedDtype = dtypeSelect.value;
+    if (selectedDtype == 'Tabular'){
+        if (!document.getElementById('Model tuning').checked) {
+            mlAlgSelect.innerHTML = getSelectOptions(tabularMLAlg);
+        }else{
+            mlAlgSelect.innerHTML = getSelectOptions(tabularTuningAlg);
+        }
+    }else{
+        mlAlgSelect.innerHTML = getSelectOptions(nonTabularMLAlg);
+    }
+}
+
+
 function handleClick(cb){
+    handleUseCases();
     generateText();
 }
 
@@ -152,6 +169,7 @@ selects.forEach(select => {
         generateText();
     });
 });
+
 
 function handleDType(){
     const selectedDtype = dtypeSelect.value;

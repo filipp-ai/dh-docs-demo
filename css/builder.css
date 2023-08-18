@@ -40,6 +40,9 @@
 .highlightText{
     background-color: yellow;
 }
+.commentText{
+    color: #26a640;
+}
 .snippetPre{
     text-wrap: normal;
     font-size: 12px;
@@ -99,10 +102,11 @@
   user-select: none;
 }
 input[type="checkbox"]{
-  visibility: hidden;
+  //visibility: hidden;
   //position: absolute;
 }
 input[type="checkbox"] + label:before{
+    /*
   height:12px;
   width:12px;
   margin-right: 2px;
@@ -110,14 +114,17 @@ input[type="checkbox"] + label:before{
   display:inline-block;
   vertical-align: baseline;
   border:1px solid #777;
+     */
 }
 input[type="checkbox"]:checked + label:before{
-  //background-color: black;
-border-width: 4px;
+    /*
+  background-color: black;
+  border-width: 4px;
   border-color: #ea453b;
+  */
 }
 input[type="checkbox"] + label:before{
-  border-radius:50%;
+  //border-radius:50%;
 
 }
 .checkbox-full{
