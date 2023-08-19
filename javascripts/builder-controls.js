@@ -82,7 +82,6 @@ function generateText(){
         }
         return true;
     }
-
     useCasesList = getUseCasesList();
     if (dtypeSelect.value === ''){
         warningDiv.style.display = 'block';
@@ -199,6 +198,14 @@ function handleAlg(){
         trainLibSelect.innerHTML = getSelectOptions(tabularTrainLib);
     }else{
         trainLibSelect.innerHTML = getSelectOptions(nonTabularTrainLib);
+    }
+    ////targetFeaturesSeparateDF targetFeaturesSeparate
+    if (['K-Means', 'PCA', 'SVD'].includes(selectedAlg)){
+        document.getElementById('targetFeaturesSeparate').innerHTML = getSelectOptions(['No']);
+        document.getElementById('targetFeaturesSeparateDF').innerHTML = getSelectOptions(['No']);
+    }else{
+        document.getElementById('targetFeaturesSeparate').innerHTML = getSelectOptions(['No', 'Yes']);
+        document.getElementById('targetFeaturesSeparateDF').innerHTML = getSelectOptions(['No', 'Yes']);
     }
     generateText();
 }

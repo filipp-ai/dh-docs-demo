@@ -18,6 +18,7 @@ const algToClass = {
         "Deep learning regression": 'CoresetTreeServiceLR',
     }
 
+const unsupervisedAlg = ['K-Means', 'PCA', 'SVD'];
 
 function genBuildFromFile(
             singleMultFilesDirs,
@@ -374,12 +375,20 @@ service_obj.${partial ? 'partial_': ''}build_from_df(${df_params})
 
 function genBuildFromNP(singleMultNPY, partial) {
     let np_params = '';
-    if (singleMultNPY === 'Single numpy array') {
-        np_params = `X=<span class=\"highlightText\">X${partial ? '_2': ''}</span>, y=<span class=\"highlightText\">y${partial ? '_2': ''}</span>`;
-    } else if (singleMultNPY === 'Multiple numpy arrays') {
-        np_params = `X=<span class=\"highlightText\">[X1${partial ? '_2': ''}, X2${partial ? '_2': ''}]</span>, y=<span class=\"highlightText\">[y1${partial ? '_2': ''}, y2${partial ? '_2': ''}]</span>`;
-    }
 
+    if (!unsupervisedAlg.includes(alg)) {
+        if (singleMultNPY === 'Single numpy array') {
+            np_params = `X=<span class=\"highlightText\">X${partial ? '_2' : ''}</span>, y=<span class=\"highlightText\">y${partial ? '_2' : ''}</span>`;
+        } else if (singleMultNPY === 'Multiple numpy arrays') {
+            np_params = `X=<span class=\"highlightText\">[X1${partial ? '_2' : ''}, X2${partial ? '_2' : ''}]</span>, y=<span class=\"highlightText\">[y1${partial ? '_2' : ''}, y2${partial ? '_2' : ''}]</span>`;
+        }
+    }else{
+        if (singleMultNPY === 'Single numpy array') {
+            np_params = `X=<span class=\"highlightText\">X${partial ? '_2' : ''}</span>`;
+        } else if (singleMultNPY === 'Multiple numpy arrays') {
+            np_params = `X=<span class=\"highlightText\">[X1${partial ? '_2' : ''}, X2${partial ? '_2' : ''}]</span>`;
+        }
+    }
     let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree</span>` : '';
 
     return codeSnippetText += `
@@ -466,12 +475,22 @@ function genCodeText(dsType,
 
     let service_init = ''
     if (form === 'File' || form ==='DF'){
-        service_init += `
+        console.log(alg, ['Logistic Regression', 'Decision trees classification based'].includes(alg));
+        if (['Logistic Regression', 'Decision trees classification based'].includes(alg)){
+            service_init = `
 <span class=\"commentText\"># Tell the tree how data is structured.
 # In this example we have one target column, all other columns are features.
 # Replace it with your own target feature name.</span>
 data_params = {'target': {'name': '<span class=\"highlightText\">Cover_Type</span>'}}
 `
+        }else if (['Linear Regression', 'Decision trees regression based'].includes(alg)){
+            service_init = `
+<span class=\"commentText\"># Tell the tree how data is structured.
+# In this example we have one target column, all other columns are features.
+# Replace it with your own target feature name.</span>
+data_params = {'target': {'name': '<span class=\"highlightText\">tip_amount</span>'}}
+`
+        }
     }
     if (dsType == 'Tabular'){
         n_instances = '290_000';
