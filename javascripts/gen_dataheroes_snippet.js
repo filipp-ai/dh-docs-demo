@@ -20,6 +20,10 @@ const algToClass = {
 
 const unsupervisedAlg = ['K-Means', 'PCA', 'SVD'];
 
+const buildComment = `<span class=\"commentText\"># Build the Coreset Tree
+# The Coreset tree uses the local file system to store its data.
+# After this step you will have a new directory .dataheroes_cache</span>`
+
 function genBuildFromFile(
             singleMultFilesDirs,
             targetFeaturesSeparate,
@@ -29,216 +33,228 @@ function genBuildFromFile(
     let build_from_npy_file_single_separate = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
 # and build the Coreset tree using the read_npy reader.</span>
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-x_train_file = data_generated / <span class=\"highlightText\">'x_train.npy'</span>
-y_train_file = data_generated / <span class=\"highlightText\">'y_train.npy'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+x_train_file = data_dir / <span class=\"highlightText\">'x_train.npy'</span>
+y_train_file = data_dir / <span class=\"highlightText\">'y_train.npy'</span>
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(x_train_file, y_train_file, reader_f=read_npy)
 `
 
 let partial_build_from_npy_file_single_separate = `
-x_train_file_2 = data_generated / <span class=\"highlightText\">'x_train_2.npy'</span>
-y_train_file_2 = data_generated / <span class=\"highlightText\">'y_train_2.npy'</span>
+x_train_file_2 = data_dir / <span class=\"highlightText\">'x_train_2.npy'</span>
+y_train_file_2 = data_dir / <span class=\"highlightText\">'y_train_2.npy'</span>
 service_obj.partial_build_from_file(x_train_file_2, y_train_file_2, reader_f=read_npy)
 `
 
 let build_from_csv_file_single_separate = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names)</span>
-data_generated: Path = <span class=\"highlightText\">'generated'</span> 
-x_train_file = data_generated / <span class=\"highlightText\">'x_train.csv'</span>
-y_train_file = data_generated / <span class=\"highlightText\">'y_train.csv'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span> 
+x_train_file = data_dir / <span class=\"highlightText\">'x_train.csv'</span>
+y_train_file = data_dir / <span class=\"highlightText\">'y_train.csv'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(x_train_file, y_train_file)
 `
 
 let partial_build_from_csv_file_single_separate = `
-x_train_file_2 = data_generated / <span class=\"highlightText\">'x_train_2.csv'</span>
-y_train_file_2 = data_generated / <span class=\"highlightText\">'y_train_2.csv'</span>
+x_train_file_2 = data_dir / <span class=\"highlightText\">'x_train_2.csv'</span>
+y_train_file_2 = data_dir / <span class=\"highlightText\">'y_train_2.csv'</span>
 service_obj.partial_build_from_file(x_train_file_2, y_train_file_2)
 `
 
 let build_from_tsv_file_single_separate = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names)</span>
-data_generated: Path = <span class=\"highlightText\">'generated'</span> 
-x_train_file = data_generated / <span class=\"highlightText\">'x_train.tsv'</span>
-y_train_file = data_generated / <span class=\"highlightText\">'y_train.tsv'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span> 
+x_train_file = data_dir / <span class=\"highlightText\">'x_train.tsv'</span>
+y_train_file = data_dir / <span class=\"highlightText\">'y_train.tsv'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(x_train_file, y_train_file, sep='\\t')
 `
 
 let partial_build_from_tsv_file_single_separate = `
-x_train_file_2 = data_generated / <span class=\"highlightText\">'x_train_2.tsv'</span>
-y_train_file_2 = data_generated / <span class=\"highlightText\">'y_train_2.tsv'</span>
+x_train_file_2 = data_dir / <span class=\"highlightText\">'x_train_2.tsv'</span>
+y_train_file_2 = data_dir / <span class=\"highlightText\">'y_train_2.tsv'</span>
 service_obj.partial_build_from_file(x_train_file_2, y_train_file_2, sep='\\t')
 `
 
 let build_from_npy_file_single = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
 # and build the Coreset tree using the read_npy reader.</span>
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-data_file = data_generated / <span class=\"highlightText\">'data.npy'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+data_file = data_dir / <span class=\"highlightText\">'data.npy'</span>
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(data_file, reader_f=read_npy)
 `
 
 let partial_build_from_npy_file_single = `    
-data_file_2 = data_generated / <span class=\"highlightText\">'data_2.npy'</span>
+data_file_2 = data_dir / <span class=\"highlightText\">'data_2.npy'</span>
 service_obj.partial_build_from_file(data_file_2, reader_f=read_npy)
 `
 
 let build_from_csv_file_single = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names)</span> 
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-data_file = data_generated / <span class=\"highlightText\">'data.csv'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+data_file = data_dir / <span class=\"highlightText\">'data.csv'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(data_file)
 `
 
 let partial_build_from_csv_file_single = `
-data_file_2 = data_generated / <span class=\"highlightText\">'data_2.csv'</span>
+data_file_2 = data_dir / <span class=\"highlightText\">'data_2.csv'</span>
 service_obj.partial_build_from_file(data_file_2)
 `
 
 let build_from_tsv_file_single = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names)</span> 
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-data_file = data_generated / <span class=\"highlightText\">'data.tsv'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+data_file = data_dir / <span class=\"highlightText\">'data.tsv'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(data_file, sep='\\t')
 `
 
 let partial_build_from_tsv_file_single = `
-data_file_2 = data_generated / <span class=\"highlightText\">'data_2.tsv'</span>
+data_file_2 = data_dir / <span class=\"highlightText\">'data_2.tsv'</span>
 service_obj.partial_build_from_file(data_file_2, sep='\\t')
 `
 
 let build_from_npy_file_mult = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
 # and build the Coreset tree using the read_npy reader.</span>
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-data_file1 = data_generated / <span class=\"highlightText\">'data1.npy'</span>
-data_file2 = data_generated / <span class=\"highlightText\">'data2.npy'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+data_file1 = data_dir / <span class=\"highlightText\">'data1.npy'</span>
+data_file2 = data_dir / <span class=\"highlightText\">'data2.npy'</span>
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file([data_file1, data_file2], reader_f=read_npy)
 `
 
 let partial_build_from_npy_file_mult = `
-data_file1_2 = data_generated / <span class=\"highlightText\">'data1_2.npy'</span>
-data_file2_2 = data_generated / <span class=\"highlightText\">'data2_2.npy'</span>
+data_file1_2 = data_dir / <span class=\"highlightText\">'data1_2.npy'</span>
+data_file2_2 = data_dir / <span class=\"highlightText\">'data2_2.npy'</span>
 service_obj.partial_build_from_file([data_file1_2, data_file2_2], reader_f=read_npy)
 `
 
 let build_from_csv_file_mult = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names)</span> 
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-data_file1 = data_generated / <span class=\"highlightText\">'data1.npy'</span>
-data_file2 = data_generated / <span class=\"highlightText\">'data2.npy'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+data_file1 = data_dir / <span class=\"highlightText\">'data1.npy'</span>
+data_file2 = data_dir / <span class=\"highlightText\">'data2.npy'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file([data_file1, data_file2])
 `
 
 let partial_build_from_csv_file_mult = `
-data_file1_2 = data_generated / <span class=\"highlightText\">'data1_2.npy'</span>
-data_file2_2 = data_generated / <span class=\"highlightText\">'data2_2.npy'</span>
+data_file1_2 = data_dir / <span class=\"highlightText\">'data1_2.npy'</span>
+data_file2_2 = data_dir / <span class=\"highlightText\">'data2_2.npy'</span>
 service_obj.partial_build_from_file([data_file1_2, data_file2_2])
 `
 
 let build_from_tsv_file_mult = `
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-data_file1 = data_generated / <span class=\"highlightText\">'data1.npy'</span>
-data_file2 = data_generated / <span class=\"highlightText\">'data2.npy'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+data_file1 = data_dir / <span class=\"highlightText\">'data1.npy'</span>
+data_file2 = data_dir / <span class=\"highlightText\">'data2.npy'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file([data_file1, data_file2], sep='\\t')
 `
 
 let partial_build_from_tsv_file_mult = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names)</span> 
-data_file1_2 = data_generated / <span class=\"highlightText\">'data1_2.npy'</span>
-data_file2_2 = data_generated / <span class=\"highlightText\">'data2_2.npy'</span>
+data_file1_2 = data_dir / <span class=\"highlightText\">'data1_2.npy'</span>
+data_file2_2 = data_dir / <span class=\"highlightText\">'data2_2.npy'</span>
 service_obj.partial_build_from_file([data_file1_2, data_file2_2], sep='\\t')
 `
 
 let build_from_npy_file_mult_separate = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
 # and build the Coreset tree using the read_npy reader.</span>
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-x_train_file1 = data_generated / <span class=\"highlightText\">'x_train1.npy'</span>
-x_train_file2 = data_generated / <span class=\"highlightText\">'x_train2.npy'</span>
-y_train_file1 = data_generated / <span class=\"highlightText\">'y_train1.npy'</span>
-y_train_file2 = data_generated / <span class=\"highlightText\">'y_train2.npy'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+x_train_file1 = data_dir / <span class=\"highlightText\">'x_train1.npy'</span>
+x_train_file2 = data_dir / <span class=\"highlightText\">'x_train2.npy'</span>
+y_train_file1 = data_dir / <span class=\"highlightText\">'y_train1.npy'</span>
+y_train_file2 = data_dir / <span class=\"highlightText\">'y_train2.npy'</span>
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2], reader_f=read_npy)
 `
 
 let partial_build_from_npy_file_mult_separate = `
-x_train_file1_2 = data_generated / <span class=\"highlightText\">'x_train1_2.npy'</span>
-x_train_file2_2 = data_generated / <span class=\"highlightText\">'x_train2_2.npy'</span>
-y_train_file1_2 = data_generated / <span class=\"highlightText\">'y_train1_2.npy'</span>
-y_train_file2_2 = data_generated / <span class=\"highlightText\">'y_train2_2.npy'</span>
+x_train_file1_2 = data_dir / <span class=\"highlightText\">'x_train1_2.npy'</span>
+x_train_file2_2 = data_dir / <span class=\"highlightText\">'x_train2_2.npy'</span>
+y_train_file1_2 = data_dir / <span class=\"highlightText\">'y_train1_2.npy'</span>
+y_train_file2_2 = data_dir / <span class=\"highlightText\">'y_train2_2.npy'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2], reader_f=read_npy)
 `
 
 let build_from_csv_file_mult_separate = `
 # Prepare the definitions of path variables for the dataset files (replace with your directory name and file names) 
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-x_train_file1 = data_generated / <span class=\"highlightText\">'x_train1.csv'</span>
-x_train_file2 = data_generated / <span class=\"highlightText\">'x_train2.csv'</span>
-y_train_file1 = data_generated / <span class=\"highlightText\">'y_train1.csv'</span>
-y_train_file2 = data_generated / <span class=\"highlightText\">'y_train2.csv'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+x_train_file1 = data_dir / <span class=\"highlightText\">'x_train1.csv'</span>
+x_train_file2 = data_dir / <span class=\"highlightText\">'x_train2.csv'</span>
+y_train_file1 = data_dir / <span class=\"highlightText\">'y_train1.csv'</span>
+y_train_file2 = data_dir / <span class=\"highlightText\">'y_train2.csv'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2])
 `
 
 let partial_build_from_csv_file_mult_separate = `
-x_train_file1_2 = data_generated / <span class=\"highlightText\">'x_train1_2.csv'</span>
-x_train_file2_2 = data_generated / <span class=\"highlightText\">'x_train2_2.csv'</span>
-y_train_file1_2 = data_generated / <span class=\"highlightText\">'y_train1_2.csv'</span>
-y_train_file2_2 = data_generated / <span class=\"highlightText\">'y_train2_2.csv'</span>
+x_train_file1_2 = data_dir / <span class=\"highlightText\">'x_train1_2.csv'</span>
+x_train_file2_2 = data_dir / <span class=\"highlightText\">'x_train2_2.csv'</span>
+y_train_file1_2 = data_dir / <span class=\"highlightText\">'y_train1_2.csv'</span>
+y_train_file2_2 = data_dir / <span class=\"highlightText\">'y_train2_2.csv'</span>
 service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2])
 `
 
 let build_from_tsv_file_mult_separate = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files (replace with your directory name and file names)</span> 
-data_generated: Path = <span class=\"highlightText\">'generated'</span>
-x_train_file1 = data_generated / <span class=\"highlightText\">'x_train1.tsv'</span>
-x_train_file2 = data_generated / <span class=\"highlightText\">'x_train2.tsv'</span>
-y_train_file1 = data_generated / <span class=\"highlightText\">'y_train1.tsv'</span>
-y_train_file2 = data_generated / <span class=\"highlightText\">'y_train2.tsv'</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'generated'</span>
+x_train_file1 = data_dir / <span class=\"highlightText\">'x_train1.tsv'</span>
+x_train_file2 = data_dir / <span class=\"highlightText\">'x_train2.tsv'</span>
+y_train_file1 = data_dir / <span class=\"highlightText\">'y_train1.tsv'</span>
+y_train_file2 = data_dir / <span class=\"highlightText\">'y_train2.tsv'</span>
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2], sep='\\t')
 `
 
 let partial_build_from_tsv_file_mult_separate = `
-x_train_file1_2 = data_generated / <span class=\"highlightText\">'x_train1_2.tsv'</span>
-x_train_file2_2 = data_generated / <span class=\"highlightText\">'x_train2_2.tsv'</span>
-y_train_file1_2 = data_generated / <span class=\"highlightText\">'y_train1_2.tsv'</span>
-y_train_file2_2 = data_generated / <span class=\"highlightText\">'y_train2_2.tsv'</span>
+x_train_file1_2 = data_dir / <span class=\"highlightText\">'x_train1_2.tsv'</span>
+x_train_file2_2 = data_dir / <span class=\"highlightText\">'x_train2_2.tsv'</span>
+y_train_file1_2 = data_dir / <span class=\"highlightText\">'y_train1_2.tsv'</span>
+y_train_file2_2 = data_dir / <span class=\"highlightText\">'y_train2_2.tsv'</span>
 service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2], sep='\\t')
 `
 
@@ -247,7 +263,7 @@ let build_from_dir_single = `
 from pathlib import Path
 data_dir = Path("<span class=\"highlightText\">data_dir</span>")
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(data_dir)
 `
 
@@ -263,7 +279,7 @@ from pathlib import Path
 data_dir = Path("<span class=\"highlightText\">data_dir</span>")
 target_dir = Path("<span class=\"highlightText\">target_dir</span>")
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(file_path=data_dir, target_file_path=target_dir)
 `
 
@@ -280,7 +296,7 @@ from pathlib import Path
 data_dir1 = Path("<span class=\"highlightText\">data_dir1</span>")
 data_dir2 = Path("<span class=\"highlightText\">data_dir2</span>")
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(file_path=[data_dir1, data_dir2]])
 `
 
@@ -288,7 +304,7 @@ let partial_build_from_dir_mult = `
 data_dir1_2 = Path("<span class=\"highlightText\">data_dir1_2</span>")
 data_dir2_2 = Path("<span class=\"highlightText\">data_dir2_2</span>")
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2]])
 `
 
@@ -301,7 +317,7 @@ data_dir2 = Path("<span class=\"highlightText\">data_dir2</span>")
 target_dir1 = Path("<span class=\"highlightText\">target_dir1</span>")
 target_dir2 = Path("<span class=\"highlightText\">target_dir2</span>")
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.build_from_file(file_path=[data_dir1, data_dir2], target_file_path=[target_dir1, target_dir2])
 `
 
@@ -311,7 +327,7 @@ data_dir2_2 = Path("<span class=\"highlightText\">data_dir2_2</span>")
 target_dir1_2 = Path("<span class=\"highlightText\">target_dir1_2</span>")
 target_dir2_2 = Path("<span class=\"highlightText\">target_dir2_2</span>")
 
-<span class=\"commentText\"># Build the Coreset Tree</span>
+${buildComment}
 service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2], target_file_path=[target_dir1_2, target_dir2_2])
 `
 
@@ -366,7 +382,7 @@ function genBuildFromDF(targetFeaturesSeparateDF, singleMultDF, partial) {
         df_params = `datasets=<span class=\"highlightText\">[df1${partial ? '_2': ''}, df2${partial ? '_2': ''}]</span>, target_datasets=<span class=\"highlightText\">[y_df1${partial ? '_2': ''}, y_df2${partial ? '_2': ''}]</span>`;
     }
     let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree</span>` : '';
-    codeSnippetText += `<span class=\"commentText\"># Build the Coreset Tree</span>        
+    codeSnippetText += `${buildComment}        
 service_obj.${partial ? 'partial_': ''}build_from_df(${df_params})            
 `;
 
@@ -392,7 +408,7 @@ function genBuildFromNP(singleMultNPY, partial) {
     let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree</span>` : '';
 
     return codeSnippetText += `
-<span class=\"commentText\"># Build the Coreset Tree</span>        
+${buildComment}        
 service_obj.${partial ? 'partial_': ''}build(${np_params})            
 `;
 }
@@ -478,16 +494,16 @@ function genCodeText(dsType,
         console.log(alg, ['Logistic Regression', 'Decision trees classification based'].includes(alg));
         if (['Logistic Regression', 'Decision trees classification based'].includes(alg)){
             service_init = `
-<span class=\"commentText\"># Tell the tree how data is structured.
+<span class=\"commentText\"># Define the data structure.
 # In this example we have one target column, all other columns are features.
-# Replace it with your own target feature name.</span>
+# Replace it with your own target name.</span>
 data_params = {'target': {'name': '<span class=\"highlightText\">Cover_Type</span>'}}
 `
         }else if (['Linear Regression', 'Decision trees regression based'].includes(alg)){
             service_init = `
 <span class=\"commentText\"># Tell the tree how data is structured.
 # In this example we have one target column, all other columns are features.
-# Replace it with your own target feature name.</span>
+# Replace it with your own target name.</span>
 data_params = {'target': {'name': '<span class=\"highlightText\">tip_amount</span>'}}
 `
         }
@@ -504,23 +520,23 @@ data_params = {'target': {'name': '<span class=\"highlightText\">tip_amount</spa
     }
 
     if (lib == 'XGBoost') {
-        lib_import = `
-from xgboost import XGBClassifier
+        lib_import = `from xgboost import XGBClassifier
+
 `;
         lib_param = '\n    model_cls=XGBClassifier,'
     }else if (lib == 'LightGBM') {
-        lib_import = `
-from lightgbm import LGBMClassifier
+        lib_import = `from lightgbm import LGBMClassifier
+
 `;
         lib_param = '\n    model_cls=LGBMClassifier,'
     }else if (lib == 'CatBoost') {
-        lib_import = `
-from catboost import CatBoostClassifier
+        lib_import = `from catboost import CatBoostClassifier
+
 `;
         lib_param = '\n    model_cls=CatBoostClassifier,'
     }else if (lib == 'Scikit-learn' && alg.includes('Decision trees') ) {
-        lib_import = `
-from sklearn.ensemble import GradientBoostingClassifier
+        lib_import = `from sklearn.ensemble import GradientBoostingClassifier
+
 `;
         lib_param = '\n    model_cls=GradientBoostingClassifier,'
     }else{
@@ -528,33 +544,59 @@ from sklearn.ensemble import GradientBoostingClassifier
         lib_param = '';
     }
 
-    service_init += `${(lib_import !=='') ? lib_import:''}    
-<span class=\"commentText\"># Initialize the service for ${useCaseProcessedComment} and build the Coreset tree.
-# Change the number of instances ‘n_instances’ to match your dataset.
-# The Coreset tree uses the local file system to store its data.
-# After this step you will have a new directory .dataheroes_cache</span>
-service_obj = ${coresetTreeServiceClass}(${(form === 'File' || form ==='DF') ? `\n    data_params=data_params,`: ''}
+    service_init += `    
+<span class=\"commentText\"># Initialize the service for ${useCaseProcessedComment}.
+# Change the number of instances ‘n_instances’ to match your dataset.</span>
+${(lib_import !=='') ? lib_import:''}service_obj = ${coresetTreeServiceClass}(${(form === 'File' || form ==='DF') ? `\n    data_params=data_params,`: ''}
     optimized_for=${useCaseOptimizedForStr},
     n_instances=<span class=\"highlightText\">${n_instances}</span>,${(lib_import !=='') ? lib_param:''}
 )`
 
-    cleaning_processing=`
+    let cleaning_processing=''
+
+    if (['Decision trees classification based', 'Logistic Regression'].includes(alg)) {
+        cleaning_processing = `
 <span class=\"commentText\"># Define the classes of interest and the number of samples you want to examine per class (adjust according to your needs).
 # Alternatively just pass size=100 (or any other number) to get the top importance samples across all classes.</span>
 samples_per_class = <span class=\"highlightText\">{0: 100, 3: 20}</span>
-result = service_obj.get_important_samples(class_size=samples_per_class)
-important_samples, importance = result['idx'], result["importance"]
+result = service_obj.get_cleaning_samples(class_size=samples_per_class)
+samples_to_clean, importance = result['idx'], result["importance"]
 
 <span class=\"commentText\"># Examine the returned samples for mislabels or other anomalies.
 # Use update_targets to relabel samples.
-# We simulated this by calling a fix_labels function. Replace it with your own method to select the relabeled samples).</span>
+# We simulated this by calling a fix_labels function (Replace it with your own method to fix the incorrectly labeled samples).</span>
 indices_relabeled, y_train_relabeled = <span class=\"highlightText\">fix_labels(...)</span>
 service_obj.update_targets(indices=indices_relabeled, y=y_train_relabeled)
 
-<span class=\"commentText\"># Use remove_samples to remove samples from the dataset. 
+<span class=\"commentText\"># Use remove_samples to remove samples, which should not be a part of your dataset. 
 # Replace indices_to_remove with the indices you wish to remove.</span>
-service_obj.remove_samples(important_samples[<span class=\"highlightText\">indices_to_remove</span>])
+service_obj.remove_samples(samples_to_clean[<span class=\"highlightText\">indices_to_remove</span>])
 `
+    }else if (['K-Means', 'PCA', 'SVD'].includes(alg)) {
+        cleaning_processing = `
+<span class=\"commentText\"># Define the number of top importance samples you wish to receive, by adjusting the size parameter.</span>
+result = service_obj.get_cleaning_samples(size=<span class=\"highlightText\">100</span>)
+samples_to_clean, importance = result['idx'], result["importance"]
+ 
+<span class=\"commentText\"># Use remove_samples to remove samples, which should not be a part of your dataset. 
+# Replace indices_to_remove with the indices you wish to remove.</span>
+service_obj.remove_samples(samples_to_clean[<span class=\"highlightText\">indices_to_remove</span>])        
+`
+
+    }else if (['Decision trees regression based', 'Linear Regression'].includes(alg)) {
+        cleaning_processing = `
+<span class=\"commentText\"># Define the number of top importance samples you wish to receive, by adjusting the size parameter.</span>
+result = service_obj.get_cleaning_samples(size=<span class=\"highlightText\">100</span>)
+samples_to_clean, importance = result['idx'], result["importance"]
+ 
+<span class=\"commentText\"># Examine the returned samples for incorrect targets or other anomalies.
+# Use update_targets to fix samples with an incorrect target.
+# We simulated this by calling a fix_targets function. (Replace it with your own method to fix samples’ target).</span>
+indices_fixed, y_train_fixed = <span class=\"highlightText\">fix_targets(...)</span>
+service_obj.update_targets(indices=indices_fixed, y=y_train_fixed)      
+`
+    }
+
 let what_adjusting = '';
 let metric = '';
 let corset_score_expression = '';
@@ -575,7 +617,9 @@ param_grid = {
    'C'       : np.logspace(-3,3,7),
    'solver'  : ['newton-cg', 'lbfgs', 'liblinear']</span>      
 }
-scoring = make_scorer(<span</span> class=\"highlightText\">roc_auc_score</span>)
+
+from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">roc_auc_score</span>`}
+scoring = make_scorer(<span class=\"highlightText\">roc_auc_score</span>)
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
@@ -596,6 +640,8 @@ param_grid = {
 <span class=\"highlightText\">   'fit_intercept': [True, False], 
    'positive': [True, False]</span>      
 }
+
+from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
 scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
@@ -607,10 +653,22 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
 } else if (alg == 'K-Means'){
     what_adjusting = 'n_clusters';
     metric = 'silhouette_score';
-    corset_score_expression = `<span class=\"highlightText\">silhouette_score</span>(y_test, service_obj.predict(X_test))`;
+    corset_score_expression = `<span class=\"highlightText\">silhouette_score</span>(X_test, service_obj.predict(X_test))`;
     model_params = 'n_clusters=10';
 
-    tuning_processing = ''
+    tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
+# which would run dramatically faster than GridSearchCV on the entire dataset.
+# Adjust the hyperparameters and scoring function to your needs.</span>
+param_grid = {
+<span class=\"highlightText\">   'n_clusters': [2, 3, 5, 7],</span>      
+}
+
+<span class=\"commentText\"># Use default K-Means scoring</span>
+optimal_hyperparameters, trained_model = service_obj.grid_search(
+    param_grid=param_grid, 
+    scoring=None, 
+    verbose=2)
+`
 
 }else if (alg == 'PCA'){
     what_adjusting = 'n_components';
@@ -618,17 +676,41 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
     corset_score_expression = `<span class=\"highlightText\">np.sum(coreset_model.explained_variance_ratio_)</span>`;
     model_params = 'n_components=10';
 
-    tuning_processing = ''
+    tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
+# which would run dramatically faster than GridSearchCV on the entire dataset.
+# Adjust the hyperparameters and scoring function to your needs.</span>
+param_grid = {
+<span class=\"highlightText\">   'n_components': [1, 2, 3]</span>      
+}
+
+<span class=\"commentText\"># Use default PCA scoring</span>
+optimal_hyperparameters, trained_model = service_obj.grid_search(
+    param_grid=param_grid, 
+    scoring=None, 
+    verbose=2)
+`
 
 }else if (alg == 'SVD'){
-    what_adjusting = 'n_iter';
+    what_adjusting = 'n_components';
     metric = '';
     corset_score_expression = `<span class=\"highlightText\">np.sum(coreset_model.explained_variance_)</span>`;
-    model_params = 'n_iter=8';
+    model_params = 'n_components=10';
 
-    tuning_processing = ''
+    tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
+# which would run dramatically faster than GridSearchCV on the entire dataset.
+# Adjust the hyperparameters and scoring function to your needs.</span>
+param_grid = {
+<span class=\"highlightText\">   'n_components': [1, 2, 3]</span>      
+}
 
-}else if (alg.includes('Decision')){
+<span class=\"commentText\"># Use default SVD scoring</span>
+optimal_hyperparameters, trained_model = service_obj.grid_search(
+    param_grid=param_grid, 
+    scoring=None, 
+    verbose=2)
+`
+
+}else if (alg === 'Decision trees classification based'){
     what_adjusting = 'n_estimators';
     metric = 'balanced_accuracy_score';
     corset_score_expression = '<span class=\"highlightText\">balanced_accuracy_score</span>(y_test, service_obj.predict(X_test))';
@@ -641,7 +723,35 @@ param_grid = {
    'n_estimators': [250, 500, 1000],
    'max_depth': [4, 6]</span>  
 }
+
+from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">balanced_accuracy_score</span>`}
 scoring = make_scorer(<span class=\"highlightText\">balanced_accuracy_score</span>)
+
+optimal_hyperparameters, trained_model = service_obj.grid_search(
+    param_grid=param_grid, 
+    scoring=scoring, 
+    verbose=2
+    )
+`
+}else if (alg === 'Decision trees regression based'){
+    what_adjusting = 'n_estimators';
+    //metric = 'balanced_accuracy_score';
+    //corset_score_expression = '<span class=\"highlightText\">balanced_accuracy_score</span>(y_test, service_obj.predict(X_test))';
+    metric = 'mean_squared_error';
+    corset_score_expression = `<span class=\"highlightText\">mean_squared_error</span>(y_test, service_obj.predict_proba(X_test))`;
+
+    model_params = 'n_estimators=500';
+    tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
+# which would run dramatically faster than GridSearchCV on the entire dataset.
+# Adjust the hyperparameters and scoring function to your needs.</span>
+param_grid = {
+<span class=\"highlightText\">   'learning_rate': [0.1, 0.01],
+   'n_estimators': [250, 500, 1000],
+   'max_depth': [4, 6]</span>  
+}
+
+from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
+scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
@@ -651,10 +761,10 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
 `
 }
 
-let training_processing=`<span class=\"commentText\"># fit a ${alg} model using ${lib} directly on the Coreset tree.
+let training_processing=`<span class=\"commentText\"># fit a ${alg.replace('trees', 'tree')} model using ${lib} directly on the Coreset tree.
 # Try a few levels of the Coreset tree to find the optimal one.
 # Provide the same parameters to the fit, predict and predict_proba Coreset methods  
-# as you would provide ${lib} (adjusting ${what_adjusting}).</span>${metric !== '' ? `\nfrom sklearn.metrics import <span class=\"highlightText\">${metric}</span>` : ''}
+# as you would provide ${lib} (e.g.: adjusting ${what_adjusting}).</span>${metric !== '' ? `\nfrom sklearn.metrics import <span class=\"highlightText\">${metric}</span>` : ''}
 for tree_level in range(3):
    coreset_model = service_obj.fit(level=tree_level, <span class=\"highlightText\">${model_params}</span>)
    coreset_score = ${corset_score_expression}
@@ -737,7 +847,7 @@ for tree_level in range(3):
 
     codeSnippetText += '\n'+finalComment;
 
-    if (useCases.includes('Data Cleaning')){
+    if (useCases.includes('Data Cleaning') && dsType !== 'Tabular'){
         codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes for the ImageNet dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_image_classification_imagenet.ipynb">link</a>.
 
 # For a full notebook showing how to build a Coreset tree for cleaning purposes comparing cleaning using the DataHeroes 

@@ -6,11 +6,11 @@ const useCaseCheckList = document.getElementById('Use Case Check');
 const tabularUseCases = ["Model training", "Model tuning", "Model maintenance", "Data Cleaning"];
 const nonTabularUseCases = ["Data Cleaning"];
 
-const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"];
-const tabularTuningAlg = ["Linear Regression", "Logistic Regression", "Decision trees classification based", "Decision trees regression based"];
-const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"];
+const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"].sort();
+const tabularTuningAlg = ["Linear Regression", "Logistic Regression", "Decision trees classification based", "Decision trees regression based"].sort();
+const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"].sort();
 
-const tabularTrainLib = ["Scikit-learn", "XGBoost", "LightGBM", "CatBoost"];
+const tabularTrainLib = ["XGBoost", "LightGBM", "CatBoost", "Scikit-learn"];
 const nonTabularTrainLib = ["PyTorch", "TensorFlow (currently used for feature extraction)"];
 
 function getSelectOptions(elements){
@@ -44,7 +44,7 @@ function getSelectOptionsCheckbox(elements){
         if (result === ''){
             checked = 'checked';
         }
-        result += `<div class="checkbox-full"><input ${checked} type="checkbox" onclick="handleClick(this);" name="${el}" id="${el}"><label for="${el}">${el}</label></div>`;
+        result += `<div class="checkbox-full"><input ${checked} type="checkbox" onclick="handleUseCaseChange(this);" name="${el}" id="${el}"><label for="${el}">${el}</label></div>`;
 
     }
 
@@ -157,8 +157,8 @@ function handleUseCases(){
 }
 
 
-function handleClick(cb){
-    handleUseCases();
+function handleUseCaseChange(cb){
+    //handleUseCases();
     generateText();
 }
 
@@ -192,8 +192,8 @@ function handleAlg(){
     const selectedAlg = mlAlgSelect.value;
     // Clear previous options
     if (selectedDtype == 'Tabular' && !selectedAlg.includes('Decision trees')){
-        trainLibSelect.innerHTML = getSelectOptions([tabularTrainLib[0]]);
-        trainLibSelect.value = tabularTrainLib[0];
+        trainLibSelect.innerHTML = getSelectOptions(['Scikit-learn']);
+        trainLibSelect.value = 'Scikit-learn';
     }else if (selectedDtype == 'Tabular' && selectedAlg.includes('Decision trees')){
         trainLibSelect.innerHTML = getSelectOptions(tabularTrainLib);
     }else{
