@@ -88,7 +88,7 @@ function generateText(){
         warningText.innerHTML = "Select a dataset type";
     }else if (useCasesList.length == 0){
         warningDiv.style.display = 'block';
-        warningText.innerHTML = "Select a Use case(s)";
+        warningText.innerHTML = "Please select at least a single Use case";
     }else if (mlAlgSelect.value === ''){
         warningDiv.style.display = 'block';
         warningText.innerHTML = "Select a ML algorithm";
