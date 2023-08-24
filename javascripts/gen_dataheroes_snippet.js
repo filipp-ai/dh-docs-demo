@@ -223,8 +223,6 @@ x_train_file1_2 = data_dir / <span class=\"highlightText\">'x_train1_2.npy'</spa
 x_train_file2_2 = data_dir / <span class=\"highlightText\">'x_train2_2.npy'</span>
 y_train_file1_2 = data_dir / <span class=\"highlightText\">'y_train1_2.npy'</span>
 y_train_file2_2 = data_dir / <span class=\"highlightText\">'y_train2_2.npy'</span>
-
-${buildComment}
 service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2], reader_f=read_npy)
 `
 
@@ -317,8 +315,6 @@ service_obj.build_from_file(file_path=[data_dir1, data_dir2]])
 let partial_build_from_dir_mult = `
 data_dir1_2 = Path("<span class=\"highlightText\">data_dir1_2</span>")
 data_dir2_2 = Path("<span class=\"highlightText\">data_dir2_2</span>")
-
-${buildComment}
 service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2]])
 `
 
@@ -340,8 +336,6 @@ data_dir1_2 = Path("<span class=\"highlightText\">data_dir1_2</span>")
 data_dir2_2 = Path("<span class=\"highlightText\">data_dir2_2</span>")
 target_dir1_2 = Path("<span class=\"highlightText\">target_dir1_2</span>")
 target_dir2_2 = Path("<span class=\"highlightText\">target_dir2_2</span>")
-
-${buildComment}
 service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2], target_file_path=[target_dir1_2, target_dir2_2])
 `
 
@@ -758,7 +752,8 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
     model_params = 'n_estimators=500';
     tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
 # which would run dramatically faster than GridSearchCV on the entire dataset.
-# Adjust the hyperparameters and scoring function to your needs.</span>
+# Adjust the hyperparameters and scoring function to your needs
+# (or use the default SVD scoring by setting scoring=None).</span>
 param_grid = {
 <span class=\"highlightText\">   'learning_rate': [0.1, 0.01],
    'n_estimators': [250, 500, 1000],
@@ -784,7 +779,8 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
     model_params = 'n_estimators=500';
     tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
 # which would run dramatically faster than GridSearchCV on the entire dataset.
-# Adjust the hyperparameters and scoring function to your needs.</span>
+# Adjust the hyperparameters and scoring function to your needs
+# (or use the default SVD scoring by setting scoring=None).</span>
 param_grid = {
 <span class=\"highlightText\">   'learning_rate': [0.1, 0.01],
    'n_estimators': [250, 500, 1000],
