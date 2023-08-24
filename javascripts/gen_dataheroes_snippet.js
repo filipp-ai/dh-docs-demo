@@ -483,7 +483,7 @@ function genCodeText(dsType,
         if (el==='Model training' || el==='Model maintenance' || el==='Model tuning'){
             return 'training';
         }
-        if (el==='Data Cleaning'){
+        if (el==='Data cleaning'){
             return 'cleaning';
         }
         if (el==='Model tuning'){
@@ -836,7 +836,7 @@ for tree_level in range(3):
         partial=false
     );
 
-    if (useCases.includes('Data Cleaning')) {
+    if (useCases.includes('Data cleaning')) {
         codeSnippetText += cleaning_processing;
     }
 
@@ -902,7 +902,7 @@ for tree_level in range(3):
 
     codeSnippetText += '\n'+finalComment;
 
-    if (useCases.includes('Data Cleaning') && dsType !== 'Tabular'){
+    if (useCases.includes('Data cleaning') && dsType !== 'Tabular'){
         codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes for the ImageNet dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_image_classification_imagenet.ipynb">link</a>.
 
 # For a full notebook showing how to build a Coreset tree for cleaning purposes comparing cleaning using the DataHeroes 

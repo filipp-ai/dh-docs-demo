@@ -3,8 +3,8 @@ const mlAlgSelect = document.getElementById('ML algorithm');
 const trainLibSelect = document.getElementById('Library used to train models');
 const useCaseCheckList = document.getElementById('Use Case Check');
 
-const tabularUseCases = ["Model training", "Model tuning", "Model maintenance", "Data Cleaning"];
-const nonTabularUseCases = ["Data Cleaning"];
+const tabularUseCases = ["Model training", "Model tuning", "Model maintenance", "Data cleaning"];
+const nonTabularUseCases = ["Data cleaning"];
 
 const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"].sort();
 const tabularTuningAlg = ["Linear Regression", "Logistic Regression", "Decision trees classification based", "Decision trees regression based"].sort();
