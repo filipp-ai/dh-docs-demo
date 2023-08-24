@@ -507,6 +507,7 @@ function genCodeText(dsType,
         useCaseOptimizedForStr = '"' + useCaseOptimizedFor[0] + '"';
     }
     ///////////////////
+    let modelClassName = '';
 
     let service_init = ''
     if (form === 'File' || form ==='DF'){
@@ -538,21 +539,28 @@ data_params = {'target': {'name': '<span class=\"highlightText\">tip_amount</spa
     }
 
     if (lib == 'XGBoost') {
+        modelClassName = alg == 'Decision trees classification based' ? 'XGBClassifier': 'XGBRegressor';
         lib_import = `from xgboost import ${alg == 'Decision trees classification based' ? 'XGBClassifier': 'XGBRegressor'}
 
 `;
         lib_param = `\n    model_cls=${alg == 'Decision trees classification based' ? 'XGBClassifier': 'XGBRegressor'},`
     }else if (lib == 'LightGBM') {
+        modelClassName = alg == 'Decision trees classification based' ? 'LGBMClassifier': 'LGBMRegressor';
         lib_import = `from lightgbm import ${alg == 'Decision trees classification based' ? 'LGBMClassifier': 'LGBMRegressor'}
 
 `;
         lib_param = `\n    model_cls=${alg == 'Decision trees classification based' ? 'LGBMClassifier': 'LGBMRegressor'},`
     }else if (lib == 'CatBoost') {
+        modelClassName = alg == 'Decision trees classification based' ? 'CatBoostClassifier': 'CatBoostRegressor';
+
         lib_import = `from catboost import ${alg == 'Decision trees classification based' ? 'CatBoostClassifier': 'CatBoostRegressor'}
 
 `;
         lib_param = `\n    model_cls=${alg == 'Decision trees classification based' ? 'CatBoostClassifier': 'CatBoostRegressor'},`
     }else if (lib == 'Scikit-learn' && alg.includes('Decision trees') ) {
+
+        modelClassName = alg == 'Decision trees classification based' ? 'GradientBoostingClassifier': 'GradientBoostingRegressor';
+
         lib_import = `from sklearn.ensemble import ${alg == 'Decision trees classification based' ? 'GradientBoostingClassifier' : 'GradientBoostingRegressor'}
 
 `;
@@ -753,7 +761,7 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
     tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
 # which would run dramatically faster than GridSearchCV on the entire dataset.
 # Adjust the hyperparameters and scoring function to your needs
-# (or use the default SVD scoring by setting scoring=None).</span>
+# (or use the default ${modelClassName} scoring by setting scoring=None).</span>
 param_grid = {
 <span class=\"highlightText\">   'learning_rate': [0.1, 0.01],
    'n_estimators': [250, 500, 1000],
@@ -780,7 +788,7 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
     tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
 # which would run dramatically faster than GridSearchCV on the entire dataset.
 # Adjust the hyperparameters and scoring function to your needs
-# (or use the default SVD scoring by setting scoring=None).</span>
+# (or use the default ${modelClassName} scoring by setting scoring=None).</span>
 param_grid = {
 <span class=\"highlightText\">   'learning_rate': [0.1, 0.01],
    'n_estimators': [250, 500, 1000],
