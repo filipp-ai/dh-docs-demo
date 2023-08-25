@@ -508,7 +508,6 @@ function genCodeText(dsType,
     }
     ///////////////////
     let modelClassName = '';
-
     let service_init = ''
     if (form === 'File' || form ==='DF'){
         if (['Logistic Regression', 'Decision trees classification based'].includes(alg)){
@@ -698,8 +697,10 @@ param_grid = {
 <span class=\"highlightText\">   'n_clusters': [2, 3, 5, 7],</span>      
 }
 
-from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">silhouette_score</span>`}
-scoring = make_scorer(<span class=\"highlightText\">silhouette_score</span>)
+<span class=\"commentText\"># The silhouette score</span>
+<span class=\"highlightText\">def scoring(model, X, y=None):
+${useCases.includes('Model training') ? '' : '    from sklearn.metrics import silhouette_score\n'}    clusters_labels = model.predict(X)
+    return silhouette_score(X, clusters_labels)</span>
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
@@ -721,8 +722,12 @@ param_grid = {
 <span class=\"highlightText\">   'n_components': [1, 2, 3]</span>      
 }
 
-from sklearn.metrics import make_scorer, <span class=\"highlightText\">explained_variance_score</span>
-scoring = make_scorer(<span class=\"highlightText\">explained_variance_score</span>)
+<span class=\"commentText\"># The score is the opposite of the reconstruction error,
+# evaluate based on the Frobenius norm.</span>
+<span class=\"highlightText\">def scoring(model, X, y=None):
+    X_transformed = model.transform(X)
+    score = -np.linalg.norm(X - X_transformed.dot(model.components_) - model.mean_)
+    return score</span>
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
@@ -744,8 +749,10 @@ param_grid = {
 <span class=\"highlightText\">   'n_components': [1, 2, 3]</span>      
 }
 
-from sklearn.metrics import make_scorer, <span class=\"highlightText\">explained_variance_score</span>
-scoring = make_scorer(<span class=\"highlightText\">explained_variance_score</span>)
+<span class=\"commentText\"># The score is the opposite of the reconstruction error,
+# evaluate based on the nuclear norm.</span>
+<span class=\"highlightText\">def scoring(model, X, y=None):
+    return -np.linalg.norm(X - (model.predict(X)).dot(model.model), ord='nuc')</span>
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
