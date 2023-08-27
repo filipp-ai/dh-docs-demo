@@ -7,7 +7,6 @@ const tabularUseCases = ["Model training", "Model tuning", "Model maintenance", 
 const nonTabularUseCases = ["Data cleaning"];
 
 const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"].sort();
-const tabularTuningAlg = ["Linear Regression", "Logistic Regression", "Decision trees classification based", "Decision trees regression based"].sort();
 const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"].sort();
 
 const tabularTrainLib = ["XGBoost", "LightGBM", "CatBoost", "Scikit-learn"];
@@ -16,7 +15,7 @@ const nonTabularTrainLib = ["PyTorch", "TensorFlow (currently used for feature e
 function getSelectOptions(elements){
     let result = '';
     for (el of elements){
-        if (elements[0] == el) {
+        if (elements[0] === el) {
             result += '<option value="' + el + '">' + el + '</option>';
         }else{
             result += '<option value="' + el + '">' + el + '</option>';
@@ -26,8 +25,8 @@ function getSelectOptions(elements){
 }
 
 function getUseCasesList(){
-    var useCasesList = [];
-    for (v in tabularUseCases) {
+    let useCasesList = [];
+    for (let v in tabularUseCases) {
         el = document.getElementById(tabularUseCases[v]);
         if (el && el.checked) {
             useCasesList.push(tabularUseCases[v]);
@@ -38,9 +37,9 @@ function getUseCasesList(){
 
 function getSelectOptionsCheckbox(elements){
 
-    result = '';
+    let result = '';
     for (el of elements){
-        checked = '';
+        let checked = '';
         if (result === ''){
             checked = 'checked';
         }
@@ -82,11 +81,11 @@ function generateText(){
         }
         return true;
     }
-    useCasesList = getUseCasesList();
+    let useCasesList = getUseCasesList();
     if (dtypeSelect.value === ''){
         warningDiv.style.display = 'block';
         warningText.innerHTML = "Select a dataset type";
-    }else if (useCasesList.length == 0){
+    }else if (useCasesList.length === 0){
         warningDiv.style.display = 'block';
         warningText.innerHTML = "Please select at least a single Use case";
     }else if (mlAlgSelect.value === ''){
@@ -107,10 +106,7 @@ function generateText(){
     }else{
         //success!!!
         codeSnippetDiv.style.display = 'block';
-        useCases = getUseCasesList();
-        useCaseStr = useCases.join(', ');
-
-
+        let useCasesList = getUseCasesList();
 
         datasetFormSelect = document.getElementById('datasetFormSelect')
         fileTypeSelect = document.getElementById('File Type')
@@ -123,7 +119,7 @@ function generateText(){
 
         document.getElementById('codeSnippetText').innerHTML = genCodeText(
                                                                 dsType=dtypeSelect.value,
-                                                                useCases=useCases,
+                                                                useCases=useCasesList,
                                                                 alg=mlAlgSelect.value,
                                                                 lib=trainLibSelect.value,
                                                                 form=datasetFormSelect.value,
@@ -143,21 +139,7 @@ function generateText(){
 }
 
 
-function handleUseCases(){
-    const selectedDtype = dtypeSelect.value;
-    if (selectedDtype == 'Tabular'){
-        if (!document.getElementById('Model tuning').checked) {
-            mlAlgSelect.innerHTML = getSelectOptions(tabularMLAlg);
-        }else{
-            mlAlgSelect.innerHTML = getSelectOptions(tabularTuningAlg);
-        }
-    }else{
-        mlAlgSelect.innerHTML = getSelectOptions(nonTabularMLAlg);
-    }
-}
-
-
-function handleUseCaseChange(cb){
+function handleUseCaseChange(){
     //handleUseCases();
     generateText();
 }
@@ -172,15 +154,17 @@ selects.forEach(select => {
 
 function handleDType(){
     const selectedDtype = dtypeSelect.value;
-    // Clear previous options
-    if (selectedDtype == 'Tabular'){
+    document.getElementById('tabularOptions').style.display = 'none';
+    if (selectedDtype === 'Tabular'){
+        document.getElementById('tabularOptions').style.display = 'block';
         useCaseCheckList.innerHTML = getSelectOptionsCheckbox(tabularUseCases);
         mlAlgSelect.innerHTML = getSelectOptions(tabularMLAlg);
         trainLibSelect.innerHTML = getSelectOptions(tabularTrainLib);
-    }else if (selectedDtype==='') {
-        useCaseCheckList.innerHTML = '                           ';
-        mlAlgSelect.innerHTML = '                               ';
     }else{
+        //defaults for non-tabular dataset
+        document.getElementById('File Type').value = 'NPY';
+        document.getElementById('targetFeaturesSeparate').value = 'Yes';
+
         useCaseCheckList.innerHTML = getSelectOptionsCheckbox(nonTabularUseCases);
         mlAlgSelect.innerHTML = getSelectOptions(nonTabularMLAlg);
         trainLibSelect.innerHTML = getSelectOptions(nonTabularTrainLib);
@@ -191,10 +175,10 @@ function handleAlg(){
     const selectedDtype = dtypeSelect.value;
     const selectedAlg = mlAlgSelect.value;
     // Clear previous options
-    if (selectedDtype == 'Tabular' && !selectedAlg.includes('Decision trees')){
+    if (selectedDtype === 'Tabular' && !selectedAlg.includes('Decision trees')){
         trainLibSelect.innerHTML = getSelectOptions(['Scikit-learn']);
         trainLibSelect.value = 'Scikit-learn';
-    }else if (selectedDtype == 'Tabular' && selectedAlg.includes('Decision trees')){
+    }else if (selectedDtype === 'Tabular' && selectedAlg.includes('Decision trees')){
         trainLibSelect.innerHTML = getSelectOptions(tabularTrainLib);
     }else{
         trainLibSelect.innerHTML = getSelectOptions(nonTabularTrainLib);
@@ -206,6 +190,11 @@ function handleAlg(){
     }else{
         document.getElementById('targetFeaturesSeparate').innerHTML = getSelectOptions(['No', 'Yes']);
         document.getElementById('targetFeaturesSeparateDF').innerHTML = getSelectOptions(['No', 'Yes']);
+
+        if (dtypeSelect.value !=='Tabular'){
+            //default value for non-tabular
+            document.getElementById('targetFeaturesSeparate').value = 'Yes';
+        }
     }
     generateText();
 }

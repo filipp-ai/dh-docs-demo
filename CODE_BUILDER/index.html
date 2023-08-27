@@ -732,27 +732,28 @@
         </div>
     </div>
     <div class="container">
-    <div class="row-label">ML algorithm</div>  
-     <div class="row">
-            <label class="select" for="ML algorithm">
-            <select  class="select" id="ML algorithm">
-            </select>
-                <svg>
-                  <use xlink:href="#select-arrow-down"></use>
-                </svg>
-            </label>
-    </div>
-    <div class="row-label">Library used to train models</div>
-    <div class="row">
-            <label  class="select"  for="Library used to train models">
-            <select  class="select"  id="Library used to train models">
-            </select>
-                <svg>
-                  <use xlink:href="#select-arrow-down"></use>
-                </svg>
-            </label>
-    </select>
-    </div>
+        <div id="tabularOptions" class="section-to-hide" style="display: block;">
+            <div class="row-label">ML algorithm</div>  
+             <div class="row">
+                    <label class="select" for="ML algorithm">
+                    <select  class="select" id="ML algorithm">
+                    </select>
+                        <svg>
+                          <use xlink:href="#select-arrow-down"></use>
+                        </svg>
+                    </label>
+            </div>
+            <div class="row-label">Library used to train models</div>
+            <div class="row">
+                    <label  class="select"  for="Library used to train models">
+                    <select  class="select"  id="Library used to train models">
+                    </select>
+                        <svg>
+                          <use xlink:href="#select-arrow-down"></use>
+                        </svg>
+                    </label>
+            </div>
+        </div>
     <div class="row-label">In which form is your dataset available?</div>
     <div class="row">
             <label  class="select" for="datasetFormSelect">
@@ -766,9 +767,6 @@
                 </svg>
             </label>
     </div>
-
-
-
      <div id="optionFileContent" class="section-to-hide" style="display: none;">
                     <div class="row-label">File type</div>
                     <div class="row">
@@ -833,9 +831,6 @@
                 </div>
                 </div>
     </div>
-
-
-
     <div id="optionNPContent"  class="section-to-hide"  style="display: none;">
                 <div class="row-label">Do you have a Single numpy array?</div>
                 <div class="row">
@@ -849,7 +844,6 @@
                         </label>
      </div>
     </div>
-
     <div class="row">
         <div id="warningDiv" class="admonition warning warningDiv"  style="display: none;" >
             <p class="admonition-title">Warning</p>
@@ -857,14 +851,10 @@
             </div>
         </div>
     </div>
-
-
-
     <div class="row">
             <div class="language-py copy highlight codeSnippet" id="codeSnippet" >
                 <pre id="__code_0" class="snippetPre">
                     <code id="codeSnippetText" class="codeSnippetTextClass" style="font-size: 1.05em">
-
                         from sklearn.preprocessing import LabelEncoder
                         from scipy.sparse import issparse
                         from scipy import sparse
@@ -873,22 +863,18 @@
                             Logit sampling from 2018 Paper On Coresets for Logistic Regression.
                             """
                             X = np.concatenate([X, np.ones([X.shape[0], 1])], axis=1)
-
                             if w is not None:
                                 w = _check_sample_weight(w, X, dtype=X.dtype)
                                 X, y = w_dot_X(X, y=y, w=w)
                             else:
                                 w = _check_sample_weight(w, X, dtype=X.dtype)
-
                         </code>
                 </pre>
             </div>
     </div>
-
     </div>
     </div>
     <script src="../javascripts/builder-controls.js"></script>
-
 </body>
 <p></html></p>
 

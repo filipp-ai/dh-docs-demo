@@ -1,8 +1,14 @@
 image_dataset_comment_1 = `
-<span class=\"commentText\"># A prerequisite to use this Coreset is to extract the features embeddings from your images.
-# In order to do so, drop the last classification layer from your pre-trained network, so the output would be the embeddings instead of the class distribution.
-# To see how we extracted the feature embeddings from the ImageNet dataset using ResNet18 and PyTorch, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_imagenet1k_resnet18_pytorch.py\">link</a>.
-# To see how we extracted the feature embeddings from the CIFAR10 dataset using ResNet18 and TensorFlow /Keras, visit this <a target=\"_blank\" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_cifar10_resnet18_tensorflow_keras.py">link</a>.
+<span class=\"commentText\"># A prerequisite to use this Coreset is to extract the features embeddings 
+# from your images. In order to do so, drop the last classification layer 
+# from your pre-trained network, so the output would be the embeddings instead 
+# of the class distribution.
+
+# To see how we extracted the feature embeddings from the ImageNet dataset 
+# using ResNet18 and PyTorch, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_imagenet1k_resnet18_pytorch.py\">link</a>.
+
+# To see how we extracted the feature embeddings from the CIFAR10 dataset 
+# using ResNet18 and TensorFlow /Keras, visit this <a target=\"_blank\" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_cifar10_resnet18_tensorflow_keras.py">link</a>.
 </span>
 `
 
@@ -532,9 +538,14 @@ data_params = {'target': {'name': '<span class=\"highlightText\">tip_amount</spa
     } else if (dsType == 'NLP'){
         n_instances = '100_000';
         n_classes = '';
-    }else{
+    }else if (dsType == 'Computer Vision - Image Classification'){
+        //ImageNet 1K
         n_instances = '1_200_000';
         n_classes = '1_000';
+    }else{
+        // COCO
+        n_instances = '330_000';
+        n_classes = '';
     }
 
     if (lib == 'XGBoost') {
@@ -579,13 +590,26 @@ ${(lib_import !=='') ? lib_import:''}service_obj = ${coresetTreeServiceClass}(${
 
     let cleaning_processing=''
 
-    if (['Decision trees classification based', 'Logistic Regression'].includes(alg)) {
+    let samplesPerClass = '';
+    if (dsType === 'Computer Vision - Image Classification'){
+        samplesPerClass = '{638: 100}';
+    } else if (dsType === 'Computer Vision - Object Detection'){
+        samplesPerClass = '{47: 100}';
+    } else if (dsType === 'Computer Vision - Semantic Segmentation'){
+        samplesPerClass = '{47: 100}';
+    } else if (dsType === 'Computer Vision - NLP'){
+        samplesPerClass = '{4: 20}';
+    }
+
+    if (dsType !== 'Tabular'
+    ) {
         cleaning_processing = `
 <span class=\"commentText\"># Define the classes of interest and the number of samples 
-# you want to examine per class (adjust according to your needs).
+# you want to examine per class (adjust according to your needs), 
+# you can use 'all' instead of number.
 # Alternatively just pass size=100 (or any other number) to get 
 # the top importance samples across all classes.</span>
-samples_per_class = <span class=\"highlightText\">{0: 100, 3: 20}</span>
+samples_per_class = <span class=\"highlightText\">${samplesPerClass}</span>
 result = service_obj.get_cleaning_samples(class_size=samples_per_class)
 samples_to_clean, importance = result['idx'], result["importance"]
 
@@ -823,8 +847,56 @@ for tree_level in range(3):
 `
 
     let codeSnippetText = '';
-    if (dsType != 'Tabular' && dsType != 'NLP'){
-        codeSnippetText += image_dataset_comment_1;
+    if (dsType === 'Computer Vision - Image Classification'){
+        codeSnippetText += `
+<span class=\"commentText\"># A prerequisite to use this Coreset is to extract the features embeddings 
+# from your images. In order to do so, drop the last classification layer 
+# from your pre-trained network, so the output would be the embeddings instead 
+# of the class distribution.
+
+# To see how we extracted the feature embeddings from the ImageNet dataset 
+# using ResNet18 and PyTorch, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_imagenet1k_resnet18_pytorch.py\">link</a>.
+
+# To see how we extracted the feature embeddings from the CIFAR10 dataset 
+# using ResNet18 and TensorFlow /Keras, visit this <a target=\"_blank\" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_cifar10_resnet18_tensorflow_keras.py">link</a>.
+</span>
+`;
+    } else if (dsType === 'Computer Vision - Object Detection'){
+        codeSnippetText += `
+<span class=\"commentText\"># A prerequisite to use this Coreset is to extract the features embeddings 
+# from your images. In order to do so, drop the last classification layer 
+# from your pre-trained network, so the output would be the embeddings instead 
+# of the class distribution.
+
+# To see how we extracted the feature embeddings from the COCO dataset 
+# using Resnet50 and PyTorch, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_object_detection_coco_resnet50_pytorch.py\">link</a>.
+
+</span>
+`;
+    } else if (dsType === 'Computer Vision - Semantic Segmentation'){
+        codeSnippetText += `
+<span class=\"commentText\"># A prerequisite to use this Coreset is to extract the features embeddings 
+# from your images. In order to do so, drop the last classification layer 
+# from your pre-trained network, so the output would be the embeddings instead 
+# of the class distribution.
+
+# To see how we extracted the feature embeddings from the COCO dataset 
+# using Resnet50 and PyTorch, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dh-library/blob/DEV/examples/feature_extraction_scripts/feature_extraction_semantic_segmentation_coco_resnet50_pytorch.py\">link</a>.
+
+</span>
+`;
+    } else if (dsType === 'Computer Vision - NLP'){
+        codeSnippetText += `
+<span class=\"commentText\"># A prerequisite to use this Coreset is to extract the features embeddings 
+# from your samples. In order to do so, drop the last classification layer 
+# from your pre-trained network, so the output would be the embeddings instead 
+# of the class distribution.
+
+# To see how we extracted the feature embeddings from the AG News dataset 
+# using PyTorch, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/feature_extraction_scripts/feature_extraction_agnews_bert_pytorch.py\">link</a>.
+
+</span>
+`;
     }
     codeSnippetText += `from dataheroes import ${coresetTreeServiceClass} \n`;
 
@@ -909,11 +981,25 @@ for tree_level in range(3):
 
     codeSnippetText += '\n'+finalComment;
 
-    if (useCases.includes('Data cleaning') && dsType !== 'Tabular'){
-        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes for the ImageNet dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_image_classification_imagenet.ipynb">link</a>.
+    if (dsType === 'Computer Vision - Image Classification'){
+        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
+# for the ImageNet dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_image_classification_imagenet.ipynb">link</a>.
 
-# For a full notebook showing how to build a Coreset tree for cleaning purposes comparing cleaning using the DataHeroes 
-# library to random cleaning for the CIFAR10 dataset, visit this <a target="_blank" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb">link</a>.</span>    
+# For a full notebook showing how to build a Coreset tree for cleaning purposes 
+# comparing cleaning using the DataHeroes library to random cleaning 
+# for the CIFAR10 dataset, visit this <a target="_blank" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb">link</a>.</span>    
+`
+    }else if (dsType === 'Computer Vision - Object Detection'){
+        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
+# for the COCO dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_object_detection_coco.ipynb">link</a>.
+`
+    }else if (dsType === 'Computer Vision - Semantic Segmentation'){
+        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
+# for the COCO dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_semantic_segmentation_coco.ipynb">link</a>.
+`
+    }else if (dsType === 'NLP'){
+        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
+# for the AG News dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_nlp_classification_agnews.ipynb">link</a>.
 `
     }
 
