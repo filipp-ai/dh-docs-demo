@@ -597,7 +597,7 @@ ${(lib_import !=='') ? lib_import:''}service_obj = ${coresetTreeServiceClass}(${
         samplesPerClass = '{47: 100}';
     } else if (dsType === 'Computer Vision - Semantic Segmentation'){
         samplesPerClass = '{47: 100}';
-    } else if (dsType === 'Computer Vision - NLP'){
+    } else if (dsType === 'NLP'){
         samplesPerClass = '{4: 20}';
     }
 
