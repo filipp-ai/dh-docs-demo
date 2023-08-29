@@ -1228,29 +1228,47 @@ For Example:<br/>
     <em>'target': {'name': 'Cover_Type'},</em><br/>
     <em>'index': {'name': 'index_column'}<br/></em>
 <em>}</em><br/><br/></p>
-<p>By default, all categorical features are automatically detected and one-hot encoded by the library.<br/><br/>
-To disable this functionality set <code>detect_categorical=False</code>.<br/><br/>
-Note, coresets can only be built with numeric features.<br/><br/>
+<p>By default, all categorical features are automatically detected and one-hot encoded by the library.<br/>
+To disable this functionality set <code>detect_categorical=False</code>.<br/>
+By default, missing values are automatically detected and handled by the library.<br/>
+To disable this functionality set <code>detect_missing=False</code>.<br/><br/>
+Note, coresets can only be built with numeric features and without missing values.<br/><br/>
 Forcing specific features, which include only numeric values, to be categorical,
 can be done in two possible ways. On a feature-by-feature base or using the categorical_features list,
 (passing the feature names or the feature index in the dataset starting from 0),
-as shown in the following example:<br/><br/></p>
-<p>By default, missing values are automatically detected and handled by the library.<br/><br/>
-To disable this functionality set <code>detect_missing=False</code>.<br/><br/></p>
+as shown in the example below.<br/>
+By default, missing values for numeric features would be replaced with the calculated mean 
+and missing values for categorical features would be treated just as another category/value 
+when the feature is one-hot encoded by the library. It is possible to change the default behavior
+for numeric features by defining a specific replacement number for all numeric features using the fill_value_num
+or to define this on a feature-by-feature base. It is possible to change the default behavior
+for categorical features by defining a specific replacement value or by specifying <code>take_most_common</code>,
+(which will fill the missing values with the most commonly used value of the feature) for all categorical features
+using the fill_value_cat or to define this on a feature-by-feature base, as shown in the example below.<br/><br/></p>
 <p><em>data_params = {<br/></em>
-    <em>features: [<br/></em>
-        <em>{name: occupation, categorical: True},</em>
-        <em>{name: company_name, categorical: True},</em>
-        <em>{name: gender},<br/></em>
-        <em>{name: age},<br/></em>
-        <em>{name: education},<br/></em>
-    <em>categorical_features: ['gender', 'education']</em>
+    <em>'features': [<br/></em>
+        <em>{'name': 'occupation', 'categorical': True, 'fill_value': 'Unemployed'},</em>
+        <em>{'name': 'company_name', 'categorical': True},</em>
+        <em>{'name': 'gender'},<br/></em>
+        <em>{'name': 'age', 'fill_value': 18},<br/></em>
+        <em>{'name': 'education'},<br/></em>
+    <em>'categorical_features': ['gender', 'education'],</em>
+    <em>'fill_value_cat': 'take_most_common',</em>
+    <em>'fill_value_num': -1,</em>
 <em>}</em><br/><br/></p>
-<p><code>ohe_min_frequency</code> - Similarly to Skicit-learn's OneHotEncoder min_frequency parameter,
+<p><code>ohe_min_frequency</code> - float between 0 and 1, default 0.01. 
+Similarly to Skicit-learn's OneHotEncoder min_frequency parameter,
 specifies the minimum frequency below which a category will be considered infrequent.<br/><br/></p>
-<p><code>ohe_max_categories</code> - Similarly to Skicit-learn's OneHotEncoder max_categories parameter,
+<p><code>ohe_max_categories</code> - int, default 100.
+Similarly to Skicit-learn's OneHotEncoder max_categories parameter,
 specifies an upper limit to the number of output features for each input feature
 when considering infrequent categories.<br/><br/></p>
+<p><code>drop_rows_below</code> - float between 0 and 1, default 0 (nothing is dropped).
+If the ratio of instances with missing values on any feature is lower than this ratio
+those instances would be ignored during the coreset build.<br/><br/></p>
+<p><code>drop_cols_above</code> - float between 0 and 1, default 1 (nothing is dropped).
+If the ratio of instances with missing values for a certain feature is higher than this ratio
+this feature would be ignored during the coreset build.<br/><br/></p>
 <p>By default, all datetime features are automatically detected and turned into properties.
 Properties, won’t be used to compute the Coreset or train the model, but it is possible to
 filter_out_samples on them or to pass them in the select_from_function of get_cleaning_samples.<br/><br/>
@@ -1462,7 +1480,8 @@ For example, chunk_sample_ratio=0.5, means that 50% of the data instances from e
           <td>
             <div class="doc-md-description">
               <p>A Scikit-learn compatible model class, optional.
-A model class to train with coreset data.</p>
+The model class used to train the model on the coreset, in case a specific model instance wasn't passed to fit or the validation methods.
+The default model class is our WPCA class extending sklearn's PCA to support weights.</p>
             </div>
           </td>
           <td>
@@ -1622,7 +1641,7 @@ features: A list of feature names corresponding to the data.</p>
   
       <p>Create a coreset tree from the parameters X, y, indices and props (properties).
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. Categorical features are automatically one-hot encoded, but there should be no missing values.
+the partial_build functions. Categorical features are automatically one-hot encoded and missing values are automatically handled.
 The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
@@ -1644,7 +1663,7 @@ The target will be ignored when the Coreset is built.</p>
           <td>
             <div class="doc-md-description">
               <p>array like or iterator of arrays like.
-An array or an iterator of features. Categorical features are automatically one-hot encoded, but there should be no missing values.</p>
+An array or an iterator of features. Categorical features are automatically one-hot encoded and missing values are automatically handled.</p>
             </div>
           </td>
           <td>
@@ -1793,7 +1812,7 @@ True - Data is copied before processing (impacts memory).</p>
   
       <p>Create a coreset tree from pandas DataFrame(s).
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. Categorical features are automatically one-hot encoded, but there should be no missing values.
+the partial_build functions. Categorical features are automatically one-hot encoded and missing values are automatically handled.
 The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
@@ -1932,7 +1951,7 @@ True - Data is copied before processing (impacts memory).</p>
   
       <p>Create a coreset tree based on data taken from local storage.
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. Categorical features are automatically one-hot encoded, but there should be no missing values.
+the partial_build functions. Categorical features are automatically one-hot encoded and missing values are automatically handled.
 The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
@@ -2382,7 +2401,7 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
   <div class="doc doc-contents ">
   
-      <p>Fit a model on the coreset tree.
+      <p>Fit a model on the coreset tree. This model will be used when predict and predict_proba are called. 
 This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
 
   <p><strong>Parameters:</strong></p>
@@ -2918,7 +2937,8 @@ If None, the default scorer of the current model is used.</p>
           <td>
             <div class="doc-md-description">
               <p>bool, optional.
-If True, retrain the model on the whole coreset using the best found hyperparameters, and return the model.</p>
+If True, retrain the model on the whole coreset using the best found hyperparameters, and return the model.
+This model will be used when predict and predict_proba are called.</p>
             </div>
           </td>
           <td>
@@ -3389,7 +3409,7 @@ Local directory where intermediate data is stored.</p>
   <div class="doc doc-contents ">
   
       <p>Add new samples to a coreset tree from parameters X, y, indices and props (properties).
-Categorical features are automatically one-hot encoded, but there should be no missing values.
+Categorical features are automatically one-hot encoded and missing values are automatically handled.
 The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
@@ -3411,7 +3431,8 @@ The target will be ignored when the Coreset is built.</p>
           <td>
             <div class="doc-md-description">
               <p>array like or iterator of arrays like.
-An array or an iterator of features. Categorical features are automatically one-hot encoded, but there should be no missing values.</p>
+An array or an iterator of features. Categorical features are automatically one-hot encoded 
+and missing values are automatically handled.</p>
             </div>
           </td>
           <td>
@@ -3558,7 +3579,7 @@ True - Data is copied before processing (impacts memory).</p>
   <div class="doc doc-contents ">
   
       <p>Add new samples to a coreset tree based on the pandas DataFrame iterator.
-Categorical features are automatically one-hot encoded, but there should be no missing values.
+Categorical features are automatically one-hot encoded and missing values are automatically handled.
 The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
@@ -3695,7 +3716,7 @@ True - Data is copied before processing (impacts memory).</p>
   <div class="doc doc-contents ">
   
       <p>Add new samples to a coreset tree based on data taken from local storage.
-Categorical features are automatically one-hot encoded, but there should be no missing values.
+Categorical features are automatically one-hot encoded and missing values are automatically handled.
 The target will be ignored when the Coreset is built.</p>
 
   <p><strong>Parameters:</strong></p>
@@ -3953,7 +3974,9 @@ A dictionary containing the names of the image file(s) to be generated.</p>
   <div class="doc doc-contents ">
   
       <p>Run prediction on the trained model.
-This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
+This function is only applicable in case the coreset tree was optimized_for 'training' and
+in case fit() or grid_search(refit=True) where called before.
+The function automatically preprocesses the data according to the preprocessing_stage used to train the model.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4039,7 +4062,9 @@ True - Data is copied before processing (impacts memory).</p>
   <div class="doc doc-contents ">
   
       <p>Run prediction on the trained model.
-This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
+This function is only applicable in case the coreset tree was optimized_for 'training' and
+in case fit() or grid_search(refit=True) where called before.
+The function automatically preprocesses the data according to the preprocessing_stage used to train the model.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
