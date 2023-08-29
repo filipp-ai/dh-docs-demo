@@ -1261,27 +1261,27 @@ By default, missing values are automatically detected and handled by the library
 To disable this functionality set <code>detect_missing=False</code>.<br/><br/>
 Note, coresets can only be built with numeric features and without missing values.<br/><br/>
 Forcing specific features, which include only numeric values, to be categorical,
-can be done in two possible ways. On a feature-by-feature base or using the categorical_features list,
+can be done in two possible ways. On a feature-by-feature base or using the <code>categorical_features list</code>,
 (passing the feature names or the feature index in the dataset starting from 0),
 as shown in the example below.<br/>
 By default, missing values for numeric features would be replaced with the calculated mean 
 and missing values for categorical features would be treated just as another category/value 
 when the feature is one-hot encoded by the library. It is possible to change the default behavior
-for numeric features by defining a specific replacement number for all numeric features using the fill_value_num
+for numeric features by defining a specific replacement number for all numeric features using the <code>fill_value_num</code>
 or to define this on a feature-by-feature base. It is possible to change the default behavior
 for categorical features by defining a specific replacement value or by specifying <code>take_most_common</code>,
 (which will fill the missing values with the most commonly used value of the feature) for all categorical features
-using the fill_value_cat or to define this on a feature-by-feature base, as shown in the example below.<br/><br/></p>
+using the <code>fill_value_cat</code> or to define this on a feature-by-feature base, as shown in the example below.<br/><br/></p>
 <p><em>data_params = {<br/></em>
     <em>'features': [<br/></em>
-        <em>{'name': 'occupation', 'categorical': True, 'fill_value': 'Unemployed'},</em>
-        <em>{'name': 'company_name', 'categorical': True},</em>
+        <em>{'name': 'occupation', 'categorical': True, 'fill_value': 'Unemployed'},<br/></em>
+        <em>{'name': 'company_name', 'categorical': True},<br/></em>
         <em>{'name': 'gender'},<br/></em>
         <em>{'name': 'age', 'fill_value': 18},<br/></em>
         <em>{'name': 'education'},<br/></em>
-    <em>'categorical_features': ['gender', 'education'],</em>
-    <em>'fill_value_cat': 'take_most_common',</em>
-    <em>'fill_value_num': -1,</em>
+    <em>'categorical_features': ['gender', 'education'],<br/></em>
+    <em>'fill_value_cat': 'take_most_common',<br/></em>
+    <em>'fill_value_num': -1,<br/></em>
 <em>}</em><br/><br/></p>
 <p><code>ohe_min_frequency</code> - float between 0 and 1, default 0.01. 
 Similarly to Skicit-learn's OneHotEncoder min_frequency parameter,
@@ -1299,7 +1299,7 @@ this feature would be ignored during the coreset build.<br/><br/></p>
 <p>By default, all datetime features are automatically detected and turned into properties.
 Properties, won’t be used to compute the Coreset or train the model, but it is possible to
 filter_out_samples on them or to pass them in the select_from_function of get_cleaning_samples.<br/><br/>
-To disable this functionality set datetime_to_properties=False.<br/><br/></p>
+To disable this functionality set <code>datetime_to_properties</code>=False.<br/><br/></p>
             </div>
           </td>
           <td>
@@ -1875,8 +1875,7 @@ True - Data is copied before processing (impacts memory).</p>
   
       <p>Create a coreset tree from pandas DataFrame(s).
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. Categorical features are automatically one-hot encoded and missing values are automatically handled.
-The target will be ignored when the Coreset is built.</p>
+the partial_build functions. Categorical features are automatically one-hot encoded and missing values are automatically handled.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2014,8 +2013,7 @@ True - Data is copied before processing (impacts memory).</p>
   
       <p>Create a coreset tree based on data taken from local storage.
 build functions may be called only once. To add more data to the coreset tree use one of
-the partial_build functions. Categorical features are automatically one-hot encoded and missing values are automatically handled.
-The target will be ignored when the Coreset is built.</p>
+the partial_build functions. Categorical features are automatically one-hot encoded and missing values are automatically handled.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3690,8 +3688,7 @@ True - Data is copied before processing (impacts memory).</p>
   <div class="doc doc-contents ">
   
       <p>Add new samples to a coreset tree based on the pandas DataFrame iterator.
-Categorical features are automatically one-hot encoded and missing values are automatically handled.
-The target will be ignored when the Coreset is built.</p>
+Categorical features are automatically one-hot encoded and missing values are automatically handled.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3827,8 +3824,7 @@ True - Data is copied before processing (impacts memory).</p>
   <div class="doc doc-contents ">
   
       <p>Add new samples to a coreset tree based on data taken from local storage.
-Categorical features are automatically one-hot encoded and missing values are automatically handled.
-The target will be ignored when the Coreset is built.</p>
+Categorical features are automatically one-hot encoded and missing values are automatically handled.</p>
 
   <p><strong>Parameters:</strong></p>
   <table>
