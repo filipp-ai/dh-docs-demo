@@ -885,7 +885,7 @@ for tree_level in range(3):
 
 </span>
 `;
-    } else if (dsType === 'Computer Vision - NLP'){
+    } else if (dsType === 'NLP'){
         codeSnippetText += `
 <span class=\"commentText\"># A prerequisite to use this Coreset is to extract the features embeddings 
 # from your samples. In order to do so, drop the last classification layer 
