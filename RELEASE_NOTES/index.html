@@ -1,3 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -83,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#new-features-improvements-and-bug-fixes-in-version-060" class="md-skip">
+        <a href="#new-features-improvements-and-bug-fixes-in-version-070" class="md-skip">
           Skip to content
         </a>
       
@@ -428,6 +434,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#new-features-improvements-and-bug-fixes-in-version-070" class="md-nav__link">
+    New Features, Improvements and Bug Fixes in version 0.7.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-features-improvements-and-bug-fixes-in-version-060" class="md-nav__link">
     New Features, Improvements and Bug Fixes in version 0.6.0
   </a>
@@ -673,6 +686,54 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/data/common/" class="md-nav__link">
+        common
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -749,6 +810,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#new-features-improvements-and-bug-fixes-in-version-070" class="md-nav__link">
+    New Features, Improvements and Bug Fixes in version 0.7.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-features-improvements-and-bug-fixes-in-version-060" class="md-nav__link">
     New Features, Improvements and Bug Fixes in version 0.6.0
   </a>
@@ -819,7 +887,17 @@
    }
 </style>
 
-<p>Last updated on July 25, 2023</p>
+<p>Last updated on September 8, 2023</p>
+<h3 id="new-features-improvements-and-bug-fixes-in-version-070">New Features, Improvements and Bug Fixes in version 0.7.0<a class="headerlink" href="#new-features-improvements-and-bug-fixes-in-version-070" title="Permanent link">¤</a></h3>
+<ul>
+<li>Coresets can now be built when the dataset has missing values. The library will automatically handle them during the build process (as Coresets can only be built without missing values).</li>
+<li>Significantly improving the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.predict"><code>predict</code></a> and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.predict_proba"><code>predict_proba</code></a> time for datasets with categorical features.</li>
+<li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.predict"><code>predict</code></a> and <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.predict_proba"><code>predict_proba</code></a> will now automatically preprocesses the data according to the <code>preprocessing_stage</code> used to train the model.</li>
+<li>Improving the automatic detection of categorical features.</li>
+<li>It is now possible to define the model class, used to train the model on the coreset, when initializing the CoresetTreeService class, using the <code>model_cls</code> parameter.</li>
+<li>Enhancing the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search</code></a> function to run on unsupervised datasets.</li>
+<li>Fixing the problem when <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search</code></a> would fail after <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.remove_samples"><code>remove_samples</code></a> or <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.filter_out_samples"><code>filter_out_samples</code></a> were called.</li>
+</ul>
 <h3 id="new-features-improvements-and-bug-fixes-in-version-060">New Features, Improvements and Bug Fixes in version 0.6.0<a class="headerlink" href="#new-features-improvements-and-bug-fixes-in-version-060" title="Permanent link">¤</a></h3>
 <ul>
 <li>Replacing the <code>save_all</code> parameter passed when initializing all classes, with the <code>chunk_sample_ratio</code> parameter, which indicates the size of the sample that will be taken and saved from each chunk on top of the Coreset for the validation methods.</li>
@@ -936,7 +1014,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.select"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.select", "content.code.copy"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
