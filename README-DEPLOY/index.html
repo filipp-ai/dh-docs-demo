@@ -1,8 +1,9 @@
+<!--
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
 <script>hljs.highlightAll();</script>
+-->
 
 
 <!doctype html>
@@ -606,44 +607,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-          data
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_2">
-          <span class="md-nav__icon md-icon"></span>
-          data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
       <a href="../reference/data/common/" class="md-nav__link">
-        common
+        DataParams
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -757,15 +724,16 @@
 <h2 id="documentation-deployment">Documentation deployment<a class="headerlink" href="#documentation-deployment" title="Permanent link">¤</a></h2>
 <p>During execution GitHub credentials will be asked (you need enter token as password).
 We keep documentation in branch docs-versions 
-<pre class="highlight"><code>pip install -r requirements_mkdocs.txt
-# from branch with version 0.1.0 (for a moment that is docs_0_1_0_fixed)
-mike deploy -b docs-versions -p 0.1.0
-# from branch with last version 0.4.0 (for a moment that is docs_0_4_0)
-# before deploy merge_ingerited_members.py should be executed (merge inherited members)
-mike deploy -b docs-versions -p -u 0.4.0 latest
-mike set-default -b docs-versions -p 0.4.0
-if we need delete certain version
-mike delete -b docs-versions -p 0.1.0</code></pre></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install -r requirements_mkdocs.txt
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a># from branch with version 0.1.0 (for a moment that is docs_0_1_0_fixed)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>mike deploy -b docs-versions -p 0.1.0
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a># from branch with last version 0.4.0 (for a moment that is docs_0_4_0)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># before deploy merge_ingerited_members.py should be executed (merge inherited members)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>mike deploy -b docs-versions -p -u 0.4.0 latest
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>mike set-default -b docs-versions -p 0.4.0
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>if we need delete certain version
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>mike delete -b docs-versions -p 0.1.0
+</span></code></pre></div></p>
 
 
 

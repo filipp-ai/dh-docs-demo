@@ -10,7 +10,7 @@ class MemberCollector(ast.NodeVisitor):
     current_class_node = None
 
     def visit_ClassDef(self, node):
-        for member in [n for n in  node.body if isinstance(n, ast.FunctionDef)]:
+        for member in [n for n in node.body if isinstance(n, ast.FunctionDef)]:
             members_list.append({"class_name": node.name, "member": member})
         return node
 

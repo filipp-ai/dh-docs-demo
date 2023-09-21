@@ -13,8 +13,15 @@
 .md-nav__link[href='#services.coreset_tree.pca']{height: 0px}
 .md-nav__link[href='#services.coreset_tree.svd']{height: 0px}
 .md-nav__link[href='#services.coreset_tree.dtc']{height: 0px}
+.md-nav__link[href='#data.common']{height: 0px}
+/*
+I do not remember what I tried to fix this way,
+anyway now it breaks newlines in code blocks inside docstring!
+Probably I tried to fix non-wrapping signatures in Code Reference
+But now it's now working anyway, even with this code -
 
 .doc-object .highlight pre code{
   display: flex;
   flex-wrap: wrap;
 }
+*/

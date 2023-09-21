@@ -599,14 +599,19 @@ ${(lib_import !=='') ? lib_import:''}service_obj = ${coresetTreeServiceClass}(${
         samplesPerClass = '{47: 100}';
     } else if (dsType === 'NLP'){
         samplesPerClass = '{4: 20}';
+    }else{
+        // (dsType === 'Tabular' && ['Logistic Regression', 'Decision trees classification based'].includes(alg))
+        samplesPerClass = '{3: 50}';
     }
 
-    if (dsType !== 'Tabular'
+    if (dsType !== 'Tabular' ||
+        (dsType === 'Tabular' && ['Logistic Regression', 'Decision trees classification based'].includes(alg))
+
     ) {
         cleaning_processing = `
 <span class=\"commentText\"># Define the classes of interest and the number of samples 
-# you want to examine per class (adjust according to your needs), 
-# you can use 'all' instead of number.
+# you want to examine per class (adjust according to your needs).
+# You can use 'all' instead of number.
 # Alternatively just pass size=100 (or any other number) to get 
 # the top importance samples across all classes.</span>
 samples_per_class = <span class=\"highlightText\">${samplesPerClass}</span>

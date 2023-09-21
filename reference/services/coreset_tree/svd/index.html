@@ -1,8 +1,9 @@
+<!--
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
 <script>hljs.highlightAll();</script>
+-->
 
 
 <!doctype html>
@@ -871,44 +872,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-          data
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_2">
-          <span class="md-nav__icon md-icon"></span>
-          data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../../data/common/" class="md-nav__link">
-        common
+        DataParams
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1261,7 +1228,8 @@
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD" class="headerlink" title="Permanent link">¤</a></h2>
-<pre class="highlight"><code class="language-python">CoresetTreeServiceSVD(*, data_manager=None, data_params=None, n_instances=None, max_memory_gb=None, n_classes=None, optimized_for=None, chunk_size=None, coreset_size=None, coreset_params=None, sample_all=None, working_directory=None, cache_dir=None, node_train_function=None, node_train_function_params=None, node_metadata_func=None, chunk_sample_ratio=None, model_cls=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">CoresetTreeServiceSVD</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory_gb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimized_for</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_sample_ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_cls</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
@@ -1558,7 +1526,8 @@ The default model class is our WSVD class supporting also weights.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">auto_preprocessing(level=0, X=None, sparse_threshold=0.01, copy=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">auto_preprocessing</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sparse_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -1677,7 +1646,8 @@ features: A list of feature names corresponding to the data.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.build" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">build(X, y=None, indices=None, props=None, *, chunk_size=None, chunk_by=None, copy=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -1847,7 +1817,8 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">build_from_df(datasets, target_datasets=None, *, chunk_size=None, chunk_by=None, copy=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -1985,7 +1956,8 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">build_from_file(file_path, target_file_path=None, *, reader_f=pd.read_csv, reader_kwargs=None, reader_chunk_size_param_name=None, chunk_size=None, chunk_by=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -2157,7 +2129,8 @@ When provided, chunk_size input is ignored.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.cross_validate" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">cross_validate(level=None, model=None, scoring=None, return_model=False, verbose=0, preprocessing_stage='auto', **model_params)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">cross_validate</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -2330,7 +2303,8 @@ The hyper-parameters of the model. If not provided, the default values are used.
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.filter_out_samples" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">filter_out_samples(filter_function, force_resample_all=None, force_sensitivity_recalc=None, force_do_nothing=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">filter_out_samples</span><span class="p">(</span><span class="n">filter_function</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -2434,7 +2408,8 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.fit" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">fit(level=0, model=None, preprocessing_stage='auto', **model_params)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fit</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -2554,7 +2529,8 @@ Input when instantiating default model class.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.get_cleaning_samples" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">get_cleaning_samples(size=None, ignore_indices=None, select_from_indices=None, select_from_function=None, ignore_seen_samples=True)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_cleaning_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_seen_samples</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -2699,7 +2675,8 @@ importance: array-like[float].
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.get_coreset" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">get_coreset(level=0, preprocessing_stage='user', sparse_threshold=0.01, as_df=False, with_index=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_coreset</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">sparse_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -2844,7 +2821,8 @@ props: A numpy array of sample properties.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.get_max_level" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">get_max_level()</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_max_level</span><span class="p">()</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -2864,7 +2842,8 @@ Level 1 is the level below the head of the tree, etc.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.grid_search" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">grid_search(param_grid, level=None, validation_method='cross validation', model=None, scoring=None, refit=True, verbose=0, preprocessing_stage='auto', error_score=np.nan)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">grid_search</span><span class="p">(</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_method</span><span class="o">=</span><span class="s1">&#39;cross validation&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3069,7 +3048,8 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.holdout_validate" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">holdout_validate(level=None, validation_size=0.2, model=None, scoring=None, return_model=False, verbose=0, preprocessing_stage='auto', **model_params)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">holdout_validate</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3258,7 +3238,8 @@ The hyper-parameters of the model. If not provided, the default values are used.
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.is_dirty" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">is_dirty()</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">is_dirty</span><span class="p">()</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3302,7 +3283,8 @@ The hyper-parameters of the model. If not provided, the default values are used.
   </span>
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.load" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">load(dir_path, name=None, *, data_manager=None, load_buffer=True, working_directory=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">load</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">load_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3434,7 +3416,8 @@ Local directory where intermediate data is stored.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.partial_build" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">partial_build(X, y=None, indices=None, props=None, *, chunk_size=None, chunk_by=None, copy=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3603,7 +3586,8 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.partial_build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">partial_build_from_df(datasets, target_datasets=None, *, chunk_size=None, chunk_by=None, copy=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3739,7 +3723,8 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.partial_build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">partial_build_from_file(file_path, target_file_path=None, *, reader_f=pd.read_csv, reader_kwargs=None, reader_chunk_size_param_name=None, chunk_size=None, chunk_by=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3909,7 +3894,8 @@ When provided, chunk_size input is ignored.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.plot" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">plot(dir_path=None, selected_trees=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selected_trees</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -3995,7 +3981,8 @@ A dictionary containing the names of the image file(s) to be generated.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.predict" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">predict(X, copy=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4082,7 +4069,8 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.predict_proba" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">predict_proba(X, copy=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4169,7 +4157,8 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.print" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">print(selected_tree=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">selected_tree</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4217,7 +4206,8 @@ Which tree to print. Defaults to printing all.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.remove_samples" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">remove_samples(indices, force_resample_all=None, force_sensitivity_recalc=None, force_do_nothing=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">remove_samples</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4317,7 +4307,8 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.save" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">save(dir_path=None, name=None, save_buffer=True, override=False, allow_pickle=True)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">save</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">override</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4451,7 +4442,8 @@ False: Saves the Coreset tree in JSON format.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.save_coreset" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">save_coreset(file_path, level=0, preprocessing_stage='user', with_index=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">save_coreset</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4554,7 +4546,8 @@ Relevant only when preprocessing_stage=<code>auto</code>. Should the returned da
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.set_model_cls" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">set_model_cls(model_cls)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">set_model_cls</span><span class="p">(</span><span class="n">model_cls</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4601,7 +4594,8 @@ Relevant only when preprocessing_stage=<code>auto</code>. Should the returned da
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.set_seen_indication" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">set_seen_indication(seen_flag=True, indices=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">set_seen_indication</span><span class="p">(</span><span class="n">seen_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4665,7 +4659,8 @@ Set flag only for the provided list of indices. Defaults to all indices.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.update_dirty" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">update_dirty(force_resample_all=None, force_sensitivity_recalc=None)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">update_dirty</span><span class="p">(</span><span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4737,7 +4732,8 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p>
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.update_features" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">update_features(indices, X, feature_names=None, force_resample_all=None, force_sensitivity_recalc=None, force_do_nothing=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">update_features</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -4867,7 +4863,8 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.update_targets" class="headerlink" title="Permanent link">¤</a></h3>
-<pre class="highlight"><code class="language-python">update_targets(indices, y, force_resample_all=None, force_sensitivity_recalc=None, force_do_nothing=False)</code></pre>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">update_targets</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   

@@ -48,10 +48,8 @@ for line in nav.build_literate_nav():
     line = line.replace('[lr]', '[CoresetTreeServiceLR]')
     reference_nav_lines.append(line)
 
-# put dataParams to end of content list (Code Reference)
-# that means -  put to the end first two lines
-reference_nav_lines = reference_nav_lines[1:] + [reference_nav_lines[0]]
-reference_nav_lines = reference_nav_lines[1:] + [reference_nav_lines[0]]
+# put DataParams to end of content list (Code Reference) and without hierarchy
+reference_nav_lines = reference_nav_lines[2:] + ['* [DataParams](data/common.md)']
 
 with mkdocs_gen_files.open("reference/SUMMARY.md", "w") as nav_file:
     nav_file.writelines(reference_nav_lines)

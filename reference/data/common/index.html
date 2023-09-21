@@ -1,8 +1,9 @@
+<!--
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
 <script>hljs.highlightAll();</script>
+-->
 
 
 <!doctype html>
@@ -27,7 +28,7 @@
     
     
       
-        <title>common - DataHeroes</title>
+        <title>DataParams - DataHeroes</title>
       
     
     
@@ -137,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              common
+              DataParams
             
           </span>
         </div>
@@ -614,35 +615,6 @@
     
   
   
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-          data
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_4_2">
-          <span class="md-nav__icon md-icon"></span>
-          data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-    
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -650,12 +622,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          common
+          DataParams
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        common
+        DataParams
       </a>
       
         
@@ -689,13 +661,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -811,7 +776,7 @@
   
 
 
-  <h1>common</h1>
+  <h1>DataParams</h1>
 
 <div class="doc doc-object doc-module">
 
@@ -850,78 +815,22 @@
         Bases: <code><span title="data.common.BaseDC">BaseDC</span></code></p>
 
   
-      <p>Includes all the information needed for the working dataset (features, target, index).
-We can either use this class explicitly or pass params as dictionary:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="data.common.DataParams--__tabbed_1_1" name="data.common.DataParams--__tabbed_1" type="radio" /><input id="data.common.DataParams--__tabbed_1_2" name="data.common.DataParams--__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="data.common.DataParams--__tabbed_1_1">Explicit use of DataParams</label><label for="data.common.DataParams--__tabbed_1_2">Pass parameters as dictionary</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<pre class="highlight"><code class="language-py">from dataheroes import DataParams, CoresetTreeServiceLG
-
-# We can initialize DataParams either from dict...
-data_params = DataParams.from_dict(
-    {
-    'target': {'name': 'Cover_Type'},
-    'index': {'name': 'index_column'}
-    }
-)
-
-# ...or passing param values directly
-data_params = DataParams(
-    target={'name': 'Cover_Type'},
-    index={'name': 'index_column'}
-)
-
-service_obj = CoresetTreeServiceLG(
-    optimized_for='training',
-    data_params=data_params
-)</code></pre>
-</div>
-<div class="tabbed-block">
-<pre class="highlight"><code class="language-py">data_params_dict = {
-    'target': {'name': 'Cover_Type'},
-    'index': {'name': 'index_column'}
-}
-
-service_obj = CoresetTreeServiceLG(
-    optimized_for='training',
-    data_params=data_params_dict
-)</code></pre>
-</div>
-</div>
-</div>
+      <p>Includes all the information needed for the working dataset (features, target, index):
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">data_params</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Cover_Type&#39;</span><span class="p">},</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;index_column&#39;</span><span class="p">}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">service_obj</span> <span class="o">=</span> <span class="n">CoresetTreeServiceLG</span><span class="p">(</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">optimized_for</span><span class="o">=</span><span class="s1">&#39;training&#39;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">data_params</span><span class="o">=</span><span class="n">data_params</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">)</span>
+</span></code></pre></div></p>
 <p>By default, all categorical features are automatically detected and one-hot encoded by the library.
 To disable this functionality set <code>detect_categorical=False</code>.</p>
 <p>By default, missing values are automatically detected and handled by the library.
 To disable this functionality set <code>detect_missing=False</code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>coresets can only be built with numeric features and without missing values.</p>
-</div>
-<p>Forcing specific features, which include only numeric values, to be categorical,
-can be done in two possible ways. On a feature-by-feature base or using the <code>categorical_features</code> list,
-(passing the feature names or the feature index in the dataset starting from 0),
-as shown in the example below.</p>
-<p>By default, missing values for numeric features would be replaced with the calculated mean
-and missing values for categorical features would be treated just as another category/value
-when the feature is one-hot encoded by the library. It is possible to change the default behavior
-for numeric features by defining a specific replacement number for all numeric features using the <code>fill_value_num</code>
-or to define this on a feature-by-feature base. It is possible to change the default behavior
-for categorical features by defining a specific replacement value or by specifying <code>take_most_common</code>,
-(which will fill the missing values with the most commonly used value of the feature) for all categorical features
-using the <code>fill_value_cat</code> or to define this on a feature-by-feature base, as shown in the example below.
-<pre class="highlight"><code>data_params = {
-    'features': [
-        {'name': 'occupation', 'categorical': True,
-            'fill_value': 'Unemployed'},
-        {'name': 'company_name', 'categorical': True},
-        {'name': 'gender'},
-        {'name': 'age', 'fill_value': 18},
-        {'name': 'education'},
-    'categorical_features': ['gender', 'education'],
-    'fill_value_cat': 'take_most_common',
-    'fill_value_num': -1,
-}</code></pre>
-Some other parameters:</p>
+<p>Note - coresets can only be built with numeric features and without missing values.</p>
 <table>
 <thead>
 <tr>
@@ -932,14 +841,59 @@ Some other parameters:</p>
 </thead>
 <tbody>
 <tr>
+<td>features</td>
+<td>List</td>
+<td>List of the fields used for the model training. If not defined, <code>columns_to_features</code> should be defined. Each field defined as dictionary with fields (only <code>name</code> is mandatory) <ul><li>name</li><li>dtype</li><li>fill_value</li><li>transform</li><li>categorical</li><ul></td>
+</tr>
+<tr>
+<td>properties</td>
+<td>List</td>
+<td>List of the dataset fields that are not used for the model training, but still could be viewed and used for data filtering - <code>[{'name': 'notes'}, {'name': 'customer name'}} ]</code></td>
+</tr>
+<tr>
+<td>target</td>
+<td>dict</td>
+<td>Target column - <code>{'name': 'tips amount'}</code></td>
+</tr>
+<tr>
+<td>index</td>
+<td>dict</td>
+<td>index column - <code>{'name': 'record_ID'}</code></td>
+</tr>
+<tr>
+<td>columns_to_features</td>
+<td>Union[bool, dict], default False</td>
+<td>Either bool or dict with two possible fields - <code>include</code> and <code>exclude</code>. For the last case list of fields or masks are allowed - <code>{'exclude': ['ignore_.*', 'bad']}</code></td>
+</tr>
+<tr>
+<td>datetime_to_properties</td>
+<td>boolean, default True</td>
+<td>By default, all datetime features are automatically detected and turned into properties. Properties, won’t be used to compute the Coreset or train the model, but it is possible to filter_out_samples on them or to pass them in the <code>select_from_function</code> of <code>get_cleaning_samples</code>. To disable this functionality set <code>datetime_to_properties</code>=False.</td>
+</tr>
+<tr>
+<td>detect_categorical</td>
+<td>boolean, default True</td>
+<td>By default, all non-numeric and non-boolean features are regarded as categorical and one-hot encoded by the library. To disable this functionality set <code>detect_categorical</code>=False.</td>
+</tr>
+<tr>
+<td>categorical_features</td>
+<td>List</td>
+<td>Forcing specific features, which include only numeric values, to be categorical, can be done in two possible ways. On a feature-by-feature base (passing <code>categorical</code> flag) or using the <code>categorical_features</code> list, (passing the feature names or the feature index in the dataset starting from 0), as shown in the example below.</td>
+</tr>
+<tr>
 <td>ohe_min_frequency</td>
 <td>float between 0 and 1, default 0.01</td>
-<td>. Similarly to Skicit-learn's OneHotEncoder min_frequency parameter, specifies the minimum frequency below which a category will be considered infrequent.</td>
+<td>Similarly to Skicit-learn's OneHotEncoder min_frequency parameter, specifies the minimum frequency below which a category will be considered infrequent.</td>
 </tr>
 <tr>
 <td>ohe_max_categories</td>
 <td>int, default 100.</td>
 <td>Similarly to Skicit-learn's OneHotEncoder max_categories parameter, specifies an upper limit to the number of output features for each input feature when considering infrequent categories.</td>
+</tr>
+<tr>
+<td>detect_missing</td>
+<td>bool, default True</td>
+<td>Is set <code>False</code> and the data contains missing values - an exception will be raised.</td>
 </tr>
 <tr>
 <td>drop_rows_below</td>
@@ -952,12 +906,66 @@ Some other parameters:</p>
 <td>If the ratio of instances with missing values for a certain feature is higher than this ratio this feature would be ignored during the coreset build.</td>
 </tr>
 <tr>
-<td>datetime_to_properties</td>
-<td>boolean, default True</td>
-<td>By default, all datetime features are automatically detected and turned into properties. Properties, won’t be used to compute the Coreset or train the model, but it is possible to filter_out_samples on them or to pass them in the <code>select_from_function</code> of <code>get_cleaning_samples</code>. To disable this functionality set <code>datetime_to_properties</code>=False.</td>
+<td>fill_value_num</td>
+<td>float</td>
+<td>By default, missing values for numeric features would be replaced with the calculated mean and missing values for categorical features would be treated just as another category/value when the feature is one-hot encoded by the library. <br><br>It is possible to change the default behavior for numeric features by defining a specific replacement number for all features or to define <code>fill_value</code> on a feature-by-feature base.</td>
+</tr>
+<tr>
+<td>fill_value_cat</td>
+<td>Any</td>
+<td>It is possible to change the default behavior for categorical features by defining a specific replacement value or by specifying <code>take_most_common</code>, which will fill the missing values with the most commonly used value of the feature.  <br><br>It is possible to change the default behavior for categorical features by defining a specific replacement string for all features or to define <code>fill_value</code> on a feature-by-feature base.</td>
+</tr>
+<tr>
+<td>data_transform_before</td>
+<td>Transform</td>
+<td>The whole dataset processing, executing on original data. The signature is <code>func(dataset) -&gt; dataset</code>.</td>
+</tr>
+<tr>
+<td>feature_transform_default</td>
+<td>Transform</td>
+<td>Transformation on feature-by-feature basis. Executed after <code>data_transform_before</code>. Can be overridden at the level of individual feature with <code>transform</code> attribute of feature. The signature is <code>func(dataset, transform_context:dict):data</code>. Returns data for one feature only. <code>transform_context={'feature_name': ...}</code>.</td>
+</tr>
+<tr>
+<td>data_transform_after</td>
+<td>Transform</td>
+<td>Same as <code>data_transform_before</code>, executed after <code>feature_transform_default</code>.</td>
 </tr>
 </tbody>
 </table>
+<p>Code example:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">data_before_processing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">transform_context</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;constructed_target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">return</span> <span class="n">df</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">def</span> <span class="nf">feature_processing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">transform_context</span><span class="p">):</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">if</span> <span class="n">transform_context</span><span class="p">[</span><span class="s1">&#39;feature_name&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;tips&#39;</span><span class="p">:</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;constructed_target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">transform_context</span><span class="p">[</span><span class="s1">&#39;feature_name&#39;</span><span class="p">]]</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">def</span> <span class="nf">transform_normalization</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">transform_context</span><span class="p">):</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="o">....</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">return</span> <span class="n">df</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">data_params</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="s1">&#39;features&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;occupation&#39;</span><span class="p">,</span> <span class="s1">&#39;categorical&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            <span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="s1">&#39;Unemployed&#39;</span><span class="p">},</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;company_name&#39;</span><span class="p">,</span> <span class="s1">&#39;categorical&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;gender&#39;</span><span class="p">},</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;education&#39;</span><span class="p">},</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;constructed_target&#39;</span><span class="p">},</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="s1">&#39;categorical_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">],</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="s1">&#39;fill_value_cat&#39;</span><span class="p">:</span> <span class="s1">&#39;take_most_common&#39;</span><span class="p">,</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    <span class="s1">&#39;fill_value_num&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="s1">&#39;data_transform_before&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">data_before_processing</span><span class="p">},</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="s1">&#39;feature_transform_default&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">feature_processing</span><span class="p">},</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="s1">&#39;data_transform_after&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">transform_normalization</span><span class="p">},</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="p">}</span>
+</span></code></pre></div></p>
 
 
 
