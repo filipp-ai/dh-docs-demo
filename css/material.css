@@ -25,3 +25,7 @@ But now it's now working anyway, even with this code -
   flex-wrap: wrap;
 }
 */
+
+.doc-label-dataclass, .doc-class-bases{
+  display: none;
+}
