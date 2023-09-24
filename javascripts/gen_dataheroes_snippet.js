@@ -345,7 +345,9 @@ target_dir2_2 = Path("<span class=\"highlightText\">target_dir2_2</span>")
 service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2], target_file_path=[target_dir1_2, target_dir2_2])
 `
 
-    let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree.</span>` : '';
+    let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree.
+# The Coreset tree is automatically updated to reflect the old and newly added data, 
+# allowing models to be retrained quickly, to overcome model degradation.</span>` : '';
 
     if (singleMultFilesDirs === 'Single Directory' && targetFeaturesSeparate === 'No') {
         codeSnippetText += partial ? partial_build_from_dir_single : build_from_dir_single;
@@ -395,7 +397,9 @@ function genBuildFromDF(targetFeaturesSeparateDF, singleMultDF, partial) {
     } else if (targetFeaturesSeparateDF === 'Yes' && singleMultDF === 'Multiple DataFrames') {
         df_params = `datasets=<span class=\"highlightText\">[df1${partial ? '_2' : ''}, df2${partial ? '_2' : ''}]</span>, target_datasets=<span class=\"highlightText\">[y_df1${partial ? '_2' : ''}, y_df2${partial ? '_2' : ''}]</span>`;
     }
-    let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree.</span>\n` : '';
+    let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree.
+# The Coreset tree is automatically updated to reflect the old and newly added data, 
+# allowing models to be retrained quickly, to overcome model degradation.</span>\n` : '';
 
     if (!partial) {
         codeSnippetText += `${buildComment}        
@@ -424,7 +428,9 @@ function genBuildFromNP(singleMultNPY, partial) {
             np_params = `X=<span class=\"highlightText\">[X1${partial ? '_2' : ''}, X2${partial ? '_2' : ''}]</span>`;
         }
     }
-    let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree.</span>\n` : '';
+    let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree.
+# The Coreset tree is automatically updated to reflect the old and newly added data, 
+# allowing models to be retrained quickly, to overcome model degradation.</span>\n` : '';
 
     if (!partial) {
         codeSnippetText += `${buildComment}        
@@ -486,7 +492,7 @@ function genCodeText(dsType,
     // useCaseProcessedComment - "train and cleaning" etc.
     // useCaseOptimizedForStr -  init optimized_for value
     let useCaseProcessed = useCases.map(el => {
-        if (el==='Model training' || el==='Model maintenance' || el==='Model tuning'){
+        if (el === 'Model training and tuning' || el==='Model training' || el==='Model maintenance' || el==='Model tuning'){
             return 'training';
         }
         if (el==='Data cleaning'){
@@ -679,7 +685,7 @@ param_grid = {
    'solver'  : ['newton-cg', 'lbfgs', 'liblinear']</span>      
 }
 
-from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">roc_auc_score</span>`}
+from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">roc_auc_score</span>`}
 scoring = make_scorer(<span class=\"highlightText\">roc_auc_score</span>)
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
@@ -703,7 +709,7 @@ param_grid = {
    'positive': [True, False]</span>      
 }
 
-from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
+from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
 scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
@@ -728,7 +734,7 @@ param_grid = {
 
 <span class=\"commentText\"># The silhouette score</span>
 <span class=\"highlightText\">def scoring(model, X, y=None):
-${useCases.includes('Model training') ? '' : '    from sklearn.metrics import silhouette_score\n'}    clusters_labels = model.predict(X)
+${useCases.includes('Model training and tuning') ? '' : '    from sklearn.metrics import silhouette_score\n'}    clusters_labels = model.predict(X)
     return silhouette_score(X, clusters_labels)</span>
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
@@ -804,7 +810,7 @@ param_grid = {
    'max_depth': [4, 6]</span>  
 }
 
-from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">balanced_accuracy_score</span>`}
+from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">balanced_accuracy_score</span>`}
 scoring = make_scorer(<span class=\"highlightText\">balanced_accuracy_score</span>)
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
@@ -831,7 +837,7 @@ param_grid = {
    'max_depth': [4, 6]</span>  
 }
 
-from sklearn.metrics import make_scorer${useCases.includes('Model training') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
+from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
 scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
@@ -904,6 +910,8 @@ for tree_level in range(3):
 `;
     }
     codeSnippetText += `from dataheroes import ${coresetTreeServiceClass} \n`;
+    codeSnippetText += `\n`;
+    codeSnippetText += `<span class=\"commentText\"># Text <span class=\"highlightText\">highlighted in yellow</span> should be modified to fit your needs.</span>\n`;
 
     codeSnippetText += service_init;
 
@@ -947,42 +955,89 @@ for tree_level in range(3):
         codeSnippetText += '\n'+tuning_processing;
     }
 
+    if (useCases.includes('Model training and tuning')) {
+        codeSnippetText += '\n'+training_processing;
+        codeSnippetText += '\n'+tuning_processing;
+    }
+
+
 
 
 
     let finalComment = ''
-    if (alg == 'Linear Regression'){
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a linear regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_linear_regression_tabular_data_yellowtaxi.ipynb\">link</a>.</span>  
+    if (useCases.includes('Model training and tuning')) {
+        if (alg == 'Linear Regression') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a linear regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_linear_regression_tabular_data_yellowtaxi.ipynb\">link</a></span>  
+
 `
-    } else if (alg == 'Logistic Regression'){
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a logistic regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_logistic_regression_tabular_data_covertype.ipynb\">link</a>.</span>  
+        } else if (alg == 'Logistic Regression') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a logistic regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_logistic_regression_tabular_data_covertype.ipynb\">link</a>.</span>  
+
 `
-    } else if (alg == 'PCA'){
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a PCA model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.</span>  
+        } else if (alg == 'PCA') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a PCA model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.</span>  
+
 `
-    } else if (alg == 'K-Means'){
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a K-Means model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_kmeans_tabular_data_covertype.ipynb\">link</a>.</span>  
+        } else if (alg == 'K-Means') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a K-Means model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_kmeans_tabular_data_covertype.ipynb\">link</a>.</span>  
+
 `
-    } else if (alg == 'SVD'){
-        finalComment = `<span class=\"commentText\"># A full notebook isn’t available for the CoresetTreeServiceSVD. 
-# For a full notebook showing how to build a Coreset tree and train a PCA model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.</span>  
+        } else if (alg == 'SVD') {
+            finalComment = `<span class=\"commentText\"># A full notebook for the CoresetTreeServiceSVD isn’t available. 
+# For a full notebook showing how to build a Coreset tree and train a PCA model on it, 
+# visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.</span>  
+
 `
-    } else if (lib == 'LightGBM'){
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a LightGBM model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_lightGBM_tabular_data_pokerhand.ipynb\">link</a>.</span>  
+        } else if (lib == 'LightGBM') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a LightGBM model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_lightGBM_tabular_data_pokerhand.ipynb\">link</a>.</span>  
+
 `
-    }else if (lib == 'XGBoost') {
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a XGBoost model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_xgboost_tabular_data_pokerhand.ipynb\">link</a>.</span>  
+        } else if (lib == 'XGBoost') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a XGBoost model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_xgboost_tabular_data_pokerhand.ipynb\">link</a>.</span>  
+
 `
-    }else if (lib == 'CatBoost') {
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a CatBoost model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_Catboost_tabular_data_pokerhand.ipynb">link</a>.</span>  
+        } else if (lib == 'CatBoost') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a CatBoost model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_Catboost_tabular_data_pokerhand.ipynb">link</a>.</span>  
 `
-    }else if (alg == 'Decision trees classification based' && lib == 'Scikit-learn') {
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/">link</a>.</span>  
+        } else if (alg == 'Decision trees classification based' && lib == 'Scikit-learn') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_gradientBoosting_tabular_data_pokerhand.ipynb">link</a>.</span>  
+
 `
-    }else if (alg == 'Decision trees regression based' && lib == 'Scikit-learn') {
-        finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/">link</a>.</span>  
+        } else if (alg == 'Decision trees regression based' && lib == 'Scikit-learn') {
+            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_gradientBoosting_tabular_data_pokerhand.ipynb">link</a>.</span>  
+
+`
+        }
+
+        finalComment += `<span class=\"commentText\"># A full notebook showing how to build a Coreset tree and hyperparameter 
+# tune your model on it, is available only for XGBoost in this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/hyperparameters_optimization/grid_search_hyperparameters_tuning.ipynb">link</a>.
+
 `
     }
+
+    if (useCases.includes('Data cleaning')){
+        if (alg =='Decision trees classification based' || alg == 'Logistic Regression'){
+            finalComment += `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and use it to clean your data in classification tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_credit_card.ipynb\">link</a>.</span>
+`
+        } else if (alg =='Decision trees regression based' || alg == 'Linear Regression'){
+            finalComment += `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
+# and use it to clean your data in regression tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_california_housing.ipynb\">link</a>.</span>
+`       }else{
+            finalComment += `<span class=\"commentText\"># A full notebook showing how to clean your data 
+# using the ${coresetTreeServiceClass}, isn’t available.
+# For a full notebook showing how to build a Coreset tree and use it 
+# to clean your data in regression tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_california_housing.ipynb\">link</a>.</span>
+`        }
+    } 
 
     codeSnippetText += '\n'+finalComment;
 
