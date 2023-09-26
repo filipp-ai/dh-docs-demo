@@ -815,7 +815,10 @@
         Bases: <code><span title="data.common.BaseDC">BaseDC</span></code></p>
 
   
-      <p>Includes all the information needed for the working dataset (features, target, index):
+      <p>A class including all required information to preprocess the data.
+When not defined all fields/columns in the data are treated as features.</p>
+<p>The example below shows how the class is used by the CoresetTreeService class.
+See a more extensive example at the end of the page.
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">data_params</span> <span class="o">=</span> <span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Cover_Type&#39;</span><span class="p">},</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="s1">&#39;index&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;index_column&#39;</span><span class="p">}</span>
@@ -826,11 +829,6 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">data_params</span><span class="o">=</span><span class="n">data_params</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">)</span>
 </span></code></pre></div></p>
-<p>By default, all categorical features are automatically detected and one-hot encoded by the library.
-To disable this functionality set <code>detect_categorical=False</code>.</p>
-<p>By default, missing values are automatically detected and handled by the library.
-To disable this functionality set <code>detect_missing=False</code>.</p>
-<p>Note - coresets can only be built with numeric features and without missing values.</p>
 <table>
 <thead>
 <tr>
@@ -841,152 +839,173 @@ To disable this functionality set <code>detect_missing=False</code>.</p>
 </thead>
 <tbody>
 <tr>
-<td>features</td>
-<td>List</td>
-<td>List of the fields used for the model training. If not defined, <code>columns_to_features</code> should be defined. Each field defined as dictionary with fields (only <code>name</code> is mandatory) <ul><li>name</li><li>dtype</li><li>fill_value</li><li>transform</li><li>categorical</li><ul></td>
+<td><strong><a id="General Parameters">General Parameters</a></strong></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>properties</td>
+<td>features</td>
 <td>List</td>
-<td>List of the dataset fields that are not used for the model training, but still could be viewed and used for data filtering - <code>[{'name': 'notes'}, {'name': 'customer name'}} ]</code></td>
+<td>The list of the fields/columns used as featues to build the Coreset and train the model. If not defined, the <code>columns_to_features</code> parameter should be defined. Each feature is defined as a dictionary with the following attributes (only name is mandatory): <ul><li>name: The feature name.</li><li>dtype: The feature data type.</li><li>categorical: Set to true if the feature is categorical. For more information refer to the <a href="#Categorical Features">Categorical Features Parameters</a> section.</li><li>fill_value: In case the feature has missing values, how should they be filled. For more information refer to the <a href="#Missing Values">Missing Values Parameters</a> section.</li><li>transform: A function defining the required transformation for the feature. For more information refer to the <a href="#Data Transformation">Data Transformation Parameters</a> section. </li><ul> See the example at the end of the page.</td>
 </tr>
 <tr>
 <td>target</td>
 <td>dict</td>
-<td>Target column - <code>{'name': 'tips amount'}</code></td>
+<td>The target column. Example: <code>{'name': 'Cover_Type'}</code></td>
 </tr>
 <tr>
 <td>index</td>
 <td>dict</td>
-<td>index column - <code>{'name': 'record_ID'}</code></td>
+<td>The index column. Example: <code>'index': {'name': 'index_column'}</code></td>
+</tr>
+<tr>
+<td>properties</td>
+<td>List</td>
+<td>A list of fields/columns which won’t be used to build the Coreset or train the model, but it is possible to <code>filter_out_samples</code> on them or to pass them in the <code>select_from_function</code> of <code>get_cleaning_samples</code>. <br><br>Example: <code>'index': {'name': 'date'}</code></td>
 </tr>
 <tr>
 <td>columns_to_features</td>
 <td>Union[bool, dict], default False</td>
-<td>Either bool or dict with two possible fields - <code>include</code> and <code>exclude</code>. For the last case list of fields or masks are allowed - <code>{'exclude': ['ignore_.*', 'bad']}</code></td>
+<td>Either <code>bool</code> or <code>dict</code> with two possible fields, include or exclude. When set to true, all fields/columns in the dataset are treated as features. When include is used, only fields/columns defined or those fitting the defined masks are treated as features. When exclude is used, only fields/columns defined or those fitting the defined masks are not treated as features. <br><br>Example: <code>{'exclude': ['internal_.*', 'bad']}</code></td>
 </tr>
 <tr>
 <td>datetime_to_properties</td>
 <td>boolean, default True</td>
-<td>By default, all datetime features are automatically detected and turned into properties. Properties, won’t be used to compute the Coreset or train the model, but it is possible to filter_out_samples on them or to pass them in the <code>select_from_function</code> of <code>get_cleaning_samples</code>. To disable this functionality set <code>datetime_to_properties</code>=False.</td>
+<td>By default, all datetime fields/columns are automatically detected and turned into properties. Properties, won’t be used to build the Coreset or train the model, but it is possible to <code>filter_out_samples</code> on them or to pass them in the <code>select_from_function</code> of <code>get_cleaning_samples</code>. To disable this functionality set <code>datetime_to_properties=False</code>.</td>
 </tr>
 <tr>
-<td><strong>Categorical features</strong></td>
+<td><strong><a id="Categorical Features">Categorical Features Parameters</strong></a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>detect_categorical</td>
 <td>boolean, default True</td>
-<td>By default, all non-numeric and non-boolean features are regarded as categorical and one-hot encoded by the library. To disable this functionality set <code>detect_categorical</code>=False.</td>
+<td>By default, all non-numeric and non-boolean fields/columns are automatically regarded as categorical features and one-hot encoded by the library. To disable this functionality set <code>detect_categorical</code>=False. <br><br>Note - coresets can only be built with numeric features.</td>
 </tr>
 <tr>
 <td>categorical_features</td>
 <td>List</td>
-<td>Forcing specific features, which include only numeric values, to be categorical, can be done in two possible ways. On a feature-by-feature base (passing <code>categorical</code> flag) or using the <code>categorical_features</code> list, (passing the feature names or the feature index in the dataset starting from 0), as shown in the example below.</td>
+<td>Forcing specific features, which include only numeric values, to be categorical, can be done in two possible ways. On a feature-by-feature base (setting the <code>categorical</code> attribute to True in the <code>features</code> list) or using the <code>categorical_features</code> list, passing the feature names or the feature index in the dataset starting from 0. <br><br>See the example at the end of the page.</td>
 </tr>
 <tr>
 <td>ohe_min_frequency</td>
 <td>float between 0 and 1, default 0.01</td>
-<td>Similarly to Skicit-learn's OneHotEncoder min_frequency parameter, specifies the minimum frequency below which a category will be considered infrequent.</td>
+<td>Similarly to Skicit-learn's OneHotEncoder <code>min_frequency</code> parameter, specifies the minimum frequency below which a category will be considered infrequent. <br><br>Example: <code>ohe_min_frequency</code>=0</td>
 </tr>
 <tr>
 <td>ohe_max_categories</td>
 <td>int, default 100.</td>
-<td>Similarly to Skicit-learn's OneHotEncoder max_categories parameter, specifies an upper limit to the number of output features for each input feature when considering infrequent categories.</td>
+<td>Similarly to Skicit-learn's OneHotEncoder max_categories parameter, specifies an upper limit to the number of output features for each input feature when considering infrequent categories. <br><br>Example: <code>ohe_max_categories</code>=500</td>
 </tr>
 <tr>
-<td><strong>Missing values</strong></td>
+<td><strong><a id="Missing Values">Missing Values Parameters</a></strong></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>detect_missing</td>
 <td>bool, default True</td>
-<td>Is set <code>False</code> and the data contains missing values - an exception will be raised.</td>
+<td>By default, missing values are automatically detected and handled by the library. To disable this functionality set <code>detect_missing=False</code>.<br><br>Note - coresets can only be built when there are no missing values.</td>
 </tr>
 <tr>
 <td>drop_rows_below</td>
 <td>float between 0 and 1, default 0 (nothing is dropped)</td>
-<td>If the ratio of instances with missing values on any feature is lower than this ratio those instances would be ignored during the coreset build.</td>
+<td>If the ratio of instances with missing values on any feature is lower than this ratio, those instances would be ignored during the coreset build.<br><br>Example: <code>drop_rows_below</code>=0.05</td>
 </tr>
 <tr>
 <td>drop_cols_above</td>
 <td>float between 0 and 1, default 1 (nothing is dropped).</td>
-<td>If the ratio of instances with missing values for a certain feature is higher than this ratio this feature would be ignored during the coreset build.</td>
+<td>If the ratio of instances with missing values for a certain feature is higher than this ratio, this feature would be ignored during the coreset build.<br><br>Example: <code>drop_cols_above</code>=0.3</td>
 </tr>
 <tr>
 <td>fill_value_num</td>
 <td>float</td>
-<td>By default, missing values for numeric features would be replaced with the calculated mean and missing values for categorical features would be treated just as another category/value when the feature is one-hot encoded by the library. <br><br>It is possible to change the default behavior for numeric features by defining a specific replacement number for all features or to define <code>fill_value</code> on a feature-by-feature base.</td>
+<td>By default, missing values for numeric features would be replaced with the calculated mean. It is possible to change the default behavior for numeric features by defining a specific replacement number for all features using the fill_value_num or to use the fill_value attribute in the features list, to define a replacement on a feature-by-feature base.<br><br>Example: <code>fill_value_num</code>=-1</td>
 </tr>
 <tr>
 <td>fill_value_cat</td>
 <td>Any</td>
-<td>It is possible to change the default behavior for categorical features by defining a specific replacement value or by specifying <code>take_most_common</code>, which will fill the missing values with the most commonly used value of the feature.  <br><br>It is possible to change the default behavior for categorical features by defining a specific replacement string for all features or to define <code>fill_value</code> on a feature-by-feature base.</td>
+<td>By default, missing values for categorical features would be treated just as another category/value when the feature is one-hot encoded by the library. <br><br>It is possible to change the default behavior for categorical features by defining a specific replacement value or by specifying take_most_common, (which will fill the missing values with the most commonly used value of the feature) for all categorical features using the fill_value_cat or to use the fill_value attribute in the features list, to define a replacement on a feature-by-feature base.<br><br>Example: <code>'fill_value_cat'= 'take_most_common'</code></td>
+</tr>
+<tr>
+<td><strong><a id="Data Transformation">Data Transformation Parameters</a></strong></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>data_transform_before</td>
 <td>Transform</td>
-<td>The whole dataset processing, executing on original data. The signature is <code>func(dataset) -&gt; dataset</code>.</td>
+<td>A preprocessing function applied to the entire dataset. The function's signature is <code>func(dataset) -&gt; dataset</code>.<br><br>See the example at the end of the page.</td>
 </tr>
 <tr>
 <td>feature_transform_default</td>
 <td>Transform</td>
-<td>Transformation on feature-by-feature basis. Executed after <code>data_transform_before</code>. Can be overridden at the level of individual feature with <code>transform</code> attribute of feature. The signature is <code>func(dataset, transform_context:dict):data</code>. Returns data for one feature only. <code>transform_context={'feature_name': ...}</code>.</td>
+<td>A default feature transformation function applied on feature-by-feature base. Executed after the data_transform_before. The function can be overridden at the feature level with by defining the transform attribute in the features list. The function's signature is <code>func(dataset, transform_context:dict):data</code>. The function returns the data of a single feature. <code>transform_context={'feature_name': ...}</code></td>
 </tr>
 <tr>
 <td>data_transform_after</td>
 <td>Transform</td>
-<td>Same as <code>data_transform_before</code>, executed after <code>feature_transform_default</code>.</td>
+<td>A preprocessing function similar to <code>data_transform_before</code>, executed after the feature-by-feature transformation.<br><br>See the example at the end of the page.</td>
 </tr>
 </tbody>
 </table>
 <p>Code example:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">data_before_processing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">transform_context</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">data_before_processing</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="c1"># remove dataset rows by condition</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;department&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Head Office&#39;</span><span class="p">]</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">return</span> <span class="n">df</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">def</span> <span class="nf">feature_processing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">transform_context</span><span class="p">):</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">if</span> <span class="n">transform_context</span><span class="p">[</span><span class="s1">&#39;feature_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;bonus_percent&#39;</span><span class="p">:</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="c1"># replace float &#39;bonus_percent&#39; feature with categorical</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bonus_percent&#39;</span><span class="p">]</span> <span class="o">&lt;=</span><span class="mi">5</span><span class="p">,</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bonus_percent&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bonus_percent&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">),</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bonus_percent&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)]</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;less_5&#39;</span><span class="p">,</span> <span class="s1">&#39;5_to_10&#39;</span><span class="p">,</span> <span class="s1">&#39;more_10&#39;</span><span class="p">]</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bonus_percent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">conditions</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">transform_context</span><span class="p">[</span><span class="s1">&#39;feature_name&#39;</span><span class="p">]]</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">def</span> <span class="nf">transform_scaling</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">transform_context</span><span class="p">):</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="n">columns_to_scale</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;work_experience_in_months&#39;</span><span class="p">]</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="n">df</span><span class="p">[</span><span class="n">columns_to_scale</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">columns_to_scale</span><span class="p">])</span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="k">return</span> <span class="n">df</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="n">data_params</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="s1">&#39;features&#39;</span><span class="p">:</span> <span class="p">[</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;family_status&#39;</span><span class="p">,</span> <span class="s1">&#39;categorical&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="s1">&#39;single&#39;</span><span class="p">},</span>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;department&#39;</span><span class="p">,</span> <span class="s1">&#39;categorical&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;gender&#39;</span><span class="p">},</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;job_title&#39;</span><span class="p">},</span>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
-</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;work_experience_in_months&#39;</span><span class="p">},</span>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;bonus_percent&#39;</span><span class="p">},</span>
-</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="p">],</span>
-</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;full_name&#39;</span><span class="p">},],</span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;salary&#39;</span><span class="p">},</span>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    <span class="s1">&#39;categorical_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">],</span>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="s1">&#39;fill_value_cat&#39;</span><span class="p">:</span> <span class="s1">&#39;take_most_common&#39;</span><span class="p">,</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    <span class="s1">&#39;fill_value_num&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    <span class="s1">&#39;data_transform_before&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">data_before_processing</span><span class="p">},</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="s1">&#39;feature_transform_default&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">feature_processing</span><span class="p">},</span>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>    <span class="s1">&#39;data_transform_after&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">transform_scaling</span><span class="p">},</span>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">def</span> <span class="nf">education_level_transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="c1"># replace categorical values with numeric</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;elementary_school&#39;</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;high_school&#39;</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;diploma&#39;</span><span class="p">,</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;associates&#39;</span><span class="p">,</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;bachelors&#39;</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;masters&#39;</span><span class="p">,</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;doctorate&#39;</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="p">]</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">conditions</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;education_level&#39;</span><span class="p">]</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="k">def</span> <span class="nf">yearly_bonus_transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="c1"># for creating new feature</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;h1_bonus&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;h2_bonus&#39;</span><span class="p">]</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="k">def</span> <span class="nf">transform_scaling</span><span class="p">(</span><span class="n">dataset</span><span class="p">):</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="n">columns_to_scale</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;work_experience_in_months&#39;</span><span class="p">]</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    <span class="n">df</span><span class="p">[</span><span class="n">columns_to_scale</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">columns_to_scale</span><span class="p">])</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>    <span class="k">return</span> <span class="n">df</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="n">data_params</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="s1">&#39;features&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;family_status&#39;</span><span class="p">,</span> <span class="s1">&#39;categorical&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="s1">&#39;single&#39;</span><span class="p">},</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;department&#39;</span><span class="p">,</span> <span class="s1">&#39;categorical&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;gender&#39;</span><span class="p">},</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;job_title&#39;</span><span class="p">},</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;fill_value&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;work_experience_in_months&#39;</span><span class="p">},</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;bonus_percent&#39;</span><span class="p">},</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;education_level&#39;</span><span class="p">,</span> <span class="s1">&#39;transform&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">education_level_transform</span><span class="p">}},</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;yearly_bonus&#39;</span><span class="p">,</span> <span class="s1">&#39;transform&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">yearly_bonus_transform</span><span class="p">}},</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    <span class="p">],</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>    <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;full_name&#39;</span><span class="p">},],</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;salary&#39;</span><span class="p">},</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>    <span class="s1">&#39;categorical_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">],</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    <span class="s1">&#39;fill_value_cat&#39;</span><span class="p">:</span> <span class="s1">&#39;take_most_common&#39;</span><span class="p">,</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    <span class="s1">&#39;fill_value_num&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>    <span class="s1">&#39;data_transform_before&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">data_before_processing</span><span class="p">},</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    <span class="s1">&#39;data_transform_after&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">transform_scaling</span><span class="p">},</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="p">}</span>
 </span></code></pre></div></p>
 
 
