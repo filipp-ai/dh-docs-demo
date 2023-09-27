@@ -617,7 +617,7 @@ ${(lib_import !=='') ? lib_import:''}service_obj = ${coresetTreeServiceClass}(${
         cleaning_processing = `
 <span class=\"commentText\"># Define the classes of interest and the number of samples 
 # you want to examine per class (adjust according to your needs).
-# You can use 'all' instead of number.
+# You can use 'all' instead of a number too.
 # Alternatively just pass size=100 (or any other number) to get 
 # the top importance samples across all classes.</span>
 samples_per_class = <span class=\"highlightText\">${samplesPerClass}</span>
@@ -909,9 +909,9 @@ for tree_level in range(3):
 </span>
 `;
     }
-    codeSnippetText += `from dataheroes import ${coresetTreeServiceClass} \n`;
-    codeSnippetText += `\n`;
     codeSnippetText += `<span class=\"commentText\"># Text <span class=\"highlightText\">highlighted in yellow</span> should be modified to fit your needs.</span>\n`;
+    codeSnippetText += `\n`;
+    codeSnippetText += `from dataheroes import ${coresetTreeServiceClass} \n`;
 
     codeSnippetText += service_init;
 

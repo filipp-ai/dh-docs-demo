@@ -132,8 +132,19 @@ input[type="checkbox"] + label:before{
     flex-grow: 0;
     flex-shrink: 0;
 }
+
+.checkbox-full label{
+    margin-left: 0.3em;
+    border-bottom: 0.05rem dotted;
+    cursor: help;
+}
+
+.checkbox-full label:hover{
+    cursor: help;
+}
+
 .checkbox-tooltip{
-    vertical-align: top;
+    vertical-align: text-top;
     cursor: pointer;
 }
 
