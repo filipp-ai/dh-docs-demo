@@ -3,11 +3,14 @@ const mlAlgSelect = document.getElementById('ML algorithm');
 const trainLibSelect = document.getElementById('Library used to train models');
 const useCaseCheckList = document.getElementById('Use Case Check');
 
-//const tabularUseCases = ["Model training", "Model tuning", "Model maintenance", "Data cleaning"];
-const tabularUseCases = ["Model training and tuning", "Model maintenance", "Data cleaning"];
+//const tabularUseCases = ["Model training", "Model tuning", "Model retraining", "Data cleaning"];
+const tabularUseCases = ["Model training and tuning", "Model retraining", "Data cleaning"];
 const nonTabularUseCases = ["Data cleaning"];
 
-const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"].sort();
+const tabularMLAlg = [
+    "Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based",
+    //"Decision trees regression based"
+].sort();
 const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"].sort();
 
 const tabularTrainLib = ["XGBoost", "LightGBM", "CatBoost", "Scikit-learn"];
@@ -47,7 +50,7 @@ function getSelectOptionsCheckbox(elements){
         let tooltip = '';
         if (el =='Model training and tuning'){
             tooltip = 'Training and hyperparameter tuning models';
-        } else if (el=='Model maintenance'){
+        } else if (el=='Model retraining'){
             tooltip = 'Adding data and retraining the models';
         } else if (el=='Data cleaning'){
             tooltip = 'Identifying mislabels and outliers';
@@ -160,7 +163,7 @@ function handleUseCaseChange(){
     // messy restoring of Model_training_and_tuning value!
     const modelTrainingStateName = "Model_training_and_tuning";
 
-    if (!document.getElementById('Model maintenance').checked &&
+    if (!document.getElementById('Model retraining').checked &&
         !document.getElementById('Model training and tuning').disabled
     ) {
         // 'Model training and tuning' - store its value
@@ -168,7 +171,7 @@ function handleUseCaseChange(){
         localStorage.setItem(modelTrainingStateName, stateValue);
     }
 
-    if (!document.getElementById('Model maintenance').checked &&
+    if (!document.getElementById('Model retraining').checked &&
         document.getElementById('Model training and tuning').disabled
     ) {
         // if we are enabling 'Model training and tuning' - RE-store its value
@@ -180,14 +183,14 @@ function handleUseCaseChange(){
         }
 
     }
-    if (document.getElementById('Model maintenance').checked
+    if (document.getElementById('Model retraining').checked
         &&
         !document.getElementById('Model training and tuning').checked
     ){
         document.getElementById('Model training and tuning').click();
     }
     document.getElementById('Model training and tuning').disabled =
-        document.getElementById('Model maintenance').checked;
+        document.getElementById('Model retraining').checked;
 
     generateText();
 }

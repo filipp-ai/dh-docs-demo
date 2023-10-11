@@ -492,7 +492,7 @@ function genCodeText(dsType,
     // useCaseProcessedComment - "train and cleaning" etc.
     // useCaseOptimizedForStr -  init optimized_for value
     let useCaseProcessed = useCases.map(el => {
-        if (el === 'Model training and tuning' || el==='Model training' || el==='Model maintenance' || el==='Model tuning'){
+        if (el === 'Model training and tuning' || el==='Model training' || el==='Model retraining' || el==='Model tuning'){
             return 'training';
         }
         if (el==='Data cleaning'){
@@ -932,7 +932,7 @@ for tree_level in range(3):
         codeSnippetText += cleaning_processing;
     }
 
-    if (useCases.includes('Model maintenance')) {
+    if (useCases.includes('Model retraining')) {
         codeSnippetText += '\n'+ genBuild(
         form=form,
         singleMultFilesDirs=singleMultFilesDirs,
