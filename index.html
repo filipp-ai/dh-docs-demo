@@ -1,3 +1,10 @@
+<!--
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+-->
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -678,6 +685,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/data/common/" class="md-nav__link">
+        DataParams
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -841,7 +862,7 @@ The Coreset Tree data structure has several advantages over a single Coreset com
 <ul>
 <li>A single Coreset requires the entire dataset to fit into the device’s memory and is therefore limited in the size of datasets it can handle. A Coreset Tree, does not have this limitation as it processes the dataset in chunks and can therefore handle any dataset size by splitting the data into the appropriate number of chunks.</li>
 <li>A Coreset Tree can be computed much faster since the Coresets’ computation can be distributed across a cluster of devices or processors.</li>
-<li>In a Coreset Tree, additional data can be added to the original dataset without requiring re-computation of the entire Coreset Tree. A Coreset just needs to be built for the additional data and then that Coreset is added to the Coreset Tree, while updating only the necessary Coreset nodes on the path to the root Coreset. This makes it a great structure to use for Model retraining in production.</li>
+<li>In a Coreset Tree, additional data can be added to the original dataset without requiring re-computation of the entire Coreset Tree. A Coreset just needs to be built for the additional data and then that Coreset is added to the Coreset Tree, while updating only the necessary Coreset nodes on the path to the root Coreset. This makes it a great structure to use for model retraining in production.</li>
 <li>Similarly, updating the target or features of existing instances or removing instances, does not require re‑computation of the entire Coreset Tree, updating the Coreset nodes on the path to the root Coreset will suffice. E.g.: If we updated the target for some instances in X6, all we need to do to keep the Coreset Tree updated, is to update the Coresets C9, C10, C14 and C15, while the rest of the Coresets remain unchanged.</li>
 </ul>
 <p>The main disadvantage of the Coreset Tree versus a single Coreset computed over the entire dataset, is that each level of the Coreset tree increases the approximation error, therefore leading to a slightly less accurate root Coreset. However, this error can be controlled and decreased easily, by increasing the <code>coreset_size</code>.</p>
@@ -871,8 +892,8 @@ The Coreset Tree data structure has several advantages over a single Coreset com
 <li>Create a free account on <a href="https://dataheroes.ai/getting-started/">https://dataheroes.ai/getting-started/</a>.</li>
 <li>Install the library on your device by running: <code>pip install dataheroes</code>.</li>
 <li>Activate your account by executing the following code once (from each device you’re using):
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>from dataheroes.utils import activate_account
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>activate_account(&quot;john.doe@gmail.com&quot;)
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">dataheroes.utils</span> <span class="kn">import</span> <span class="n">activate_account</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">activate_account</span><span class="p">(</span><span class="s2">&quot;john.doe@gmail.com&quot;</span><span class="p">)</span>
 </span></code></pre></div></li>
 <li>Check out our documentation and examples available <a target="_blank" href="https://dataheroes.ai/tutorials/">here</a>.</li>
 </ol>

@@ -7,10 +7,7 @@ const useCaseCheckList = document.getElementById('Use Case Check');
 const tabularUseCases = ["Model training and tuning", "Model retraining", "Data cleaning"];
 const nonTabularUseCases = ["Data cleaning"];
 
-const tabularMLAlg = [
-    "Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based",
-    //"Decision trees regression based"
-].sort();
+const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"].sort();
 const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"].sort();
 
 const tabularTrainLib = ["XGBoost", "LightGBM", "CatBoost", "Scikit-learn"];

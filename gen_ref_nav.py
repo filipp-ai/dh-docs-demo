@@ -13,6 +13,7 @@ for file_pattern in sorted([
                     "dataheroes/services/coreset_tree/lr.py",
                     "dataheroes/services/coreset_tree/pca.py",
                     "dataheroes/services/coreset_tree/svd.py",
+                    "dataheroes/data/common.py",
                      ]):
     for path_str in glob.glob(file_pattern, recursive=True):
         path = Path(path_str)
@@ -46,6 +47,9 @@ for line in nav.build_literate_nav():
     line = line.replace('[kmeans]', '[CoresetTreeServiceKMeans]')
     line = line.replace('[lr]', '[CoresetTreeServiceLR]')
     reference_nav_lines.append(line)
+
+# put DataParams to end of content list (Code Reference) and without hierarchy
+reference_nav_lines = reference_nav_lines[2:] + ['* [DataParams](data/common.md)']
 
 with mkdocs_gen_files.open("reference/SUMMARY.md", "w") as nav_file:
     nav_file.writelines(reference_nav_lines)
