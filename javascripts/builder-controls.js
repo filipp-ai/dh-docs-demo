@@ -2,17 +2,93 @@ const dtypeSelect = document.getElementById('Dataset type');
 const mlAlgSelect = document.getElementById('ML algorithm');
 const trainLibSelect = document.getElementById('Library used to train models');
 const useCaseCheckList = document.getElementById('Use Case Check');
-
-//const tabularUseCases = ["Model training", "Model tuning", "Model retraining", "Data cleaning"];
 const tabularUseCases = ["Model training and tuning", "Model retraining", "Data cleaning"];
 const nonTabularUseCases = ["Data cleaning"];
-
 const tabularMLAlg = ["Linear Regression", "Logistic Regression", "K-Means", "PCA", "SVD", "Decision trees classification based", "Decision trees regression based"].sort();
 const nonTabularMLAlg = ["Deep learning classification", "Deep learning regression"].sort();
-
 const tabularTrainLib = ["XGBoost", "LightGBM", "CatBoost", "Scikit-learn"];
 const nonTabularTrainLib = ["PyTorch", "TensorFlow (currently used for feature extraction)"];
+let controlSelectIds = [
+                'Dataset type',
+                'ML algorithm',
+                'Library used to train models',
+                'datasetFormSelect',
+                'File Type',
+                'targetFeaturesSeparate',
+                'singleMultFilesDirs',
+                'targetFeaturesSeparateDF',
+                'singleMultDF',
+                'singleMultNPY',
+                 ];
+let controlCheckIds = [
+                'Model training and tuning',
+                'Model retraining',
+                'Data cleaning'
+                 ];
 
+
+let loadStateInProgress = false;
+
+function saveState(){
+    if (loadStateInProgress){
+        return;
+    }
+
+    for (let controlIdIdx in controlSelectIds){
+        let controlId = String(controlSelectIds[controlIdIdx]);
+        if (document.getElementById(controlId) !== null && document.getElementById(controlId) !== undefined) {
+            localStorage.setItem(controlId, document.getElementById(controlId).value);
+        }
+    }
+
+    for (let controlIdIdx in controlCheckIds){
+        let controlId = controlCheckIds[controlIdIdx];
+        if (document.getElementById(controlId) !== null) {
+            localStorage.setItem(controlId, document.getElementById(controlId).checked ? '1' : '0');
+        }
+    }
+}
+function  loadState(){
+    loadStateInProgress = true;
+    try {
+        let dsType = localStorage.getItem('Dataset type');
+        if (dsType === null || dsType === '') {
+            return;
+        }
+        let debugId = 'Library used to train models';
+
+        document.getElementById('Dataset type').value = localStorage.getItem('Dataset type');
+        handleDType();
+
+        for (let controlIdIdx in controlCheckIds) {
+            let controlId = String(controlCheckIds[controlIdIdx]);
+            if (localStorage.getItem(controlId) === '1' && document.getElementById(controlId) !== null
+                && !document.getElementById(controlId).checked) {
+                document.getElementById(controlId).click();
+            }
+        }
+        handleUseCaseChange();
+        document.getElementById('ML algorithm').value = localStorage.getItem('ML algorithm');
+        handleAlg();
+
+        document.getElementById('Library used to train models').value = localStorage.getItem('Library used to train models');
+        document.getElementById('datasetFormSelect').value = localStorage.getItem('datasetFormSelect');
+        handleForm();
+
+        let ctrlList = ['File Type',
+            'targetFeaturesSeparate',
+            'singleMultFilesDirs',
+            'targetFeaturesSeparateDF',
+            'singleMultDF',
+            'singleMultNPY'];
+        ctrlList.forEach((ctrlId) => {
+            document.getElementById(ctrlId).value = localStorage.getItem(ctrlId);
+        });
+    }finally {
+        loadStateInProgress = false;
+        generateText();
+    }
+}
 function getSelectOptions(elements){
     let result = '';
     for (el of elements){
@@ -24,7 +100,6 @@ function getSelectOptions(elements){
     }
     return result;
 }
-
 function getUseCasesList(){
     let useCasesList = [];
     for (let v in tabularUseCases) {
@@ -35,7 +110,6 @@ function getUseCasesList(){
     }
     return useCasesList;
 }
-
 function getSelectOptionsCheckbox(elements){
 
     let result = '';
@@ -52,22 +126,20 @@ function getSelectOptionsCheckbox(elements){
         } else if (el=='Data cleaning'){
             tooltip = 'Identifying mislabels and outliers';
         }
-        result += `<div class="checkbox-full"><input ${checked} type="checkbox" onclick="handleUseCaseChange(this);" name="${el}" id="${el}"><label for="${el}" data-toggle='tooltip' title='${tooltip}'>${el}
-</label>
-
-
-
-
-
-
-</div>`;
+        result += `<div class="checkbox-full">
+                    <input ${checked} type="checkbox" onclick="handleUseCaseChange(this);" 
+                    name="${el}" id="${el}">
+                    <label for="${el}" data-toggle='tooltip' title='${tooltip}'>${el}
+                    </label>
+                    </div>`;
 
     }
 
     return result;
 }
-
 function generateText(){
+    if (!loadStateInProgress){saveState();}
+    
     const warningText = document.getElementById('warning_text');
     const warningDiv = document.getElementById('warningDiv');
     const codeSnippetDiv = document.getElementById('codeSnippet');
@@ -154,8 +226,6 @@ function generateText(){
     }
 
 }
-
-
 function handleUseCaseChange(){
     // messy restoring of Model_training_and_tuning value!
     const modelTrainingStateName = "Model_training_and_tuning";
@@ -191,21 +261,14 @@ function handleUseCaseChange(){
 
     generateText();
 }
-
-const selects = document.querySelectorAll('select');
-selects.forEach(select => {
-    select.addEventListener('change', function() {
-        generateText();
-    });
-});
-
-
 function handleDType(){
     const selectedDtype = dtypeSelect.value;
     document.getElementById('tabularOptions').style.display = 'none';
     if (selectedDtype === 'Tabular'){
         document.getElementById('tabularOptions').style.display = 'block';
-        useCaseCheckList.innerHTML = getSelectOptionsCheckbox(tabularUseCases);
+        //useCaseCheckList.innerHTML = getSelectOptionsCheckbox(tabularUseCases);
+        document.getElementById('grp_Model training and tuning').style.display = 'block';
+        document.getElementById('grp_Model retraining').style.display = 'block';
         mlAlgSelect.innerHTML = getSelectOptions(tabularMLAlg);
         trainLibSelect.innerHTML = getSelectOptions(tabularTrainLib);
     }else{
@@ -213,25 +276,25 @@ function handleDType(){
         document.getElementById('File Type').value = 'NPY';
         document.getElementById('targetFeaturesSeparate').value = 'Yes';
 
-        useCaseCheckList.innerHTML = getSelectOptionsCheckbox(nonTabularUseCases);
+        //useCaseCheckList.innerHTML = getSelectOptionsCheckbox(nonTabularUseCases);
+        document.getElementById('grp_Model training and tuning').style.display = 'none';
+        document.getElementById('grp_Model retraining').style.display = 'none';
         mlAlgSelect.innerHTML = getSelectOptions(nonTabularMLAlg);
         trainLibSelect.innerHTML = getSelectOptions(nonTabularTrainLib);
     }
 }
-
 function handleAlg(){
-    const selectedDtype = dtypeSelect.value;
+    const selectedDType = dtypeSelect.value;
     const selectedAlg = mlAlgSelect.value;
     // Clear previous options
-    if (selectedDtype === 'Tabular' && !selectedAlg.includes('Decision trees')){
+    if (selectedDType === 'Tabular' && !selectedAlg.includes('Decision trees')){
         trainLibSelect.innerHTML = getSelectOptions(['Scikit-learn']);
         trainLibSelect.value = 'Scikit-learn';
-    }else if (selectedDtype === 'Tabular' && selectedAlg.includes('Decision trees')){
+    }else if (selectedDType === 'Tabular' && selectedAlg.includes('Decision trees')){
         trainLibSelect.innerHTML = getSelectOptions(tabularTrainLib);
     }else{
         trainLibSelect.innerHTML = getSelectOptions(nonTabularTrainLib);
     }
-    ////targetFeaturesSeparateDF targetFeaturesSeparate
     if (['K-Means', 'PCA', 'SVD'].includes(selectedAlg)){
         document.getElementById('targetFeaturesSeparate').innerHTML = getSelectOptions(['No']);
         document.getElementById('targetFeaturesSeparateDF').innerHTML = getSelectOptions(['No']);
@@ -246,16 +309,6 @@ function handleAlg(){
     }
     generateText();
 }
-
-dtypeSelect.addEventListener('change', function() {
-    handleDType();
-    handleAlg();
-});
-
-mlAlgSelect.addEventListener('change', function() {
-    handleAlg();
-});
-
 function handleForm(){
     const selectedDatasetForm = datasetFormSelect.value;
     optionFileContent.style.display = 'none';
@@ -269,22 +322,40 @@ function handleForm(){
     }else if (selectedDatasetForm ==='NP') {
         optionNPContent.style.display = 'block';
     }
-
-
 }
 
+document.querySelectorAll('select').forEach(select => {
+    if (select.id !== 'ML algorithm') {
+        select.addEventListener('change', function () {
+            generateText();
+        });
+    }
+});
 
+dtypeSelect.addEventListener('change', function() {
+    handleDType();
+    handleAlg();
+});
 
-
+mlAlgSelect.addEventListener('change', function() {
+    handleAlg();
+});
 
 
 datasetFormSelect.addEventListener('change', function() {
     handleForm();
 });
 
-handleDType();
-handleAlg();
-handleForm();
-generateText();
+
+if (localStorage.getItem('Dataset type') === null ||
+    localStorage.getItem('Dataset type') === ''){
+    handleDType();
+    handleAlg();
+    handleForm();
+    generateText();
+}else{
+    loadState();
+}
+
 
 

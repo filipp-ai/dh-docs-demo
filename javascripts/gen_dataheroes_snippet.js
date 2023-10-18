@@ -691,6 +691,7 @@ scoring = make_scorer(<span class=\"highlightText\">roc_auc_score</span>)
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
+    refit=True,
     verbose=2)
 `
 
@@ -715,6 +716,7 @@ scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
+    refit=True,
     verbose=2)
 `
 
@@ -740,6 +742,7 @@ ${useCases.includes('Model training and tuning') ? '' : '    from sklearn.metric
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
+    refit=True,
     verbose=2)
 `
 
@@ -767,6 +770,7 @@ param_grid = {
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
+    refit=True,
     verbose=2)
 `
 
@@ -791,7 +795,8 @@ param_grid = {
 
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
-    scoring=scoring, 
+    scoring=scoring,
+    refit=True, 
     verbose=2)
 `
 
@@ -816,6 +821,7 @@ scoring = make_scorer(<span class=\"highlightText\">balanced_accuracy_score</spa
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
+    refit=True,
     verbose=2
     )
 `
@@ -843,6 +849,7 @@ scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
 optimal_hyperparameters, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
+    refit=True,
     verbose=2
     )
 `
