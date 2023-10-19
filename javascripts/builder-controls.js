@@ -34,10 +34,12 @@ function saveState(){
         return;
     }
 
+    let paramsForUrl = '?';
     for (let controlIdIdx in controlSelectIds){
         let controlId = String(controlSelectIds[controlIdIdx]);
         if (document.getElementById(controlId) !== null && document.getElementById(controlId) !== undefined) {
             localStorage.setItem(controlId, document.getElementById(controlId).value);
+            paramsForUrl += controlId+'='+document.getElementById(controlId).value+'&';
         }
     }
 
@@ -45,8 +47,10 @@ function saveState(){
         let controlId = controlCheckIds[controlIdIdx];
         if (document.getElementById(controlId) !== null) {
             localStorage.setItem(controlId, document.getElementById(controlId).checked ? '1' : '0');
+            paramsForUrl += controlId+'='+document.getElementById(controlId).checked ? '1' : '0'+'&';
         }
     }
+    window.history.replaceState(null, null, paramsForUrl);
 }
 function  loadState(){
     loadStateInProgress = true;
@@ -64,6 +68,11 @@ function  loadState(){
             let controlId = String(controlCheckIds[controlIdIdx]);
             if (localStorage.getItem(controlId) === '1' && document.getElementById(controlId) !== null
                 && !document.getElementById(controlId).checked) {
+                document.getElementById(controlId).click();
+            }
+            // sometimes should click if flag should not be selected
+            if (localStorage.getItem(controlId) === '0' && document.getElementById(controlId) !== null
+                && document.getElementById(controlId).checked) {
                 document.getElementById(controlId).click();
             }
         }
@@ -346,6 +355,33 @@ datasetFormSelect.addEventListener('change', function() {
     handleForm();
 });
 
+function parse_query_string(query) {
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair.shift());
+    var value = decodeURIComponent(pair.join("="));
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = value;
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], value];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(value);
+    }
+  }
+  return query_string;
+}
+
+var query = window.location.search.substring(1);
+var qs = parse_query_string(query);
+for (const el in qs){
+    localStorage.setItem(el,qs[el]);
+};
 
 if (localStorage.getItem('Dataset type') === null ||
     localStorage.getItem('Dataset type') === ''){

@@ -539,18 +539,18 @@ data_params = {'target': {'name': '<span class=\"highlightText\">tip_amount</spa
         }
     }
     if (dsType == 'Tabular'){
-        n_instances = '290_000';
+        n_instances = '<span class=\"highlightText\">XXX</span>';//'290_000';
         n_classes = '7';
     } else if (dsType == 'NLP'){
-        n_instances = '100_000';
+        n_instances = '<span class=\"highlightText\">XXX</span>';//'100_000';
         n_classes = '';
     }else if (dsType == 'Computer Vision - Image Classification'){
         //ImageNet 1K
-        n_instances = '1_200_000';
+        n_instances = '<span class=\"highlightText\">XXX</span>';//'1_200_000';
         n_classes = '1_000';
     }else{
         // COCO
-        n_instances = '330_000';
+        n_instances = '<span class=\"highlightText\">XXX</span>';//'330_000';
         n_classes = '';
     }
 
