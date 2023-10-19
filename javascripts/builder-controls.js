@@ -44,10 +44,10 @@ function saveState(){
     }
 
     for (let controlIdIdx in controlCheckIds){
-        let controlId = controlCheckIds[controlIdIdx];
+        let controlId = String(controlCheckIds[controlIdIdx]);
         if (document.getElementById(controlId) !== null) {
             localStorage.setItem(controlId, document.getElementById(controlId).checked ? '1' : '0');
-            paramsForUrl += controlId+'='+document.getElementById(controlId).checked ? '1' : '0'+'&';
+            paramsForUrl += controlId+'='+(document.getElementById(controlId).checked ? '1' : '0')+'&';
         }
     }
     window.history.replaceState(null, null, paramsForUrl);
