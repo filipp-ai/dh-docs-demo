@@ -215,7 +215,7 @@ function generateText(){
         singleMultNPY = document.getElementById('singleMultNPY')
 
 
-        document.getElementById('codeSnippetText').innerHTML = genCodeText(
+        genResults = genCodeText(
                                                                 dsType=dtypeSelect.value,
                                                                 useCases=useCasesList,
                                                                 alg=mlAlgSelect.value,
@@ -231,7 +231,8 @@ function generateText(){
 
                                                                 singleMultNPY=singleMultNPY.value
                                                             );
-
+        document.getElementById('codeSnippetText').innerHTML = genResults.codeSnippetText;
+        document.getElementById('finalComments').innerHTML = genResults.finalComment;
     }
 
 }

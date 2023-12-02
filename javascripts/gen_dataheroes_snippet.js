@@ -971,105 +971,58 @@ for tree_level in range(3):
 
 
 
-    let finalComment = ''
+    let finalComment = []
     if (useCases.includes('Model training and tuning')) {
         if (alg == 'Linear Regression') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a linear regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_linear_regression_tabular_data_yellowtaxi.ipynb\">link</a></span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a linear regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_linear_regression_tabular_data_yellowtaxi.ipynb\">link</a>.`);
         } else if (alg == 'Logistic Regression') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a logistic regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_logistic_regression_tabular_data_covertype.ipynb\">link</a>.</span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a logistic regression model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_logistic_regression_tabular_data_covertype.ipynb\">link</a>.`);
         } else if (alg == 'PCA') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a PCA model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.</span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a PCA model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.`);
         } else if (alg == 'K-Means') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a K-Means model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_kmeans_tabular_data_covertype.ipynb\">link</a>.</span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a K-Means model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_kmeans_tabular_data_covertype.ipynb\">link</a>.`);
         } else if (alg == 'SVD') {
-            finalComment = `<span class=\"commentText\"># A full notebook for the CoresetTreeServiceSVD isn’t available. 
-# For a full notebook showing how to build a Coreset tree and train a PCA model on it, 
-# visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.</span>  
-
-`
+            finalComment.push(`A full notebook for the CoresetTreeServiceSVD isn’t available. For a full notebook showing how to build a Coreset tree and train a PCA model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_pca_tabular_data_higgs.ipynb\">link</a>.`);
         } else if (lib == 'LightGBM') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a LightGBM model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_lightGBM_tabular_data_pokerhand.ipynb\">link</a>.</span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a LightGBM model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_lightGBM_tabular_data_pokerhand.ipynb\">link</a>.`);
         } else if (lib == 'XGBoost') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a XGBoost model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_xgboost_tabular_data_pokerhand.ipynb\">link</a>.</span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a XGBoost model on it, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_xgboost_tabular_data_pokerhand.ipynb\">link</a>.`);
         } else if (lib == 'CatBoost') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree and train a CatBoost model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_Catboost_tabular_data_pokerhand.ipynb">link</a>.</span>  
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a CatBoost model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_Catboost_tabular_data_pokerhand.ipynb">link</a>.`);
         } else if (alg == 'Decision trees classification based' && lib == 'Scikit-learn') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_gradientBoosting_tabular_data_pokerhand.ipynb">link</a>.</span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_gradientBoosting_tabular_data_pokerhand.ipynb">link</a>.`);
         } else if (alg == 'Decision trees regression based' && lib == 'Scikit-learn') {
-            finalComment = `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_gradientBoosting_tabular_data_pokerhand.ipynb">link</a>.</span>  
-
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and train a GradientBoosting model on it, visit this <a target=\"_blank\" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/build_and_train/build_and_train_gradientBoosting_tabular_data_pokerhand.ipynb">link</a>.`);
         }
 
-        finalComment += `<span class=\"commentText\"># A full notebook showing how to build a Coreset tree and hyperparameter 
-# tune your model on it, is available only for XGBoost in this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/hyperparameters_optimization/grid_search_hyperparameters_tuning.ipynb">link</a>.
-
-`
+        finalComment.push(`A full notebook showing how to build a Coreset tree and hyperparameter tune your model on it, is available only for XGBoost in this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/hyperparameters_optimization/grid_search_hyperparameters_tuning.ipynb">link</a>.`);
     }
 
     if (useCases.includes('Data cleaning')){
         if (alg =='Decision trees classification based' || alg == 'Logistic Regression'){
-            finalComment += `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and use it to clean your data in classification tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_credit_card.ipynb\">link</a>.</span>
-`
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and use it to clean your data in classification tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_credit_card.ipynb\">link</a>.`);
         } else if (alg =='Decision trees regression based' || alg == 'Linear Regression'){
-            finalComment += `<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree 
-# and use it to clean your data in regression tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_california_housing.ipynb\">link</a>.</span>
-`       }else{
-            finalComment += `<span class=\"commentText\"># A full notebook showing how to clean your data 
-# using the ${coresetTreeServiceClass}, isn’t available.
-# For a full notebook showing how to build a Coreset tree and use it 
-# to clean your data in regression tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_california_housing.ipynb\">link</a>.</span>
-`        }
+            finalComment.push(`For a full notebook showing how to build a Coreset tree and use it to clean your data in regression tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_california_housing.ipynb\">link</a>.`);
+        }else{
+            finalComment.push(`A full notebook showing how to clean your data using the ${coresetTreeServiceClass}, isn’t available. For a full notebook showing how to build a Coreset tree and use it  to clean your data in regression tasks, visit this <a target=\"_blank\" href=\"https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_tabular_california_housing.ipynb\">link</a>.`);
+        }
     } 
 
-    codeSnippetText += '\n'+finalComment;
-
     if (dsType === 'Computer Vision - Image Classification'){
-        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
-# for the ImageNet dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_image_classification_imagenet.ipynb">link</a>.
-
-# For a full notebook showing how to build a Coreset tree for cleaning purposes 
-# comparing cleaning using the DataHeroes library to random cleaning 
-# for the CIFAR10 dataset, visit this <a target="_blank" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb">link</a>.</span>    
-`
+        finalComment.push(`For a full notebook showing how to build a Coreset tree for cleaning purposes for the ImageNet dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_image_classification_imagenet.ipynb">link</a>. For a full notebook showing how to build a Coreset tree for cleaning purposes comparing cleaning using the DataHeroes library to random cleaning for the CIFAR10 dataset, visit this <a target="_blank" href=https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_coreset_vs_random_image_classification_cifar10.ipynb">link</a>.`);
     }else if (dsType === 'Computer Vision - Object Detection'){
-        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
-# for the COCO dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_object_detection_coco.ipynb">link</a>.
-`
+        finalComment.push(`For a full notebook showing how to build a Coreset tree for cleaning purposes for the COCO dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_object_detection_coco.ipynb">link</a>.`);
     }else if (dsType === 'Computer Vision - Semantic Segmentation'){
-        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
-# for the COCO dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_semantic_segmentation_coco.ipynb">link</a>.
-`
+        finalComment.push(`For a full notebook showing how to build a Coreset tree for cleaning purposes for the COCO dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_semantic_segmentation_coco.ipynb">link</a>.`);
     }else if (dsType === 'NLP'){
-        codeSnippetText += '\n'+`<span class=\"commentText\"># For a full notebook showing how to build a Coreset tree for cleaning purposes 
-# for the AG News dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_nlp_classification_agnews.ipynb">link</a>.
-`
+        finalComment.push(`For a full notebook showing how to build a Coreset tree for cleaning purposes for the AG News dataset, visit this <a target="_blank" href="https://github.com/Data-Heroes/dataheroes/blob/master/examples/cleaning/data_cleaning_nlp_classification_agnews.ipynb">link</a>.`);
     }
 
-    return codeSnippetText;
+    var finalCommentString = ''
+    for (var i = 0; i < finalComment.length; i++) {
+        finalCommentString += `<div class="row-comment">`+finalComment[i]+`</div>`;
+    //Do something
+    }
+    return {'codeSnippetText': codeSnippetText, 'finalComment': finalCommentString};
 }
 

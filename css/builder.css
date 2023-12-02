@@ -12,6 +12,12 @@
     width: 100%;
     padding-bottom: 10px;
     }
+.row-comment {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    }
 .label {
     margin-right: 10px;
     width: 300px;
@@ -70,7 +76,6 @@
   width: 100%;
   border: 1px solid #e8eaed;
   border-radius: 5px;
-  background: #f3f4f8;
   box-shadow: 0 1px 3px -2px #9098a9;
   cursor: pointer;
   font-family: inherit;
