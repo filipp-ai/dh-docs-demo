@@ -213,27 +213,27 @@ function generateText(){
         targetFeaturesSeparateDF = document.getElementById('targetFeaturesSeparateDF')
         singleMultDF = document.getElementById('singleMultDF')
         singleMultNPY = document.getElementById('singleMultNPY')
-
-
-        genResults = genCodeText(
-                                                                dsType=dtypeSelect.value,
-                                                                useCases=useCasesList,
-                                                                alg=mlAlgSelect.value,
-                                                                lib=trainLibSelect.value,
-                                                                form=datasetFormSelect.value,
-
-                                                                fileTypeSelect=fileTypeSelect.value,
-                                                                targetFeaturesSeparate=targetFeaturesSeparate.value,
-                                                                singleMultFilesDirs=singleMultFilesDirs.value,
-
-                                                                targetFeaturesSeparateDF=targetFeaturesSeparateDF.value,
-                                                                singleMultDF=singleMultDF.value,
-
-                                                                singleMultNPY=singleMultNPY.value
-                                                            );
-        document.getElementById('codeSnippetText').innerHTML = genResults.codeSnippetText;
-        document.getElementById('finalComments').innerHTML = genResults.finalComment;
     }
+
+    genResults = genCodeText(
+                                                            dsType=dtypeSelect.value,
+                                                            useCases=useCasesList,
+                                                            alg=mlAlgSelect.value,
+                                                            lib=trainLibSelect.value,
+                                                            form=datasetFormSelect.value,
+
+                                                            fileTypeSelect=fileTypeSelect.value,
+                                                            targetFeaturesSeparate=targetFeaturesSeparate.value,
+                                                            singleMultFilesDirs=singleMultFilesDirs.value,
+
+                                                            targetFeaturesSeparateDF=targetFeaturesSeparateDF.value,
+                                                            singleMultDF=singleMultDF.value,
+
+                                                            singleMultNPY=singleMultNPY.value
+                                                        );
+    document.getElementById('codeSnippetText').innerHTML = genResults.codeSnippetText;
+    document.getElementById('finalComments').innerHTML = genResults.finalComment;
+
 
 }
 function handleUseCaseChange(){

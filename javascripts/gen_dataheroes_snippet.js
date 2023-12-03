@@ -1020,8 +1020,7 @@ for tree_level in range(3):
 
     var finalCommentString = ''
     for (var i = 0; i < finalComment.length; i++) {
-        finalCommentString += `<div class="row-comment">`+finalComment[i]+`</div>`;
-    //Do something
+        finalCommentString += `<li class="row-comment">`+finalComment[i]+`</li>`;
     }
     return {'codeSnippetText': codeSnippetText, 'finalComment': finalCommentString};
 }
