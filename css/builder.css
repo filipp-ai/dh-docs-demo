@@ -166,8 +166,9 @@ input[type="checkbox"] + label:before{
 .row-label{
 font-weight: 600
 }
-
-
+.finalComments{
+    padding-top: 1.5em;
+}
 
 @keyframes HideList {
   from {
@@ -177,10 +178,6 @@ font-weight: 600
     transform: scaleY(0);
   }
 }
-
 .section-to-hide{
     width: 100%;
-}
-#finalComments{
-    padding-top: 1.5em;
 }
