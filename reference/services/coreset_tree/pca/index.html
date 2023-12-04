@@ -1865,22 +1865,109 @@ The default model class is our WPCA class extending sklearn's PCA to support wei
   
       <p>Apply auto-preprocessing on the provided (test) data, similarly to the way it is done
 by the fit or get_coreset methods. Preprocessing includes ohe-hot encoding and depends
-on coreset tree level, as every level in the Coreset tree might be encoded differently.
-Parameters:
-    level: int, optional, default 0.
-        Defines the depth level of the tree according to which the preprocessing would be done.
-    X: array like or iterator of arrays like.
-        An array or an iterator of features.
-    sparse_threshold: int, optional, default 0.01.
-        Returns a sparse matrix if the data density after preprocessing is below sparse_threshold,
-        otherwise, will return the data as an array.
-    copy: boolean, default False.
-        False (default) - Input data might be updated as result of this function.
-        True - Data is copied before processing (impacts memory).
-Returns:
-    Dict:
-        data: A numpy array of the preprocessed data.
-        features: A list of feature names corresponding to the data.</p>
+on coreset tree level, as every level in the Coreset tree might be encoded differently.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>level</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int, optional, default 0.
+Defines the depth level of the tree according to which the preprocessing would be done.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>X</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>array like or iterator of arrays like.
+An array or an iterator of features.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sparse_threshold</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int, optional, default 0.01.
+Returns a sparse matrix if the data density after preprocessing is below sparse_threshold,
+otherwise, will return the data as an array.</p>
+            </div>
+          </td>
+          <td>
+                <code>0.01</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>copy</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>boolean, default False.
+False (default) - Input data might be updated as result of this function.
+True - Data is copied before processing (impacts memory).</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Dict</code></td>          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>data: A numpy array of the preprocessed data.
+features: A list of feature names corresponding to the data.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -3074,12 +3161,33 @@ Relevant only when preprocessing_stage=<code>auto</code>. Should the returned da
         </tr>
     </tbody>
   </table>
-      <p>Returns:
-    Dict:
-        data: A numpy arrays tuple (indices, X, optional y) or a pandas DataFrame when, depending on the as_df parameter.
-        w: A numpy array of sample weights.
-        n_represents: number of instances represented by the coreset.
-        props: A numpy array of sample properties.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Dict</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>data: A numpy arrays tuple (indices, X, optional y) or a pandas DataFrame when, depending on the as_df parameter.
+w: A numpy array of sample weights.
+n_represents: number of instances represented by the coreset.
+props: A numpy array of sample properties.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -3138,8 +3246,30 @@ If the passed level is greater than the maximal level of the tree, the maximal a
         </tr>
     </tbody>
   </table>
-      <p>Returns:
-    int: coreset size</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>int</code></td>          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>coreset size</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -3352,8 +3482,30 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
         </tr>
     </tbody>
   </table>
-      <p>Returns:
-    A dict with the best hyperparameters setting, among those provided by the user.             The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.             A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the 'cross validation'              method the average across all folds for each hyperparameter combination is included too.             If refit=True, the retrained model is also returned.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dict with the best hyperparameters setting, among those provided by the user.             The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.             A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the 'cross validation'              method the average across all folds for each hyperparameter combination is included too.             If refit=True, the retrained model is also returned.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -4254,16 +4406,78 @@ When provided, chunk_size input is ignored.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Produce a tree graph plot and save figure as a local png file.
-Parameters:
-    dir_path: string or PathLike.
-        Path to save the plot figure in; if not provided, or if isn't valid/doesn't exist,
-        the figure will be saved in the current directory (from which this method is called).</p>
-<div class="language-text highlight"><pre><span></span><code>selected_trees: dict, optional.
-    A dictionary containing the names of the image file(s) to be generated.
-</code></pre></div>
-<p>Returns:
-    Image file path</p>
+      <p>Produce a tree graph plot and save figure as a local png file.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>dir_path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string or PathLike.
+Path to save the plot figure in; if not provided, or if isn't valid/doesn't exist,
+the figure will be saved in the current directory (from which this method is called).</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>selected_trees</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>dict, optional.
+A dictionary containing the names of the image file(s) to be generated.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Image file path</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -4335,8 +4549,29 @@ True - Data is copied before processing (impacts memory).</p>
         </tr>
     </tbody>
   </table>
-      <p>Returns:
-    Model prediction results.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Model prediction results.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -4408,8 +4643,29 @@ True - Data is copied before processing (impacts memory).</p>
         </tr>
     </tbody>
   </table>
-      <p>Returns:
-    Returns the probability of the sample for each class in the model.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Returns the probability of the sample for each class in the model.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -4431,10 +4687,38 @@ True - Data is copied before processing (impacts memory).</p>
 
   <div class="doc doc-contents ">
   
-      <p>Print the tree's string representation.
-Parameters:
-    selected_tree: string, optional.
-        Which tree to print. Defaults to printing all.</p>
+      <p>Print the tree's string representation.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>selected_tree</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string, optional.
+Which tree to print. Defaults to printing all.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
@@ -4704,24 +4988,91 @@ False: Saves the Coreset tree in JSON format.</p>
   
       <p>Get the coreset from the tree and save it to a file.
 Use the level parameter to control the level of the tree from which samples will be returned.
-This function is only applicable in case the coreset tree was optimized_for 'training'.
-Parameters:
-    file_path: string or PathLike.
-        Local file path to store the coreset.
-    level: int, optional, default 0.
-        Defines the depth level of the tree from which the coreset is extracted.
-        Level 0 returns the coreset from the head of the tree with around coreset_size samples.
-        Level 1 returns the coreset from the level below the head of the tree with around twice of the samples compared to level 0, etc.
-        If the passed level is greater than the maximal level of the tree, the maximal available level is used.
-    preprocessing_stage: string, optional, default <code>user</code>.<br/><br/>
-        The different stages reflect the data preprocessing workflow.<br/><br/>
-        - <strong>original</strong> - Return the data as it was handed to the Coreset’s build function
-        (The data_params.save_orig flag should be set for this option to be available).<br/><br/>
-        - <strong>user</strong> - Return the data after any user defined data preprocessing (if defined).<br/><br/>
-        - <strong>auto</strong> - Return the data after applying auto-preprocessing, including one-hot-encoding,
-        converting Boolean fields to numeric, etc.
-    with_index: boolean, optional, default False.
-        Relevant only when preprocessing_stage=<code>auto</code>. Should the returned data include the index column.</p>
+This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>file_path</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string or PathLike.
+Local file path to store the coreset.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>level</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int, optional, default 0.
+Defines the depth level of the tree from which the coreset is extracted.
+Level 0 returns the coreset from the head of the tree with around coreset_size samples.
+Level 1 returns the coreset from the level below the head of the tree with around twice of the samples compared to level 0, etc.
+If the passed level is greater than the maximal level of the tree, the maximal available level is used.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>preprocessing_stage</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, None]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string, optional, default <code>user</code>.<br/><br/>
+The different stages reflect the data preprocessing workflow.<br/><br/>
+- <strong>original</strong> - Return the data as it was handed to the Coreset’s build function
+(The data_params.save_orig flag should be set for this option to be available).<br/><br/>
+- <strong>user</strong> - Return the data after any user defined data preprocessing (if defined).<br/><br/>
+- <strong>auto</strong> - Return the data after applying auto-preprocessing, including one-hot-encoding,
+converting Boolean fields to numeric, etc.</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;user&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>with_index</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>boolean, optional, default False.
+Relevant only when preprocessing_stage=<code>auto</code>. Should the returned data include the index column.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
