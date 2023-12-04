@@ -16,8 +16,8 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    padding-bottom: 10px;
-    }
+    padding-bottom: 0px;
+}
 .label {
     margin-right: 10px;
     width: 300px;
@@ -49,9 +49,10 @@
 .commentText{
     color: #26a640;
 }
-.snippetPre{
+.md-typeset pre.snippetPre{
     text-wrap: normal;
     font-size: 12px;
+    margin-top: 0px;
 }
 .select {
   position: relative;
@@ -179,4 +180,7 @@ font-weight: 600
 
 .section-to-hide{
     width: 100%;
+}
+#finalComments{
+    padding-top: 1.5em;
 }
