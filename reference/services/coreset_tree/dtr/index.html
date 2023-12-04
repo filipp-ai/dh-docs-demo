@@ -17,13 +17,13 @@
       
       
       
-        <link rel="canonical" href="https://data-heroes.github.io/dh-library/reference/services/coreset_tree/lr/">
+        <link rel="canonical" href="https://data-heroes.github.io/dh-library/reference/services/coreset_tree/dtr/">
       
       
-        <link rel="prev" href="../lg/">
+        <link rel="prev" href="../dtc/">
       
       
-        <link rel="next" href="../pca/">
+        <link rel="next" href="../kmeans/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -31,7 +31,7 @@
     
     
       
-        <title>CoresetTreeServiceLR - DataHeroes</title>
+        <title>CoresetTreeServiceDTR - DataHeroes</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#services.coreset_tree.lr" class="md-skip">
+        <a href="#services.coreset_tree.dtr" class="md-skip">
           Skip to content
         </a>
       
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CoresetTreeServiceLR
+              CoresetTreeServiceDTR
             
           </span>
         </div>
@@ -637,10 +637,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../dtr/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CoresetTreeServiceDTR
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -649,6 +667,318 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr" class="md-nav__link">
+    <span class="md-ellipsis">
+      dtr
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR" class="md-nav__link">
+    <span class="md-ellipsis">
+      CoresetTreeServiceDTR
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CoresetTreeServiceDTR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      auto_preprocessing()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_df" class="md-nav__link">
+    <span class="md-ellipsis">
+      build_from_df()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      build_from_file()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.cross_validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      cross_validate()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.filter_out_samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter_out_samples()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      fit()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_cleaning_samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_cleaning_samples()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_coreset()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_coreset_size()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_max_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_max_level()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.grid_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      grid_search()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.holdout_validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      holdout_validate()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.is_dirty" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_dirty()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      load()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build" class="md-nav__link">
+    <span class="md-ellipsis">
+      partial_build()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_df" class="md-nav__link">
+    <span class="md-ellipsis">
+      partial_build_from_df()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      partial_build_from_file()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      plot()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      predict()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.predict_proba" class="md-nav__link">
+    <span class="md-ellipsis">
+      predict_proba()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.print" class="md-nav__link">
+    <span class="md-ellipsis">
+      print()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.remove_samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove_samples()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.save" class="md-nav__link">
+    <span class="md-ellipsis">
+      save()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.save_coreset" class="md-nav__link">
+    <span class="md-ellipsis">
+      save_coreset()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.set_model_cls" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_model_cls()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.set_seen_indication" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_seen_indication()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_dirty" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_dirty()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_features" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_features()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_targets()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -700,28 +1030,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    CoresetTreeServiceLR
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -730,318 +1042,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr" class="md-nav__link">
-    <span class="md-ellipsis">
-      lr
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR" class="md-nav__link">
-    <span class="md-ellipsis">
-      CoresetTreeServiceLR
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CoresetTreeServiceLR">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.auto_preprocessing" class="md-nav__link">
-    <span class="md-ellipsis">
-      auto_preprocessing()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build" class="md-nav__link">
-    <span class="md-ellipsis">
-      build()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build_from_df" class="md-nav__link">
-    <span class="md-ellipsis">
-      build_from_df()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build_from_file" class="md-nav__link">
-    <span class="md-ellipsis">
-      build_from_file()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.cross_validate" class="md-nav__link">
-    <span class="md-ellipsis">
-      cross_validate()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.filter_out_samples" class="md-nav__link">
-    <span class="md-ellipsis">
-      filter_out_samples()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      fit()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_cleaning_samples" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_cleaning_samples()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_coreset()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset_size" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_coreset_size()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_max_level" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_max_level()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.grid_search" class="md-nav__link">
-    <span class="md-ellipsis">
-      grid_search()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.holdout_validate" class="md-nav__link">
-    <span class="md-ellipsis">
-      holdout_validate()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.is_dirty" class="md-nav__link">
-    <span class="md-ellipsis">
-      is_dirty()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.load" class="md-nav__link">
-    <span class="md-ellipsis">
-      load()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build" class="md-nav__link">
-    <span class="md-ellipsis">
-      partial_build()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_df" class="md-nav__link">
-    <span class="md-ellipsis">
-      partial_build_from_df()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_file" class="md-nav__link">
-    <span class="md-ellipsis">
-      partial_build_from_file()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.plot" class="md-nav__link">
-    <span class="md-ellipsis">
-      plot()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.predict" class="md-nav__link">
-    <span class="md-ellipsis">
-      predict()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.predict_proba" class="md-nav__link">
-    <span class="md-ellipsis">
-      predict_proba()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.print" class="md-nav__link">
-    <span class="md-ellipsis">
-      print()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.remove_samples" class="md-nav__link">
-    <span class="md-ellipsis">
-      remove_samples()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.save" class="md-nav__link">
-    <span class="md-ellipsis">
-      save()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.save_coreset" class="md-nav__link">
-    <span class="md-ellipsis">
-      save_coreset()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.set_model_cls" class="md-nav__link">
-    <span class="md-ellipsis">
-      set_model_cls()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.set_seen_indication" class="md-nav__link">
-    <span class="md-ellipsis">
-      set_seen_indication()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_dirty" class="md-nav__link">
-    <span class="md-ellipsis">
-      update_dirty()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_features" class="md-nav__link">
-    <span class="md-ellipsis">
-      update_features()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_targets" class="md-nav__link">
-    <span class="md-ellipsis">
-      update_targets()
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1218,26 +1218,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr" class="md-nav__link">
     <span class="md-ellipsis">
-      lr
+      dtr
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR" class="md-nav__link">
     <span class="md-ellipsis">
-      CoresetTreeServiceLR
+      CoresetTreeServiceDTR
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CoresetTreeServiceLR">
+    <nav class="md-nav" aria-label="CoresetTreeServiceDTR">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.auto_preprocessing" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing" class="md-nav__link">
     <span class="md-ellipsis">
       auto_preprocessing()
     </span>
@@ -1246,7 +1246,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build" class="md-nav__link">
     <span class="md-ellipsis">
       build()
     </span>
@@ -1255,7 +1255,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build_from_df" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_df" class="md-nav__link">
     <span class="md-ellipsis">
       build_from_df()
     </span>
@@ -1264,7 +1264,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build_from_file" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_file" class="md-nav__link">
     <span class="md-ellipsis">
       build_from_file()
     </span>
@@ -1273,7 +1273,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.cross_validate" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.cross_validate" class="md-nav__link">
     <span class="md-ellipsis">
       cross_validate()
     </span>
@@ -1282,7 +1282,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.filter_out_samples" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.filter_out_samples" class="md-nav__link">
     <span class="md-ellipsis">
       filter_out_samples()
     </span>
@@ -1291,7 +1291,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.fit" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.fit" class="md-nav__link">
     <span class="md-ellipsis">
       fit()
     </span>
@@ -1300,7 +1300,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_cleaning_samples" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_cleaning_samples" class="md-nav__link">
     <span class="md-ellipsis">
       get_cleaning_samples()
     </span>
@@ -1309,7 +1309,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset" class="md-nav__link">
     <span class="md-ellipsis">
       get_coreset()
     </span>
@@ -1318,7 +1318,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset_size" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset_size" class="md-nav__link">
     <span class="md-ellipsis">
       get_coreset_size()
     </span>
@@ -1327,7 +1327,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_max_level" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_max_level" class="md-nav__link">
     <span class="md-ellipsis">
       get_max_level()
     </span>
@@ -1336,7 +1336,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.grid_search" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.grid_search" class="md-nav__link">
     <span class="md-ellipsis">
       grid_search()
     </span>
@@ -1345,7 +1345,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.holdout_validate" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.holdout_validate" class="md-nav__link">
     <span class="md-ellipsis">
       holdout_validate()
     </span>
@@ -1354,7 +1354,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.is_dirty" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.is_dirty" class="md-nav__link">
     <span class="md-ellipsis">
       is_dirty()
     </span>
@@ -1363,7 +1363,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.load" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.load" class="md-nav__link">
     <span class="md-ellipsis">
       load()
     </span>
@@ -1372,7 +1372,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build" class="md-nav__link">
     <span class="md-ellipsis">
       partial_build()
     </span>
@@ -1381,7 +1381,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_df" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_df" class="md-nav__link">
     <span class="md-ellipsis">
       partial_build_from_df()
     </span>
@@ -1390,7 +1390,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_file" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_file" class="md-nav__link">
     <span class="md-ellipsis">
       partial_build_from_file()
     </span>
@@ -1399,7 +1399,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.plot" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.plot" class="md-nav__link">
     <span class="md-ellipsis">
       plot()
     </span>
@@ -1408,7 +1408,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.predict" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.predict" class="md-nav__link">
     <span class="md-ellipsis">
       predict()
     </span>
@@ -1417,7 +1417,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.predict_proba" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.predict_proba" class="md-nav__link">
     <span class="md-ellipsis">
       predict_proba()
     </span>
@@ -1426,7 +1426,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.print" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.print" class="md-nav__link">
     <span class="md-ellipsis">
       print()
     </span>
@@ -1435,7 +1435,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.remove_samples" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.remove_samples" class="md-nav__link">
     <span class="md-ellipsis">
       remove_samples()
     </span>
@@ -1444,7 +1444,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.save" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.save" class="md-nav__link">
     <span class="md-ellipsis">
       save()
     </span>
@@ -1453,7 +1453,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.save_coreset" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.save_coreset" class="md-nav__link">
     <span class="md-ellipsis">
       save_coreset()
     </span>
@@ -1462,7 +1462,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.set_model_cls" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.set_model_cls" class="md-nav__link">
     <span class="md-ellipsis">
       set_model_cls()
     </span>
@@ -1471,7 +1471,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.set_seen_indication" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.set_seen_indication" class="md-nav__link">
     <span class="md-ellipsis">
       set_seen_indication()
     </span>
@@ -1480,7 +1480,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_dirty" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_dirty" class="md-nav__link">
     <span class="md-ellipsis">
       update_dirty()
     </span>
@@ -1489,7 +1489,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_features" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_features" class="md-nav__link">
     <span class="md-ellipsis">
       update_features()
     </span>
@@ -1498,7 +1498,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_targets" class="md-nav__link">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_targets" class="md-nav__link">
     <span class="md-ellipsis">
       update_targets()
     </span>
@@ -1532,13 +1532,13 @@
   
 
 
-  <h1>CoresetTreeServiceLR</h1>
+  <h1>CoresetTreeServiceDTR</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="services.coreset_tree.lr"></a>
+<a id="services.coreset_tree.dtr"></a>
   <div class="doc doc-contents first">
 
   
@@ -1557,12 +1557,12 @@
 
 
 
-<h2 id="services.coreset_tree.lr.CoresetTreeServiceLR" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">CoresetTreeServiceLR</span>
+<h2 id="services.coreset_tree.dtr.CoresetTreeServiceDTR" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">CoresetTreeServiceDTR</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR" class="headerlink" title="Permanent link">¤</a></h2>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">CoresetTreeServiceLR</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory_gb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimized_for</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_sample_ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_cls</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR" class="headerlink" title="Permanent link">¤</a></h2>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">CoresetTreeServiceDTR</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_instances</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory_gb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">optimized_for</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">coreset_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_train_function_params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">node_metadata_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_sample_ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_cls</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -1570,14 +1570,14 @@
             Bases: <code><span title="services.coreset_tree._mixin.CoresetTreeServiceSupervisedMixin">CoresetTreeServiceSupervisedMixin</span></code>, <code><span title="services.coreset_tree._base.CoresetTreeService">CoresetTreeService</span></code></p>
 
   
-      <p>Subclass of CoresetTreeService for Linear Regression.
+      <p>Subclass of CoresetTreeService for Decision Tree Regression-based problems.
 A service class for creating a coreset tree and working with it.
 optimized_for is a required parameter defining the main usage of the service: 'training', 'cleaning' or both,
 optimized_for=['training', 'cleaning'].
 The service will decide whether to build an actual Coreset Tree or
-to build a single Coreset over the entire dataset, based on the triplet:
-n_instances, max_memory_gb and the 'number of features' (deduced from the dataset).
-The chunk_size and coreset_size will be deduced based on the above triplet too.
+to build a single Coreset over the entire dataset, based on the quadruplet:
+n_instances, n_classes, max_memory_gb and the 'number of features' (deduced from the dataset).
+The chunk_size and coreset_size will be deduced based on the above quadruplet too.
 In case chunk_size and coreset_size are provided, they will override all above mentioned parameters (less recommended).</p>
 
 
@@ -1676,7 +1676,7 @@ The main usage of the service.</p>
         <tr>
           <td><code>chunk_size</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a>]</code>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1841,7 +1841,10 @@ For example, chunk_sample_ratio=0.5, means that 50% of the data instances from e
             <div class="doc-md-description">
               <p>A Scikit-learn compatible model class, optional.
 The model class used to train the model on the coreset, in case a specific model instance wasn't passed to fit or the validation methods.
-The default model class is sklearn's LinearRegression.</p>
+The default model class which will be selected for this class instance will be XGBRegressor, on condition the
+xgboost library is installed. Otherwise, LGBMRegressor will be chosen if the lightgbm library is installed. Else,
+in the presence of the Catboost library, the selected class will be the CatBoostRegressor. Lastly, if none of the
+mentioned three libraries are installed, sklearn's GradientBoostingRegressor will be chosen as the final fallback.</p>
             </div>
           </td>
           <td>
@@ -1870,11 +1873,11 @@ The default model class is sklearn's LinearRegression.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.auto_preprocessing" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">auto_preprocessing</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.auto_preprocessing" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">auto_preprocessing</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sparse_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -1915,7 +1918,7 @@ Defines the depth level of the tree according to which the preprocessing would b
         <tr>
           <td><code>X</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -1996,11 +1999,11 @@ features: A list of feature names corresponding to the data.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.build" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.build" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">build</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -2026,7 +2029,7 @@ the partial_build functions. Categorical features are automatically one-hot enco
         <tr>
           <td><code>X</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2042,7 +2045,7 @@ and missing values are automatically handled.</p>
         <tr>
           <td><code>y</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2057,7 +2060,7 @@ An array or an iterator of targets.</p>
         <tr>
           <td><code>indices</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2072,7 +2075,7 @@ An array or an iterator with indices of X.</p>
         <tr>
           <td><code>props</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2172,11 +2175,11 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.build_from_df" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_df" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">build_from_df</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -2202,7 +2205,7 @@ the partial_build functions. Categorical features are automatically one-hot enco
         <tr>
           <td><code>datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pd.DataFrame">DataFrame</span>], <span title="pd.DataFrame">DataFrame</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas.DataFrame">DataFrame</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2217,7 +2220,7 @@ Data includes features, may include labels and may include indices.</p>
         <tr>
           <td><code>target_datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="pd.DataFrame">DataFrame</span>, <span title="pd.Series">Series</span>]], <span title="pd.DataFrame">DataFrame</span>, <span title="pd.Series">Series</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="pandas.DataFrame">DataFrame</span>, <span title="pandas.Series">Series</span>]], <span title="pandas.DataFrame">DataFrame</span>, <span title="pandas.Series">Series</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2316,11 +2319,11 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.build_from_file" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_file" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">build_from_file</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -2346,7 +2349,7 @@ the partial_build functions. Categorical features are automatically one-hot enco
         <tr>
           <td><code>file_path</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], Iterable[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2362,7 +2365,7 @@ Data includes features, may include targets and may include indices.</p>
         <tr>
           <td><code>target_file_path</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], Iterable[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2387,7 +2390,7 @@ For example, to read excel files use pandas read_excel.</p>
             </div>
           </td>
           <td>
-                <code><span title="pd.read_csv">read_csv</span></code>
+                <code><span title="pandas.read_csv">read_csv</span></code>
           </td>
         </tr>
         <tr>
@@ -2494,12 +2497,12 @@ When provided, chunk_size input is ignored.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.cross_validate" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.cross_validate" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">cross_validate</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.cross_validate" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">cross_validate</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.cross_validate" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">cross_validate</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2556,7 +2559,7 @@ Default: instantiate the service model class using input model_params.</p>
         <tr>
           <td><code>scoring</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[BaseEstimator, <span title="numpy.ndarray">ndarray</span>, <span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>, <span title="numpy.ndarray">ndarray</span>, <span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2596,8 +2599,9 @@ If True, the trained model is also returned.</p>
             <div class="doc-md-description">
               <p>int, optional.
 Controls the verbosity: the higher, the more messages.
-    &gt;=1 : The number of folds and hyperparameter combinations to process at the start and the time it took, best hyperparameters found and their score at the end.
-    &gt;=2 : the score is also displayed;</p>
+    &gt;=1 : the computation time for each fold is displayed;
+    &gt;=2 : the score is also displayed;
+    &gt;=3 : starting time of the computation is also displayed.</p>
             </div>
           </td>
           <td>
@@ -2619,7 +2623,23 @@ converting Boolean fields to numeric, etc.</p>
             </div>
           </td>
           <td>
-                <code>&#39;auto&#39;</code>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>enhancement</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int (0-3), optional, default 0 (no enhancement).
+Enhance the default decision tree regression-based training.
+Can improve the strength of the model, but will increase the training run time.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
           </td>
         </tr>
         <tr>
@@ -2652,7 +2672,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
     <tbody>
         <tr>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2662,7 +2682,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
         </tr>
         <tr>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2683,11 +2703,11 @@ The hyper-parameters of the model. If not provided, the default values are used.
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.filter_out_samples" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.filter_out_samples" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">filter_out_samples</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.filter_out_samples" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.filter_out_samples" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">filter_out_samples</span><span class="p">(</span><span class="n">filter_function</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -2712,7 +2732,7 @@ The coreset tree is automatically updated to accommodate to the changes.</p>
         <tr>
           <td><code>filter_function</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[Iterable, Iterable, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None]], Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, None], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, None]], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2792,17 +2812,17 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.fit" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.fit" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">fit</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.fit" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fit</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.fit" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fit</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
   
-      <p>Fit a model on the coreset tree. This model will be used when predict and predict_proba are called.
+      <p>Fit a model on the coreset tree.
 This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
 
 
@@ -2829,6 +2849,22 @@ This function is only applicable in case the coreset tree was optimized_for 'tra
 Level 0 returns the coreset from the head of the tree with around coreset_size samples.
 Level 1 returns the coreset from the level below the head of the tree with around twice of the samples compared to level 0, etc.
 If the passed level is greater than the maximal level of the tree, the maximal available level is used.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>enhancement</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int (0-3), optional, default 0 (no enhancement).
+Enhance the default decision tree regression-based training.
+Can improve the strength of the model, but will increase the training run time.</p>
             </div>
           </td>
           <td>
@@ -2866,7 +2902,7 @@ converting Boolean fields to numeric, etc.</p>
             </div>
           </td>
           <td>
-                <code>&#39;auto&#39;</code>
+                <code>None</code>
           </td>
         </tr>
         <tr>
@@ -2919,11 +2955,11 @@ Input when instantiating default model class.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.get_cleaning_samples" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.get_cleaning_samples" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">get_cleaning_samples</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_cleaning_samples" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_cleaning_samples" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_cleaning_samples</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">select_from_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_seen_samples</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -2966,7 +3002,7 @@ Number of samples to return.</p>
         <tr>
           <td><code>ignore_indices</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2981,7 +3017,7 @@ An array of indices to ignore when selecting cleaning samples.</p>
         <tr>
           <td><code>select_from_indices</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2996,7 +3032,7 @@ An array of indices to ignore when selecting cleaning samples.</p>
         <tr>
           <td><code>select_from_function</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[Iterable, Iterable, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, None]], Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, None], <a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, None]], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3071,11 +3107,11 @@ importance: array-like[float].
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">get_coreset</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_coreset</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">sparse_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -3223,11 +3259,11 @@ props: A numpy array of sample properties.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset_size" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset_size" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">get_coreset_size</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_coreset_size" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset_size" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_coreset_size</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -3305,11 +3341,11 @@ If the passed level is greater than the maximal level of the tree, the maximal a
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.get_max_level" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.get_max_level" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">get_max_level</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.get_max_level" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_max_level" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_max_level</span><span class="p">()</span>
 </span></code></pre></div>
 
@@ -3328,12 +3364,12 @@ Level 1 is the level below the head of the tree, etc.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.grid_search" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.grid_search" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">grid_search</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.grid_search" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">grid_search</span><span class="p">(</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_method</span><span class="o">=</span><span class="s1">&#39;cross validation&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.grid_search" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">grid_search</span><span class="p">(</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_method</span><span class="o">=</span><span class="s1">&#39;cross validation&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -3357,7 +3393,7 @@ This function is only applicable in case the coreset tree was optimized_for 'tra
         <tr>
           <td><code>param_grid</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Dict[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, List], List[Dict[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, List]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>], <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3394,9 +3430,7 @@ If None, the best level will be selected.</p>
           <td>
             <div class="doc-md-description">
               <p>str, optional.
-Indicates which validation method will be used. The possible values are 'cross validation' and 'hold-out validation'.
-If 'cross validation' is selected, the process involves progressing through folds. We first train and validate all hyperparameter
-combinations for each fold, before moving on to the subsequent folds.</p>
+Indicates which validation method will be used. The possible values are 'cross validation' and 'hold-out validation'.</p>
             </div>
           </td>
           <td>
@@ -3421,7 +3455,7 @@ The model class needs to implement the usual scikit-learn interface.</p>
         <tr>
           <td><code>scoring</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[BaseEstimator, <span title="numpy.ndarray">ndarray</span>, <span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>, <span title="numpy.ndarray">ndarray</span>, <span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3445,8 +3479,7 @@ If None, the default scorer of the current model is used.</p>
           <td>
             <div class="doc-md-description">
               <p>bool, optional.
-If True, retrain the model on the whole coreset using the best found hyperparameters, and return the model.
-This model will be used when predict and predict_proba are called.</p>
+If True, retrain the model on the whole coreset using the best found hyperparameters, and return the model.</p>
             </div>
           </td>
           <td>
@@ -3460,10 +3493,11 @@ This model will be used when predict and predict_proba are called.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>int, optional
+              <p>int, optional.
 Controls the verbosity: the higher, the more messages.
-    &gt;=1 : The number of folds and hyperparameter combinations to process at the start and the time it took, best hyperparameters found and their score at the end.
-    &gt;=2 : The score and time for each fold and hyperparameter combination.</p>
+    &gt;=1 : the computation time for each fold and parameter candidate is displayed;
+    &gt;=2 : the score is also displayed;
+    &gt;=3 : starting time of the computation is also displayed.</p>
             </div>
           </td>
           <td>
@@ -3485,7 +3519,23 @@ converting Boolean fields to numeric, etc.</p>
             </div>
           </td>
           <td>
-                <code>&#39;auto&#39;</code>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>enhancement</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int (0-3), optional, default 0 (no enhancement).
+Enhance the default decision tree regression-based training.
+Can improve the strength of the model, but will increase the training run time.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
           </td>
         </tr>
         <tr>
@@ -3506,70 +3556,12 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
         </tr>
     </tbody>
   </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A dict with the best hyperparameters setting, among those provided by the user.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>'cross validation' method the average across all folds for each hyperparameter combination is included too.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>If refit=True, the retrained model is also returned.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      <p>Returns:
+    A dict with the best hyperparameters setting, among those provided by the user.
+    The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.
+    A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the
+    'cross validation' method the average across all folds for each hyperparameter combination is included too.
+    If refit=True, the retrained model is also returned.</p>
 
   </div>
 
@@ -3581,12 +3573,12 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.holdout_validate" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.holdout_validate" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">holdout_validate</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.holdout_validate" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">holdout_validate</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.holdout_validate" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">holdout_validate</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -3659,7 +3651,7 @@ Default: instantiate the service model class using input model_params.</p>
         <tr>
           <td><code>scoring</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[BaseEstimator, <span title="numpy.ndarray">ndarray</span>, <span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>, <span title="numpy.ndarray">ndarray</span>, <span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3699,8 +3691,9 @@ If True, the trained model is also returned.</p>
             <div class="doc-md-description">
               <p>int, optional.
 Controls the verbosity: the higher, the more messages.
-    &gt;=1 : The number of hyperparameter combinations to process at the start and the time it took, best hyperparameters found and their score at the end.
-    &gt;=2 : The score and time for each hyperparameter combination.</p>
+    &gt;=1 : the training and validation time is displayed;
+    &gt;=2 : the validation score is also displayed;
+    &gt;=3 : starting time of the computation is also displayed.</p>
             </div>
           </td>
           <td>
@@ -3722,7 +3715,23 @@ converting Boolean fields to numeric, etc.</p>
             </div>
           </td>
           <td>
-                <code>&#39;auto&#39;</code>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>enhancement</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int (0-3), optional, default 0 (no enhancement).
+Enhance the default decision tree regression-based training.
+Can improve the strength of the model, but will increase the training run time.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
           </td>
         </tr>
         <tr>
@@ -3755,7 +3764,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
     <tbody>
         <tr>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3776,11 +3785,11 @@ The hyper-parameters of the model. If not provided, the default values are used.
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.is_dirty" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.is_dirty" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">is_dirty</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.is_dirty" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.is_dirty" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">is_dirty</span><span class="p">()</span>
 </span></code></pre></div>
 
@@ -3821,7 +3830,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.load" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.load" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">load</span>
 
   
@@ -3829,7 +3838,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
   </span>
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.load" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.load" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">load</span><span class="p">(</span><span class="n">dir_path</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">load_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -3964,11 +3973,11 @@ Local directory where intermediate data is stored.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.partial_build" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">partial_build</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -3993,7 +4002,7 @@ Categorical features are automatically one-hot encoded and missing values are au
         <tr>
           <td><code>X</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4009,7 +4018,7 @@ and missing values are automatically handled.</p>
         <tr>
           <td><code>y</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4024,7 +4033,7 @@ An array or an iterator of targets.</p>
         <tr>
           <td><code>indices</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4039,7 +4048,7 @@ An array or an iterator with indices of X.</p>
         <tr>
           <td><code>props</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], Iterable[Iterable[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4138,11 +4147,11 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_df" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_df" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">partial_build_from_df</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -4167,7 +4176,7 @@ Categorical features are automatically one-hot encoded and missing values are au
         <tr>
           <td><code>datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pd.DataFrame">DataFrame</span>], <span title="pd.DataFrame">DataFrame</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas.DataFrame">DataFrame</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4182,7 +4191,7 @@ Data includes features, may include targets and may include indices.</p>
         <tr>
           <td><code>target_datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pd.DataFrame">DataFrame</span>], <span title="pd.DataFrame">DataFrame</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas.DataFrame">DataFrame</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4280,11 +4289,11 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_file" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_file" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">partial_build_from_file</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.partial_build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -4309,7 +4318,7 @@ Categorical features are automatically one-hot encoded and missing values are au
         <tr>
           <td><code>file_path</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], Iterable[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4325,7 +4334,7 @@ Data includes features, may include targets and may include indices.</p>
         <tr>
           <td><code>target_file_path</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], Iterable[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>], <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="os.PathLike" href="https://docs.python.org/3/library/os.html#os.PathLike">PathLike</a>]]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4350,7 +4359,7 @@ For example, to read excel files use pandas read_excel.</p>
             </div>
           </td>
           <td>
-                <code><span title="pd.read_csv">read_csv</span></code>
+                <code><span title="pandas.read_csv">read_csv</span></code>
           </td>
         </tr>
         <tr>
@@ -4456,11 +4465,11 @@ When provided, chunk_size input is ignored.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.plot" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.plot" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">plot</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.plot" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.plot" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">selected_trees</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -4549,11 +4558,11 @@ A dictionary containing the names of the image file(s) to be generated.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.predict" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.predict" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">predict</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.predict" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.predict" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -4580,7 +4589,7 @@ The function automatically preprocesses the data according to the preprocessing_
         <tr>
           <td><code>X</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4643,11 +4652,11 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.predict_proba" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.predict_proba" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">predict_proba</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.predict_proba" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.predict_proba" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -4674,7 +4683,7 @@ The function automatically preprocesses the data according to the preprocessing_
         <tr>
           <td><code>X</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>, <a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4737,11 +4746,11 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.print" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.print" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">print</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.print" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.print" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">selected_tree</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -4790,11 +4799,11 @@ Which tree to print. Defaults to printing all.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.remove_samples" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.remove_samples" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">remove_samples</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.remove_samples" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.remove_samples" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">remove_samples</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -4819,7 +4828,7 @@ The coreset tree is automatically updated to accommodate to the changes.</p>
         <tr>
           <td><code>indices</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4895,11 +4904,11 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.save" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.save" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">save</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.save" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.save" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">save</span><span class="p">(</span><span class="n">dir_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save_buffer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">override</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -5036,11 +5045,11 @@ False: Saves the Coreset tree in JSON format.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.save_coreset" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.save_coreset" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">save_coreset</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.save_coreset" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.save_coreset" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">save_coreset</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -5144,11 +5153,11 @@ Relevant only when preprocessing_stage=<code>auto</code>. Should the returned da
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.set_model_cls" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.set_model_cls" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">set_model_cls</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.set_model_cls" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.set_model_cls" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">set_model_cls</span><span class="p">(</span><span class="n">model_cls</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -5168,11 +5177,11 @@ Parameters:
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.set_seen_indication" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.set_seen_indication" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">set_seen_indication</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.set_seen_indication" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.set_seen_indication" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">set_seen_indication</span><span class="p">(</span><span class="n">seen_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -5212,7 +5221,7 @@ Set 'seen' or 'unseen' flag</p>
         <tr>
           <td><code>indices</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5237,11 +5246,11 @@ Set flag only for the provided list of indices. Defaults to all indices.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.update_dirty" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.update_dirty" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">update_dirty</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_dirty" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_dirty" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">update_dirty</span><span class="p">(</span><span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -5314,11 +5323,11 @@ len(tree)-1 = leaf level, -1 - same as leaf level.</p>
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.update_features" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.update_features" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">update_features</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_features" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_features" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">update_features</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -5343,7 +5352,7 @@ The coreset tree is automatically updated to accommodate to the changes.</p>
         <tr>
           <td><code>indices</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5358,7 +5367,7 @@ An array of indices to be updated.</p>
         <tr>
           <td><code>X</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5373,7 +5382,7 @@ An array of features. Should have the same length as indices.</p>
         <tr>
           <td><code>feature_names</code></td>
           <td>
-                <code>Iterable[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5449,11 +5458,11 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 
-<h3 id="services.coreset_tree.lr.CoresetTreeServiceLR.update_targets" class="doc doc-heading">
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.update_targets" class="doc doc-heading">
           <span class="doc doc-object-name doc-function-name">update_targets</span>
 
 
-<a href="#services.coreset_tree.lr.CoresetTreeServiceLR.update_targets" class="headerlink" title="Permanent link">¤</a></h3>
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.update_targets" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">update_targets</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">force_resample_all</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_sensitivity_recalc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force_do_nothing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 
@@ -5478,7 +5487,7 @@ The coreset tree is automatically updated to accommodate to the changes.</p>
         <tr>
           <td><code>indices</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -5493,7 +5502,7 @@ An array of indices to be updated.</p>
         <tr>
           <td><code>y</code></td>
           <td>
-                <code>Iterable</code>
+                <code><a class="autorefs autorefs-external" title="typing.Iterable" href="https://docs.python.org/3/library/typing.html#typing.Iterable">Iterable</a></code>
           </td>
           <td>
             <div class="doc-md-description">

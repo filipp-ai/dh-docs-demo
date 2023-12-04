@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://data-heroes.github.io/dh-library/reference/services/coreset_tree/dtr/</loc>
+         <lastmod>2023-12-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://data-heroes.github.io/dh-library/reference/services/coreset_tree/kmeans/</loc>
          <lastmod>2023-12-04</lastmod>
          <changefreq>daily</changefreq>

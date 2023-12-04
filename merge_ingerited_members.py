@@ -48,6 +48,7 @@ for result_module in  [
                         "../dataheroes/services/coreset_tree/kmeans.py",
                         "../dataheroes/services/coreset_tree/lg.py",
                         "../dataheroes/services/coreset_tree/dtc.py",
+                        "../dataheroes/services/coreset_tree/dtr.py",
                         "../dataheroes/services/coreset_tree/lr.py",
                         "../dataheroes/services/coreset_tree/pca.py",
                         "../dataheroes/services/coreset_tree/svd.py",

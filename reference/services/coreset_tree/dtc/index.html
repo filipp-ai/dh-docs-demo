@@ -23,7 +23,7 @@
         <link rel="prev" href="../../../../CODE_WIZARD/">
       
       
-        <link rel="next" href="../kmeans/">
+        <link rel="next" href="../dtr/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -973,6 +973,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dtr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CoresetTreeServiceDTR
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2256,7 +2277,7 @@ the partial_build functions. Categorical features are automatically one-hot enco
         <tr>
           <td><code>datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pd.DataFrame">DataFrame</span>], <span title="pd.DataFrame">DataFrame</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas.DataFrame">DataFrame</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2271,7 +2292,7 @@ Data includes features, may include labels and may include indices.</p>
         <tr>
           <td><code>target_datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="pd.DataFrame">DataFrame</span>, <span title="pd.Series">Series</span>]], <span title="pd.DataFrame">DataFrame</span>, <span title="pd.Series">Series</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<span title="pandas.DataFrame">DataFrame</span>, <span title="pandas.Series">Series</span>]], <span title="pandas.DataFrame">DataFrame</span>, <span title="pandas.Series">Series</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2441,7 +2462,7 @@ For example, to read excel files use pandas read_excel.</p>
             </div>
           </td>
           <td>
-                <code><span title="pd.read_csv">read_csv</span></code>
+                <code><span title="pandas.read_csv">read_csv</span></code>
           </td>
         </tr>
         <tr>
@@ -2665,7 +2686,7 @@ Controls the verbosity: the higher, the more messages.
           </td>
           <td>
             <div class="doc-md-description">
-              <p>string, optional, default <code>user</code> when LightGBM or CatBoost are used, <code>auto</code> when Scikit-learn or XGBoost are used<br/><br/>
+              <p>string, optional, default <code>auto</code>.<br/><br/>
 The different stages reflect the data preprocessing workflow.<br/><br/>
 - <strong>user</strong> - Return the data after any user defined data preprocessing (if defined).<br/><br/>
 - <strong>auto</strong> - Return the data after applying auto-preprocessing, including one-hot-encoding,
@@ -2710,7 +2731,17 @@ The hyper-parameters of the model. If not provided, the default values are used.
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A list of scores, one for each fold. If return_model=True, a list of trained models             is also returned (one model for each fold).</p>
+              <p>A list of scores, one for each fold. If return_model=True, a list of trained models</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>]]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>is also returned (one model for each fold).</p>
             </div>
           </td>
         </tr>
@@ -2902,7 +2933,7 @@ Default: instantiate the service model class using input model_params.</p>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>string, optional, default <code>user</code> when LightGBM or CatBoost are used, <code>auto</code> when Scikit-learn or XGBoost are used<br/><br/>
+              <p>string, optional, default <code>auto</code>.<br/><br/>
 The different stages reflect the data preprocessing workflow.<br/><br/>
 - <strong>user</strong> - Return the data after any user defined data preprocessing (if defined).<br/><br/>
 - <strong>auto</strong> - Return the data after applying auto-preprocessing, including one-hot-encoding,
@@ -3571,7 +3602,7 @@ Controls the verbosity: the higher, the more messages.
           </td>
           <td>
             <div class="doc-md-description">
-              <p>string, optional, default <code>user</code> when LightGBM or CatBoost are used, <code>auto</code> when Scikit-learn or XGBoost are used<br/><br/>
+              <p>string, optional, default <code>auto</code>.<br/><br/>
 The different stages reflect the data preprocessing workflow.<br/><br/>
 - <strong>user</strong> - Return the data after any user defined data preprocessing (if defined).<br/><br/>
 - <strong>auto</strong> - Return the data after applying auto-preprocessing, including one-hot-encoding,
@@ -3614,17 +3645,47 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
     <tbody>
         <tr>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="sklearn.base.BaseEstimator">BaseEstimator</span>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>, <span title="sklearn.base.BaseEstimator">BaseEstimator</span>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A dict with the best hyperparameters setting, among those provided by the user.             The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.             A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the 'cross validation'             method the average across all folds for each hyperparameter combination is included too.</p>
+              <p>A dict with the best hyperparameters setting, among those provided by the user.</p>
             </div>
           </td>
         </tr>
         <tr>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="sklearn.base.BaseEstimator">BaseEstimator</span>]]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>, <span title="sklearn.base.BaseEstimator">BaseEstimator</span>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>, <span title="sklearn.base.BaseEstimator">BaseEstimator</span>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>, <span title="sklearn.base.BaseEstimator">BaseEstimator</span>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>'cross validation' method the average across all folds for each hyperparameter combination is included too.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>, <span title="sklearn.base.BaseEstimator">BaseEstimator</span>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.Dict" href="https://docs.python.org/3/library/typing.html#typing.Dict">Dict</a>, <span title="pandas.DataFrame">DataFrame</span>]]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3778,7 +3839,7 @@ Controls the verbosity: the higher, the more messages.
           </td>
           <td>
             <div class="doc-md-description">
-              <p>string, optional, default <code>user</code> when LightGBM or CatBoost are used, <code>auto</code> when Scikit-learn or XGBoost are used<br/><br/>
+              <p>string, optional, default <code>auto</code>.<br/><br/>
 The different stages reflect the data preprocessing workflow.<br/><br/>
 - <strong>user</strong> - Return the data after any user defined data preprocessing (if defined).<br/><br/>
 - <strong>auto</strong> - Return the data after applying auto-preprocessing, including one-hot-encoding,
@@ -4231,7 +4292,7 @@ Categorical features are automatically one-hot encoded and missing values are au
         <tr>
           <td><code>datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pd.DataFrame">DataFrame</span>], <span title="pd.DataFrame">DataFrame</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas.DataFrame">DataFrame</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4246,7 +4307,7 @@ Data includes features, may include targets and may include indices.</p>
         <tr>
           <td><code>target_datasets</code></td>
           <td>
-                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pd.DataFrame">DataFrame</span>], <span title="pd.DataFrame">DataFrame</span>]</code>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterator[<span title="pandas.DataFrame">DataFrame</span>], <span title="pandas.DataFrame">DataFrame</span>]</code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4414,7 +4475,7 @@ For example, to read excel files use pandas read_excel.</p>
             </div>
           </td>
           <td>
-                <code><span title="pd.read_csv">read_csv</span></code>
+                <code><span title="pandas.read_csv">read_csv</span></code>
           </td>
         </tr>
         <tr>

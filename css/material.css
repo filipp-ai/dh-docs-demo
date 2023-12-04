@@ -13,6 +13,7 @@
 .md-nav__link[href='#services.coreset_tree.pca']{height: 0px; display: none}
 .md-nav__link[href='#services.coreset_tree.svd']{height: 0px; display: none}
 .md-nav__link[href='#services.coreset_tree.dtc']{height: 0px; display: none}
+.md-nav__link[href='#services.coreset_tree.dtr']{height: 0px; display: none}
 .md-nav__link[href='#data.common']{height: 0px; display: none}
 /*
 I do not remember what I tried to fix this way,

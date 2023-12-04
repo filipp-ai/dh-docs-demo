@@ -20,7 +20,7 @@
         <link rel="canonical" href="https://data-heroes.github.io/dh-library/reference/services/coreset_tree/kmeans/">
       
       
-        <link rel="prev" href="../dtc/">
+        <link rel="prev" href="../dtr/">
       
       
         <link rel="next" href="../lg/">
@@ -624,6 +624,27 @@
   
   <span class="md-ellipsis">
     CoresetTreeServiceDTC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dtr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CoresetTreeServiceDTR
   </span>
   
 
@@ -2660,7 +2681,17 @@ The hyper-parameters of the model. If not provided, the default values are used.
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A list of scores, one for each fold. If return_model=True, a list of trained models             is also returned (one model for each fold).</p>
+              <p>A list of scores, one for each fold. If return_model=True, a list of trained models</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>is also returned (one model for each fold).</p>
             </div>
           </td>
         </tr>
@@ -2796,7 +2827,7 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
   <div class="doc doc-contents ">
   
-      <p>Fit a model on the coreset tree. This model will be used when predict and predict_proba are called. 
+      <p>Fit a model on the coreset tree. This model will be used when predict and predict_proba are called.
 This function is only applicable in case the coreset tree was optimized_for 'training'.</p>
 
 
@@ -3518,7 +3549,47 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A dict with the best hyperparameters setting, among those provided by the user.             The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.             A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the 'cross validation'              method the average across all folds for each hyperparameter combination is included too.             If refit=True, the retrained model is also returned.</p>
+              <p>A dict with the best hyperparameters setting, among those provided by the user.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>'cross validation' method the average across all folds for each hyperparameter combination is included too.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If refit=True, the retrained model is also returned.</p>
             </div>
           </td>
         </tr>
@@ -3953,7 +4024,7 @@ The target will be ignored when the Coreset is built.</p>
           <td>
             <div class="doc-md-description">
               <p>array like or iterator of arrays like.
-An array or an iterator of features. Categorical features are automatically one-hot encoded 
+An array or an iterator of features. Categorical features are automatically one-hot encoded
 and missing values are automatically handled.</p>
             </div>
           </td>
