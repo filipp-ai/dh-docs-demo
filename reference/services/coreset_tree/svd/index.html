@@ -2663,17 +2663,7 @@ The hyper-parameters of the model. If not provided, the default values are used.
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A list of scores, one for each fold. If return_model=True, a list of trained models</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>Union[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], Tuple[List[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], List[BaseEstimator]]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>is also returned (one model for each fold).</p>
+              <p>A list of scores, one for each fold. If return_model=True, a list of trained models is also returned (one model for each fold).</p>
             </div>
           </td>
         </tr>
@@ -3531,47 +3521,7 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
           </td>
           <td>
             <div class="doc-md-description">
-              <p>A dict with the best hyperparameters setting, among those provided by the user.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>Union[Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The keys are the hyperparameters names, while the dicts' values are the hyperparameters values.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>Union[Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>Union[Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>'cross validation' method the average across all folds for each hyperparameter combination is included too.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-                <code>Union[Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>, BaseEstimator], Tuple[Dict, <span title="pd.DataFrame">DataFrame</span>]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>If refit=True, the retrained model is also returned.</p>
+              <p>A dict with the best hyperparameters setting, among those provided by the user. The keys are the hyperparameters names, while the dicts' values are the hyperparameters values. A Pandas DataFrame holding the score for each hyperparameter combination and fold. For the 'cross validation' method the average across all folds for each hyperparameter combination is included too. If refit=True, the retrained model is also returned.</p>
             </div>
           </td>
         </tr>
@@ -5165,9 +5115,37 @@ Relevant only when preprocessing_stage=<code>auto</code>. Should the returned da
 
   <div class="doc doc-contents ">
   
-      <p>Set the model class used to train the model on the coreset, in case a specific model instance wasn't passed to fit or the validation methods.
-Parameters:
-    model_cls: A Scikit-learn compatible model class.</p>
+      <p>Set the model class used to train the model on the coreset, in case a specific model instance wasn't passed to fit or the validation methods.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>model_cls</code></td>
+          <td>
+                <code>Any</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A Scikit-learn compatible model class.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
