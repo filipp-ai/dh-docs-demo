@@ -926,6 +926,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.seq_dependent_validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      seq_dependent_validation()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.set_model_cls" class="md-nav__link">
     <span class="md-ellipsis">
       set_model_cls()
@@ -1456,6 +1465,15 @@
   <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.save_coreset" class="md-nav__link">
     <span class="md-ellipsis">
       save_coreset()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.seq_dependent_validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      seq_dependent_validation()
     </span>
   </a>
   
@@ -2004,7 +2022,7 @@ features: A list of feature names corresponding to the data.</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2138,6 +2156,20 @@ True - Data is copied before processing (impacts memory).</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>n_jobs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Default: number of CPUs. Number of jobs to run in parallel during build. </p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -2180,7 +2212,7 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2282,6 +2314,20 @@ True - Data is copied before processing (impacts memory).</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>n_jobs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Default: number of CPUs. Number of jobs to run in parallel during build. </p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -2324,7 +2370,7 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2454,6 +2500,20 @@ chunk_size=-1: Force the service to create a single coreset from the entire data
               <p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>n_jobs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Default: number of CPUs. Number of jobs to run in parallel during build. </p>
             </div>
           </td>
           <td>
@@ -2807,7 +2867,7 @@ When set to True, suppresses any update to the coreset tree until update_dirty i
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.fit" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fit</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fit</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">seq_from</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_to</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -2843,6 +2903,36 @@ If the passed level is greater than the maximal level of the tree, the maximal a
           </td>
           <td>
                 <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string/datetime, optional
+The starting sequence of the training set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string/datetime, optional
+The ending sequence of the training set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
         <tr>
@@ -3102,7 +3192,7 @@ importance: array-like[float].
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_coreset</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">sparse_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_coreset</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">sparse_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">with_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">seq_from</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_to</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -3209,35 +3299,44 @@ Relevant only when preprocessing_stage=<code>auto</code>. Should the returned da
                 <code>False</code>
           </td>
         </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-<th>Name</th>        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
         <tr>
-<td><code>Dict</code></td>          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          <td><code>seq_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>data: A numpy arrays tuple (indices, X, optional y) or a pandas DataFrame when, depending on the as_df parameter.
-w: A numpy array of sample weights.
-n_represents: number of instances represented by the coreset.
-props: A numpy array of sample properties.</p>
+              <p>string or datetime, optional, default None.
+The start sequence to filter samples by.</p>
             </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string or datetime, optional, default None.
+The end sequence to filter samples by.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
   </table>
+      <p>Returns:
+    Dict:
+        data: A numpy arrays tuple (indices, X, optional y) or a pandas DataFrame when, depending on the as_df parameter.
+        w: A numpy array of sample weights.
+        n_represents: number of instances represented by the coreset.
+        props: A numpy array of sample properties.</p>
 
   </div>
 
@@ -3254,7 +3353,7 @@ props: A numpy array of sample properties.</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.get_coreset_size" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_coreset_size</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_coreset_size</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">seq_from</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_to</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -3292,6 +3391,36 @@ If the passed level is greater than the maximal level of the tree, the maximal a
           </td>
           <td>
                 <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string or datetime, optional, default None.
+The start sequence to filter samples by.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/datetime.html#module-datetime">datetime</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string or datetime, optional, default None.
+The end sequence to filter samples by.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
@@ -3359,7 +3488,7 @@ Level 1 is the level below the head of the tree, etc.</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.grid_search" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">grid_search</span><span class="p">(</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_method</span><span class="o">=</span><span class="s1">&#39;cross validation&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">grid_search</span><span class="p">(</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validation_method</span><span class="o">=</span><span class="s1">&#39;cross validation&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">refit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">enhancement</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">error_score</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">validation_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">seq_train_from</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_train_to</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_validate_from</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_validate_to</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -3420,7 +3549,7 @@ If None, the best level will be selected.</p>
           <td>
             <div class="doc-md-description">
               <p>str, optional.
-Indicates which validation method will be used. The possible values are 'cross validation' and 'hold-out validation'.</p>
+Indicates which validation method will be used. The possible values are 'cross validation', 'hold-out validation' and 'seq-dependent validation'.</p>
             </div>
           </td>
           <td>
@@ -3544,6 +3673,81 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
                 <code><span title="numpy.nan">nan</span></code>
           </td>
         </tr>
+        <tr>
+          <td><code>validation_size</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>float, optional, default 0.2.
+The size of the validation set, as a percentage of the training set size for holdout validate.</p>
+            </div>
+          </td>
+          <td>
+                <code>0.2</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_train_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The starting sequence of the training set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_train_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The ending sequence of the training set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_validate_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The starting sequence number of the validation set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_validate_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The ending sequence number of the validation set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -3592,7 +3796,7 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
   <div class="doc doc-contents ">
   
       <p>A method for hold-out validation on the coreset tree.
-The test set is always the last part of the dataset.
+The validation set is always the last part of the dataset.
 This function is only applicable in case the coreset tree was optimized_for <code>training</code>.</p>
 
 
@@ -3632,7 +3836,7 @@ If None, the best level will be selected.</p>
           <td>
             <div class="doc-md-description">
               <p>float, optional.
-The percentage of the dataset that will be used for testing the model.</p>
+The percentage of the dataset that will be used for validating the model.</p>
             </div>
           </td>
           <td>
@@ -3986,7 +4190,7 @@ Local directory where intermediate data is stored.</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -4118,6 +4322,20 @@ True - Data is copied before processing (impacts memory).</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>n_jobs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Default: number of CPUs. Number of jobs to run in parallel during build. </p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -4160,7 +4378,7 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_df" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_df</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">target_datasets</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -4260,6 +4478,20 @@ True - Data is copied before processing (impacts memory).</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>n_jobs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Default: number of CPUs. Number of jobs to run in parallel during build. </p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -4302,7 +4534,7 @@ True - Data is copied before processing (impacts memory).</p>
 
 
 <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.partial_build_from_file" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">partial_build_from_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">target_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reader_f</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">,</span> <span class="n">reader_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reader_chunk_size_param_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
@@ -4430,6 +4662,20 @@ chunk_size=0: Nodes are created based on input chunks.</p>
               <p>function, label, or list of labels, optional.
 Split the data according to the provided key.
 When provided, chunk_size input is ignored.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>n_jobs</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Default: number of CPUs. Number of jobs to run in parallel during build. </p>
             </div>
           </td>
           <td>
@@ -5146,6 +5392,248 @@ Relevant only when preprocessing_stage=<code>auto</code>. Should the returned da
           </td>
           <td>
                 <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.seq_dependent_validation" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">seq_dependent_validation</span>
+
+
+<a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.seq_dependent_validation" class="headerlink" title="Permanent link">¤</a></h3>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">seq_dependent_validation</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_train_from</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_train_to</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_validate_from</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_validate_to</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_model</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">preprocessing_stage</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">model_params</span><span class="p">)</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>The method allows to train and validate on a subset of the Coreset tree, according to the <code>seq_column</code> defined
+in the <code>DataParams</code> structure passed to the init.
+This function is only applicable in case the coreset tree was optimized_for <code>training</code>.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>level</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int, optional.
+The level of the tree from which the search for the best matching nodes starts. Nodes closer to the
+leaf level than the specified level, may be selected to better match the provided seq parameters.If
+None, the search starts from level 0, the head of the tree.
+If None, the best level will be selected.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_train_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The starting sequence of the training set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_train_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The ending sequence of the training set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_validate_from</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The starting sequence number of the validation set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>seq_validate_to</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Any, optional.
+The ending sequence number of the validation set.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A Scikit-learn compatible model instance, optional.
+When provided, model_params are not relevant.
+The model class needs to implement the usual scikit-learn interface.
+Default: instantiate the service model class using input model_params.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>scoring</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a>[[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>, <span title="numpy.ndarray">ndarray</span>, <span title="numpy.ndarray">ndarray</span>], <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>callable or string, optional.
+If it is a callable object, it must return a scalar score. The signature of the call is (model, X, y),
+where model is the ML model to be evaluated, X is the data and y is the ground truth labeling.
+For example, it can be produced using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html">sklearn.metrics.make_scorer</a>.
+If it is a string, it must be a valid name of a Scikit-learn <a href="https://scikit-learn.org/stable/modules/model_evaluation.html">scoring method</a>
+If None, the default scorer of the current model is used.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>return_model</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>bool, optional.
+If True, the trained model is also returned.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>verbose</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>int, optional.
+Controls the verbosity: the higher, the more messages.
+    &gt;=1 : The number of hyperparameter combinations to process at the start and the time it took, best hyperparameters found and their score at the end.
+    &gt;=2 : The score and time for each hyperparameter combination.</p>
+            </div>
+          </td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>preprocessing_stage</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, None]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>string, optional, default <code>auto</code>.<br/><br/>
+The different stages reflect the data preprocessing workflow.<br/><br/>
+- <strong>user</strong> - Return the data after any user defined data preprocessing (if defined).<br/><br/>
+- <strong>auto</strong> - Return the data after applying auto-preprocessing, including one-hot-encoding,
+converting Boolean fields to numeric, etc.</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;auto&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model_params</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>kwargs, optional.
+The hyper-parameters of the model. If not provided, the default values are used.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.Tuple" href="https://docs.python.org/3/library/typing.html#typing.Tuple">Tuple</a>[<a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#float">float</a>], <a class="autorefs autorefs-external" title="typing.List" href="https://docs.python.org/3/library/typing.html#typing.List">List</a>[<span title="sklearn.base.BaseEstimator">BaseEstimator</span>]]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The validation score. If return_model=True, the trained model is also returned.</p>
+            </div>
           </td>
         </tr>
     </tbody>

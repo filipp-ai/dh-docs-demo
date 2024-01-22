@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#new-features-improvements-and-bug-fixes-in-version-080" class="md-skip">
+        <a href="#new-features-improvements-and-bug-fixes-in-version-090" class="md-skip">
           Skip to content
         </a>
       
@@ -495,6 +495,15 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-improvements-and-bug-fixes-in-version-090" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features, Improvements and Bug Fixes in version 0.9.0
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#new-features-improvements-and-bug-fixes-in-version-080" class="md-nav__link">
@@ -986,6 +995,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#new-features-improvements-and-bug-fixes-in-version-090" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features, Improvements and Bug Fixes in version 0.9.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-features-improvements-and-bug-fixes-in-version-080" class="md-nav__link">
     <span class="md-ellipsis">
       New Features, Improvements and Bug Fixes in version 0.8.0
@@ -1086,10 +1104,15 @@
    }
 </style>
 
-<p>Last updated on December 4, 2023</p>
+<p>Last updated on January 20, 2024</p>
+<h3 id="new-features-improvements-and-bug-fixes-in-version-090">New Features, Improvements and Bug Fixes in version 0.9.0<a class="headerlink" href="#new-features-improvements-and-bug-fixes-in-version-090" title="Permanent link">¤</a></h3>
+<ul>
+<li>Allowing to execute <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.get_coreset"><code>get_coreset</code></a>, <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.fit"><code>fit</code></a>, <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search"><code>grid_search</code></a> and the validation functions on a subset of the data of the Coreset tree (such as certain date ranges), by defining a sequence column (<code>seq_column</code>), in the <code>DataParams</code> structure passed during the initialization of the class, which can then be used to filter the data.</li>
+<li>Improving the <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.build"><code>build</code></a> time, by improving the parallelism of the Coreset Tree construction. The number of jobs run in parallel during <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.build"><code>build</code></a> can be controlled by defining the <code>n_jobs</code> parameter passed to the function.           </li>
+</ul>
 <h3 id="new-features-improvements-and-bug-fixes-in-version-080">New Features, Improvements and Bug Fixes in version 0.8.0<a class="headerlink" href="#new-features-improvements-and-bug-fixes-in-version-080" title="Permanent link">¤</a></h3>
 <ul>
-<li>An additional CoresetTreeService for all <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/dtc/">
+<li>An additional CoresetTreeService for all <a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/dtr/">
 decision tree regression-based problems</a> has been added to the library. This service can be used to create regression-based Coresets for all libraries including: XGBoost, LightGBM, CatBoost, Scikit-learn and others.</li>
 <li>Improving the default Coreset tree created when <code>chunk_size</code> and <code>coreset_size</code> are not provided during the initialization of the class.</li>
 <li><a href="https://data-heroes.github.io/dh-library/latest/reference/services/coreset_tree/kmeans/#services.coreset_tree.kmeans.CoresetTreeServiceKMeans.grid_search">

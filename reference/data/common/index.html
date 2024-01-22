@@ -1055,7 +1055,7 @@ Each feature is defined as a dictionary with the following attributes (only name
 <tr><td>properties</td><td> List</td><td>A list of fields/columns which won’t be used to build the Coreset or train
 the model, but it is possible to <code>filter_out_samples</code> on them or to pass them in the
 <code>select_from_function</code> of <code>get_cleaning_samples</code>.
-<br><br>Example: <code>'index': {'name': 'date'}</code></td></tr>
+<br><br>Example: <code>'properties': [{'name': 'date'},]</code></td></tr>
 <tr><td>columns_to_features</td><td> Union[bool, dict], default False</td><td>Either <code>bool</code> or
 <code>dict</code> with two possible fields, <code>include</code> or <code>exclude</code>.
 When set to true, all fields/columns in the dataset are treated as features.
@@ -1064,7 +1064,7 @@ treated as features. When <code>exclude</code> is used, only fields/columns defi
 fitting the defined masks are not treated as features. <br><br>
 Example: <code>{'exclude': ['internal_.*', 'bad']}</code></td></tr>
 <tr><td>datetime_to_properties </td><td> boolean, default True</td><td>By default, all datetime fields/columns
-are automatically detected and turned into properties. Properties, won’t be used to build the Coreset or train
+are turned into properties. Properties, won’t be used to build the Coreset or train
 the model, but it is possible to <code>filter_out_samples</code> on them or to pass them
 in the <code>select_from_function</code> of <code>get_cleaning_samples</code>. To disable this functionality
 set <code>'datetime_to_properties': False</code>.</td></tr>
@@ -1074,6 +1074,27 @@ the default behavior is to save the data only after the transformations. To save
  it original format, as it was handed to the build function and before any user defined data
  transformations, set `'save_orig': True`. To retrieve the Coreset in its original format
  user `preprocessing_stage='original'` when calling the `get_coreset` function.
+ <tr><td>seq_column</td><td>dict, default None</td><td>
+Defining a sequence column (such as a date), allows to specify `seq_from` and `seq_to` parameters to `get_coreset`, `fit`,
+`grid_search` and the validation functions, so these functions would be executed on a subset of the
+data (such as certain date ranges). The `seq_column` is a dictionary containing the following parameters:
+<ul>
+    <li><code>name/id/prop_id</code>: Required. The name, id or prop_id of the sequence column. name:
+    The name of the column. id: The index of the feature starting from 0. prop_id:
+    The index of the property starting from 0.</li>
+    <li><code>granularity</code>: Required. The granularity in which the sequence column would be queried.
+    Can be either a pandas offset
+    (https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)
+    or a callable function.
+    </li>
+    <li><code>datetime_format</code>: Required in case the sequence column is a datetime formatted as string.
+    The datetime format of the sequence column.</li>
+    <li><code>chunk_by</code>: Optional. When set, the Coreset tree will be built using the `chunk_by`
+    functionality according to the sequence column instead of using a fixed `chunk_size`.
+    </li>
+</ul>
+<br><br>Example: <code>'seq_params': {'name': 'Transaction Date', 'granularity': 'D', 'datetime_format': '%yyyy-%mm-%dd'}'
+'chunk_by': True}</code></td></tr>
 </td></tr>
 <tr><td colspan='3'><b><a id="Categorical Features">Categorical Features Parameters</a></b></tr>
 <tr><td>detect_categorical </td><td> boolean, default True</td>
@@ -1195,14 +1216,20 @@ transformation.<br><br>See the example at the end of the page.</td></tr>
 </span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>            <span class="s1">&#39;transform&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">yearly_bonus_transform</span><span class="p">}</span>
 </span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>        <span class="p">},</span>
 </span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>    <span class="p">],</span>
-</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;full_name&#39;</span><span class="p">},],</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;full_name&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Hire Date&#39;</span><span class="p">}],</span>
 </span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;salary&#39;</span><span class="p">},</span>
 </span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    <span class="s1">&#39;categorical_features&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">],</span>
 </span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>    <span class="s1">&#39;fill_value_cat&#39;</span><span class="p">:</span> <span class="s1">&#39;take_most_common&#39;</span><span class="p">,</span>
 </span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>    <span class="s1">&#39;fill_value_num&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
 </span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>    <span class="s1">&#39;data_transform_before&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">data_before_processing</span><span class="p">},</span>
 </span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>    <span class="s1">&#39;data_transform_after&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">transform_scaling</span><span class="p">},</span>
-</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="p">}</span>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>    <span class="s1">&#39;seq_column&#39;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Hire Date&#39;</span><span class="p">,</span>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>        <span class="s1">&#39;granularity&#39;</span><span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>        <span class="s1">&#39;datetime_format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">,</span>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>        <span class="s1">&#39;chunk_by&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>    <span class="p">},</span>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="p">}</span>
 </span></code></pre></div></p>
 
 
