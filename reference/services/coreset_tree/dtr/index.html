@@ -3549,7 +3549,9 @@ If None, the best level will be selected.</p>
           <td>
             <div class="doc-md-description">
               <p>str, optional.
-Indicates which validation method will be used. The possible values are 'cross validation', 'hold-out validation' and 'seq-dependent validation'.</p>
+Indicates which validation method will be used. The possible values are 'cross validation', 'hold-out validation' and 'seq-dependent validation'.
+If 'cross validation' is selected, the process involves progressing through folds. We first train and validate all hyperparameter
+combinations for each fold, before moving on to the subsequent folds.</p>
             </div>
           </td>
           <td>
@@ -3681,7 +3683,7 @@ FitFailedWarning is raised. This parameter does not affect the refit step, which
           <td>
             <div class="doc-md-description">
               <p>float, optional, default 0.2.
-The size of the validation set, as a percentage of the training set size for holdout validate.</p>
+The size of the validation set, as a percentage of the training set size for hold-out validation.</p>
             </div>
           </td>
           <td>
@@ -3696,7 +3698,7 @@ The size of the validation set, as a percentage of the training set size for hol
           <td>
             <div class="doc-md-description">
               <p>Any, optional.
-The starting sequence of the training set.</p>
+The starting sequence of the training set for seq-dependent validation.</p>
             </div>
           </td>
           <td>
@@ -3711,7 +3713,7 @@ The starting sequence of the training set.</p>
           <td>
             <div class="doc-md-description">
               <p>Any, optional.
-The ending sequence of the training set.</p>
+The ending sequence of the training set for seq-dependent validation.</p>
             </div>
           </td>
           <td>
@@ -3726,7 +3728,7 @@ The ending sequence of the training set.</p>
           <td>
             <div class="doc-md-description">
               <p>Any, optional.
-The starting sequence number of the validation set.</p>
+The starting sequence number of the validation set for seq-dependent validation.</p>
             </div>
           </td>
           <td>
@@ -3741,7 +3743,7 @@ The starting sequence number of the validation set.</p>
           <td>
             <div class="doc-md-description">
               <p>Any, optional.
-The ending sequence number of the validation set.</p>
+The ending sequence number of the validation set for seq-dependent validation.</p>
             </div>
           </td>
           <td>

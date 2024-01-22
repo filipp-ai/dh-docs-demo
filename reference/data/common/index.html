@@ -1075,26 +1075,33 @@ the default behavior is to save the data only after the transformations. To save
  transformations, set `'save_orig': True`. To retrieve the Coreset in its original format
  user `preprocessing_stage='original'` when calling the `get_coreset` function.
  <tr><td>seq_column</td><td>dict, default None</td><td>
-Defining a sequence column (such as a date), allows to specify `seq_from` and `seq_to` parameters to `get_coreset`, `fit`,
-`grid_search` and the validation functions, so these functions would be executed on a subset of the
-data (such as certain date ranges). The `seq_column` is a dictionary containing the following parameters:
+Defining a sequence column (such as a date), allows to specify <code>seq_from</code> and <code>seq_to</code>
+parameters to <code>get_coreset</code>, <code>fit</code>,
+<code>grid_search</code> and the validation functions, so these functions would be executed on a subset of the
+data (such as certain date ranges). The <code>seq_column</code> is a dictionary containing the following parameters:
 <ul>
     <li><code>name/id/prop_id</code>: Required. The name, id or prop_id of the sequence column. name:
     The name of the column. id: The index of the feature starting from 0. prop_id:
     The index of the property starting from 0.</li>
     <li><code>granularity</code>: Required. The granularity in which the sequence column would be queried.
-    Can be either a pandas offset
-    (https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)
+    Can be either a <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects">pandas offset</a>
     or a callable function.
     </li>
     <li><code>datetime_format</code>: Required in case the sequence column is a datetime formatted as string.
     The datetime format of the sequence column.</li>
-    <li><code>chunk_by</code>: Optional. When set, the Coreset tree will be built using the `chunk_by`
-    functionality according to the sequence column instead of using a fixed `chunk_size`.
+    <li><code>chunk_by</code>: Optional. When set, the Coreset tree will be built using the <code>chunk_by</code>
+    functionality according to the sequence column instead of using a fixed <code>chunk_size</code>.
     </li>
 </ul>
-<br><br>Example: <code>'seq_params': {'name': 'Transaction Date', 'granularity': 'D', 'datetime_format': '%yyyy-%mm-%dd'}'
-'chunk_by': True}</code></td></tr>
+<br>Example: <br>
+    <code>'seq_column':<br>
+    &emsp; {<br>
+    &emsp; &emsp; 'name': 'Transaction Date',<br>
+    &emsp; &emsp; 'granularity': 'D',<br>
+    &emsp; &emsp; 'datetime_format': '%yyyy-%mm-%dd',<br>
+    &emsp; &emsp; 'chunk_by': True<br>
+    &emsp; }<br>
+    </code></td></tr>
 </td></tr>
 <tr><td colspan='3'><b><a id="Categorical Features">Categorical Features Parameters</a></b></tr>
 <tr><td>detect_categorical </td><td> boolean, default True</td>
