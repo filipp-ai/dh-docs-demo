@@ -24,3 +24,31 @@ a.autorefs-external::after {
 a.autorefs-external:hover::after {
   background-color: var(--md-accent-fg-color);
 }
+
+/* Ensure the table layout is set to allow custom column widths */
+.md-typeset__table table {
+    table-layout: auto;
+    width: 100%;
+}
+
+/* Target the first column (Name), second column (Type), etc. */
+.md-typeset__table table th:nth-child(2),
+.md-typeset__table table td:nth-child(2) {
+    width: 25%;  /* Adjust the width for the Type column */
+}
+
+/* Optional: Adjust widths of other columns if needed */
+.md-typeset__table table th:nth-child(1),
+.md-typeset__table table td:nth-child(1) {
+    width: 20%; /* Name column width */
+}
+
+.md-typeset__table table th:nth-child(3),
+.md-typeset__table table td:nth-child(3) {
+    width: 40%; /* Description column width */
+}
+
+.md-typeset__table table th:nth-child(4),
+.md-typeset__table table td:nth-child(4) {
+    width: 15%; /* Default column width */
+}
