@@ -42,8 +42,8 @@ function genBuildFromFile(
 # Build the Coreset tree using the read_npy reader.</span>
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-x_train_file = data_dir / <span class=\"highlightText\">'x_train.npy'</span>
-y_train_file = data_dir / <span class=\"highlightText\">'y_train.npy'</span>
+x_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'x_train.npy'</span>)
+y_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'y_train.npy'</span>)
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
@@ -53,8 +53,8 @@ service_obj.build_from_file(x_train_file, y_train_file, reader_f=read_npy)
 `
 
 let partial_build_from_npy_file_single_separate = `
-x_train_file_2 = data_dir / <span class=\"highlightText\">'x_train_2.npy'</span>
-y_train_file_2 = data_dir / <span class=\"highlightText\">'y_train_2.npy'</span>
+x_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train_2.npy'</span>)
+y_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train_2.npy'</span>)
 service_obj.partial_build_from_file(x_train_file_2, y_train_file_2, reader_f=read_npy)
 `
 
@@ -63,17 +63,35 @@ let build_from_csv_file_single_separate = `
 # Replace with your directory name and file names.</span>
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span> 
-x_train_file = data_dir / <span class=\"highlightText\">'x_train.csv'</span>
-y_train_file = data_dir / <span class=\"highlightText\">'y_train.csv'</span>
+x_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'x_train.csv'</span>)
+y_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'y_train.csv'</span>)
 
 ${buildComment}
 service_obj.build_from_file(x_train_file, y_train_file)
 `
 
+let build_from_parquet_file_single_separate = `
+<span class=\"commentText\"># Prepare the definitions of path variables for the dataset files. 
+# Replace with your directory name and file names.</span>
+from pathlib import Path
+import pandas as pd
+data_dir: Path = <span class=\"highlightText\">'dataset'</span> 
+x_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'x_train.parquet'</span>)
+y_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'y_train.parquet'</span>)
+
+${buildComment}
+service_obj.build_from_file(x_train_file, y_train_file, reader_f=pd.read_parquet)
+`
+
 let partial_build_from_csv_file_single_separate = `
-x_train_file_2 = data_dir / <span class=\"highlightText\">'x_train_2.csv'</span>
-y_train_file_2 = data_dir / <span class=\"highlightText\">'y_train_2.csv'</span>
+x_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train_2.csv'</span>)
+y_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train_2.csv'</span>)
 service_obj.partial_build_from_file(x_train_file_2, y_train_file_2)
+`
+let partial_build_from_parquet_file_single_separate = `
+x_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train_2.parquet'</span>)
+y_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train_2.parquet'</span>)
+service_obj.partial_build_from_file(x_train_file_2, y_train_file_2, reader_f=pd.read_parquet)
 `
 
 let build_from_tsv_file_single_separate = `
@@ -81,16 +99,16 @@ let build_from_tsv_file_single_separate = `
 # Replace with your directory name and file names.</span>
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span> 
-x_train_file = data_dir / <span class=\"highlightText\">'x_train.tsv'</span>
-y_train_file = data_dir / <span class=\"highlightText\">'y_train.tsv'</span>
+x_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'x_train.tsv'</span>)
+y_train_file = os.path.join(data_dir,  <span class=\"highlightText\">'y_train.tsv'</span>)
 
 ${buildComment}
 service_obj.build_from_file(x_train_file, y_train_file, sep='\\t')
 `
 
 let partial_build_from_tsv_file_single_separate = `
-x_train_file_2 = data_dir / <span class=\"highlightText\">'x_train_2.tsv'</span>
-y_train_file_2 = data_dir / <span class=\"highlightText\">'y_train_2.tsv'</span>
+x_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train_2.tsv'</span>)
+y_train_file_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train_2.tsv'</span>)
 service_obj.partial_build_from_file(x_train_file_2, y_train_file_2, sep='\\t')
 `
 
@@ -100,7 +118,7 @@ let build_from_npy_file_single = `
 # Build the Coreset tree using the read_npy reader.</span>
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-data_file = data_dir / <span class=\"highlightText\">'data.npy'</span>
+data_file = os.path.join(data_dir, <span class=\"highlightText\">'data.npy'</span>)
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
@@ -110,7 +128,7 @@ service_obj.build_from_file(data_file, reader_f=read_npy)
 `
 
 let partial_build_from_npy_file_single = `    
-data_file_2 = data_dir / <span class=\"highlightText\">'data_2.npy'</span>
+data_file_2 = os.path.join(data_dir, <span class=\"highlightText\">'data_2.npy'</span>)
 service_obj.partial_build_from_file(data_file_2, reader_f=read_npy)
 `
 
@@ -119,15 +137,32 @@ let build_from_csv_file_single = `
 # Replace with your directory name and file name.</span> 
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-data_file = data_dir / <span class=\"highlightText\">'data.csv'</span>
+data_file = os.path.join(data_dir, <span class=\"highlightText\">'data.csv'</span>)
 
 ${buildComment}
 service_obj.build_from_file(data_file)
 `
 
+let build_from_parquet_file_single = `
+<span class=\"commentText\"># Prepare the definitions of path variables for the dataset file. 
+# Replace with your directory name and file name.</span> 
+from pathlib import Path
+import pandas as pd
+data_dir: Path = <span class=\"highlightText\">'dataset'</span>
+data_file = os.path.join(data_dir, <span class=\"highlightText\">'data.parquet'</span>)
+
+${buildComment}
+service_obj.build_from_file(data_file, reader_f=pd.read_parquet)
+`
+
 let partial_build_from_csv_file_single = `
-data_file_2 = data_dir / <span class=\"highlightText\">'data_2.csv'</span>
+data_file_2 = os.path.join(data_dir, <span class=\"highlightText\">'data_2.csv'</span>)
 service_obj.partial_build_from_file(data_file_2)
+`
+
+let partial_build_from_parquet_file_single = `
+data_file_2 = os.path.join(data_dir, <span class=\"highlightText\">'data_2.parquet'</span>)
+service_obj.partial_build_from_file(data_file_2, reader_f=pd.read_parquet)
 `
 
 let build_from_tsv_file_single = `
@@ -135,14 +170,14 @@ let build_from_tsv_file_single = `
 # Replace with your directory name and file name.</span> 
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-data_file = data_dir / <span class=\"highlightText\">'data.tsv'</span>
+data_file = os.path.join(data_dir, <span class=\"highlightText\">'data.tsv'</span>)
 
 ${buildComment}
 service_obj.build_from_file(data_file, sep='\\t')
 `
 
 let partial_build_from_tsv_file_single = `
-data_file_2 = data_dir / <span class=\"highlightText\">'data_2.tsv'</span>
+data_file_2 = os.path.join(data_dir, <span class=\"highlightText\">'data_2.tsv'</span>)
 service_obj.partial_build_from_file(data_file_2, sep='\\t')
 `
 
@@ -152,8 +187,8 @@ let build_from_npy_file_mult = `
 # Build the Coreset tree using the read_npy reader.</span>
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-data_file1 = data_dir / <span class=\"highlightText\">'data1.npy'</span>
-data_file2 = data_dir / <span class=\"highlightText\">'data2.npy'</span>
+data_file1 = os.path.join(data_dir, <span class=\"highlightText\">'data1.npy'</span>)
+data_file2 = os.path.join(data_dir, <span class=\"highlightText\">'data2.npy'</span>)
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
@@ -163,8 +198,8 @@ service_obj.build_from_file([data_file1, data_file2], reader_f=read_npy)
 `
 
 let partial_build_from_npy_file_mult = `
-data_file1_2 = data_dir / <span class=\"highlightText\">'data1_2.npy'</span>
-data_file2_2 = data_dir / <span class=\"highlightText\">'data2_2.npy'</span>
+data_file1_2 = os.path.join(data_dir, <span class=\"highlightText\">'data1_2.npy'</span>)
+data_file2_2 = os.path.join(data_dir, <span class=\"highlightText\">'data2_2.npy'</span>)
 service_obj.partial_build_from_file([data_file1_2, data_file2_2], reader_f=read_npy)
 `
 
@@ -173,17 +208,36 @@ let build_from_csv_file_mult = `
 # Replace with your directory name and file names.</span> 
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-data_file1 = data_dir / <span class=\"highlightText\">'data1.npy'</span>
-data_file2 = data_dir / <span class=\"highlightText\">'data2.npy'</span>
+data_file1 = os.path.join(data_dir, <span class=\"highlightText\">'data1.csv'</span>)
+data_file2 = os.path.join(data_dir, <span class=\"highlightText\">'data2.csv'</span>)
 
 ${buildComment}
 service_obj.build_from_file([data_file1, data_file2])
 `
 
+let build_from_parquet_file_mult = `
+<span class=\"commentText\"># Prepare the definitions of path variables for the dataset files.
+# Replace with your directory name and file names.</span> 
+from pathlib import Path
+import pandas as pd
+data_dir: Path = <span class=\"highlightText\">'dataset'</span>
+data_file1 = os.path.join(data_dir, <span class=\"highlightText\">'data1.parquet'</span>)
+data_file2 = os.path.join(data_dir, <span class=\"highlightText\">'data2.parquet'</span>)
+
+${buildComment}
+service_obj.build_from_file([data_file1, data_file2], reader_f=pd.read_parquet)
+`
+
 let partial_build_from_csv_file_mult = `
-data_file1_2 = data_dir / <span class=\"highlightText\">'data1_2.npy'</span>
-data_file2_2 = data_dir / <span class=\"highlightText\">'data2_2.npy'</span>
+data_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'data1_2.csv'</span>)
+data_file2_2 = os.path.join(data_dir, <span class=\"highlightText\">'data2_2.csv'</span>)
 service_obj.partial_build_from_file([data_file1_2, data_file2_2])
+`
+
+let partial_build_from_parquet_file_mult = `
+data_file1_2 = os.path.join(data_dir, <span class=\"highlightText\">'data1_2.parquet'</span>)
+data_file2_2 = os.path.join(data_dir, <span class=\"highlightText\">'data2_2.parquet'</span>)
+service_obj.partial_build_from_file([data_file1_2, data_file2_2], reader_f=pd.read_parquet)
 `
 
 let build_from_tsv_file_mult = `
@@ -191,8 +245,8 @@ let build_from_tsv_file_mult = `
 # Replace with your directory name and file names.</span>
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-data_file1 = data_dir / <span class=\"highlightText\">'data1.npy'</span>
-data_file2 = data_dir / <span class=\"highlightText\">'data2.npy'</span>
+data_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'data1.tsv'</span>)
+data_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'data2.tsv'</span>)
 
 ${buildComment}
 service_obj.build_from_file([data_file1, data_file2], sep='\\t')
@@ -201,8 +255,8 @@ service_obj.build_from_file([data_file1, data_file2], sep='\\t')
 let partial_build_from_tsv_file_mult = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files. 
 # Replace with your directory name and file names.</span> 
-data_file1_2 = data_dir / <span class=\"highlightText\">'data1_2.npy'</span>
-data_file2_2 = data_dir / <span class=\"highlightText\">'data2_2.npy'</span>
+data_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'data1_2.tsv'</span>)
+data_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'data2_2.tsv'</span>)
 service_obj.partial_build_from_file([data_file1_2, data_file2_2], sep='\\t')
 `
 
@@ -212,10 +266,10 @@ let build_from_npy_file_mult_separate = `
 # Build the Coreset tree using the read_npy reader.</span>
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-x_train_file1 = data_dir / <span class=\"highlightText\">'x_train1.npy'</span>
-x_train_file2 = data_dir / <span class=\"highlightText\">'x_train2.npy'</span>
-y_train_file1 = data_dir / <span class=\"highlightText\">'y_train1.npy'</span>
-y_train_file2 = data_dir / <span class=\"highlightText\">'y_train2.npy'</span>
+x_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1.npy'</span>)
+x_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2.npy'</span>)
+y_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1.npy'</span>)
+y_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2.npy'</span>)
 
 <span class=\"commentText\"># import reader for NPY format</span>
 from dataheroes.data.utils import read_npy
@@ -224,11 +278,29 @@ ${buildComment}
 service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2], reader_f=read_npy)
 `
 
+let build_from_tsv_file_mult_separate = `
+<span class=\"commentText\"># Prepare the definitions of path variables for the dataset files. 
+# Replace with your directory name and file names. 
+# Build the Coreset tree using the read_npy reader.</span>
+from pathlib import Path
+data_dir: Path = <span class=\"highlightText\">'dataset'</span>
+x_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1.tsv'</span>)
+x_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2.tsv'</span>)
+y_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1.tsv'</span>)
+y_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2.tsv'</span>)
+
+<span class=\"commentText\"># import reader for NPY format</span>
+from dataheroes.data.utils import read_npy
+
+${buildComment}
+service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2], sep='\\t')
+`
+
 let partial_build_from_npy_file_mult_separate = `
-x_train_file1_2 = data_dir / <span class=\"highlightText\">'x_train1_2.npy'</span>
-x_train_file2_2 = data_dir / <span class=\"highlightText\">'x_train2_2.npy'</span>
-y_train_file1_2 = data_dir / <span class=\"highlightText\">'y_train1_2.npy'</span>
-y_train_file2_2 = data_dir / <span class=\"highlightText\">'y_train2_2.npy'</span>
+x_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1_2.npy'</span>)
+x_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2_2.npy'</span>)
+y_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1_2.npy'</span>)
+y_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2_2.npy'</span>)
 service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2], reader_f=read_npy)
 `
 
@@ -237,104 +309,135 @@ let build_from_csv_file_mult_separate = `
 # Replace with your directory name and file names.</span> 
 from pathlib import Path
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-x_train_file1 = data_dir / <span class=\"highlightText\">'x_train1.csv'</span>
-x_train_file2 = data_dir / <span class=\"highlightText\">'x_train2.csv'</span>
-y_train_file1 = data_dir / <span class=\"highlightText\">'y_train1.csv'</span>
-y_train_file2 = data_dir / <span class=\"highlightText\">'y_train2.csv'</span>
+x_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1.csv'</span>)
+x_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2.csv'</span>)
+y_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1.csv'</span>)
+y_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2.csv'</span>)
 
 ${buildComment}
 service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2])
 `
 
-let partial_build_from_csv_file_mult_separate = `
-x_train_file1_2 = data_dir / <span class=\"highlightText\">'x_train1_2.csv'</span>
-x_train_file2_2 = data_dir / <span class=\"highlightText\">'x_train2_2.csv'</span>
-y_train_file1_2 = data_dir / <span class=\"highlightText\">'y_train1_2.csv'</span>
-y_train_file2_2 = data_dir / <span class=\"highlightText\">'y_train2_2.csv'</span>
-service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2])
-`
-
-let build_from_tsv_file_mult_separate = `
+let build_from_parquet_file_mult_separate = `
 <span class=\"commentText\"># Prepare the definitions of path variables for the dataset files. 
 # Replace with your directory name and file names.</span> 
 from pathlib import Path
+import pandas as pd
 data_dir: Path = <span class=\"highlightText\">'dataset'</span>
-x_train_file1 = data_dir / <span class=\"highlightText\">'x_train1.tsv'</span>
-x_train_file2 = data_dir / <span class=\"highlightText\">'x_train2.tsv'</span>
-y_train_file1 = data_dir / <span class=\"highlightText\">'y_train1.tsv'</span>
-y_train_file2 = data_dir / <span class=\"highlightText\">'y_train2.tsv'</span>
+x_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1.parquet'</span>)
+x_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2.parquet'</span>)
+y_train_file1 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1.parquet'</span>)
+y_train_file2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2.parquet'</span>)
 
 ${buildComment}
-service_obj.build_from_file([x_train_file1, x_train_file2], [y_train_file1, y_train_file2], sep='\\t')
+service_obj.build_from_file([x_train_file1, x_train_file2], 
+                            [y_train_file1, y_train_file2], 
+                            reader_f=pd.read_parquet)
 `
+
+let partial_build_from_csv_file_mult_separate = `
+x_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1_2.csv'</span>)
+x_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2_2.csv'</span>)
+y_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1_2.csv'</span>)
+y_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2_2.csv'</span>)
+service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2])
+`
+
+let partial_build_from_parquet_file_mult_separate = `
+x_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1_2.parquet'</span>)
+x_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2_2.parquet'</span>)
+y_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1_2.parquet'</span>)
+y_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2_2.parquet'</span>)
+service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2], reader_f=pd.read_parquet)
+`
+
 let partial_build_from_tsv_file_mult_separate = `
-x_train_file1_2 = data_dir / <span class=\"highlightText\">'x_train1_2.tsv'</span>
-x_train_file2_2 = data_dir / <span class=\"highlightText\">'x_train2_2.tsv'</span>
-y_train_file1_2 = data_dir / <span class=\"highlightText\">'y_train1_2.tsv'</span>
-y_train_file2_2 = data_dir / <span class=\"highlightText\">'y_train2_2.tsv'</span>
+x_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train1_2.tsv'</span>)
+x_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'x_train2_2.tsv'</span>)
+y_train_file1_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train1_2.tsv'</span>)
+y_train_file2_2 = os.path.join(data_dir,  <span class=\"highlightText\">'y_train2_2.tsv'</span>)
 service_obj.partial_build_from_file([x_train_file1_2, x_train_file2_2], [y_train_file1_2, y_train_file2_2], sep='\\t')
 `
+
+let importForBuild = ''
+
+let buildParams = ''
+
+if (fileTypeSelect == 'NPY'){
+    importForBuild = 'from dataheroes.data.utils import read_npy\n'
+    buildParams= ', reader_f=read_npy'
+} else if (fileTypeSelect == 'TSV'){
+    buildParams= ', sep=\'\\t\''
+} else if (fileTypeSelect == 'Parquet'){
+    importForBuild = 'import pandas as pd\n'
+    buildParams= ', reader_f=pd.read_parquet'
+}
 
 let build_from_dir_single = `
 <span class=\"commentText\"># Prepare the data directory. Replace with your directory name. 
 # The Coreset tree will be built from all files in the directory.</span>
 from pathlib import Path
+${importForBuild}
 data_dir = Path("<span class=\"highlightText\">data_dir</span>")
 
 ${buildComment}
-service_obj.build_from_file(data_dir)
+service_obj.build_from_file(data_dir${buildParams})
 `
 
 let partial_build_from_dir_single = `
 data_dir_2 = Path("<span class=\"highlightText\">data_dir_2</span>")
-service_obj.partial_build_from_file(data_dir_2)
+service_obj.partial_build_from_file(data_dir_2${buildParams})
 `
 
 let build_from_dir_single_separate = `
 <span class=\"commentText\"># Prepare the data and target directories. Replace with your directory names. 
 # The Coreset tree will be built from all files in the directories.</span>
 from pathlib import Path
+${importForBuild}
 data_dir = Path("<span class=\"highlightText\">data_dir</span>")
 target_dir = Path("<span class=\"highlightText\">target_dir</span>")
 
 ${buildComment}
-service_obj.build_from_file(file_path=data_dir, target_file_path=target_dir)
+service_obj.build_from_file(file_path=data_dir, target_file_path=target_dir${buildParams})
 `
 
 let partial_build_from_dir_single_separate = `
 data_dir_2 = Path("<span class=\"highlightText\">data_dir_2</span>")
 target_dir_2 = Path("<span class=\"highlightText\">target_dir_2</span>")
-service_obj.partial_build_from_file(file_path=data_dir_2, target_file_path=target_dir_2)
+service_obj.partial_build_from_file(file_path=data_dir_2, target_file_path=target_dir_2${buildParams})
 `
 
 let build_from_dir_mult = `
 <span class=\"commentText\"># Prepare the data directories. Replace with your directory names. 
 # The Coreset tree will be built from all files in the directories.</span>
 from pathlib import Path
+${importForBuild}
 data_dir1 = Path("<span class=\"highlightText\">data_dir1</span>")
 data_dir2 = Path("<span class=\"highlightText\">data_dir2</span>")
 
 ${buildComment}
-service_obj.build_from_file(file_path=[data_dir1, data_dir2]])
+service_obj.build_from_file(file_path=[data_dir1, data_dir2]]${buildParams})
 `
 
 let partial_build_from_dir_mult = `
 data_dir1_2 = Path("<span class=\"highlightText\">data_dir1_2</span>")
 data_dir2_2 = Path("<span class=\"highlightText\">data_dir2_2</span>")
-service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2]])
+service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2]]${buildParams})
 `
 
 let build_from_dir_mult_separate = `
 <span class=\"commentText\"># Prepare the data and target directories. Replace with your directory names. 
 # The Coreset tree will be built from all files in the directories.</span>
 from pathlib import Path
+${importForBuild}
 data_dir1 = Path("<span class=\"highlightText\">data_dir1</span>")
 data_dir2 = Path("<span class=\"highlightText\">data_dir2</span>")
 target_dir1 = Path("<span class=\"highlightText\">target_dir1</span>")
 target_dir2 = Path("<span class=\"highlightText\">target_dir2</span>")
 
 ${buildComment}
-service_obj.build_from_file(file_path=[data_dir1, data_dir2], target_file_path=[target_dir1, target_dir2])
+service_obj.build_from_file(file_path=[data_dir1, data_dir2], 
+                            target_file_path=[target_dir1, target_dir2]${buildParams})
 `
 
 let partial_build_from_dir_mult_separate = `
@@ -342,47 +445,57 @@ data_dir1_2 = Path("<span class=\"highlightText\">data_dir1_2</span>")
 data_dir2_2 = Path("<span class=\"highlightText\">data_dir2_2</span>")
 target_dir1_2 = Path("<span class=\"highlightText\">target_dir1_2</span>")
 target_dir2_2 = Path("<span class=\"highlightText\">target_dir2_2</span>")
-service_obj.partial_build_from_file(file_path=[data_dir1_2, data_dir2_2], target_file_path=[target_dir1_2, target_dir2_2])
+service_obj.partial_build_from_file(
+                                    file_path=[data_dir1_2, data_dir2_2], 
+                                    target_file_path=[target_dir1_2, target_dir2_2]${buildParams})
 `
 
     let codeSnippetText = partial ? `<span class=\"commentText\"># Add additional data to the Coreset tree.
 # The Coreset tree is automatically updated to reflect the old and newly added data, 
 # allowing models to be retrained quickly, to overcome model degradation.</span>` : '';
-
+    buildCodeSnippetText = ''
     if (singleMultFilesDirs === 'Single Directory' && targetFeaturesSeparate === 'No') {
-        codeSnippetText += partial ? partial_build_from_dir_single : build_from_dir_single;
+        buildCodeSnippetText += partial ? partial_build_from_dir_single : build_from_dir_single;
     } else if (singleMultFilesDirs === 'Single Directory' && targetFeaturesSeparate === 'Yes') {
-        codeSnippetText += partial ? partial_build_from_dir_single_separate : build_from_dir_single_separate
+        buildCodeSnippetText += partial ? partial_build_from_dir_single_separate : build_from_dir_single_separate
     } else if (singleMultFilesDirs === 'Multiple Directories' && targetFeaturesSeparate === 'No') {
-        codeSnippetText += partial ? partial_build_from_dir_mult : build_from_dir_mult
+        buildCodeSnippetText += partial ? partial_build_from_dir_mult : build_from_dir_mult
     } else if (singleMultFilesDirs === 'Multiple Directories' && targetFeaturesSeparate === 'Yes') {
-        codeSnippetText += partial ? partial_build_from_dir_mult_separate : build_from_dir_mult_separate
+        buildCodeSnippetText += partial ? partial_build_from_dir_mult_separate : build_from_dir_mult_separate
     } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'NPY') {
-        codeSnippetText += partial ? partial_build_from_npy_file_single_separate : build_from_npy_file_single_separate;
+        buildCodeSnippetText += partial ? partial_build_from_npy_file_single_separate : build_from_npy_file_single_separate;
     } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'TSV') {
-        codeSnippetText += partial ? partial_build_from_tsv_file_single_separate : build_from_tsv_file_single_separate;
+        buildCodeSnippetText += partial ? partial_build_from_tsv_file_single_separate : build_from_tsv_file_single_separate;
     } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'CSV') {
-        codeSnippetText += partial ? partial_build_from_csv_file_single_separate : build_from_csv_file_single_separate;
+        buildCodeSnippetText += partial ? partial_build_from_csv_file_single_separate : build_from_csv_file_single_separate;
+    } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'Parquet') {
+        buildCodeSnippetText += partial ? partial_build_from_parquet_file_single_separate : build_from_parquet_file_single_separate;
     } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'NPY') {
-        codeSnippetText += partial ? partial_build_from_npy_file_single : build_from_npy_file_single;
+        buildCodeSnippetText += partial ? partial_build_from_npy_file_single : build_from_npy_file_single;
     } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'TSV') {
-        codeSnippetText += partial ? partial_build_from_tsv_file_single : build_from_tsv_file_single;
+        buildCodeSnippetText += partial ? partial_build_from_tsv_file_single : build_from_tsv_file_single;
     } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'CSV') {
-        codeSnippetText += partial ? partial_build_from_csv_file_single : build_from_csv_file_single;
+        buildCodeSnippetText += partial ? partial_build_from_csv_file_single : build_from_csv_file_single;
+    } else if (singleMultFilesDirs === 'Single File' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'Parquet') {
+        buildCodeSnippetText += partial ? partial_build_from_parquet_file_single : build_from_parquet_file_single;
     } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'NPY') {
-        codeSnippetText += partial ? partial_build_from_npy_file_mult : build_from_npy_file_mult;
+        buildCodeSnippetText += partial ? partial_build_from_npy_file_mult : build_from_npy_file_mult;
     } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'TSV') {
-        codeSnippetText += partial ? partial_build_from_tsv_file_mult : build_from_tsv_file_mult;
+        buildCodeSnippetText += partial ? partial_build_from_tsv_file_mult : build_from_tsv_file_mult;
     } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'CSV') {
-        codeSnippetText += partial ? partial_build_from_csv_file_mult : build_from_csv_file_mult;
+        buildCodeSnippetText += partial ? partial_build_from_csv_file_mult : build_from_csv_file_mult;
+    } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'No' && fileTypeSelect == 'Parquet') {
+        buildCodeSnippetText += partial ? partial_build_from_parquet_file_mult : build_from_parquet_file_mult;
     } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'NPY') {
-        codeSnippetText += partial ? partial_build_from_npy_file_mult_separate : build_from_npy_file_mult_separate;
+        buildCodeSnippetText += partial ? partial_build_from_npy_file_mult_separate : build_from_npy_file_mult_separate;
     } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'TSV') {
-        codeSnippetText += partial ? partial_build_from_tsv_file_mult_separate : build_from_tsv_file_mult_separate;
+        buildCodeSnippetText += partial ? partial_build_from_tsv_file_mult_separate : build_from_tsv_file_mult_separate;
     } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'CSV') {
-        codeSnippetText += partial ? partial_build_from_csv_file_mult_separate : build_from_csv_file_mult_separate;
+        buildCodeSnippetText += partial ? partial_build_from_csv_file_mult_separate : build_from_csv_file_mult_separate;
+    } else if (singleMultFilesDirs === 'Multiple Files' && targetFeaturesSeparate === 'Yes' && fileTypeSelect == 'Parquet') {
+        buildCodeSnippetText += partial ? partial_build_from_parquet_file_mult_separate : build_from_parquet_file_mult_separate;
     }
-    return codeSnippetText;
+    return codeSnippetText + buildCodeSnippetText;
 }
 
 
@@ -688,7 +801,7 @@ param_grid = {
 from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">roc_auc_score</span>`}
 scoring = make_scorer(<span class=\"highlightText\">roc_auc_score</span>)
 
-optimal_hyperparameters, trained_model = service_obj.grid_search(
+optimal_hyperparameters, coreset_results_df, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
     refit=True,
@@ -698,7 +811,7 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
 } else if (alg == 'Linear Regression'){
     what_adjusting = 'n_jobs';
     metric = 'mean_squared_error';
-    corset_score_expression = `<span class=\"highlightText\">mean_squared_error</span>(y_test, service_obj.predict_proba(X_test))`;
+    corset_score_expression = `<span class=\"highlightText\">mean_squared_error</span>(y_test, service_obj.predict(X_test))`;
     model_params = 'n_jobs=2';
 
     tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
@@ -711,9 +824,9 @@ param_grid = {
 }
 
 from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
-scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
+scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>, greater_is_better=False)
 
-optimal_hyperparameters, trained_model = service_obj.grid_search(
+optimal_hyperparameters, coreset_results_df, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
     refit=True,
@@ -739,7 +852,7 @@ param_grid = {
 ${useCases.includes('Model training and tuning') ? '' : '    from sklearn.metrics import silhouette_score\n'}    clusters_labels = model.predict(X)
     return silhouette_score(X, clusters_labels)</span>
 
-optimal_hyperparameters, trained_model = service_obj.grid_search(
+optimal_hyperparameters, coreset_results_df, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
     refit=True,
@@ -767,7 +880,7 @@ param_grid = {
     score = -np.linalg.norm(X - X_transformed.dot(model.components_) - model.mean_)
     return score</span>
 
-optimal_hyperparameters, trained_model = service_obj.grid_search(
+optimal_hyperparameters, coreset_results_df, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
     refit=True,
@@ -793,7 +906,7 @@ param_grid = {
 <span class=\"highlightText\">def scoring(model, X, y=None):
     return -np.linalg.norm(X - (model.predict(X)).dot(model.model), ord='nuc')</span>
 
-optimal_hyperparameters, trained_model = service_obj.grid_search(
+optimal_hyperparameters, coreset_results_df, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring,
     refit=True, 
@@ -818,7 +931,7 @@ param_grid = {
 from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">balanced_accuracy_score</span>`}
 scoring = make_scorer(<span class=\"highlightText\">balanced_accuracy_score</span>)
 
-optimal_hyperparameters, trained_model = service_obj.grid_search(
+optimal_hyperparameters, coreset_results_df, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
     refit=True,
@@ -830,7 +943,7 @@ optimal_hyperparameters, trained_model = service_obj.grid_search(
     //metric = 'balanced_accuracy_score';
     //corset_score_expression = '<span class=\"highlightText\">balanced_accuracy_score</span>(y_test, service_obj.predict(X_test))';
     metric = 'mean_squared_error';
-    corset_score_expression = `<span class=\"highlightText\">mean_squared_error</span>(y_test, service_obj.predict_proba(X_test))`;
+    corset_score_expression = `<span class=\"highlightText\">mean_squared_error</span>(y_test, service_obj.predict(X_test))`;
 
     model_params = 'n_estimators=500';
     tuning_processing = `<span class=\"commentText\"># To hyperparameter tune your model, use the library’s built-in grid_search function, 
@@ -844,9 +957,9 @@ param_grid = {
 }
 
 from sklearn.metrics import make_scorer${useCases.includes('Model training and tuning') ? '': `, <span class=\"highlightText\">mean_squared_error</span>`}
-scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>)
+scoring = make_scorer(<span class=\"highlightText\">mean_squared_error</span>, greater_is_better=False)
 
-optimal_hyperparameters, trained_model = service_obj.grid_search(
+optimal_hyperparameters, coreset_results_df, trained_model = service_obj.grid_search(
     param_grid=param_grid, 
     scoring=scoring, 
     refit=True,

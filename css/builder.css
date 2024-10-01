@@ -87,7 +87,7 @@
   color: #5a667f;
 }
 .select select option {
-  color: #223254;
+  color: var(--md-default-fg-color);
 }
 .select select option[value=""][disabled] {
   display: none;
