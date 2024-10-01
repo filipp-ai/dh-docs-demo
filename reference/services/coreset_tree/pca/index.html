@@ -1919,23 +1919,130 @@ The default model class is our WPCA class extending sklearn's PCA to support wei
 
   <div class="doc doc-contents ">
   
-      <p>Apply auto-preprocessing on the provided data, similarly to the fit or
-get_coreset methods. Preprocessing includes one-hot encoding and handling missing values.</p>
-      <hr />
-<div class="language-text highlight"><pre><span></span><code>X : Union[Iterable, Iterable[Iterable]]
-    An array-like object or an iterator of features.
-sparse_output : bool, optional, default False
-    When set to True, the function will create a sparse matrix after preprocessing.
-copy : bool, optional, default False
-    If set to True, data is copied before processing. False (default) - Input data may be updated.
-</code></pre></div>
-      <hr />
-<div class="language-text highlight"><pre><span></span><code>dict
-    A dictionary containing the following keys:
-    - data: A numpy array of the preprocessed data.
-    - features: A list of feature names corresponding to the data.
-    - sparse: A boolean indicating if the output is in sparse format.
-</code></pre></div>
+      <p>Apply auto-preprocessing on the provided (test) data, similarly to the way it is done by the fit or
+get_coreset methods. Preprocessing includes ohe-hot encoding and handling missing values depends.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>X</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a>[Iterable, Iterable[Iterable]]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>array like or iterator of arrays like.
+An array or an iterator of features.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>sparse_output</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>boolean, default False. When set to True, the function will create a sparse matrix
+after preprocessing.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>copy</code></td>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>boolean, default False.
+False (default) - Input data might be updated as result of this function.
+True - Data is copied before processing (impacts memory).</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary containing the following keys:</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <ul>
+<li>data: A numpy array of the preprocessed data.</li>
+</ul>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <ul>
+<li>features: A list of feature names corresponding to the data.</li>
+</ul>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <ul>
+<li>sparse: A boolean indicating if the output is in sparse format.</li>
+</ul>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
