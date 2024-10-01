@@ -24,9 +24,3 @@ a.autorefs-external::after {
 a.autorefs-external:hover::after {
   background-color: var(--md-accent-fg-color);
 }
-
-a[href*="Iterable"] {
-    pointer-events: none;
-    color: inherit;
-    text-decoration: none;
-}
