@@ -707,30 +707,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="auto_preprocessing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parameters:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--returns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Returns:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1284,30 +1260,6 @@
       auto_preprocessing
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="auto_preprocessing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parameters:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--returns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Returns:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1968,19 +1920,21 @@ mentioned three libraries are installed, sklearn's GradientBoostingRegressor wil
   
       <p>Apply auto-preprocessing on the provided data, similarly to the fit or
 get_coreset methods. Preprocessing includes one-hot encoding and handling missing values.</p>
-<h5 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--parameters">Parameters:<a class="headerlink" href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--parameters" title="Permanent link">¤</a></h5>
-<p>X : Union[Iterable, Iterable[Iterable]]
+      <hr />
+<div class="language-text highlight"><pre><span></span><code>X : Union[Iterable, Iterable[Iterable]]
     An array-like object or an iterator of features.
 sparse_output : bool, optional, default False
     When set to True, the function will create a sparse matrix after preprocessing.
 copy : bool, optional, default False
-    If set to True, data is copied before processing. False (default) - Input data may be updated.</p>
-<h5 id="services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--returns">Returns:<a class="headerlink" href="#services.coreset_tree.dtr.CoresetTreeServiceDTR.auto_preprocessing--returns" title="Permanent link">¤</a></h5>
-<p>dict
+    If set to True, data is copied before processing. False (default) - Input data may be updated.
+</code></pre></div>
+      <hr />
+<div class="language-text highlight"><pre><span></span><code>dict
     A dictionary containing the following keys:
     - data: A numpy array of the preprocessed data.
     - features: A list of feature names corresponding to the data.
-    - sparse: A boolean indicating if the output is in sparse format.</p>
+    - sparse: A boolean indicating if the output is in sparse format.
+</code></pre></div>
 
   </div>
 
