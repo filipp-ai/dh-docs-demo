@@ -812,6 +812,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="auto_preprocessing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1260,6 +1284,30 @@
       auto_preprocessing
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="auto_preprocessing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1919,75 +1967,21 @@ The default model class is our WSVD class supporting also weights.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Apply auto-preprocessing on the provided (test) data, similarly to the way it is done by the fit or
-get_coreset methods. Preprocessing includes ohe-hot encoding and handling missing values depends.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>X</code></td>
-          <td>
-                <code>Union[Iterable, Iterable[Iterable]]</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>array like or iterator of arrays like.
-An array or an iterator of features.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>sparse_output</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>boolean, default False. When set to True, the function will create a sparse matrix
-after preprocessing.</p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>copy</code></td>
-          <td>
-                <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>boolean, default False.
-False (default) - Input data might be updated as result of this function.
-True - Data is copied before processing (impacts memory).</p>
-            </div>
-          </td>
-          <td>
-                <code>False</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-      <p>Returns:
-    A dictionary with the following keys:
-        data: A numpy array of the preprocessed data.
-        features: A list of feature names corresponding to the data.
-        sparse: A boolean indicating if the output is in sparse format.</p>
+      <p>Apply auto-preprocessing on the provided data, similarly to the fit or
+get_coreset methods. Preprocessing includes one-hot encoding and handling missing values.</p>
+<h5 id="services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--parameters">Parameters:<a class="headerlink" href="#services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--parameters" title="Permanent link">¤</a></h5>
+<p>X : Union[Iterable, Iterable[Iterable]]
+    An array-like object or an iterator of features.
+sparse_output : bool, optional, default False
+    When set to True, the function will create a sparse matrix after preprocessing.
+copy : bool, optional, default False
+    If set to True, data is copied before processing. False (default) - Input data may be updated.</p>
+<h5 id="services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--returns">Returns:<a class="headerlink" href="#services.coreset_tree.svd.CoresetTreeServiceSVD.auto_preprocessing--returns" title="Permanent link">¤</a></h5>
+<p>dict
+    A dictionary containing the following keys:
+    - data: A numpy array of the preprocessed data.
+    - features: A list of feature names corresponding to the data.
+    - sparse: A boolean indicating if the output is in sparse format.</p>
 
   </div>
 
